@@ -10064,17 +10064,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x48</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>CCMR3</name>
           <displayName>CCMR3</displayName>
           <description>TIM capture/compare mode register 3</description>
@@ -12037,17 +12026,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x64</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -15379,17 +15357,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD4</name>
-          <displayName>RSVD4</displayName>
-          <description></description>
-          <addressOffset>0x4C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>L0_CFG</name>
           <displayName>L0_CFG</displayName>
           <description></description>
@@ -15723,17 +15690,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD3</name>
-          <displayName>RSVD3</displayName>
-          <description></description>
-          <addressOffset>0x6C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>L1_CFG</name>
           <displayName>L1_CFG</displayName>
           <description></description>
@@ -16064,17 +16020,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD2</name>
-          <displayName>RSVD2</displayName>
-          <description></description>
-          <addressOffset>0x8C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -17705,17 +17650,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x134</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>CANVAS_STAT</name>
           <displayName>CANVAS_STAT</displayName>
           <description></description>
@@ -19302,17 +19236,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>7</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD2</name>
-          <displayName>RSVD2</displayName>
-          <description></description>
-          <addressOffset>0x44</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -21234,17 +21157,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x104</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>CANVAS_STAT0</name>
           <displayName>CANVAS_STAT0</displayName>
           <description></description>
@@ -21562,17 +21474,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       </addressBlock>
       <registers>
         <register>
-          <name>RSVD41</name>
-          <displayName>RSVD41</displayName>
-          <description></description>
-          <addressOffset>0x0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>TX_PCM_FORMAT</name>
           <displayName>TX_PCM_FORMAT</displayName>
           <description></description>
@@ -21617,17 +21518,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD40</name>
-          <displayName>RSVD40</displayName>
-          <description></description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>TX_PCM_SAMPLE_CLK</name>
           <displayName>TX_PCM_SAMPLE_CLK</displayName>
           <description></description>
@@ -21663,17 +21553,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD39</name>
-          <displayName>RSVD39</displayName>
-          <description></description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>TX_RS_SMOOTH</name>
           <displayName>TX_RS_SMOOTH</displayName>
           <description></description>
@@ -21699,17 +21578,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD38</name>
-          <displayName>RSVD38</displayName>
-          <description></description>
-          <addressOffset>0x34</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -21753,17 +21621,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD37</name>
-          <displayName>RSVD37</displayName>
-          <description></description>
-          <addressOffset>0x44</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>TX_VOL_CTRL</name>
           <displayName>TX_VOL_CTRL</displayName>
           <description></description>
@@ -21798,17 +21655,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD36</name>
-          <displayName>RSVD36</displayName>
-          <description></description>
-          <addressOffset>0x54</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -21861,17 +21707,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD35</name>
-          <displayName>RSVD35</displayName>
-          <description></description>
-          <addressOffset>0x64</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -21936,17 +21771,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD34</name>
-          <displayName>RSVD34</displayName>
-          <description></description>
-          <addressOffset>0x74</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>AUDIO_TX_BCLK_DIV</name>
           <displayName>AUDIO_TX_BCLK_DIV</displayName>
           <description></description>
@@ -21982,17 +21806,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD33</name>
-          <displayName>RSVD33</displayName>
-          <description></description>
-          <addressOffset>0x84</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>AUDIO_TX_FORMAT</name>
           <displayName>AUDIO_TX_FORMAT</displayName>
           <description></description>
@@ -22018,17 +21831,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD32</name>
-          <displayName>RSVD32</displayName>
-          <description></description>
-          <addressOffset>0x94</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -22082,17 +21884,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD31</name>
-          <displayName>RSVD31</displayName>
-          <description></description>
-          <addressOffset>0xA4</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>AUDIO_TX_FUNC_EN</name>
           <displayName>AUDIO_TX_FUNC_EN</displayName>
           <description></description>
@@ -22127,17 +21918,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD30</name>
-          <displayName>RSVD30</displayName>
-          <description></description>
-          <addressOffset>0xB4</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>AUDIO_TX_PAUSE</name>
           <displayName>AUDIO_TX_PAUSE</displayName>
           <description></description>
@@ -22166,17 +21946,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD29</name>
-          <displayName>RSVD29</displayName>
-          <description></description>
-          <addressOffset>0xC4</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>AUDIO_I2S_SL_MERGE</name>
           <displayName>AUDIO_I2S_SL_MERGE</displayName>
           <description></description>
@@ -22202,17 +21971,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD28</name>
-          <displayName>RSVD28</displayName>
-          <description></description>
-          <addressOffset>0xCC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -22250,17 +22008,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD27</name>
-          <displayName>RSVD27</displayName>
-          <description></description>
-          <addressOffset>0x104</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>AUDIO_RX_PAUSE</name>
           <displayName>AUDIO_RX_PAUSE</displayName>
           <description></description>
@@ -22286,17 +22033,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD26</name>
-          <displayName>RSVD26</displayName>
-          <description></description>
-          <addressOffset>0x114</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -22350,17 +22086,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD25</name>
-          <displayName>RSVD25</displayName>
-          <description></description>
-          <addressOffset>0x124</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>AUDIO_RX_PCM_DW</name>
           <displayName>AUDIO_RX_PCM_DW</displayName>
           <description></description>
@@ -22385,17 +22110,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD24</name>
-          <displayName>RSVD24</displayName>
-          <description></description>
-          <addressOffset>0x134</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -22460,17 +22174,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD23</name>
-          <displayName>RSVD23</displayName>
-          <description></description>
-          <addressOffset>0x144</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>AUDIO_RX_BCLK_DIV</name>
           <displayName>AUDIO_RX_BCLK_DIV</displayName>
           <description></description>
@@ -22506,17 +22209,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD22</name>
-          <displayName>RSVD22</displayName>
-          <description></description>
-          <addressOffset>0x154</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>RECORD_DATA_SEL</name>
           <displayName>RECORD_DATA_SEL</displayName>
           <description></description>
@@ -22540,17 +22232,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD21</name>
-          <displayName>RSVD21</displayName>
-          <description></description>
-          <addressOffset>0x164</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -22591,17 +22272,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD20</name>
-          <displayName>RSVD20</displayName>
-          <description></description>
-          <addressOffset>0x174</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>RX_RE_SAMPLE</name>
           <displayName>RX_RE_SAMPLE</displayName>
           <description></description>
@@ -22626,17 +22296,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD19</name>
-          <displayName>RSVD19</displayName>
-          <description></description>
-          <addressOffset>0x184</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -22679,17 +22338,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD18</name>
-          <displayName>RSVD18</displayName>
-          <description></description>
-          <addressOffset>0x194</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>RX_CH_SEL</name>
           <displayName>RX_CH_SEL</displayName>
           <description></description>
@@ -22727,17 +22375,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD17</name>
-          <displayName>RSVD17</displayName>
-          <description></description>
-          <addressOffset>0x1A4</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -22810,17 +22447,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD16</name>
-          <displayName>RSVD16</displayName>
-          <description></description>
-          <addressOffset>0x204</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -22900,17 +22526,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD15</name>
-          <displayName>RSVD15</displayName>
-          <description></description>
-          <addressOffset>0x214</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>BT_PCM_DW</name>
           <displayName>BT_PCM_DW</displayName>
           <description></description>
@@ -22935,17 +22550,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD14</name>
-          <displayName>RSVD14</displayName>
-          <description></description>
-          <addressOffset>0x224</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -22994,17 +22598,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD13</name>
-          <displayName>RSVD13</displayName>
-          <description></description>
-          <addressOffset>0x234</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>BT_PCM_CLK_DUTY</name>
           <displayName>BT_PCM_CLK_DUTY</displayName>
           <description></description>
@@ -23032,17 +22625,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD12</name>
-          <displayName>RSVD12</displayName>
-          <description></description>
-          <addressOffset>0x244</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>BT_PCM_SYNC_DUTY</name>
           <displayName>BT_PCM_SYNC_DUTY</displayName>
           <description></description>
@@ -23066,17 +22648,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD11</name>
-          <displayName>RSVD11</displayName>
-          <description></description>
-          <addressOffset>0x254</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -23114,17 +22685,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD10</name>
-          <displayName>RSVD10</displayName>
-          <description></description>
-          <addressOffset>0x264</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>INT_MASK</name>
           <displayName>INT_MASK</displayName>
           <description></description>
@@ -23156,17 +22716,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD9</name>
-          <displayName>RSVD9</displayName>
-          <description></description>
-          <addressOffset>0x304</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -23204,17 +22753,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD8</name>
-          <displayName>RSVD8</displayName>
-          <description></description>
-          <addressOffset>0x314</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>TX_DMA_ENTRY</name>
           <displayName>TX_DMA_ENTRY</displayName>
           <description></description>
@@ -23234,17 +22772,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD7</name>
-          <displayName>RSVD7</displayName>
-          <description></description>
-          <addressOffset>0x404</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>RX_DMA_ENTRY</name>
           <displayName>RX_DMA_ENTRY</displayName>
           <description></description>
@@ -23261,17 +22788,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD6</name>
-          <displayName>RSVD6</displayName>
-          <description></description>
-          <addressOffset>0x444</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -23306,17 +22822,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD5</name>
-          <displayName>RSVD5</displayName>
-          <description></description>
-          <addressOffset>0x484</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -23398,17 +22903,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD4</name>
-          <displayName>RSVD4</displayName>
-          <description></description>
-          <addressOffset>0x504</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>FIFO_STATUS</name>
           <displayName>FIFO_STATUS</displayName>
           <description></description>
@@ -23433,17 +22927,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD3</name>
-          <displayName>RSVD3</displayName>
-          <description></description>
-          <addressOffset>0x604</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -23472,17 +22955,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD2</name>
-          <displayName>RSVD2</displayName>
-          <description></description>
-          <addressOffset>0x704</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -23543,17 +23015,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x714</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -24224,17 +23685,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x28</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -25863,24 +25313,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               </description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVDR</name>
-          <displayName>RSVDR</displayName>
-          <description>Reserved Register</description>
-          <addressOffset>0x0c</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RSVD</name>
-              <description>
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
             </field>
           </fields>
         </register>
@@ -30177,17 +29609,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x98</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>APM32CR</name>
           <displayName>APM32CR</displayName>
           <description>APM32 Control Register</description>
@@ -31918,17 +31339,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x98</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>APM32CR</name>
           <displayName>APM32CR</displayName>
           <description>APM32 Control Register</description>
@@ -32817,17 +32227,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD3</name>
-          <displayName>RSVD3</displayName>
-          <description></description>
-          <addressOffset>0x34</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>CDR</name>
           <displayName>CDR</displayName>
           <description>card interface control and card detect register</description>
@@ -33049,17 +32448,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD2</name>
-          <displayName>RSVD2</displayName>
-          <description></description>
-          <addressOffset>0x4C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -33366,17 +32754,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x6C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>FIFO</name>
           <displayName>FIFO</displayName>
           <description>FIFO entry</description>
@@ -33538,17 +32915,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -33949,17 +33315,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD2</name>
-          <displayName>RSVD2</displayName>
-          <description></description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -35294,17 +34649,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x90</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -39041,17 +38385,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>RQR</name>
           <displayName>RQR</displayName>
           <description>Request Register</description>
@@ -40239,17 +39572,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>RQR</name>
           <displayName>RQR</displayName>
           <description>Request Register</description>
@@ -41434,17 +40756,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -43559,17 +42870,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD5</name>
-          <displayName>RSVD5</displayName>
-          <description></description>
-          <addressOffset>0x1C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>ADC_CH0_CFG</name>
           <displayName>ADC_CH0_CFG</displayName>
           <description></description>
@@ -43813,17 +43113,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD4</name>
-          <displayName>RSVD4</displayName>
-          <description></description>
-          <addressOffset>0x28</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -44263,17 +43552,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD3</name>
-          <displayName>RSVD3</displayName>
-          <description></description>
-          <addressOffset>0x48</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>DAC_CH0_ENTRY</name>
           <displayName>DAC_CH0_ENTRY</displayName>
           <description></description>
@@ -44429,17 +43707,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>24</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD2</name>
-          <displayName>RSVD2</displayName>
-          <description></description>
-          <addressOffset>0x68</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -46145,17 +45412,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0xC8</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -48222,17 +47478,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>CNT</name>
           <displayName>CNT</displayName>
           <description>Counter</description>
@@ -49135,17 +48380,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD3</name>
-          <displayName>RSVD3</displayName>
-          <description></description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>RWOT_CTRL</name>
           <displayName>RWOT_CTRL</displayName>
           <description>RWOT Control Register</description>
@@ -49251,17 +48485,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD2</name>
-          <displayName>RSVD2</displayName>
-          <description></description>
-          <addressOffset>0x30</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>CLK_CTRL</name>
           <displayName>CLK_CTRL</displayName>
           <description>CLK  Control Register</description>
@@ -49312,17 +48535,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>7</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x40</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -49939,17 +49151,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD3</name>
-          <displayName>RSVD3</displayName>
-          <description></description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>RWOT_CTRL</name>
           <displayName>RWOT_CTRL</displayName>
           <description>RWOT Control Register</description>
@@ -50055,17 +49256,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD2</name>
-          <displayName>RSVD2</displayName>
-          <description></description>
-          <addressOffset>0x30</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>CLK_CTRL</name>
           <displayName>CLK_CTRL</displayName>
           <description>CLK  Control Register</description>
@@ -50116,17 +49306,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>7</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x40</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -50339,17 +49518,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD3</name>
-          <displayName>RSVD3</displayName>
-          <description></description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>HPF_CFG</name>
           <displayName>HPF_CFG</displayName>
           <description></description>
@@ -50423,17 +49591,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>7</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD2</name>
-          <displayName>RSVD2</displayName>
-          <description></description>
-          <addressOffset>0x1C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -50541,17 +49698,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x3C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -51572,17 +50718,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>FIFO</name>
           <displayName>FIFO</displayName>
           <description>FIFO Register</description>
@@ -52439,17 +51574,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>9</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -53312,17 +52436,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>FIFO</name>
           <displayName>FIFO</displayName>
           <description>FIFO Register</description>
@@ -54182,17 +53295,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>FIFO</name>
           <displayName>FIFO</displayName>
           <description>FIFO Register</description>
@@ -54612,17 +53714,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD3</name>
-          <displayName>RSVD3</displayName>
-          <description></description>
-          <addressOffset>0x50</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>OEMR0</name>
           <displayName>OEMR0</displayName>
           <description>output mode Register</description>
@@ -54677,17 +53768,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD2</name>
-          <displayName>RSVD2</displayName>
-          <description></description>
-          <addressOffset>0x6C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -55208,17 +54288,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>13</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0xD0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -57067,17 +56136,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -67377,17 +66435,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>RQR</name>
           <displayName>RQR</displayName>
           <description>Request Register</description>
@@ -68575,17 +67622,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>RQR</name>
           <displayName>RQR</displayName>
           <description>Request Register</description>
@@ -69533,17 +68569,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>CNT</name>
           <displayName>CNT</displayName>
           <description>Counter</description>
@@ -69967,17 +68992,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -70674,17 +69688,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD2</name>
-          <displayName>RSVD2</displayName>
-          <description></description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -72022,17 +71025,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x90</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>MEM1</name>
           <displayName>MEM1</displayName>
           <description>temporary memory 1</description>
@@ -72833,17 +71825,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
@@ -74494,17 +73475,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0x54</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-          </fields>
-        </register>
-        <register>
           <name>SPR</name>
           <displayName>SPR</displayName>
           <description>Stack Pointer Register</description>
@@ -75323,17 +74293,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-          </fields>
-        </register>
-        <register>
-          <name>RSVD1</name>
-          <displayName>RSVD1</displayName>
-          <description></description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
           </fields>
         </register>
         <register>
