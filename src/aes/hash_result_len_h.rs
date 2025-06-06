@@ -1,0 +1,63 @@
+///Register `HASH_RESULT_LEN_H` reader
+pub type R = crate::R<HASH_RESULT_LEN_Hrs>;
+///Register `HASH_RESULT_LEN_H` writer
+pub type W = crate::W<HASH_RESULT_LEN_Hrs>;
+///Field `DATA` reader - HASH result length h
+pub type DataR = crate::FieldReader<u32>;
+///Field `DATA` writer - HASH result length h
+pub type DataW<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
+///Field `RSVD` reader -
+pub type RsvdR = crate::FieldReader;
+///Field `RSVD` writer -
+pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+impl R {
+    ///Bits 0:28 - HASH result length h
+    #[inline(always)]
+    pub fn data(&self) -> DataR {
+        DataR::new(self.bits & 0x1fff_ffff)
+    }
+    ///Bits 29:31
+    #[inline(always)]
+    pub fn rsvd(&self) -> RsvdR {
+        RsvdR::new(((self.bits >> 29) & 7) as u8)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HASH_RESULT_LEN_H")
+            .field("rsvd", &self.rsvd())
+            .field("data", &self.data())
+            .finish()
+    }
+}
+impl W {
+    ///Bits 0:28 - HASH result length h
+    #[inline(always)]
+    pub fn data(&mut self) -> DataW<HASH_RESULT_LEN_Hrs> {
+        DataW::new(self, 0)
+    }
+    ///Bits 29:31
+    #[inline(always)]
+    pub fn rsvd(&mut self) -> RsvdW<HASH_RESULT_LEN_Hrs> {
+        RsvdW::new(self, 29)
+    }
+}
+///
+///
+///You can [`read`](crate::Reg::read) this register and get [`hash_result_len_h::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hash_result_len_h::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+pub struct HASH_RESULT_LEN_Hrs;
+impl crate::RegisterSpec for HASH_RESULT_LEN_Hrs {
+    type Ux = u32;
+}
+///`read()` method returns [`hash_result_len_h::R`](R) reader structure
+impl crate::Readable for HASH_RESULT_LEN_Hrs {}
+///`write(|w| ..)` method takes [`hash_result_len_h::W`](W) writer structure
+impl crate::Writable for HASH_RESULT_LEN_Hrs {
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+}
+///`reset()` method sets HASH_RESULT_LEN_H to value 0
+impl crate::Resettable for HASH_RESULT_LEN_Hrs {
+    const RESET_VALUE: u32 = 0;
+}

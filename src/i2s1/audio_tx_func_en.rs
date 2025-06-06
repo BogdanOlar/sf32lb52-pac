@@ -1,0 +1,78 @@
+///Register `AUDIO_TX_FUNC_EN` reader
+pub type R = crate::R<AUDIO_TX_FUNC_ENrs>;
+///Register `AUDIO_TX_FUNC_EN` writer
+pub type W = crate::W<AUDIO_TX_FUNC_ENrs>;
+///Field `TX_EN` reader - 1: enable 0:disable
+pub type TxEnR = crate::BitReader;
+///Field `TX_EN` writer - 1: enable 0:disable
+pub type TxEnW<'a, REG> = crate::BitWriter<'a, REG>;
+///Field `TX_INTF_SEL` reader - 1: select external tx interface 0: select internal apb tx interface
+pub type TxIntfSelR = crate::BitReader;
+///Field `TX_INTF_SEL` writer - 1: select external tx interface 0: select internal apb tx interface
+pub type TxIntfSelW<'a, REG> = crate::BitWriter<'a, REG>;
+///Field `RSVD` reader -
+pub type RsvdR = crate::FieldReader<u32>;
+///Field `RSVD` writer -
+pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
+impl R {
+    ///Bit 0 - 1: enable 0:disable
+    #[inline(always)]
+    pub fn tx_en(&self) -> TxEnR {
+        TxEnR::new((self.bits & 1) != 0)
+    }
+    ///Bit 1 - 1: select external tx interface 0: select internal apb tx interface
+    #[inline(always)]
+    pub fn tx_intf_sel(&self) -> TxIntfSelR {
+        TxIntfSelR::new(((self.bits >> 1) & 1) != 0)
+    }
+    ///Bits 2:31
+    #[inline(always)]
+    pub fn rsvd(&self) -> RsvdR {
+        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AUDIO_TX_FUNC_EN")
+            .field("rsvd", &self.rsvd())
+            .field("tx_intf_sel", &self.tx_intf_sel())
+            .field("tx_en", &self.tx_en())
+            .finish()
+    }
+}
+impl W {
+    ///Bit 0 - 1: enable 0:disable
+    #[inline(always)]
+    pub fn tx_en(&mut self) -> TxEnW<AUDIO_TX_FUNC_ENrs> {
+        TxEnW::new(self, 0)
+    }
+    ///Bit 1 - 1: select external tx interface 0: select internal apb tx interface
+    #[inline(always)]
+    pub fn tx_intf_sel(&mut self) -> TxIntfSelW<AUDIO_TX_FUNC_ENrs> {
+        TxIntfSelW::new(self, 1)
+    }
+    ///Bits 2:31
+    #[inline(always)]
+    pub fn rsvd(&mut self) -> RsvdW<AUDIO_TX_FUNC_ENrs> {
+        RsvdW::new(self, 2)
+    }
+}
+///
+///
+///You can [`read`](crate::Reg::read) this register and get [`audio_tx_func_en::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`audio_tx_func_en::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+pub struct AUDIO_TX_FUNC_ENrs;
+impl crate::RegisterSpec for AUDIO_TX_FUNC_ENrs {
+    type Ux = u32;
+}
+///`read()` method returns [`audio_tx_func_en::R`](R) reader structure
+impl crate::Readable for AUDIO_TX_FUNC_ENrs {}
+///`write(|w| ..)` method takes [`audio_tx_func_en::W`](W) writer structure
+impl crate::Writable for AUDIO_TX_FUNC_ENrs {
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+}
+///`reset()` method sets AUDIO_TX_FUNC_EN to value 0
+impl crate::Resettable for AUDIO_TX_FUNC_ENrs {
+    const RESET_VALUE: u32 = 0;
+}
