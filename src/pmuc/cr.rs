@@ -34,10 +34,6 @@ pub type Pin0SelW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 pub type Pin1SelR = crate::FieldReader;
 ///Field `PIN1_SEL` writer -
 pub type Pin1SelW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     ///Bit 0 - LP clock for watchdog and FSM. 0 - LRC10, 1 - LRC32
     #[inline(always)]
@@ -79,16 +75,10 @@ impl R {
     pub fn pin1_sel(&self) -> Pin1SelR {
         Pin1SelR::new(((self.bits >> 15) & 0x1f) as u8)
     }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 20) & 0x0fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CR")
-            .field("rsvd", &self.rsvd())
             .field("pin1_sel", &self.pin1_sel())
             .field("pin0_sel", &self.pin0_sel())
             .field("pin1_mode", &self.pin1_mode())
@@ -140,11 +130,6 @@ impl W {
     #[inline(always)]
     pub fn pin1_sel(&mut self) -> Pin1SelW<CRrs> {
         Pin1SelW::new(self, 15)
-    }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CRrs> {
-        RsvdW::new(self, 20)
     }
 }
 ///Control Register

@@ -34,18 +34,10 @@ pub type Tcie7W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Tcie8R = crate::BitReader;
 ///Field `TCIE8` writer - enable task complete interrupt for task 8
 pub type Tcie8W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 ///Field `TEIE` reader - enable transfer error flag
 pub type TeieR = crate::BitReader;
 ///Field `TEIE` writer - enable transfer error flag
 pub type TeieW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
 impl R {
     ///Bit 0 - enable task complete interrupt for task 1
     #[inline(always)]
@@ -87,28 +79,16 @@ impl R {
     pub fn tcie8(&self) -> Tcie8R {
         Tcie8R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 8) & 0xff) as u8)
-    }
     ///Bit 16 - enable transfer error flag
     #[inline(always)]
     pub fn teie(&self) -> TeieR {
         TeieR::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bits 17:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 17) & 0x7fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("IER")
-            .field("rsvd", &self.rsvd())
             .field("teie", &self.teie())
-            .field("rsvd2", &self.rsvd2())
             .field("tcie8", &self.tcie8())
             .field("tcie7", &self.tcie7())
             .field("tcie6", &self.tcie6())
@@ -161,20 +141,10 @@ impl W {
     pub fn tcie8(&mut self) -> Tcie8W<IERrs> {
         Tcie8W::new(self, 7)
     }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<IERrs> {
-        Rsvd2W::new(self, 8)
-    }
     ///Bit 16 - enable transfer error flag
     #[inline(always)]
     pub fn teie(&mut self) -> TeieW<IERrs> {
         TeieW::new(self, 16)
-    }
-    ///Bits 17:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<IERrs> {
-        RsvdW::new(self, 17)
     }
 }
 ///interrupt enable register

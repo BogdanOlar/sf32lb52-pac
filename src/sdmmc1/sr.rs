@@ -46,10 +46,6 @@ pub type FifoUnderrunW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type FifoOverrunR = crate::BitReader;
 ///Field `FIFO_OVERRUN` writer - FIFO overrun Read 1: FIFO overrun error Read 0: no FIFO overrun error Write 1: clear the bit Write 0: no any influence to the bit
 pub type FifoOverrunW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `CMD_SENT` reader - Command sent (perhaps no response back yet) Read 1: command sent. When command start bit is set, the bit will also be back to 0 Read 0: command transferring or others Write 1: clear the bit Write 0: no any influence to the bit
 pub type CmdSentR = crate::BitReader;
 ///Field `CMD_SENT` writer - Command sent (perhaps no response back yet) Read 1: command sent. When command start bit is set, the bit will also be back to 0 Read 0: command transferring or others Write 1: clear the bit Write 0: no any influence to the bit
@@ -74,10 +70,6 @@ pub type SdioW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CacheErrR = crate::BitReader;
 ///Field `CACHE_ERR` writer - Detect cache error Read 1: cache error occur Read 0: no cache error Write 1: clear the bit Write 0: no any influence to the bit
 pub type CacheErrW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 impl R {
     ///Bit 0 - Command busy 1: busy, and when busy, start TX command bit is no usage and should not modify the relative register 0: command idle
     #[inline(always)]
@@ -134,11 +126,6 @@ impl R {
     pub fn fifo_overrun(&self) -> FifoOverrunR {
         FifoOverrunR::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bit 11
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 11) & 1) != 0)
-    }
     ///Bit 12 - Command sent (perhaps no response back yet) Read 1: command sent. When command start bit is set, the bit will also be back to 0 Read 0: command transferring or others Write 1: clear the bit Write 0: no any influence to the bit
     #[inline(always)]
     pub fn cmd_sent(&self) -> CmdSentR {
@@ -169,23 +156,16 @@ impl R {
     pub fn cache_err(&self) -> CacheErrR {
         CacheErrR::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 18) & 0x3fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SR")
-            .field("rsvd", &self.rsvd())
             .field("cache_err", &self.cache_err())
             .field("sdio", &self.sdio())
             .field("card_exist", &self.card_exist())
             .field("card_remove", &self.card_remove())
             .field("card_insert", &self.card_insert())
             .field("cmd_sent", &self.cmd_sent())
-            .field("rsvd2", &self.rsvd2())
             .field("fifo_overrun", &self.fifo_overrun())
             .field("fifo_underrun", &self.fifo_underrun())
             .field("startbit_error", &self.startbit_error())
@@ -256,11 +236,6 @@ impl W {
     pub fn fifo_overrun(&mut self) -> FifoOverrunW<SRrs> {
         FifoOverrunW::new(self, 10)
     }
-    ///Bit 11
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<SRrs> {
-        Rsvd2W::new(self, 11)
-    }
     ///Bit 12 - Command sent (perhaps no response back yet) Read 1: command sent. When command start bit is set, the bit will also be back to 0 Read 0: command transferring or others Write 1: clear the bit Write 0: no any influence to the bit
     #[inline(always)]
     pub fn cmd_sent(&mut self) -> CmdSentW<SRrs> {
@@ -290,11 +265,6 @@ impl W {
     #[inline(always)]
     pub fn cache_err(&mut self) -> CacheErrW<SRrs> {
         CacheErrW::new(self, 17)
-    }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SRrs> {
-        RsvdW::new(self, 18)
     }
 }
 ///command and data status register

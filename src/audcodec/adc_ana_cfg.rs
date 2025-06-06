@@ -14,10 +14,6 @@ pub type MicbiasEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CapcodeR = crate::FieldReader;
 ///Field `CAPCODE` writer - ADC cap code
 pub type CapcodeW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 25, u32>;
 impl R {
     ///Bit 0 - micbias chopping enable
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn capcode(&self) -> CapcodeR {
         CapcodeR::new(((self.bits >> 2) & 0x1f) as u8)
     }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 7) & 0x01ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ADC_ANA_CFG")
-            .field("rsvd", &self.rsvd())
             .field("capcode", &self.capcode())
             .field("micbias_en", &self.micbias_en())
             .field("micbias_chop_en", &self.micbias_chop_en())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn capcode(&mut self) -> CapcodeW<ADC_ANA_CFGrs> {
         CapcodeW::new(self, 2)
-    }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ADC_ANA_CFGrs> {
-        RsvdW::new(self, 7)
     }
 }
 ///

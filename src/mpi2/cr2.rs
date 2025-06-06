@@ -6,28 +6,16 @@ pub type W = crate::W<CR2rs>;
 pub type LoopR = crate::FieldReader;
 ///Field `LOOP` writer - Repeat CMD1->CMD2 sequence for n times. This filed is only valid when CMD2E=1 and SME2=0. For example if LOOP=0, then the sequence is CMD1 -> CMD2. If LOOP=2, then the sequence is (CMD1->CMD2) -> (CMD1->CMD2) -> (CMD1->CMD2)
 pub type LoopW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bits 0:7 - Repeat CMD1->CMD2 sequence for n times. This filed is only valid when CMD2E=1 and SME2=0. For example if LOOP=0, then the sequence is CMD1 -> CMD2. If LOOP=2, then the sequence is (CMD1->CMD2) -> (CMD1->CMD2) -> (CMD1->CMD2)
     #[inline(always)]
     pub fn loop_(&self) -> LoopR {
         LoopR::new((self.bits & 0xff) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CR2")
-            .field("rsvd", &self.rsvd())
-            .field("loop_", &self.loop_())
-            .finish()
+        f.debug_struct("CR2").field("loop_", &self.loop_()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn loop_(&mut self) -> LoopW<CR2rs> {
         LoopW::new(self, 0)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CR2rs> {
-        RsvdW::new(self, 8)
     }
 }
 ///Control Register 2

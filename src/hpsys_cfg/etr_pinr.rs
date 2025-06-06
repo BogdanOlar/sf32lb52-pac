@@ -6,46 +6,26 @@ pub type W = crate::W<ETR_PINRrs>;
 pub type Etr1PinR = crate::FieldReader;
 ///Field `ETR1_PIN` writer - Connect GPTIM1_ETR to selected IO(PA). 0 to 44 for PA00 to PA44. Other values for floating.
 pub type Etr1PinW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `ETR2_PIN` reader - Connect GPTIM2_ETR to selected IO(PA). 0 to 44 for PA00 to PA44. Other values for floating.
 pub type Etr2PinR = crate::FieldReader;
 ///Field `ETR2_PIN` writer - Connect GPTIM2_ETR to selected IO(PA). 0 to 44 for PA00 to PA44. Other values for floating.
 pub type Etr2PinW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 18, u32>;
 impl R {
     ///Bits 0:5 - Connect GPTIM1_ETR to selected IO(PA). 0 to 44 for PA00 to PA44. Other values for floating.
     #[inline(always)]
     pub fn etr1_pin(&self) -> Etr1PinR {
         Etr1PinR::new((self.bits & 0x3f) as u8)
     }
-    ///Bits 6:7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 6) & 3) as u8)
-    }
     ///Bits 8:13 - Connect GPTIM2_ETR to selected IO(PA). 0 to 44 for PA00 to PA44. Other values for floating.
     #[inline(always)]
     pub fn etr2_pin(&self) -> Etr2PinR {
         Etr2PinR::new(((self.bits >> 8) & 0x3f) as u8)
     }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 14) & 0x0003_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ETR_PINR")
-            .field("rsvd", &self.rsvd())
             .field("etr2_pin", &self.etr2_pin())
-            .field("rsvd2", &self.rsvd2())
             .field("etr1_pin", &self.etr1_pin())
             .finish()
     }
@@ -56,20 +36,10 @@ impl W {
     pub fn etr1_pin(&mut self) -> Etr1PinW<ETR_PINRrs> {
         Etr1PinW::new(self, 0)
     }
-    ///Bits 6:7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ETR_PINRrs> {
-        Rsvd2W::new(self, 6)
-    }
     ///Bits 8:13 - Connect GPTIM2_ETR to selected IO(PA). 0 to 44 for PA00 to PA44. Other values for floating.
     #[inline(always)]
     pub fn etr2_pin(&mut self) -> Etr2PinW<ETR_PINRrs> {
         Etr2PinW::new(self, 8)
-    }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ETR_PINRrs> {
-        RsvdW::new(self, 14)
     }
 }
 ///GPTIM ETR Pin Register

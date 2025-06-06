@@ -6,26 +6,16 @@ pub type W = crate::W<L2_SCALE_INIT_CFG2rs>;
 pub type YValR = crate::FieldReader<u32>;
 ///Field `Y_VAL` writer - y-axis scale initial value, 10.16 format
 pub type YValW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bits 0:25 - y-axis scale initial value, 10.16 format
     #[inline(always)]
     pub fn y_val(&self) -> YValR {
         YValR::new(self.bits & 0x03ff_ffff)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("L2_SCALE_INIT_CFG2")
-            .field("rsvd", &self.rsvd())
             .field("y_val", &self.y_val())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn y_val(&mut self) -> YValW<L2_SCALE_INIT_CFG2rs> {
         YValW::new(self, 0)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<L2_SCALE_INIT_CFG2rs> {
-        RsvdW::new(self, 26)
     }
 }
 ///

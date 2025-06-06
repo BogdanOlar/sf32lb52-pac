@@ -22,10 +22,6 @@ pub type InitTimeW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type DmaEnR = crate::BitReader;
 ///Field `DMA_EN` writer - Enable DMA interface
 pub type DmaEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `TIMER_TRIG_EN` reader - Enable timer trigger function
 pub type TimerTrigEnR = crate::BitReader;
 ///Field `TIMER_TRIG_EN` writer - Enable timer trigger function
@@ -54,10 +50,6 @@ pub type DmaDataSelW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DataSampDlyR = crate::FieldReader;
 ///Field `DATA_SAMP_DLY` writer -
 pub type DataSampDlyW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 impl R {
     ///Bit 0 - 0: single conversion mode 1: continuous conversion mode
     #[inline(always)]
@@ -83,11 +75,6 @@ impl R {
     #[inline(always)]
     pub fn dma_en(&self) -> DmaEnR {
         DmaEnR::new(((self.bits >> 7) & 1) != 0)
-    }
-    ///Bit 8
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 8) & 1) != 0)
     }
     ///Bit 9 - Enable timer trigger function
     #[inline(always)]
@@ -124,16 +111,10 @@ impl R {
     pub fn data_samp_dly(&self) -> DataSampDlyR {
         DataSampDlyR::new(((self.bits >> 17) & 0x0f) as u8)
     }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 21) & 0x07ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ADC_CTRL_REG")
-            .field("rsvd", &self.rsvd())
             .field("data_samp_dly", &self.data_samp_dly())
             .field("dma_data_sel", &self.dma_data_sel())
             .field("timer_trig_typ", &self.timer_trig_typ())
@@ -141,7 +122,6 @@ impl core::fmt::Debug for R {
             .field("frc_en_adc", &self.frc_en_adc())
             .field("chnl_sel_frc_en", &self.chnl_sel_frc_en())
             .field("timer_trig_en", &self.timer_trig_en())
-            .field("rsvd2", &self.rsvd2())
             .field("dma_en", &self.dma_en())
             .field("init_time", &self.init_time())
             .field("adc_stop", &self.adc_stop())
@@ -175,11 +155,6 @@ impl W {
     #[inline(always)]
     pub fn dma_en(&mut self) -> DmaEnW<ADC_CTRL_REGrs> {
         DmaEnW::new(self, 7)
-    }
-    ///Bit 8
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ADC_CTRL_REGrs> {
-        Rsvd2W::new(self, 8)
     }
     ///Bit 9 - Enable timer trigger function
     #[inline(always)]
@@ -215,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn data_samp_dly(&mut self) -> DataSampDlyW<ADC_CTRL_REGrs> {
         DataSampDlyW::new(self, 17)
-    }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ADC_CTRL_REGrs> {
-        RsvdW::new(self, 21)
     }
 }
 ///ADC Control Register

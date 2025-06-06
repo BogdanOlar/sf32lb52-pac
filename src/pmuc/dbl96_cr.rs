@@ -50,10 +50,6 @@ pub type DlySelExtEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DlySelExtR = crate::FieldReader<u16>;
 ///Field `DLY_SEL_EXT` writer -
 pub type DlySelExtW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -115,16 +111,10 @@ impl R {
     pub fn dly_sel_ext(&self) -> DlySelExtR {
         DlySelExtR::new(((self.bits >> 18) & 0x07ff) as u16)
     }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 29) & 7) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DBL96_CR")
-            .field("rsvd", &self.rsvd())
             .field("dly_sel_ext", &self.dly_sel_ext())
             .field("dly_sel_ext_en", &self.dly_sel_ext_en())
             .field("dly_ext_en", &self.dly_ext_en())
@@ -200,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn dly_sel_ext(&mut self) -> DlySelExtW<DBL96_CRrs> {
         DlySelExtW::new(self, 18)
-    }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DBL96_CRrs> {
-        RsvdW::new(self, 29)
     }
 }
 ///DBL96 Control Register

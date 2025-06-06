@@ -18,18 +18,10 @@ pub type PathResetW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ClkSrcSelR = crate::BitReader;
 ///Field `CLK_SRC_SEL` writer - adc clock source select 1: pll 0: xtal
 pub type ClkSrcSelW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `CLK_DIV` reader - adc clock divider
 pub type ClkDivR = crate::FieldReader;
 ///Field `CLK_DIV` writer - adc clock divider
 pub type ClkDivW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:2 - ADC oversample rate 3'b000: 200 3'b001: 300 3'b010: 400 3'b011: 600 other: reserved
     #[inline(always)]
@@ -51,28 +43,16 @@ impl R {
     pub fn clk_src_sel(&self) -> ClkSrcSelR {
         ClkSrcSelR::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 7) & 1) != 0)
-    }
     ///Bits 8:15 - adc clock divider
     #[inline(always)]
     pub fn clk_div(&self) -> ClkDivR {
         ClkDivR::new(((self.bits >> 8) & 0xff) as u8)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ADC_CFG")
-            .field("rsvd", &self.rsvd())
             .field("clk_div", &self.clk_div())
-            .field("rsvd2", &self.rsvd2())
             .field("clk_src_sel", &self.clk_src_sel())
             .field("path_reset", &self.path_reset())
             .field("op_mode", &self.op_mode())
@@ -101,20 +81,10 @@ impl W {
     pub fn clk_src_sel(&mut self) -> ClkSrcSelW<ADC_CFGrs> {
         ClkSrcSelW::new(self, 6)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ADC_CFGrs> {
-        Rsvd2W::new(self, 7)
-    }
     ///Bits 8:15 - adc clock divider
     #[inline(always)]
     pub fn clk_div(&mut self) -> ClkDivW<ADC_CFGrs> {
         ClkDivW::new(self, 8)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ADC_CFGrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///

@@ -14,10 +14,6 @@ pub type BufCnt0W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type RunStat0R = crate::FieldReader;
 ///Field `RUN_STAT0` writer - ezip engine 0 status
 pub type RunStat0W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `LINE_CNT1` reader - ezip engine 1 line count
 pub type LineCnt1R = crate::FieldReader<u16>;
 ///Field `LINE_CNT1` writer - ezip engine 1 line count
@@ -30,10 +26,6 @@ pub type BufCnt1W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type RunStat1R = crate::FieldReader;
 ///Field `RUN_STAT1` writer - ezip engine 1 status
 pub type RunStat1W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::BitReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     ///Bits 0:9 - ezip engine 0 line count
     #[inline(always)]
@@ -50,11 +42,6 @@ impl R {
     pub fn run_stat0(&self) -> RunStat0R {
         RunStat0R::new(((self.bits >> 12) & 7) as u8)
     }
-    ///Bit 15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 15) & 1) != 0)
-    }
     ///Bits 16:25 - ezip engine 1 line count
     #[inline(always)]
     pub fn line_cnt1(&self) -> LineCnt1R {
@@ -70,20 +57,13 @@ impl R {
     pub fn run_stat1(&self) -> RunStat1R {
         RunStat1R::new(((self.bits >> 28) & 7) as u8)
     }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 31) & 1) != 0)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("EZIP_STAT")
-            .field("rsvd", &self.rsvd())
             .field("run_stat1", &self.run_stat1())
             .field("buf_cnt1", &self.buf_cnt1())
             .field("line_cnt1", &self.line_cnt1())
-            .field("rsvd2", &self.rsvd2())
             .field("run_stat0", &self.run_stat0())
             .field("buf_cnt0", &self.buf_cnt0())
             .field("line_cnt0", &self.line_cnt0())
@@ -106,11 +86,6 @@ impl W {
     pub fn run_stat0(&mut self) -> RunStat0W<EZIP_STATrs> {
         RunStat0W::new(self, 12)
     }
-    ///Bit 15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<EZIP_STATrs> {
-        Rsvd2W::new(self, 15)
-    }
     ///Bits 16:25 - ezip engine 1 line count
     #[inline(always)]
     pub fn line_cnt1(&mut self) -> LineCnt1W<EZIP_STATrs> {
@@ -125,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn run_stat1(&mut self) -> RunStat1W<EZIP_STATrs> {
         RunStat1W::new(self, 28)
-    }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<EZIP_STATrs> {
-        RsvdW::new(self, 31)
     }
 }
 ///

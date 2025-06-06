@@ -22,10 +22,6 @@ pub type RampIntervalW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type RampStatR = crate::FieldReader;
 ///Field `RAMP_STAT` writer - ramp module status
 pub type RampStatW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bit 0 - volume ramp enable
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn ramp_stat(&self) -> RampStatR {
         RampStatR::new(((self.bits >> 7) & 3) as u8)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DAC_CH1_CFG_EXT")
-            .field("rsvd", &self.rsvd())
             .field("ramp_stat", &self.ramp_stat())
             .field("ramp_interval", &self.ramp_interval())
             .field("zero_adjust_en", &self.zero_adjust_en())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn ramp_stat(&mut self) -> RampStatW<DAC_CH1_CFG_EXTrs> {
         RampStatW::new(self, 7)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DAC_CH1_CFG_EXTrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///

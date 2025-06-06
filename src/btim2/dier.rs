@@ -6,46 +6,26 @@ pub type W = crate::W<DIERrs>;
 pub type UieR = crate::BitReader;
 ///Field `UIE` writer - Update interrupt enable 0: Update interrupt disabled. 1: Update interrupt enabled
 pub type UieW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 ///Field `UDE` reader - Update DMA request enable 0: Update DMA request disabled. 1: Update DMA request enabled
 pub type UdeR = crate::BitReader;
 ///Field `UDE` writer - Update DMA request enable 0: Update DMA request disabled. 1: Update DMA request enabled
 pub type UdeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bit 0 - Update interrupt enable 0: Update interrupt disabled. 1: Update interrupt enabled
     #[inline(always)]
     pub fn uie(&self) -> UieR {
         UieR::new((self.bits & 1) != 0)
     }
-    ///Bits 1:7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 1) & 0x7f) as u8)
-    }
     ///Bit 8 - Update DMA request enable 0: Update DMA request disabled. 1: Update DMA request enabled
     #[inline(always)]
     pub fn ude(&self) -> UdeR {
         UdeR::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DIER")
-            .field("rsvd", &self.rsvd())
             .field("ude", &self.ude())
-            .field("rsvd2", &self.rsvd2())
             .field("uie", &self.uie())
             .finish()
     }
@@ -56,20 +36,10 @@ impl W {
     pub fn uie(&mut self) -> UieW<DIERrs> {
         UieW::new(self, 0)
     }
-    ///Bits 1:7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<DIERrs> {
-        Rsvd2W::new(self, 1)
-    }
     ///Bit 8 - Update DMA request enable 0: Update DMA request disabled. 1: Update DMA request enabled
     #[inline(always)]
     pub fn ude(&mut self) -> UdeW<DIERrs> {
         UdeW::new(self, 8)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DIERrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///TIM DMA/Interrupt enable register

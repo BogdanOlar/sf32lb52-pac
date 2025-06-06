@@ -10,10 +10,6 @@ pub type RxFifoIntMaskW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TxFifoIntMaskR = crate::BitReader;
 ///Field `TX_FIFO_INT_MASK` writer - Interrupt mask for TX FIFO pop underflow, high active
 pub type TxFifoIntMaskW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - Interrupt mask for RX FIFO push overflow, high active
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn tx_fifo_int_mask(&self) -> TxFifoIntMaskR {
         TxFifoIntMaskR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("INT_MASK")
-            .field("rsvd", &self.rsvd())
             .field("tx_fifo_int_mask", &self.tx_fifo_int_mask())
             .field("rx_fifo_int_mask", &self.rx_fifo_int_mask())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn tx_fifo_int_mask(&mut self) -> TxFifoIntMaskW<INT_MASKrs> {
         TxFifoIntMaskW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<INT_MASKrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///

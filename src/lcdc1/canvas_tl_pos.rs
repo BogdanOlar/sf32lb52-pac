@@ -6,46 +6,26 @@ pub type W = crate::W<CANVAS_TL_POSrs>;
 pub type X0R = crate::FieldReader<u16>;
 ///Field `X0` writer -
 pub type X0W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 ///Field `Y0` reader -
 pub type Y0R = crate::FieldReader<u16>;
 ///Field `Y0` writer -
 pub type Y0W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     ///Bits 0:10
     #[inline(always)]
     pub fn x0(&self) -> X0R {
         X0R::new((self.bits & 0x07ff) as u16)
     }
-    ///Bits 11:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 11) & 0x1f) as u8)
-    }
     ///Bits 16:26
     #[inline(always)]
     pub fn y0(&self) -> Y0R {
         Y0R::new(((self.bits >> 16) & 0x07ff) as u16)
     }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 27) & 0x1f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CANVAS_TL_POS")
-            .field("rsvd", &self.rsvd())
             .field("y0", &self.y0())
-            .field("rsvd2", &self.rsvd2())
             .field("x0", &self.x0())
             .finish()
     }
@@ -56,20 +36,10 @@ impl W {
     pub fn x0(&mut self) -> X0W<CANVAS_TL_POSrs> {
         X0W::new(self, 0)
     }
-    ///Bits 11:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CANVAS_TL_POSrs> {
-        Rsvd2W::new(self, 11)
-    }
     ///Bits 16:26
     #[inline(always)]
     pub fn y0(&mut self) -> Y0W<CANVAS_TL_POSrs> {
         Y0W::new(self, 16)
-    }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CANVAS_TL_POSrs> {
-        RsvdW::new(self, 27)
     }
 }
 ///

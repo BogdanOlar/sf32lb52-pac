@@ -10,10 +10,6 @@ pub type StartW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ResetR = crate::BitReader;
 ///Field `RESET` writer - 1: reset the whole graphics 0: release the reset
 pub type ResetW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - write 1 to trigger the lcd interface block
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn reset(&self) -> ResetR {
         ResetR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("COMMAND")
-            .field("rsvd", &self.rsvd())
             .field("reset", &self.reset())
             .field("start", &self.start())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn reset(&mut self) -> ResetW<COMMANDrs> {
         ResetW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<COMMANDrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///

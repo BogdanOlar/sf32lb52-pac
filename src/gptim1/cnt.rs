@@ -6,10 +6,6 @@ pub type W = crate::W<CNTrs>;
 pub type CntR = crate::FieldReader<u16>;
 ///Field `CNT` writer - counter value
 pub type CntW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
 ///Field `UIFCPY` reader - Value depends on IUFREMAP in CR1. If UIFREMAP = 1 UIFCPY: UIF Copy This bit is a read-only copy of the UIF bit of the ISR register
 pub type UifcpyR = crate::BitReader;
 ///Field `UIFCPY` writer - Value depends on IUFREMAP in CR1. If UIFREMAP = 1 UIFCPY: UIF Copy This bit is a read-only copy of the UIF bit of the ISR register
@@ -19,11 +15,6 @@ impl R {
     #[inline(always)]
     pub fn cnt(&self) -> CntR {
         CntR::new((self.bits & 0xffff) as u16)
-    }
-    ///Bits 16:30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0x7fff) as u16)
     }
     ///Bit 31 - Value depends on IUFREMAP in CR1. If UIFREMAP = 1 UIFCPY: UIF Copy This bit is a read-only copy of the UIF bit of the ISR register
     #[inline(always)]
@@ -35,7 +26,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CNT")
             .field("uifcpy", &self.uifcpy())
-            .field("rsvd", &self.rsvd())
             .field("cnt", &self.cnt())
             .finish()
     }
@@ -45,11 +35,6 @@ impl W {
     #[inline(always)]
     pub fn cnt(&mut self) -> CntW<CNTrs> {
         CntW::new(self, 0)
-    }
-    ///Bits 16:30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CNTrs> {
-        RsvdW::new(self, 16)
     }
     ///Bit 31 - Value depends on IUFREMAP in CR1. If UIFREMAP = 1 UIFCPY: UIF Copy This bit is a read-only copy of the UIF bit of the ISR register
     #[inline(always)]

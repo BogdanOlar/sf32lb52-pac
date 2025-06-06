@@ -18,10 +18,6 @@ pub type WorkWidthDynChangeR = crate::BitReader;
 ///without disabling TOP_CTRL\[0\]
 ///and re-enabling TOP_CTRL\[0\]
 pub type WorkWidthDynChangeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
 impl R {
     ///Bit 0 - SPI_THREE_WIRE_MODE_EN 0: normal mode 1: enable TRI-WIRE mode
     #[inline(always)]
@@ -40,16 +36,10 @@ impl R {
     pub fn work_width_dyn_change(&self) -> WorkWidthDynChangeR {
         WorkWidthDynChangeR::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 3) & 0x1fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TRIWIRE_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("work_width_dyn_change", &self.work_width_dyn_change())
             .field("txd_oen", &self.txd_oen())
             .field("spi_tri_wire_en", &self.spi_tri_wire_en())
@@ -73,11 +63,6 @@ impl W {
     #[inline(always)]
     pub fn work_width_dyn_change(&mut self) -> WorkWidthDynChangeW<TRIWIRE_CTRLrs> {
         WorkWidthDynChangeW::new(self, 2)
-    }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TRIWIRE_CTRLrs> {
-        RsvdW::new(self, 3)
     }
 }
 ///Three Wire Mode Control Register

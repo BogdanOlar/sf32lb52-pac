@@ -6,28 +6,16 @@ pub type W = crate::W<BT_PCM_DWrs>;
 pub type DwR = crate::FieldReader;
 ///Field `DW` writer - BT PCM master data width (>= 8), common value: 8, 13,14, 16
 pub type DwW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 27, u32>;
 impl R {
     ///Bits 0:4 - BT PCM master data width (>= 8), common value: 8, 13,14, 16
     #[inline(always)]
     pub fn dw(&self) -> DwR {
         DwR::new((self.bits & 0x1f) as u8)
     }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 5) & 0x07ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("BT_PCM_DW")
-            .field("rsvd", &self.rsvd())
-            .field("dw", &self.dw())
-            .finish()
+        f.debug_struct("BT_PCM_DW").field("dw", &self.dw()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn dw(&mut self) -> DwW<BT_PCM_DWrs> {
         DwW::new(self, 0)
-    }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<BT_PCM_DWrs> {
-        RsvdW::new(self, 5)
     }
 }
 ///

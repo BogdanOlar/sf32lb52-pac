@@ -14,10 +14,6 @@ pub type TargetWordsW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 pub type ColSizeR = crate::FieldReader<u16>;
 ///Field `COL_SIZE` writer - number of colums in a line of original image, max column size is 1024
 pub type ColSizeW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bit 0 - decompression enable
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn col_size(&self) -> ColSizeR {
         ColSizeR::new(((self.bits >> 13) & 0x07ff) as u16)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LAYER0_DECOMP")
-            .field("rsvd", &self.rsvd())
             .field("col_size", &self.col_size())
             .field("target_words", &self.target_words())
             .field("enable", &self.enable())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn col_size(&mut self) -> ColSizeW<LAYER0_DECOMPrs> {
         ColSizeW::new(self, 13)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LAYER0_DECOMPrs> {
-        RsvdW::new(self, 24)
     }
 }
 ///

@@ -14,10 +14,6 @@ pub type Bkcmp1eW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Bkcmp2eR = crate::BitReader;
 ///Field `BKCMP2E` writer - BRK LPCOMP output2 enable This bit enables the LPCOMP output2 (if LPCOMP integrated) for the timer's BRK input. LPCOMP output2 is 'ORed' with the other BRK sources. 0: LPCOMP output2 disabled 1: LPCOMP output2 enabled This bit cannot be modified as long as LOCK level 1 has been programmed.
 pub type Bkcmp2eW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::FieldReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `BKINP` reader - BRK BKIN input polarity This bit selects the BKIN input sensitivity. It must be programmed together with the BKP polarity bit. 0: BKIN input is active high 1: BKIN input is active low This bit cannot be modified as long as LOCK level 1 has been programmed.
 pub type BkinpR = crate::BitReader;
 ///Field `BKINP` writer - BRK BKIN input polarity This bit selects the BKIN input sensitivity. It must be programmed together with the BKP polarity bit. 0: BKIN input is active high 1: BKIN input is active low This bit cannot be modified as long as LOCK level 1 has been programmed.
@@ -30,18 +26,10 @@ pub type Bkcmp1pW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Bkcmp2pR = crate::BitReader;
 ///Field `BKCMP2P` writer - BRK LPCOMP output2 polarity This bit selects the LPCOMP output2 sensitivity (if LPCOMP integrated). It must be programmed together with the BKP polarity bit. 0: LPCOMP output2 is active high 1: LPCOMP output2 is active low This bit cannot be modified as long as LOCK level 1 has been programmed.
 pub type Bkcmp2pW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `ETRSEL` reader - ETR source selection 00: ETR input is connected to I/O 01: LPCOMP output1 (if LPCOMP integrated) 10: LPCOMP output2 (if LPCOMP integrated) 11: ETR input is connected to I/O This bit cannot be modified as long as LOCK level 1 has been programmed.
 pub type EtrselR = crate::FieldReader;
 ///Field `ETRSEL` writer - ETR source selection 00: ETR input is connected to I/O 01: LPCOMP output1 (if LPCOMP integrated) 10: LPCOMP output2 (if LPCOMP integrated) 11: ETR input is connected to I/O This bit cannot be modified as long as LOCK level 1 has been programmed.
 pub type EtrselW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 ///Field `LOCK` reader - Lock configuration These bits offer a write protection against software errors. 00: LOCK OFF - No bit is write protected. 01: LOCK Level 1 = OISx and OISxN bits in CR2 register, BK2BID, BKBID, BK2DSRM, BKDSRM, BK2P, BK2E, BK2F\[3:0\], BKF\[3:0\], AOE, BKP, BKE, OSSI, OSSR, DTPSC and DTG bits in BDTR register, AF1 register and AF2 register can no longer be written. 10: LOCK Level 2 = LOCK Level 1 + CC Polarity bits (CCxP/CCxNP bits in CCER register, as long as the related channel is configured in output through the CCxS bits) as well as OSSR and OSSI bits can no longer be written. 11: LOCK Level 3 = LOCK Level 2 + CC Control bits (OCxM and OCxPE bits in CCMRx registers, as long as the related channel is configured in output through the CCxS bits) can no longer be written. The LOCK bits can be written to non-zero only once after reset.
 pub type LockR = crate::FieldReader;
 ///Field `LOCK` writer - Lock configuration These bits offer a write protection against software errors. 00: LOCK OFF - No bit is write protected. 01: LOCK Level 1 = OISx and OISxN bits in CR2 register, BK2BID, BKBID, BK2DSRM, BKDSRM, BK2P, BK2E, BK2F\[3:0\], BKF\[3:0\], AOE, BKP, BKE, OSSI, OSSR, DTPSC and DTG bits in BDTR register, AF1 register and AF2 register can no longer be written. 10: LOCK Level 2 = LOCK Level 1 + CC Polarity bits (CCxP/CCxNP bits in CCER register, as long as the related channel is configured in output through the CCxS bits) as well as OSSR and OSSI bits can no longer be written. 11: LOCK Level 3 = LOCK Level 2 + CC Control bits (OCxM and OCxPE bits in CCMRx registers, as long as the related channel is configured in output through the CCxS bits) can no longer be written. The LOCK bits can be written to non-zero only once after reset.
@@ -62,11 +50,6 @@ impl R {
     pub fn bkcmp2e(&self) -> Bkcmp2eR {
         Bkcmp2eR::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 3:8
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 3) & 0x3f) as u8)
-    }
     ///Bit 9 - BRK BKIN input polarity This bit selects the BKIN input sensitivity. It must be programmed together with the BKP polarity bit. 0: BKIN input is active high 1: BKIN input is active low This bit cannot be modified as long as LOCK level 1 has been programmed.
     #[inline(always)]
     pub fn bkinp(&self) -> BkinpR {
@@ -82,20 +65,10 @@ impl R {
     pub fn bkcmp2p(&self) -> Bkcmp2pR {
         Bkcmp2pR::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bits 12:13
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 12) & 3) as u8)
-    }
     ///Bits 14:15 - ETR source selection 00: ETR input is connected to I/O 01: LPCOMP output1 (if LPCOMP integrated) 10: LPCOMP output2 (if LPCOMP integrated) 11: ETR input is connected to I/O This bit cannot be modified as long as LOCK level 1 has been programmed.
     #[inline(always)]
     pub fn etrsel(&self) -> EtrselR {
         EtrselR::new(((self.bits >> 14) & 3) as u8)
-    }
-    ///Bits 16:29
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0x3fff) as u16)
     }
     ///Bits 30:31 - Lock configuration These bits offer a write protection against software errors. 00: LOCK OFF - No bit is write protected. 01: LOCK Level 1 = OISx and OISxN bits in CR2 register, BK2BID, BKBID, BK2DSRM, BKDSRM, BK2P, BK2E, BK2F\[3:0\], BKF\[3:0\], AOE, BKP, BKE, OSSI, OSSR, DTPSC and DTG bits in BDTR register, AF1 register and AF2 register can no longer be written. 10: LOCK Level 2 = LOCK Level 1 + CC Polarity bits (CCxP/CCxNP bits in CCER register, as long as the related channel is configured in output through the CCxS bits) as well as OSSR and OSSI bits can no longer be written. 11: LOCK Level 3 = LOCK Level 2 + CC Control bits (OCxM and OCxPE bits in CCMRx registers, as long as the related channel is configured in output through the CCxS bits) can no longer be written. The LOCK bits can be written to non-zero only once after reset.
     #[inline(always)]
@@ -107,13 +80,10 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AF1")
             .field("lock", &self.lock())
-            .field("rsvd", &self.rsvd())
             .field("etrsel", &self.etrsel())
-            .field("rsvd2", &self.rsvd2())
             .field("bkcmp2p", &self.bkcmp2p())
             .field("bkcmp1p", &self.bkcmp1p())
             .field("bkinp", &self.bkinp())
-            .field("rsvd3", &self.rsvd3())
             .field("bkcmp2e", &self.bkcmp2e())
             .field("bkcmp1e", &self.bkcmp1e())
             .field("bkine", &self.bkine())
@@ -136,11 +106,6 @@ impl W {
     pub fn bkcmp2e(&mut self) -> Bkcmp2eW<AF1rs> {
         Bkcmp2eW::new(self, 2)
     }
-    ///Bits 3:8
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<AF1rs> {
-        Rsvd3W::new(self, 3)
-    }
     ///Bit 9 - BRK BKIN input polarity This bit selects the BKIN input sensitivity. It must be programmed together with the BKP polarity bit. 0: BKIN input is active high 1: BKIN input is active low This bit cannot be modified as long as LOCK level 1 has been programmed.
     #[inline(always)]
     pub fn bkinp(&mut self) -> BkinpW<AF1rs> {
@@ -156,20 +121,10 @@ impl W {
     pub fn bkcmp2p(&mut self) -> Bkcmp2pW<AF1rs> {
         Bkcmp2pW::new(self, 11)
     }
-    ///Bits 12:13
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<AF1rs> {
-        Rsvd2W::new(self, 12)
-    }
     ///Bits 14:15 - ETR source selection 00: ETR input is connected to I/O 01: LPCOMP output1 (if LPCOMP integrated) 10: LPCOMP output2 (if LPCOMP integrated) 11: ETR input is connected to I/O This bit cannot be modified as long as LOCK level 1 has been programmed.
     #[inline(always)]
     pub fn etrsel(&mut self) -> EtrselW<AF1rs> {
         EtrselW::new(self, 14)
-    }
-    ///Bits 16:29
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AF1rs> {
-        RsvdW::new(self, 16)
     }
     ///Bits 30:31 - Lock configuration These bits offer a write protection against software errors. 00: LOCK OFF - No bit is write protected. 01: LOCK Level 1 = OISx and OISxN bits in CR2 register, BK2BID, BKBID, BK2DSRM, BKDSRM, BK2P, BK2E, BK2F\[3:0\], BKF\[3:0\], AOE, BKP, BKE, OSSI, OSSR, DTPSC and DTG bits in BDTR register, AF1 register and AF2 register can no longer be written. 10: LOCK Level 2 = LOCK Level 1 + CC Polarity bits (CCxP/CCxNP bits in CCER register, as long as the related channel is configured in output through the CCxS bits) as well as OSSR and OSSI bits can no longer be written. 11: LOCK Level 3 = LOCK Level 2 + CC Control bits (OCxM and OCxPE bits in CCMRx registers, as long as the related channel is configured in output through the CCxS bits) can no longer be written. The LOCK bits can be written to non-zero only once after reset.
     #[inline(always)]

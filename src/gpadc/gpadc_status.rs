@@ -14,10 +14,6 @@ pub type SlotDoneW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 pub type CurSlotR = crate::FieldReader;
 ///Field `CUR_SLOT` writer -
 pub type CurSlotW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn cur_slot(&self) -> CurSlotR {
         CurSlotR::new(((self.bits >> 9) & 7) as u8)
     }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 12) & 0x000f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("GPADC_STATUS")
-            .field("rsvd", &self.rsvd())
             .field("cur_slot", &self.cur_slot())
             .field("slot_done", &self.slot_done())
             .field("adc_done", &self.adc_done())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn cur_slot(&mut self) -> CurSlotW<GPADC_STATUSrs> {
         CurSlotW::new(self, 9)
-    }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<GPADC_STATUSrs> {
-        RsvdW::new(self, 12)
     }
 }
 ///GPADC Status Register

@@ -52,10 +52,6 @@ pub type DitherEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ClkAnaPolR = crate::BitReader;
 ///Field `CLK_ANA_POL` writer - analog dac clock polarity
 pub type ClkAnaPolW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::BitReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     ///Bit 0 - dac channel enable
     #[inline(always)]
@@ -118,16 +114,10 @@ impl R {
     pub fn clk_ana_pol(&self) -> ClkAnaPolR {
         ClkAnaPolR::new(((self.bits >> 30) & 1) != 0)
     }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 31) & 1) != 0)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DAC_CH0_CFG")
-            .field("rsvd", &self.rsvd())
             .field("clk_ana_pol", &self.clk_ana_pol())
             .field("dither_en", &self.dither_en())
             .field("dither_gain", &self.dither_gain())
@@ -204,11 +194,6 @@ impl W {
     #[inline(always)]
     pub fn clk_ana_pol(&mut self) -> ClkAnaPolW<DAC_CH0_CFGrs> {
         ClkAnaPolW::new(self, 30)
-    }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DAC_CH0_CFGrs> {
-        RsvdW::new(self, 31)
     }
 }
 ///

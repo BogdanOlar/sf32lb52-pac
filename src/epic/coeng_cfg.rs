@@ -18,10 +18,6 @@ pub type YuvEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type YuvChSelR = crate::FieldReader;
 ///Field `YUV_CH_SEL` writer - yuv engine channel select
 pub type YuvChSelW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
     ///Bit 0 - ezip enable
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn yuv_ch_sel(&self) -> YuvChSelR {
         YuvChSelR::new(((self.bits >> 4) & 3) as u8)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("COENG_CFG")
-            .field("rsvd", &self.rsvd())
             .field("yuv_ch_sel", &self.yuv_ch_sel())
             .field("yuv_en", &self.yuv_en())
             .field("ezip_ch_sel", &self.ezip_ch_sel())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn yuv_ch_sel(&mut self) -> YuvChSelW<COENG_CFGrs> {
         YuvChSelW::new(self, 4)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<COENG_CFGrs> {
-        RsvdW::new(self, 6)
     }
 }
 ///

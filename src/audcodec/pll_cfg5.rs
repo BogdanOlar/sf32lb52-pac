@@ -50,10 +50,6 @@ pub type EnClkDac2W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SelClkDac2R = crate::BitReader;
 ///Field `SEL_CLK_DAC2` writer - 1: select 9.6MHz as DAC clock
 pub type SelClkDac2W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     ///Bits 0:1 - DIVB bg chop clk
     #[inline(always)]
@@ -115,16 +111,10 @@ impl R {
     pub fn sel_clk_dac2(&self) -> SelClkDac2R {
         SelClkDac2R::new(((self.bits >> 28) & 1) != 0)
     }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 29) & 7) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PLL_CFG5")
-            .field("rsvd", &self.rsvd())
             .field("sel_clk_dac2", &self.sel_clk_dac2())
             .field("en_clk_dac2", &self.en_clk_dac2())
             .field("diva_clk_dac2", &self.diva_clk_dac2())
@@ -200,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn sel_clk_dac2(&mut self) -> SelClkDac2W<PLL_CFG5rs> {
         SelClkDac2W::new(self, 28)
-    }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PLL_CFG5rs> {
-        RsvdW::new(self, 29)
     }
 }
 ///

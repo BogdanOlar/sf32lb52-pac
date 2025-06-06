@@ -26,10 +26,6 @@ pub type BtPcmIfBpsW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type BbI2sBpsToCdcR = crate::BitReader;
 ///Field `BB_I2S_BPS_TO_CDC` writer - bypass baseband I2S interface to audio codec i2s interface 0: no bypass, 1: bypass
 pub type BbI2sBpsToCdcW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
     ///Bit 0 - BT phone enable 0: disable, 1: enable
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn bb_i2s_bps_to_cdc(&self) -> BbI2sBpsToCdcR {
         BbI2sBpsToCdcR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("BT_PHONE_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("bb_i2s_bps_to_cdc", &self.bb_i2s_bps_to_cdc())
             .field("bt_pcm_if_bps", &self.bt_pcm_if_bps())
             .field("bt_path_sel", &self.bt_path_sel())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn bb_i2s_bps_to_cdc(&mut self) -> BbI2sBpsToCdcW<BT_PHONE_CTRLrs> {
         BbI2sBpsToCdcW::new(self, 5)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<BT_PHONE_CTRLrs> {
-        RsvdW::new(self, 6)
     }
 }
 ///

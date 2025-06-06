@@ -6,10 +6,6 @@ pub type W = crate::W<RCR1rs>;
 pub type RepR = crate::FieldReader<u16>;
 ///Field `REP` writer - Repetition counter value if REPEN is 1, task will only be triggerd when REP is not 0. when REP is larger than 0, it will be decrease by 1 automatically each time task triggered.
 pub type RepW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `DLY` reader - Delay time before task operation after triggered 0: no delay others: delay DLY HCLK cycles before task operation DLY is read as left delay time. DLY will be reloaded automatically after each operation.
 pub type DlyR = crate::FieldReader<u16>;
 ///Field `DLY` writer - Delay time before task operation after triggered 0: no delay others: delay DLY HCLK cycles before task operation DLY is read as left delay time. DLY will be reloaded automatically after each operation.
@@ -19,11 +15,6 @@ impl R {
     #[inline(always)]
     pub fn rep(&self) -> RepR {
         RepR::new((self.bits & 0x03ff) as u16)
-    }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 10) & 0x3f) as u8)
     }
     ///Bits 16:31 - Delay time before task operation after triggered 0: no delay others: delay DLY HCLK cycles before task operation DLY is read as left delay time. DLY will be reloaded automatically after each operation.
     #[inline(always)]
@@ -35,7 +26,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("RCR1")
             .field("dly", &self.dly())
-            .field("rsvd", &self.rsvd())
             .field("rep", &self.rep())
             .finish()
     }
@@ -45,11 +35,6 @@ impl W {
     #[inline(always)]
     pub fn rep(&mut self) -> RepW<RCR1rs> {
         RepW::new(self, 0)
-    }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RCR1rs> {
-        RsvdW::new(self, 10)
     }
     ///Bits 16:31 - Delay time before task operation after triggered 0: no delay others: delay DLY HCLK cycles before task operation DLY is read as left delay time. DLY will be reloaded automatically after each operation.
     #[inline(always)]

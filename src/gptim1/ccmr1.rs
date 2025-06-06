@@ -30,10 +30,6 @@ pub type Ic2fW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type Oc1ceR = crate::BitReader;
 ///Field `OC1CE` writer - Output compare 1 clear enable 0: OC1Ref is not affected by the ETRF input 1: OC1Ref is cleared as soon as a High level is detected on ETRF input
 pub type Oc1ceW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `OC1PE` reader - Output compare 1 preload enable 0: Preload register on CCR1 disabled. CCR1 can be written at anytime, the new value is taken in account immediately. 1: Preload register on CCR1 enabled. Read/Write operations access the preload register. CCR1 preload value is loaded in the active register at each update event.
 pub type Oc1peR = crate::BitReader;
 ///Field `OC1PE` writer - Output compare 1 preload enable 0: Preload register on CCR1 disabled. CCR1 can be written at anytime, the new value is taken in account immediately. 1: Preload register on CCR1 enabled. Read/Write operations access the preload register. CCR1 preload value is loaded in the active register at each update event.
@@ -46,10 +42,6 @@ pub type Oc1mW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type Oc2ceR = crate::BitReader;
 ///Field `OC2CE` writer - Output compare 2 clear enable
 pub type Oc2ceW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `OC2PE` reader - Output compare 2 preload enable
 pub type Oc2peR = crate::BitReader;
 ///Field `OC2PE` writer - Output compare 2 preload enable
@@ -94,11 +86,6 @@ impl R {
     pub fn oc1ce(&self) -> Oc1ceR {
         Oc1ceR::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bits 17:18
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 17) & 3) as u8)
-    }
     ///Bit 19 - Output compare 1 preload enable 0: Preload register on CCR1 disabled. CCR1 can be written at anytime, the new value is taken in account immediately. 1: Preload register on CCR1 enabled. Read/Write operations access the preload register. CCR1 preload value is loaded in the active register at each update event.
     #[inline(always)]
     pub fn oc1pe(&self) -> Oc1peR {
@@ -113,11 +100,6 @@ impl R {
     #[inline(always)]
     pub fn oc2ce(&self) -> Oc2ceR {
         Oc2ceR::new(((self.bits >> 24) & 1) != 0)
-    }
-    ///Bits 25:26
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 25) & 3) as u8)
     }
     ///Bit 27 - Output compare 2 preload enable
     #[inline(always)]
@@ -135,11 +117,9 @@ impl core::fmt::Debug for R {
         f.debug_struct("CCMR1")
             .field("oc2m", &self.oc2m())
             .field("oc2pe", &self.oc2pe())
-            .field("rsvd", &self.rsvd())
             .field("oc2ce", &self.oc2ce())
             .field("oc1m", &self.oc1m())
             .field("oc1pe", &self.oc1pe())
-            .field("rsvd2", &self.rsvd2())
             .field("oc1ce", &self.oc1ce())
             .field("ic2f", &self.ic2f())
             .field("ic2psc", &self.ic2psc())
@@ -186,11 +166,6 @@ impl W {
     pub fn oc1ce(&mut self) -> Oc1ceW<CCMR1rs> {
         Oc1ceW::new(self, 16)
     }
-    ///Bits 17:18
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CCMR1rs> {
-        Rsvd2W::new(self, 17)
-    }
     ///Bit 19 - Output compare 1 preload enable 0: Preload register on CCR1 disabled. CCR1 can be written at anytime, the new value is taken in account immediately. 1: Preload register on CCR1 enabled. Read/Write operations access the preload register. CCR1 preload value is loaded in the active register at each update event.
     #[inline(always)]
     pub fn oc1pe(&mut self) -> Oc1peW<CCMR1rs> {
@@ -205,11 +180,6 @@ impl W {
     #[inline(always)]
     pub fn oc2ce(&mut self) -> Oc2ceW<CCMR1rs> {
         Oc2ceW::new(self, 24)
-    }
-    ///Bits 25:26
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CCMR1rs> {
-        RsvdW::new(self, 25)
     }
     ///Bit 27 - Output compare 2 preload enable
     #[inline(always)]

@@ -6,28 +6,16 @@ pub type W = crate::W<RCRrs>;
 pub type RepR = crate::FieldReader;
 ///Field `REP` writer - Repetition register value REP is the repetition value for the LPTIM. Read REP will return left repetition times. It should be noted that for a reliable REP register read access, two consecutive read accesses must be performed and compared. A read access can be considered reliable when the values of the two consecutive read accesses are equal.
 pub type RepW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bits 0:7 - Repetition register value REP is the repetition value for the LPTIM. Read REP will return left repetition times. It should be noted that for a reliable REP register read access, two consecutive read accesses must be performed and compared. A read access can be considered reliable when the values of the two consecutive read accesses are equal.
     #[inline(always)]
     pub fn rep(&self) -> RepR {
         RepR::new((self.bits & 0xff) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("RCR")
-            .field("rsvd", &self.rsvd())
-            .field("rep", &self.rep())
-            .finish()
+        f.debug_struct("RCR").field("rep", &self.rep()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn rep(&mut self) -> RepW<RCRrs> {
         RepW::new(self, 0)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RCRrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///LPTIM repetition register

@@ -26,10 +26,6 @@ pub type L2MaskEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type VlMaskEnR = crate::BitReader;
 ///Field `VL_MASK_EN` writer - video layer mask enable
 pub type VlMaskEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 ///Field `WIDTH` reader - source image width(including padding), unit is bytes
 pub type WidthR = crate::FieldReader<u16>;
 ///Field `WIDTH` writer - source image width(including padding), unit is bytes
@@ -42,10 +38,6 @@ pub type PrefetchEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ActiveR = crate::BitReader;
 ///Field `ACTIVE` writer - layer active flag
 pub type ActiveW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     ///Bit 0 - mask input format 1'h0: A8 1'h1: A4
     #[inline(always)]
@@ -77,11 +69,6 @@ impl R {
     pub fn vl_mask_en(&self) -> VlMaskEnR {
         VlMaskEnR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:13
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 6) & 0xff) as u8)
-    }
     ///Bits 14:26 - source image width(including padding), unit is bytes
     #[inline(always)]
     pub fn width(&self) -> WidthR {
@@ -97,20 +84,13 @@ impl R {
     pub fn active(&self) -> ActiveR {
         ActiveR::new(((self.bits >> 28) & 1) != 0)
     }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 29) & 7) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("MASK_CFG")
-            .field("rsvd", &self.rsvd())
             .field("active", &self.active())
             .field("prefetch_en", &self.prefetch_en())
             .field("width", &self.width())
-            .field("rsvd2", &self.rsvd2())
             .field("vl_mask_en", &self.vl_mask_en())
             .field("l2_mask_en", &self.l2_mask_en())
             .field("l1_mask_en", &self.l1_mask_en())
@@ -151,11 +131,6 @@ impl W {
     pub fn vl_mask_en(&mut self) -> VlMaskEnW<MASK_CFGrs> {
         VlMaskEnW::new(self, 5)
     }
-    ///Bits 6:13
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<MASK_CFGrs> {
-        Rsvd2W::new(self, 6)
-    }
     ///Bits 14:26 - source image width(including padding), unit is bytes
     #[inline(always)]
     pub fn width(&mut self) -> WidthW<MASK_CFGrs> {
@@ -170,11 +145,6 @@ impl W {
     #[inline(always)]
     pub fn active(&mut self) -> ActiveW<MASK_CFGrs> {
         ActiveW::new(self, 28)
-    }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<MASK_CFGrs> {
-        RsvdW::new(self, 29)
     }
 }
 ///

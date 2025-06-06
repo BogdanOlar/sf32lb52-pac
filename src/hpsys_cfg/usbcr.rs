@@ -22,18 +22,10 @@ pub type DmPdW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DpEnR = crate::BitReader;
 ///Field `DP_EN` writer - 0:disable dp pull up or pull down 1:enable dp pull or pull down
 pub type DpEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `TX_RTUNE` reader - TX outp impedance tuning 0 = 50 Ohm, 1 = 46 Ohm, 2 = 43 Ohm, 3 = 40 Ohm, 4 = 37.5 Ohm, 5 = 35 Ohm, 6 = 33 Ohm, 7 = 31.5 Ohm
 pub type TxRtuneR = crate::FieldReader;
 ///Field `TX_RTUNE` writer - TX outp impedance tuning 0 = 50 Ohm, 1 = 46 Ohm, 2 = 43 Ohm, 3 = 40 Ohm, 4 = 37.5 Ohm, 5 = 35 Ohm, 6 = 33 Ohm, 7 = 31.5 Ohm
 pub type TxRtuneW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::BitReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `DC_TE` reader - reserved for debug
 pub type DcTeR = crate::BitReader;
 ///Field `DC_TE` writer - reserved for debug
@@ -42,14 +34,6 @@ pub type DcTeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DcTrR = crate::FieldReader;
 ///Field `DC_TR` writer - reserved for debug
 pub type DcTrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD0` reader - reserved for debug
-pub type Rsvd0R = crate::FieldReader;
-///Field `RSVD0` writer - reserved for debug
-pub type Rsvd0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD1` reader - reserved for debug
-pub type Rsvd1R = crate::FieldReader;
-///Field `RSVD1` writer - reserved for debug
-pub type Rsvd1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bit 0 - USB PHY enable, turn on power swith, power up LDO and bias
     #[inline(always)]
@@ -76,20 +60,10 @@ impl R {
     pub fn dp_en(&self) -> DpEnR {
         DpEnR::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 7) & 1) != 0)
-    }
     ///Bits 8:10 - TX outp impedance tuning 0 = 50 Ohm, 1 = 46 Ohm, 2 = 43 Ohm, 3 = 40 Ohm, 4 = 37.5 Ohm, 5 = 35 Ohm, 6 = 33 Ohm, 7 = 31.5 Ohm
     #[inline(always)]
     pub fn tx_rtune(&self) -> TxRtuneR {
         TxRtuneR::new(((self.bits >> 8) & 7) as u8)
-    }
-    ///Bit 11
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 11) & 1) != 0)
     }
     ///Bit 12 - reserved for debug
     #[inline(always)]
@@ -101,27 +75,13 @@ impl R {
     pub fn dc_tr(&self) -> DcTrR {
         DcTrR::new(((self.bits >> 13) & 7) as u8)
     }
-    ///Bits 16:23 - reserved for debug
-    #[inline(always)]
-    pub fn rsvd0(&self) -> Rsvd0R {
-        Rsvd0R::new(((self.bits >> 16) & 0xff) as u8)
-    }
-    ///Bits 24:31 - reserved for debug
-    #[inline(always)]
-    pub fn rsvd1(&self) -> Rsvd1R {
-        Rsvd1R::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("USBCR")
-            .field("rsvd1", &self.rsvd1())
-            .field("rsvd0", &self.rsvd0())
             .field("dc_tr", &self.dc_tr())
             .field("dc_te", &self.dc_te())
-            .field("rsvd", &self.rsvd())
             .field("tx_rtune", &self.tx_rtune())
-            .field("rsvd2", &self.rsvd2())
             .field("dp_en", &self.dp_en())
             .field("dm_pd", &self.dm_pd())
             .field("ldo_lp_en", &self.ldo_lp_en())
@@ -156,20 +116,10 @@ impl W {
     pub fn dp_en(&mut self) -> DpEnW<USBCRrs> {
         DpEnW::new(self, 6)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<USBCRrs> {
-        Rsvd2W::new(self, 7)
-    }
     ///Bits 8:10 - TX outp impedance tuning 0 = 50 Ohm, 1 = 46 Ohm, 2 = 43 Ohm, 3 = 40 Ohm, 4 = 37.5 Ohm, 5 = 35 Ohm, 6 = 33 Ohm, 7 = 31.5 Ohm
     #[inline(always)]
     pub fn tx_rtune(&mut self) -> TxRtuneW<USBCRrs> {
         TxRtuneW::new(self, 8)
-    }
-    ///Bit 11
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<USBCRrs> {
-        RsvdW::new(self, 11)
     }
     ///Bit 12 - reserved for debug
     #[inline(always)]
@@ -180,16 +130,6 @@ impl W {
     #[inline(always)]
     pub fn dc_tr(&mut self) -> DcTrW<USBCRrs> {
         DcTrW::new(self, 13)
-    }
-    ///Bits 16:23 - reserved for debug
-    #[inline(always)]
-    pub fn rsvd0(&mut self) -> Rsvd0W<USBCRrs> {
-        Rsvd0W::new(self, 16)
-    }
-    ///Bits 24:31 - reserved for debug
-    #[inline(always)]
-    pub fn rsvd1(&mut self) -> Rsvd1W<USBCRrs> {
-        Rsvd1W::new(self, 24)
     }
 }
 ///USB Control register

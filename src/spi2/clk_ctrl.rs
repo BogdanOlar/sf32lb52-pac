@@ -18,10 +18,6 @@ pub type ClkEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SpiDiSelR = crate::BitReader;
 ///Field `SPI_DI_SEL` writer - Select spi_di source. 0: from port SPI_DI. 1: from port SPI_DIO.
 pub type SpiDiSelW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
 impl R {
     ///Bits 0:6 - div ratio from clk_sys
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn spi_di_sel(&self) -> SpiDiSelR {
         SpiDiSelR::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 10) & 0x003f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CLK_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("spi_di_sel", &self.spi_di_sel())
             .field("clk_en", &self.clk_en())
             .field("clk_sel", &self.clk_sel())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn spi_di_sel(&mut self) -> SpiDiSelW<CLK_CTRLrs> {
         SpiDiSelW::new(self, 9)
-    }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CLK_CTRLrs> {
-        RsvdW::new(self, 10)
     }
 }
 ///CLK Control Register

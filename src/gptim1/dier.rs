@@ -22,18 +22,10 @@ pub type Cc3ieW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Cc4ieR = crate::BitReader;
 ///Field `CC4IE` writer - Capture/Compare 4 interrupt enable 0: CC4 interrupt disabled. 1: CC4 interrupt enabled
 pub type Cc4ieW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD4` reader -
-pub type Rsvd4R = crate::BitReader;
-///Field `RSVD4` writer -
-pub type Rsvd4W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `TIE` reader - Trigger interrupt enable 0: Trigger interrupt disabled. 1: Trigger interrupt enabled
 pub type TieR = crate::BitReader;
 ///Field `TIE` writer - Trigger interrupt enable 0: Trigger interrupt disabled. 1: Trigger interrupt enabled
 pub type TieW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `UDE` reader - Update DMA request enable 0: Update DMA request disabled. 1: Update DMA request enabled
 pub type UdeR = crate::BitReader;
 ///Field `UDE` writer - Update DMA request enable 0: Update DMA request disabled. 1: Update DMA request enabled
@@ -54,18 +46,10 @@ pub type Cc3deW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Cc4deR = crate::BitReader;
 ///Field `CC4DE` writer - Capture/Compare 4 DMA request enable 0: CC4 DMA request disabled. 1: CC4 DMA request enabled
 pub type Cc4deW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `TDE` reader - Trigger DMA request enable 0: Trigger DMA request disabled. 1: Trigger DMA request enabled.
 pub type TdeR = crate::BitReader;
 ///Field `TDE` writer - Trigger DMA request enable 0: Trigger DMA request disabled. 1: Trigger DMA request enabled.
 pub type TdeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 17, u32>;
 impl R {
     ///Bit 0 - Update interrupt enable 0: Update interrupt disabled. 1: Update interrupt enabled
     #[inline(always)]
@@ -92,20 +76,10 @@ impl R {
     pub fn cc4ie(&self) -> Cc4ieR {
         Cc4ieR::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 5
-    #[inline(always)]
-    pub fn rsvd4(&self) -> Rsvd4R {
-        Rsvd4R::new(((self.bits >> 5) & 1) != 0)
-    }
     ///Bit 6 - Trigger interrupt enable 0: Trigger interrupt disabled. 1: Trigger interrupt enabled
     #[inline(always)]
     pub fn tie(&self) -> TieR {
         TieR::new(((self.bits >> 6) & 1) != 0)
-    }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 7) & 1) != 0)
     }
     ///Bit 8 - Update DMA request enable 0: Update DMA request disabled. 1: Update DMA request enabled
     #[inline(always)]
@@ -132,36 +106,22 @@ impl R {
     pub fn cc4de(&self) -> Cc4deR {
         Cc4deR::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 13
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 13) & 1) != 0)
-    }
     ///Bit 14 - Trigger DMA request enable 0: Trigger DMA request disabled. 1: Trigger DMA request enabled.
     #[inline(always)]
     pub fn tde(&self) -> TdeR {
         TdeR::new(((self.bits >> 14) & 1) != 0)
     }
-    ///Bits 15:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 15) & 0x0001_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DIER")
-            .field("rsvd", &self.rsvd())
             .field("tde", &self.tde())
-            .field("rsvd2", &self.rsvd2())
             .field("cc4de", &self.cc4de())
             .field("cc3de", &self.cc3de())
             .field("cc2de", &self.cc2de())
             .field("cc1de", &self.cc1de())
             .field("ude", &self.ude())
-            .field("rsvd3", &self.rsvd3())
             .field("tie", &self.tie())
-            .field("rsvd4", &self.rsvd4())
             .field("cc4ie", &self.cc4ie())
             .field("cc3ie", &self.cc3ie())
             .field("cc2ie", &self.cc2ie())
@@ -196,20 +156,10 @@ impl W {
     pub fn cc4ie(&mut self) -> Cc4ieW<DIERrs> {
         Cc4ieW::new(self, 4)
     }
-    ///Bit 5
-    #[inline(always)]
-    pub fn rsvd4(&mut self) -> Rsvd4W<DIERrs> {
-        Rsvd4W::new(self, 5)
-    }
     ///Bit 6 - Trigger interrupt enable 0: Trigger interrupt disabled. 1: Trigger interrupt enabled
     #[inline(always)]
     pub fn tie(&mut self) -> TieW<DIERrs> {
         TieW::new(self, 6)
-    }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<DIERrs> {
-        Rsvd3W::new(self, 7)
     }
     ///Bit 8 - Update DMA request enable 0: Update DMA request disabled. 1: Update DMA request enabled
     #[inline(always)]
@@ -236,20 +186,10 @@ impl W {
     pub fn cc4de(&mut self) -> Cc4deW<DIERrs> {
         Cc4deW::new(self, 12)
     }
-    ///Bit 13
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<DIERrs> {
-        Rsvd2W::new(self, 13)
-    }
     ///Bit 14 - Trigger DMA request enable 0: Trigger DMA request disabled. 1: Trigger DMA request enabled.
     #[inline(always)]
     pub fn tde(&mut self) -> TdeW<DIERrs> {
         TdeW::new(self, 14)
-    }
-    ///Bits 15:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DIERrs> {
-        RsvdW::new(self, 15)
     }
 }
 ///TIM DMA/Interrupt enable register

@@ -26,10 +26,6 @@ pub type IsW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ModeR = crate::BitReader;
 ///Field `MODE` writer - Mode Select. Logic LOW enables GPIO mode,logic HIGH enables I2C mode
 pub type ModeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `DS` reader - Drive Select. Logic LOW selects 4mA drive,logic HIGH selects 20mA drive
 pub type DsR = crate::BitReader;
 ///Field `DS` writer - Drive Select. Logic LOW selects 4mA drive,logic HIGH selects 20mA drive
@@ -38,10 +34,6 @@ pub type DsW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PoeR = crate::BitReader;
 ///Field `POE` writer - Reserved. Always set to logic LOW
 pub type PoeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 impl R {
     ///Bits 0:3 - Function Select
     #[inline(always)]
@@ -73,11 +65,6 @@ impl R {
     pub fn mode(&self) -> ModeR {
         ModeR::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 9
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 9) & 1) != 0)
-    }
     ///Bit 10 - Drive Select. Logic LOW selects 4mA drive,logic HIGH selects 20mA drive
     #[inline(always)]
     pub fn ds(&self) -> DsR {
@@ -88,19 +75,12 @@ impl R {
     pub fn poe(&self) -> PoeR {
         PoeR::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 12) & 0x000f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PAD_PA40")
-            .field("rsvd", &self.rsvd())
             .field("poe", &self.poe())
             .field("ds", &self.ds())
-            .field("rsvd2", &self.rsvd2())
             .field("mode", &self.mode())
             .field("is", &self.is())
             .field("ie", &self.ie())
@@ -141,11 +121,6 @@ impl W {
     pub fn mode(&mut self) -> ModeW<PAD_PA40rs> {
         ModeW::new(self, 8)
     }
-    ///Bit 9
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<PAD_PA40rs> {
-        Rsvd2W::new(self, 9)
-    }
     ///Bit 10 - Drive Select. Logic LOW selects 4mA drive,logic HIGH selects 20mA drive
     #[inline(always)]
     pub fn ds(&mut self) -> DsW<PAD_PA40rs> {
@@ -155,11 +130,6 @@ impl W {
     #[inline(always)]
     pub fn poe(&mut self) -> PoeW<PAD_PA40rs> {
         PoeW::new(self, 11)
-    }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PAD_PA40rs> {
-        RsvdW::new(self, 12)
     }
 }
 ///

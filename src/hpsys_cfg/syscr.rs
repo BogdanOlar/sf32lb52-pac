@@ -14,10 +14,6 @@ pub type SdnandW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LdoVselR = crate::BitReader;
 ///Field `LDO_VSEL` writer - select work mode 0: enhanced mode 1: base mode
 pub type LdoVselW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
 impl R {
     ///Bit 0 - If set to 1, WDT1 reset will reboot the whole chip
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn ldo_vsel(&self) -> LdoVselR {
         LdoVselR::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 3) & 0x1fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SYSCR")
-            .field("rsvd", &self.rsvd())
             .field("ldo_vsel", &self.ldo_vsel())
             .field("sdnand", &self.sdnand())
             .field("wdt1_reboot", &self.wdt1_reboot())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn ldo_vsel(&mut self) -> LdoVselW<SYSCRrs> {
         LdoVselW::new(self, 2)
-    }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SYSCRrs> {
-        RsvdW::new(self, 3)
     }
 }
 ///System Configure Register

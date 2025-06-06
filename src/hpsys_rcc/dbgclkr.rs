@@ -10,10 +10,6 @@ pub type ClkSelW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type ClkEnR = crate::BitReader;
 ///Field `CLK_EN` writer - for debug only
 pub type ClkEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `DLL1_DBG` reader - for debug only
 pub type Dll1DbgR = crate::BitReader;
 ///Field `DLL1_DBG` writer - for debug only
@@ -70,10 +66,6 @@ pub type Dll2CgEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Dll2OutStrR = crate::FieldReader;
 ///Field `DLL2_OUT_STR` writer - for debug only
 pub type Dll2OutStrW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     ///Bits 0:1 - for debug only
     #[inline(always)]
@@ -84,11 +76,6 @@ impl R {
     #[inline(always)]
     pub fn clk_en(&self) -> ClkEnR {
         ClkEnR::new(((self.bits >> 2) & 1) != 0)
-    }
-    ///Bit 3
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 3) & 1) != 0)
     }
     ///Bit 4 - for debug only
     #[inline(always)]
@@ -160,16 +147,10 @@ impl R {
     pub fn dll2_out_str(&self) -> Dll2OutStrR {
         Dll2OutStrR::new(((self.bits >> 18) & 3) as u8)
     }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 20) & 0x0fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DBGCLKR")
-            .field("rsvd", &self.rsvd())
             .field("dll2_out_str", &self.dll2_out_str())
             .field("dll2_cg_en", &self.dll2_cg_en())
             .field("dll2_out_rstb", &self.dll2_out_rstb())
@@ -184,7 +165,6 @@ impl core::fmt::Debug for R {
             .field("dll1_out_en", &self.dll1_out_en())
             .field("dll1_ldo_en", &self.dll1_ldo_en())
             .field("dll1_dbg", &self.dll1_dbg())
-            .field("rsvd2", &self.rsvd2())
             .field("clk_en", &self.clk_en())
             .field("clk_sel", &self.clk_sel())
             .finish()
@@ -200,11 +180,6 @@ impl W {
     #[inline(always)]
     pub fn clk_en(&mut self) -> ClkEnW<DBGCLKRrs> {
         ClkEnW::new(self, 2)
-    }
-    ///Bit 3
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<DBGCLKRrs> {
-        Rsvd2W::new(self, 3)
     }
     ///Bit 4 - for debug only
     #[inline(always)]
@@ -275,11 +250,6 @@ impl W {
     #[inline(always)]
     pub fn dll2_out_str(&mut self) -> Dll2OutStrW<DBGCLKRrs> {
         Dll2OutStrW::new(self, 18)
-    }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DBGCLKRrs> {
-        RsvdW::new(self, 20)
     }
 }
 ///Debug Clock Register

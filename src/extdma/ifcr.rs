@@ -18,10 +18,6 @@ pub type ChtifW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CteifR = crate::BitReader;
 ///Field `CTEIF` writer - CTEIF, transfer error flag clear
 pub type CteifW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0 - CGIF, global interrupt flag clear
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn cteif(&self) -> CteifR {
         CteifR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("IFCR")
-            .field("rsvd", &self.rsvd())
             .field("cteif", &self.cteif())
             .field("chtif", &self.chtif())
             .field("ctcif", &self.ctcif())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn cteif(&mut self) -> CteifW<IFCRrs> {
         CteifW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<IFCRrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///interrupt clear register

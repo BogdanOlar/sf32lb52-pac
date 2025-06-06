@@ -10,10 +10,6 @@ pub type DestinationW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type OFormatR = crate::FieldReader;
 ///Field `O_FORMAT` writer - AHB output format: 2'h0: RGB565 2'h1: RGB888 2'h2: ARGB8888 2'h3: ARGB8565
 pub type OFormatW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
 impl R {
     ///Bit 0 - The Data can be sent to two destinations: 2'b0: AHB RAM 2'b1: AHB LCD
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn o_format(&self) -> OFormatR {
         OFormatR::new(((self.bits >> 1) & 3) as u8)
     }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 3) & 0x1fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AHB_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("o_format", &self.o_format())
             .field("destination", &self.destination())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn o_format(&mut self) -> OFormatW<AHB_CTRLrs> {
         OFormatW::new(self, 1)
-    }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AHB_CTRLrs> {
-        RsvdW::new(self, 3)
     }
 }
 ///

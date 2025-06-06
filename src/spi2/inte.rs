@@ -2,10 +2,6 @@
 pub type R = crate::R<INTErs>;
 ///Register `INTE` writer
 pub type W = crate::W<INTErs>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `TINTE` reader - Receiver Time-out Interrupt Enable 0: Receiver time-out interrupt is disabled 1: Receiver time-out interrupt is enabled
 pub type TinteR = crate::BitReader;
 ///Field `TINTE` writer - Receiver Time-out Interrupt Enable 0: Receiver time-out interrupt is disabled 1: Receiver time-out interrupt is enabled
@@ -26,16 +22,7 @@ pub type RimW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TimR = crate::BitReader;
 ///Field `TIM` writer - Transmit FIFO Underrun Interrupt Mask 0 : TUR events generate an SPI interrupt 1 : TUR events do NOT generate an SPI interrupt
 pub type TimW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
-    ///Bit 0
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new((self.bits & 1) != 0)
-    }
     ///Bit 1 - Receiver Time-out Interrupt Enable 0: Receiver time-out interrupt is disabled 1: Receiver time-out interrupt is enabled
     #[inline(always)]
     pub fn tinte(&self) -> TinteR {
@@ -61,31 +48,19 @@ impl R {
     pub fn tim(&self) -> TimR {
         TimR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("INTE")
-            .field("rsvd", &self.rsvd())
             .field("tim", &self.tim())
             .field("rim", &self.rim())
             .field("tie", &self.tie())
             .field("rie", &self.rie())
             .field("tinte", &self.tinte())
-            .field("rsvd2", &self.rsvd2())
             .finish()
     }
 }
 impl W {
-    ///Bit 0
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<INTErs> {
-        Rsvd2W::new(self, 0)
-    }
     ///Bit 1 - Receiver Time-out Interrupt Enable 0: Receiver time-out interrupt is disabled 1: Receiver time-out interrupt is enabled
     #[inline(always)]
     pub fn tinte(&mut self) -> TinteW<INTErs> {
@@ -110,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn tim(&mut self) -> TimW<INTErs> {
         TimW::new(self, 5)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<INTErs> {
-        RsvdW::new(self, 6)
     }
 }
 ///Interrupt Enable Register

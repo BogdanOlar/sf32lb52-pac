@@ -14,18 +14,10 @@ pub type LdoVrefSelW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type LdoModeR = crate::BitReader;
 ///Field `LDO_MODE` writer -
 pub type LdoModeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 ///Field `LDO_DC_TR` reader -
 pub type LdoDcTrR = crate::FieldReader;
 ///Field `LDO_DC_TR` writer -
 pub type LdoDcTrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 ///Field `RESERVE0` reader -
 pub type Reserve0R = crate::FieldReader;
 ///Field `RESERVE0` writer -
@@ -50,20 +42,10 @@ impl R {
     pub fn ldo_mode(&self) -> LdoModeR {
         LdoModeR::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bits 5:7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 5) & 7) as u8)
-    }
     ///Bits 8:10
     #[inline(always)]
     pub fn ldo_dc_tr(&self) -> LdoDcTrR {
         LdoDcTrR::new(((self.bits >> 8) & 7) as u8)
-    }
-    ///Bits 11:15
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 11) & 0x1f) as u8)
     }
     ///Bits 16:23
     #[inline(always)]
@@ -81,9 +63,7 @@ impl core::fmt::Debug for R {
         f.debug_struct("ANACR")
             .field("reserve1", &self.reserve1())
             .field("reserve0", &self.reserve0())
-            .field("rsvd", &self.rsvd())
             .field("ldo_dc_tr", &self.ldo_dc_tr())
-            .field("rsvd2", &self.rsvd2())
             .field("ldo_mode", &self.ldo_mode())
             .field("ldo_vref_sel", &self.ldo_vref_sel())
             .field("ldo_en", &self.ldo_en())
@@ -106,20 +86,10 @@ impl W {
     pub fn ldo_mode(&mut self) -> LdoModeW<ANACRrs> {
         LdoModeW::new(self, 4)
     }
-    ///Bits 5:7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ANACRrs> {
-        Rsvd2W::new(self, 5)
-    }
     ///Bits 8:10
     #[inline(always)]
     pub fn ldo_dc_tr(&mut self) -> LdoDcTrW<ANACRrs> {
         LdoDcTrW::new(self, 8)
-    }
-    ///Bits 11:15
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ANACRrs> {
-        RsvdW::new(self, 11)
     }
     ///Bits 16:23
     #[inline(always)]

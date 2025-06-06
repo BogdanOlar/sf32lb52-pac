@@ -10,10 +10,6 @@ pub type DoneW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type OverflowR = crate::BitReader;
 ///Field `OVERFLOW` writer - Overflow when new data arrive while last calculation not done yet
 pub type OverflowW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - Done flag. When DR written, done flag will be cleared automatically. The flag will assert after CRC operation of current DR finished.
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn overflow(&self) -> OverflowR {
         OverflowR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SR")
-            .field("rsvd", &self.rsvd())
             .field("overflow", &self.overflow())
             .field("done", &self.done())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn overflow(&mut self) -> OverflowW<SRrs> {
         OverflowW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SRrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///Status register

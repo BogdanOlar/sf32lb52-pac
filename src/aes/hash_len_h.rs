@@ -6,26 +6,16 @@ pub type W = crate::W<HASH_LEN_Hrs>;
 pub type DataR = crate::FieldReader<u32>;
 ///Field `DATA` writer - HASH load length h
 pub type DataW<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     ///Bits 0:28 - HASH load length h
     #[inline(always)]
     pub fn data(&self) -> DataR {
         DataR::new(self.bits & 0x1fff_ffff)
     }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 29) & 7) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("HASH_LEN_H")
-            .field("rsvd", &self.rsvd())
             .field("data", &self.data())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn data(&mut self) -> DataW<HASH_LEN_Hrs> {
         DataW::new(self, 0)
-    }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<HASH_LEN_Hrs> {
-        RsvdW::new(self, 29)
     }
 }
 ///

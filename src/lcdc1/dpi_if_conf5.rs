@@ -30,10 +30,6 @@ pub type IntLineNumW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 pub type ClkForceOnR = crate::BitReader;
 ///Field `CLK_FORCE_ON` writer - 1: force DPI clock on 0: DPI clock is controlled by hardware
 pub type ClkForceOnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:7 - pixel clock divider
     #[inline(always)]
@@ -70,16 +66,10 @@ impl R {
     pub fn clk_force_on(&self) -> ClkForceOnR {
         ClkForceOnR::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DPI_IF_CONF5")
-            .field("rsvd", &self.rsvd())
             .field("clk_force_on", &self.clk_force_on())
             .field("int_line_num", &self.int_line_num())
             .field("hspol", &self.hspol())
@@ -125,11 +115,6 @@ impl W {
     #[inline(always)]
     pub fn clk_force_on(&mut self) -> ClkForceOnW<DPI_IF_CONF5rs> {
         ClkForceOnW::new(self, 23)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DPI_IF_CONF5rs> {
-        RsvdW::new(self, 24)
     }
 }
 ///

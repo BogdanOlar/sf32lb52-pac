@@ -6,10 +6,6 @@ pub type W = crate::W<CR2rs>;
 pub type CcpcR = crate::BitReader;
 ///Field `CCPC` writer - Capture/compare preloaded control 0: CCxE, CCxNE and OCxM bits are not preloaded 1: CCxE, CCxNE and OCxM bits are preloaded, after having been written, they are updated only when a commutation event (COM) occurs (COMG bit set or edge detected on TRGI after Trigger selection, depending on the CCUS bit). This bit acts only on channels that have a complementary output.
 pub type CcpcW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD4` reader -
-pub type Rsvd4R = crate::BitReader;
-///Field `RSVD4` writer -
-pub type Rsvd4W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `CCUS` reader - Capture/compare control update selection 0: When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit only 1: When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit or when an edge occurs on TRGI after Trigger selection This bit acts only on channels that have a complementary output.
 pub type CcusR = crate::BitReader;
 ///Field `CCUS` writer - Capture/compare control update selection 0: When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit only 1: When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit or when an edge occurs on TRGI after Trigger selection This bit acts only on channels that have a complementary output.
@@ -54,36 +50,19 @@ pub type Ois3nW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Ois4R = crate::BitReader;
 ///Field `OIS4` writer - Output Idle state 4 (OC4 output)
 pub type Ois4W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `OIS5` reader - Output Idle state 5 (OC5 output)
 pub type Ois5R = crate::BitReader;
 ///Field `OIS5` writer - Output Idle state 5 (OC5 output)
 pub type Ois5W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `OIS6` reader - Output Idle state 6 (OC6 output)
 pub type Ois6R = crate::BitReader;
 ///Field `OIS6` writer - Output Idle state 6 (OC6 output)
 pub type Ois6W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 impl R {
     ///Bit 0 - Capture/compare preloaded control 0: CCxE, CCxNE and OCxM bits are not preloaded 1: CCxE, CCxNE and OCxM bits are preloaded, after having been written, they are updated only when a commutation event (COM) occurs (COMG bit set or edge detected on TRGI after Trigger selection, depending on the CCUS bit). This bit acts only on channels that have a complementary output.
     #[inline(always)]
     pub fn ccpc(&self) -> CcpcR {
         CcpcR::new((self.bits & 1) != 0)
-    }
-    ///Bit 1
-    #[inline(always)]
-    pub fn rsvd4(&self) -> Rsvd4R {
-        Rsvd4R::new(((self.bits >> 1) & 1) != 0)
     }
     ///Bit 2 - Capture/compare control update selection 0: When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit only 1: When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit or when an edge occurs on TRGI after Trigger selection This bit acts only on channels that have a complementary output.
     #[inline(always)]
@@ -140,40 +119,22 @@ impl R {
     pub fn ois4(&self) -> Ois4R {
         Ois4R::new(((self.bits >> 14) & 1) != 0)
     }
-    ///Bit 15
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 15) & 1) != 0)
-    }
     ///Bit 16 - Output Idle state 5 (OC5 output)
     #[inline(always)]
     pub fn ois5(&self) -> Ois5R {
         Ois5R::new(((self.bits >> 16) & 1) != 0)
-    }
-    ///Bit 17
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 17) & 1) != 0)
     }
     ///Bit 18 - Output Idle state 6 (OC6 output)
     #[inline(always)]
     pub fn ois6(&self) -> Ois6R {
         Ois6R::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bits 19:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 19) & 0x1fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CR2")
-            .field("rsvd", &self.rsvd())
             .field("ois6", &self.ois6())
-            .field("rsvd2", &self.rsvd2())
             .field("ois5", &self.ois5())
-            .field("rsvd3", &self.rsvd3())
             .field("ois4", &self.ois4())
             .field("ois3n", &self.ois3n())
             .field("ois3", &self.ois3())
@@ -185,7 +146,6 @@ impl core::fmt::Debug for R {
             .field("mms", &self.mms())
             .field("ccds", &self.ccds())
             .field("ccus", &self.ccus())
-            .field("rsvd4", &self.rsvd4())
             .field("ccpc", &self.ccpc())
             .finish()
     }
@@ -195,11 +155,6 @@ impl W {
     #[inline(always)]
     pub fn ccpc(&mut self) -> CcpcW<CR2rs> {
         CcpcW::new(self, 0)
-    }
-    ///Bit 1
-    #[inline(always)]
-    pub fn rsvd4(&mut self) -> Rsvd4W<CR2rs> {
-        Rsvd4W::new(self, 1)
     }
     ///Bit 2 - Capture/compare control update selection 0: When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit only 1: When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit or when an edge occurs on TRGI after Trigger selection This bit acts only on channels that have a complementary output.
     #[inline(always)]
@@ -256,30 +211,15 @@ impl W {
     pub fn ois4(&mut self) -> Ois4W<CR2rs> {
         Ois4W::new(self, 14)
     }
-    ///Bit 15
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<CR2rs> {
-        Rsvd3W::new(self, 15)
-    }
     ///Bit 16 - Output Idle state 5 (OC5 output)
     #[inline(always)]
     pub fn ois5(&mut self) -> Ois5W<CR2rs> {
         Ois5W::new(self, 16)
     }
-    ///Bit 17
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CR2rs> {
-        Rsvd2W::new(self, 17)
-    }
     ///Bit 18 - Output Idle state 6 (OC6 output)
     #[inline(always)]
     pub fn ois6(&mut self) -> Ois6W<CR2rs> {
         Ois6W::new(self, 18)
-    }
-    ///Bits 19:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CR2rs> {
-        RsvdW::new(self, 19)
     }
 }
 ///TIM control register 2

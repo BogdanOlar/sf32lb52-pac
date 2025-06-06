@@ -22,10 +22,6 @@ pub type DlyW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type NoretR = crate::BitReader;
 ///Field `NORET` writer - Cut off VLPMEM entirely during standby. No retention
 pub type NoretW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 ///Field `RDY` reader -
 pub type RdyR = crate::BitReader;
 ///Field `RDY` writer -
@@ -53,11 +49,6 @@ impl R {
     pub fn noret(&self) -> NoretR {
         NoretR::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x007f_ffff)
-    }
     ///Bit 31
     #[inline(always)]
     pub fn rdy(&self) -> RdyR {
@@ -68,7 +59,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LPSYS_SWR")
             .field("rdy", &self.rdy())
-            .field("rsvd", &self.rsvd())
             .field("noret", &self.noret())
             .field("dly", &self.dly())
             .field("psw_ret", &self.psw_ret())
@@ -98,11 +88,6 @@ impl W {
     #[inline(always)]
     pub fn noret(&mut self) -> NoretW<LPSYS_SWRrs> {
         NoretW::new(self, 7)
-    }
-    ///Bits 8:30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LPSYS_SWRrs> {
-        RsvdW::new(self, 8)
     }
     ///Bit 31
     #[inline(always)]

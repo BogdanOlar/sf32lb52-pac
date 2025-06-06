@@ -6,26 +6,16 @@ pub type W = crate::W<DAC_CH1_DCrs>;
 pub type OffsetR = crate::FieldReader<u32>;
 ///Field `OFFSET` writer - dac ch1 dc offset
 pub type OffsetW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:23 - dac ch1 dc offset
     #[inline(always)]
     pub fn offset(&self) -> OffsetR {
         OffsetR::new(self.bits & 0x00ff_ffff)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DAC_CH1_DC")
-            .field("rsvd", &self.rsvd())
             .field("offset", &self.offset())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn offset(&mut self) -> OffsetW<DAC_CH1_DCrs> {
         OffsetW::new(self, 0)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DAC_CH1_DCrs> {
-        RsvdW::new(self, 24)
     }
 }
 ///

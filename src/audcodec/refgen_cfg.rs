@@ -30,10 +30,6 @@ pub type RzselW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type DischgR = crate::BitReader;
 ///Field `DISCHG` writer - discharge vref
 pub type DischgW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bit 0 - enable ref gen
     #[inline(always)]
@@ -70,16 +66,10 @@ impl R {
     pub fn dischg(&self) -> DischgR {
         DischgR::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("REFGEN_CFG")
-            .field("rsvd", &self.rsvd())
             .field("dischg", &self.dischg())
             .field("rzsel", &self.rzsel())
             .field("lv_mode", &self.lv_mode())
@@ -125,11 +115,6 @@ impl W {
     #[inline(always)]
     pub fn dischg(&mut self) -> DischgW<REFGEN_CFGrs> {
         DischgW::new(self, 8)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<REFGEN_CFGrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///

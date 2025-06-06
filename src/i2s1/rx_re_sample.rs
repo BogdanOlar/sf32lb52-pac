@@ -6,26 +6,16 @@ pub type W = crate::W<RX_RE_SAMPLErs>;
 pub type SmoothEnR = crate::BitReader;
 ///Field `SMOOTH_EN` writer - 0: Disable RX re-sample smooth filter 1: Enable RX re-sample smooth filter
 pub type SmoothEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 impl R {
     ///Bit 0 - 0: Disable RX re-sample smooth filter 1: Enable RX re-sample smooth filter
     #[inline(always)]
     pub fn smooth_en(&self) -> SmoothEnR {
         SmoothEnR::new((self.bits & 1) != 0)
     }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 1) & 0x7fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("RX_RE_SAMPLE")
-            .field("rsvd", &self.rsvd())
             .field("smooth_en", &self.smooth_en())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn smooth_en(&mut self) -> SmoothEnW<RX_RE_SAMPLErs> {
         SmoothEnW::new(self, 0)
-    }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RX_RE_SAMPLErs> {
-        RsvdW::new(self, 1)
     }
 }
 ///

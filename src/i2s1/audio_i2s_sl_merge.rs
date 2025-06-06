@@ -6,26 +6,16 @@ pub type W = crate::W<AUDIO_I2S_SL_MERGErs>;
 pub type SlaveTimingMergeR = crate::BitReader;
 ///Field `SLAVE_TIMING_MERGE` writer - when work as an I2S slave, and external I2S master TX/RX share an only BCLK/LRCK, we need set this bit high. 0: I2S slave use separated timing control port. TX_BCLK_IN/TX_LRCK_IN and RX_BCLK/RX_LRCK_IN are separated. 1: I2S slave use the same BCLK/LRCK, the TX_BCLK_IN/TX_LRCK also is used for RX controller.
 pub type SlaveTimingMergeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 impl R {
     ///Bit 0 - when work as an I2S slave, and external I2S master TX/RX share an only BCLK/LRCK, we need set this bit high. 0: I2S slave use separated timing control port. TX_BCLK_IN/TX_LRCK_IN and RX_BCLK/RX_LRCK_IN are separated. 1: I2S slave use the same BCLK/LRCK, the TX_BCLK_IN/TX_LRCK also is used for RX controller.
     #[inline(always)]
     pub fn slave_timing_merge(&self) -> SlaveTimingMergeR {
         SlaveTimingMergeR::new((self.bits & 1) != 0)
     }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 1) & 0x7fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AUDIO_I2S_SL_MERGE")
-            .field("rsvd", &self.rsvd())
             .field("slave_timing_merge", &self.slave_timing_merge())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn slave_timing_merge(&mut self) -> SlaveTimingMergeW<AUDIO_I2S_SL_MERGErs> {
         SlaveTimingMergeW::new(self, 0)
-    }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AUDIO_I2S_SL_MERGErs> {
-        RsvdW::new(self, 1)
     }
 }
 ///

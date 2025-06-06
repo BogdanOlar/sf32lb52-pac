@@ -34,10 +34,6 @@ pub type DmodeW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type FmodeR = crate::BitReader;
 ///Field `FMODE` writer -
 pub type FmodeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
     ///Bits 0:2 - This register specifies the format of CMD2 sequence. Refer to CCR1 description
     #[inline(always)]
@@ -79,16 +75,10 @@ impl R {
     pub fn fmode(&self) -> FmodeR {
         FmodeR::new(((self.bits >> 21) & 1) != 0)
     }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 22) & 0x03ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CCR2")
-            .field("rsvd", &self.rsvd())
             .field("fmode", &self.fmode())
             .field("dmode", &self.dmode())
             .field("dcyc", &self.dcyc())
@@ -140,11 +130,6 @@ impl W {
     #[inline(always)]
     pub fn fmode(&mut self) -> FmodeW<CCR2rs> {
         FmodeW::new(self, 21)
-    }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CCR2rs> {
-        RsvdW::new(self, 22)
     }
 }
 ///Communication Configuration Register

@@ -18,10 +18,6 @@ pub type CacheBusyW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CacheFlushR = crate::BitReader;
 ///Field `CACHE_FLUSH` writer - Set 1 to flush cache. Should set when cache not busy.
 pub type CacheFlushW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0 - Set 1 to request sd normal access. sd_req will be cleared automatically after sd_busy asserted
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn cache_flush(&self) -> CacheFlushR {
         CacheFlushR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CASR")
-            .field("rsvd", &self.rsvd())
             .field("cache_flush", &self.cache_flush())
             .field("cache_busy", &self.cache_busy())
             .field("sd_busy", &self.sd_busy())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn cache_flush(&mut self) -> CacheFlushW<CASRrs> {
         CacheFlushW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CASRrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///cache status register

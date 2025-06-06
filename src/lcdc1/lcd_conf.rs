@@ -42,10 +42,6 @@ pub type EndianW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SpiRdSelR = crate::FieldReader;
 ///Field `SPI_RD_SEL` writer - spi read line select. 0: select line 0 1: select line 1 2: select line 2 3: select line 3
 pub type SpiRdSelW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 impl R {
     ///Bits 0:1 - The Data can be sent to four destinations: 2'b00: LCD panel 0 2'b01: LCD panel 1 2'b10: AHB LCD 2'b11: AHB RAM
     #[inline(always)]
@@ -97,16 +93,10 @@ impl R {
     pub fn spi_rd_sel(&self) -> SpiRdSelR {
         SpiRdSelR::new(((self.bits >> 19) & 3) as u8)
     }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 21) & 0x07ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LCD_CONF")
-            .field("rsvd", &self.rsvd())
             .field("spi_rd_sel", &self.spi_rd_sel())
             .field("endian", &self.endian())
             .field("direct_intf_en", &self.direct_intf_en())
@@ -170,11 +160,6 @@ impl W {
     #[inline(always)]
     pub fn spi_rd_sel(&mut self) -> SpiRdSelW<LCD_CONFrs> {
         SpiRdSelW::new(self, 19)
-    }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LCD_CONFrs> {
-        RsvdW::new(self, 21)
     }
 }
 ///

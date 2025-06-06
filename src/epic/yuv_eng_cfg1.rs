@@ -6,26 +6,16 @@ pub type W = crate::W<YUV_ENG_CFG1rs>;
 pub type WidthVR = crate::FieldReader<u16>;
 ///Field `WIDTH_V` writer - yuv v vector line width, unit is bytes
 pub type WidthVW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bits 0:12 - yuv v vector line width, unit is bytes
     #[inline(always)]
     pub fn width_v(&self) -> WidthVR {
         WidthVR::new((self.bits & 0x1fff) as u16)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("YUV_ENG_CFG1")
-            .field("rsvd", &self.rsvd())
             .field("width_v", &self.width_v())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn width_v(&mut self) -> WidthVW<YUV_ENG_CFG1rs> {
         WidthVW::new(self, 0)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<YUV_ENG_CFG1rs> {
-        RsvdW::new(self, 13)
     }
 }
 ///

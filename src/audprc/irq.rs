@@ -42,10 +42,6 @@ pub type TxOut0FifoUfW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TxOut1FifoUfR = crate::BitReader;
 ///Field `TX_OUT1_FIFO_UF` writer - tx_out channel 1 fifo underflow, write 1 to clear
 pub type TxOut1FifoUfW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `TX0_FIFO_OF_MASK` reader - tx channel 0 fifo overflow mask, 0: mask the interrupt
 pub type Tx0FifoOfMaskR = crate::BitReader;
 ///Field `TX0_FIFO_OF_MASK` writer - tx channel 0 fifo overflow mask, 0: mask the interrupt
@@ -86,10 +82,6 @@ pub type TxOut0FifoUfMaskW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TxOut1FifoUfMaskR = crate::BitReader;
 ///Field `TX_OUT1_FIFO_UF_MASK` writer - tx_out channel 1 fifo underflow mask, 0: mask the interrupt
 pub type TxOut1FifoUfMaskW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bit 0 - tx channel 0 fifo overflow, write 1 to clear
     #[inline(always)]
@@ -141,11 +133,6 @@ impl R {
     pub fn tx_out1_fifo_uf(&self) -> TxOut1FifoUfR {
         TxOut1FifoUfR::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 10) & 0x3f) as u8)
-    }
     ///Bit 16 - tx channel 0 fifo overflow mask, 0: mask the interrupt
     #[inline(always)]
     pub fn tx0_fifo_of_mask(&self) -> Tx0FifoOfMaskR {
@@ -196,16 +183,10 @@ impl R {
     pub fn tx_out1_fifo_uf_mask(&self) -> TxOut1FifoUfMaskR {
         TxOut1FifoUfMaskR::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("IRQ")
-            .field("rsvd", &self.rsvd())
             .field("tx_out1_fifo_uf_mask", &self.tx_out1_fifo_uf_mask())
             .field("tx_out0_fifo_uf_mask", &self.tx_out0_fifo_uf_mask())
             .field("rx_in_fifo_of_mask", &self.rx_in_fifo_of_mask())
@@ -216,7 +197,6 @@ impl core::fmt::Debug for R {
             .field("tx2_fifo_of_mask", &self.tx2_fifo_of_mask())
             .field("tx1_fifo_of_mask", &self.tx1_fifo_of_mask())
             .field("tx0_fifo_of_mask", &self.tx0_fifo_of_mask())
-            .field("rsvd2", &self.rsvd2())
             .field("tx_out1_fifo_uf", &self.tx_out1_fifo_uf())
             .field("tx_out0_fifo_uf", &self.tx_out0_fifo_uf())
             .field("rx_in_fifo_of", &self.rx_in_fifo_of())
@@ -281,11 +261,6 @@ impl W {
     pub fn tx_out1_fifo_uf(&mut self) -> TxOut1FifoUfW<IRQrs> {
         TxOut1FifoUfW::new(self, 9)
     }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<IRQrs> {
-        Rsvd2W::new(self, 10)
-    }
     ///Bit 16 - tx channel 0 fifo overflow mask, 0: mask the interrupt
     #[inline(always)]
     pub fn tx0_fifo_of_mask(&mut self) -> Tx0FifoOfMaskW<IRQrs> {
@@ -335,11 +310,6 @@ impl W {
     #[inline(always)]
     pub fn tx_out1_fifo_uf_mask(&mut self) -> TxOut1FifoUfMaskW<IRQrs> {
         TxOut1FifoUfMaskW::new(self, 25)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<IRQrs> {
-        RsvdW::new(self, 26)
     }
 }
 ///

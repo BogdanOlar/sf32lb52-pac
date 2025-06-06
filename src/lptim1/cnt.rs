@@ -6,28 +6,16 @@ pub type W = crate::W<CNTrs>;
 pub type CntR = crate::FieldReader<u32>;
 ///Field `CNT` writer - Counter value When the LPTIM is running with an asynchronous clock, reading the CNT register may return unreliable values. So in this case it is necessary to perform two consecutive read accesses and verify that the two returned values are identical.
 pub type CntW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:23 - Counter value When the LPTIM is running with an asynchronous clock, reading the CNT register may return unreliable values. So in this case it is necessary to perform two consecutive read accesses and verify that the two returned values are identical.
     #[inline(always)]
     pub fn cnt(&self) -> CntR {
         CntR::new(self.bits & 0x00ff_ffff)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CNT")
-            .field("rsvd", &self.rsvd())
-            .field("cnt", &self.cnt())
-            .finish()
+        f.debug_struct("CNT").field("cnt", &self.cnt()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn cnt(&mut self) -> CntW<CNTrs> {
         CntW::new(self, 0)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CNTrs> {
-        RsvdW::new(self, 24)
     }
 }
 ///LPTIM counter register

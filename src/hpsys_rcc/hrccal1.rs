@@ -6,10 +6,6 @@ pub type W = crate::W<HRCCAL1rs>;
 pub type CalLengthR = crate::FieldReader<u16>;
 ///Field `CAL_LENGTH` writer - Target clk_hxt48 cycles during calibration
 pub type CalLengthW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 ///Field `CAL_EN` reader - Calibration enble. Set to 0 to clear result, then set to 1 to start a new calibration
 pub type CalEnR = crate::BitReader;
 ///Field `CAL_EN` writer - Calibration enble. Set to 0 to clear result, then set to 1 to start a new calibration
@@ -23,11 +19,6 @@ impl R {
     #[inline(always)]
     pub fn cal_length(&self) -> CalLengthR {
         CalLengthR::new((self.bits & 0xffff) as u16)
-    }
-    ///Bits 16:29
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0x3fff) as u16)
     }
     ///Bit 30 - Calibration enble. Set to 0 to clear result, then set to 1 to start a new calibration
     #[inline(always)]
@@ -45,7 +36,6 @@ impl core::fmt::Debug for R {
         f.debug_struct("HRCCAL1")
             .field("cal_done", &self.cal_done())
             .field("cal_en", &self.cal_en())
-            .field("rsvd", &self.rsvd())
             .field("cal_length", &self.cal_length())
             .finish()
     }
@@ -55,11 +45,6 @@ impl W {
     #[inline(always)]
     pub fn cal_length(&mut self) -> CalLengthW<HRCCAL1rs> {
         CalLengthW::new(self, 0)
-    }
-    ///Bits 16:29
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<HRCCAL1rs> {
-        RsvdW::new(self, 16)
     }
     ///Bit 30 - Calibration enble. Set to 0 to clear result, then set to 1 to start a new calibration
     #[inline(always)]

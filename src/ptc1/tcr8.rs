@@ -6,10 +6,6 @@ pub type W = crate::W<TCR8rs>;
 pub type TrigselR = crate::FieldReader;
 ///Field `TRIGSEL` writer - select trigger source
 pub type TrigselW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 ///Field `OP` reader - task operation 3'b000: direct write data 3'b100: read then XOR with data and write back 3'b101: read then OR with data and write back 3'b110: read then AND with data and write back 3'b111: read then add with data and write back
 pub type OpR = crate::FieldReader;
 ///Field `OP` writer - task operation 3'b000: direct write data 3'b100: read then XOR with data and write back 3'b101: read then OR with data and write back 3'b110: read then AND with data and write back 3'b111: read then add with data and write back
@@ -34,20 +30,11 @@ pub type ReptrigW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type RepirqR = crate::BitReader;
 ///Field `REPIRQ` writer - repetition interrupt 0: interrupt will be generated after each operation 1: interrupt will be generated after operation for REP times
 pub type RepirqW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:7 - select trigger source
     #[inline(always)]
     pub fn trigsel(&self) -> TrigselR {
         TrigselR::new((self.bits & 0xff) as u8)
-    }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 8) & 0xff) as u8)
     }
     ///Bits 16:18 - task operation 3'b000: direct write data 3'b100: read then XOR with data and write back 3'b101: read then OR with data and write back 3'b110: read then AND with data and write back 3'b111: read then add with data and write back
     #[inline(always)]
@@ -79,23 +66,16 @@ impl R {
     pub fn repirq(&self) -> RepirqR {
         RepirqR::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TCR8")
-            .field("rsvd", &self.rsvd())
             .field("repirq", &self.repirq())
             .field("reptrig", &self.reptrig())
             .field("repen", &self.repen())
             .field("swtrig", &self.swtrig())
             .field("trigpol", &self.trigpol())
             .field("op", &self.op())
-            .field("rsvd2", &self.rsvd2())
             .field("trigsel", &self.trigsel())
             .finish()
     }
@@ -105,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn trigsel(&mut self) -> TrigselW<TCR8rs> {
         TrigselW::new(self, 0)
-    }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<TCR8rs> {
-        Rsvd2W::new(self, 8)
     }
     ///Bits 16:18 - task operation 3'b000: direct write data 3'b100: read then XOR with data and write back 3'b101: read then OR with data and write back 3'b110: read then AND with data and write back 3'b111: read then add with data and write back
     #[inline(always)]
@@ -140,11 +115,6 @@ impl W {
     #[inline(always)]
     pub fn repirq(&mut self) -> RepirqW<TCR8rs> {
         RepirqW::new(self, 23)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TCR8rs> {
-        RsvdW::new(self, 24)
     }
 }
 ///

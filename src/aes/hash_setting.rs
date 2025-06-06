@@ -30,10 +30,6 @@ pub type HashIvLoadW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type HashLenLoadR = crate::BitReader;
 ///Field `HASH_LEN_LOAD` writer - write 1 to load hash length
 pub type HashLenLoadW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bits 0:2 - HASH Mode: 3'h0: SHA-1 3'h1: SHA-224 3'h2: SHA-256 3'h3: SM3 Others: Reserved
     #[inline(always)]
@@ -70,16 +66,10 @@ impl R {
     pub fn hash_len_load(&self) -> HashLenLoadR {
         HashLenLoadR::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("HASH_SETTING")
-            .field("rsvd", &self.rsvd())
             .field("hash_len_load", &self.hash_len_load())
             .field("hash_iv_load", &self.hash_iv_load())
             .field("result_endian", &self.result_endian())
@@ -125,11 +115,6 @@ impl W {
     #[inline(always)]
     pub fn hash_len_load(&mut self) -> HashLenLoadW<HASH_SETTINGrs> {
         HashLenLoadW::new(self, 8)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<HASH_SETTINGrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///

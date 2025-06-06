@@ -6,26 +6,16 @@ pub type W = crate::W<LAYER0_DECOMP_STATrs>;
 pub type BufMaxDepthR = crate::FieldReader;
 ///Field `BUF_MAX_DEPTH` writer - buf max usage
 pub type BufMaxDepthW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 25, u32>;
 impl R {
     ///Bits 0:6 - buf max usage
     #[inline(always)]
     pub fn buf_max_depth(&self) -> BufMaxDepthR {
         BufMaxDepthR::new((self.bits & 0x7f) as u8)
     }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 7) & 0x01ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LAYER0_DECOMP_STAT")
-            .field("rsvd", &self.rsvd())
             .field("buf_max_depth", &self.buf_max_depth())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn buf_max_depth(&mut self) -> BufMaxDepthW<LAYER0_DECOMP_STATrs> {
         BufMaxDepthW::new(self, 0)
-    }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LAYER0_DECOMP_STATrs> {
-        RsvdW::new(self, 7)
     }
 }
 ///

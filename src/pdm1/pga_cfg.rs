@@ -10,10 +10,6 @@ pub type PgaGainLW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 pub type PgaGainRR = crate::FieldReader;
 ///Field `PGA_GAIN_R` writer - right channel gain control , the range is -15dB~45dB. Resolution is 0.5dB/LSB
 pub type PgaGainRW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 18, u32>;
 impl R {
     ///Bits 0:6 - left channel gain control , the range is -15dB~45dB. Resolution is 0.5dB/LSB
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn pga_gain_r(&self) -> PgaGainRR {
         PgaGainRR::new(((self.bits >> 7) & 0x7f) as u8)
     }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 14) & 0x0003_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PGA_CFG")
-            .field("rsvd", &self.rsvd())
             .field("pga_gain_r", &self.pga_gain_r())
             .field("pga_gain_l", &self.pga_gain_l())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn pga_gain_r(&mut self) -> PgaGainRW<PGA_CFGrs> {
         PgaGainRW::new(self, 7)
-    }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PGA_CFGrs> {
-        RsvdW::new(self, 14)
     }
 }
 ///

@@ -10,10 +10,6 @@ pub type RxEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type RxIntfSelR = crate::BitReader;
 ///Field `RX_INTF_SEL` writer - 1: select external rx interface 0: select internal apb rx interface
 pub type RxIntfSelW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - 1: enable 0: disable
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn rx_intf_sel(&self) -> RxIntfSelR {
         RxIntfSelR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AUDIO_RX_FUNC_EN")
-            .field("rsvd", &self.rsvd())
             .field("rx_intf_sel", &self.rx_intf_sel())
             .field("rx_en", &self.rx_en())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn rx_intf_sel(&mut self) -> RxIntfSelW<AUDIO_RX_FUNC_ENrs> {
         RxIntfSelW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AUDIO_RX_FUNC_ENrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///

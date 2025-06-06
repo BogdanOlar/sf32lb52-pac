@@ -6,26 +6,16 @@ pub type W = crate::W<TARGETrs>;
 pub type SleepTargetR = crate::FieldReader<u32>;
 ///Field `SLEEP_TARGET` writer - bt sleep time target in cycles of clk_rtc
 pub type SleepTargetW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     ///Bits 0:27 - bt sleep time target in cycles of clk_rtc
     #[inline(always)]
     pub fn sleep_target(&self) -> SleepTargetR {
         SleepTargetR::new(self.bits & 0x0fff_ffff)
     }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 28) & 0x0f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TARGET")
-            .field("rsvd", &self.rsvd())
             .field("sleep_target", &self.sleep_target())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn sleep_target(&mut self) -> SleepTargetW<TARGETrs> {
         SleepTargetW::new(self, 0)
-    }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TARGETrs> {
-        RsvdW::new(self, 28)
     }
 }
 ///BT sleep time target

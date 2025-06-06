@@ -6,26 +6,16 @@ pub type W = crate::W<AUDIO_TX_FORMATrs>;
 pub type PcmDataWidthR = crate::FieldReader;
 ///Field `PCM_DATA_WIDTH` writer - I2S out pcm data width M >= 16, common value: 16, 18, 20, 22, 24
 pub type PcmDataWidthW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 27, u32>;
 impl R {
     ///Bits 0:4 - I2S out pcm data width M >= 16, common value: 16, 18, 20, 22, 24
     #[inline(always)]
     pub fn pcm_data_width(&self) -> PcmDataWidthR {
         PcmDataWidthR::new((self.bits & 0x1f) as u8)
     }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 5) & 0x07ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AUDIO_TX_FORMAT")
-            .field("rsvd", &self.rsvd())
             .field("pcm_data_width", &self.pcm_data_width())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn pcm_data_width(&mut self) -> PcmDataWidthW<AUDIO_TX_FORMATrs> {
         PcmDataWidthW::new(self, 0)
-    }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AUDIO_TX_FORMATrs> {
-        RsvdW::new(self, 5)
     }
 }
 ///

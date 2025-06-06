@@ -10,10 +10,6 @@ pub type HpbgVddpswEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type HpbgEnR = crate::BitReader;
 ///Field `HPBG_EN` writer - reserved for debug
 pub type HpbgEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `DC_TR` reader - reserved for debug
 pub type DcTrR = crate::FieldReader;
 ///Field `DC_TR` writer - reserved for debug
@@ -26,10 +22,6 @@ pub type DcBrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type DcMrR = crate::FieldReader;
 ///Field `DC_MR` writer - reserved for debug
 pub type DcMrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bit 0 - reserved for debug
     #[inline(always)]
@@ -40,11 +32,6 @@ impl R {
     #[inline(always)]
     pub fn hpbg_en(&self) -> HpbgEnR {
         HpbgEnR::new(((self.bits >> 1) & 1) != 0)
-    }
-    ///Bits 2:3
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 2) & 3) as u8)
     }
     ///Bits 4:6 - reserved for debug
     #[inline(always)]
@@ -61,20 +48,13 @@ impl R {
     pub fn dc_mr(&self) -> DcMrR {
         DcMrR::new(((self.bits >> 10) & 7) as u8)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CAU2_CR")
-            .field("rsvd", &self.rsvd())
             .field("dc_mr", &self.dc_mr())
             .field("dc_br", &self.dc_br())
             .field("dc_tr", &self.dc_tr())
-            .field("rsvd2", &self.rsvd2())
             .field("hpbg_en", &self.hpbg_en())
             .field("hpbg_vddpsw_en", &self.hpbg_vddpsw_en())
             .finish()
@@ -91,11 +71,6 @@ impl W {
     pub fn hpbg_en(&mut self) -> HpbgEnW<CAU2_CRrs> {
         HpbgEnW::new(self, 1)
     }
-    ///Bits 2:3
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CAU2_CRrs> {
-        Rsvd2W::new(self, 2)
-    }
     ///Bits 4:6 - reserved for debug
     #[inline(always)]
     pub fn dc_tr(&mut self) -> DcTrW<CAU2_CRrs> {
@@ -110,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn dc_mr(&mut self) -> DcMrW<CAU2_CRrs> {
         DcMrW::new(self, 10)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CAU2_CRrs> {
-        RsvdW::new(self, 13)
     }
 }
 ///CAU2 Control Register

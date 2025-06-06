@@ -10,10 +10,6 @@ pub type DispW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ExtcominR = crate::BitReader;
 ///Field `EXTCOMIN` writer - jdi serial interface extcomin control
 pub type ExtcominW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - jdi serial interface disp control
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn extcomin(&self) -> ExtcominR {
         ExtcominR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("JDI_SER_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("extcomin", &self.extcomin())
             .field("disp", &self.disp())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn extcomin(&mut self) -> ExtcominW<JDI_SER_CTRLrs> {
         ExtcominW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<JDI_SER_CTRLrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///

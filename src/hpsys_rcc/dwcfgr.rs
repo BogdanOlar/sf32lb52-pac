@@ -10,10 +10,6 @@ pub type HdivW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 pub type Pdiv1R = crate::FieldReader;
 ///Field `PDIV1` writer - pclk_hpsys = hclk_hpsys / (2^PDIV1) during deep wfi
 pub type Pdiv1W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `PDIV2` reader - pclk2_hpsys = hclk_hpsys / (2^PDIV2) during deep wfi
 pub type Pdiv2R = crate::FieldReader;
 ///Field `PDIV2` writer - pclk2_hpsys = hclk_hpsys / (2^PDIV2) during deep wfi
@@ -30,10 +26,6 @@ pub type SelSysW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type SelSysLpR = crate::BitReader;
 ///Field `SEL_SYS_LP` writer - select clk_hpsys source during deep WFI 0 - selected by SEL_SYS; 1 - clk_wdt
 pub type SelSysLpW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 ///Field `DLL1_OUT_EN` reader - for debug only
 pub type Dll1OutEnR = crate::BitReader;
 ///Field `DLL1_OUT_EN` writer - for debug only
@@ -50,10 +42,6 @@ pub type Dll2OutEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Dll2OutRstbR = crate::BitReader;
 ///Field `DLL2_OUT_RSTB` writer - for debug only
 pub type Dll2OutRstbW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     ///Bits 0:7 - hclk_hpsys = clk_hpsys / HDIV during deep wfi
     #[inline(always)]
@@ -64,11 +52,6 @@ impl R {
     #[inline(always)]
     pub fn pdiv1(&self) -> Pdiv1R {
         Pdiv1R::new(((self.bits >> 8) & 7) as u8)
-    }
-    ///Bit 11
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 11) & 1) != 0)
     }
     ///Bits 12:14 - pclk2_hpsys = hclk_hpsys / (2^PDIV2) during deep wfi
     #[inline(always)]
@@ -90,11 +73,6 @@ impl R {
     pub fn sel_sys_lp(&self) -> SelSysLpR {
         SelSysLpR::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bits 19:23
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 19) & 0x1f) as u8)
-    }
     ///Bit 24 - for debug only
     #[inline(always)]
     pub fn dll1_out_en(&self) -> Dll1OutEnR {
@@ -115,26 +93,18 @@ impl R {
     pub fn dll2_out_rstb(&self) -> Dll2OutRstbR {
         Dll2OutRstbR::new(((self.bits >> 27) & 1) != 0)
     }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 28) & 0x0f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DWCFGR")
-            .field("rsvd", &self.rsvd())
             .field("dll2_out_rstb", &self.dll2_out_rstb())
             .field("dll2_out_en", &self.dll2_out_en())
             .field("dll1_out_rstb", &self.dll1_out_rstb())
             .field("dll1_out_en", &self.dll1_out_en())
-            .field("rsvd2", &self.rsvd2())
             .field("sel_sys_lp", &self.sel_sys_lp())
             .field("sel_sys", &self.sel_sys())
             .field("div_en", &self.div_en())
             .field("pdiv2", &self.pdiv2())
-            .field("rsvd3", &self.rsvd3())
             .field("pdiv1", &self.pdiv1())
             .field("hdiv", &self.hdiv())
             .finish()
@@ -150,11 +120,6 @@ impl W {
     #[inline(always)]
     pub fn pdiv1(&mut self) -> Pdiv1W<DWCFGRrs> {
         Pdiv1W::new(self, 8)
-    }
-    ///Bit 11
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<DWCFGRrs> {
-        Rsvd3W::new(self, 11)
     }
     ///Bits 12:14 - pclk2_hpsys = hclk_hpsys / (2^PDIV2) during deep wfi
     #[inline(always)]
@@ -176,11 +141,6 @@ impl W {
     pub fn sel_sys_lp(&mut self) -> SelSysLpW<DWCFGRrs> {
         SelSysLpW::new(self, 18)
     }
-    ///Bits 19:23
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<DWCFGRrs> {
-        Rsvd2W::new(self, 19)
-    }
     ///Bit 24 - for debug only
     #[inline(always)]
     pub fn dll1_out_en(&mut self) -> Dll1OutEnW<DWCFGRrs> {
@@ -200,11 +160,6 @@ impl W {
     #[inline(always)]
     pub fn dll2_out_rstb(&mut self) -> Dll2OutRstbW<DWCFGRrs> {
         Dll2OutRstbW::new(self, 27)
-    }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DWCFGRrs> {
-        RsvdW::new(self, 28)
     }
 }
 ///Deep WFI mode Clock Configuration Register

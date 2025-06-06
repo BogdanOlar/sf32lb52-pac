@@ -6,10 +6,6 @@ pub type W = crate::W<BDTRrs>;
 pub type DtgR = crate::FieldReader<u16>;
 ///Field `DTG` writer - Dead-time generator setup This bit-field, together with DTPSC, defines the duration of the dead-time inserted between the complementary outputs. If DTG=0, dead-time is disabled. Example if tCLK=8.33ns (120MHz), dead-time possible values are: 16.67ns to 8533.33 ns by 8.33 ns steps if DTPSC=0, 266.67ns to 136.53 us by 133.33 ns steps if DTPSC=1 This bit cannot be modified as long as LOCK level 1 has been programmed.
 pub type DtgW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::BitReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `DTPSC` reader - Dead-time prescaler This bit-field enables dead-time prescaler. 0: dead-time is tCLK*(DTG+1) if DTG is not zero 1: dead-time is tCLK*(DTG+1)*16 if DTG is not zero This bit cannot be modified as long as LOCK level 1 has been programmed.
 pub type DtpscR = crate::BitReader;
 ///Field `DTPSC` writer - Dead-time prescaler This bit-field enables dead-time prescaler. 0: dead-time is tCLK*(DTG+1) if DTG is not zero 1: dead-time is tCLK*(DTG+1)*16 if DTG is not zero This bit cannot be modified as long as LOCK level 1 has been programmed.
@@ -75,11 +71,6 @@ impl R {
     #[inline(always)]
     pub fn dtg(&self) -> DtgR {
         DtgR::new((self.bits & 0x03ff) as u16)
-    }
-    ///Bit 10
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 10) & 1) != 0)
     }
     ///Bit 11 - Dead-time prescaler This bit-field enables dead-time prescaler. 0: dead-time is tCLK*(DTG+1) if DTG is not zero 1: dead-time is tCLK*(DTG+1)*16 if DTG is not zero This bit cannot be modified as long as LOCK level 1 has been programmed.
     #[inline(always)]
@@ -175,7 +166,6 @@ impl core::fmt::Debug for R {
             .field("bkp", &self.bkp())
             .field("bke", &self.bke())
             .field("dtpsc", &self.dtpsc())
-            .field("rsvd", &self.rsvd())
             .field("dtg", &self.dtg())
             .finish()
     }
@@ -185,11 +175,6 @@ impl W {
     #[inline(always)]
     pub fn dtg(&mut self) -> DtgW<BDTRrs> {
         DtgW::new(self, 0)
-    }
-    ///Bit 10
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<BDTRrs> {
-        RsvdW::new(self, 10)
     }
     ///Bit 11 - Dead-time prescaler This bit-field enables dead-time prescaler. 0: dead-time is tCLK*(DTG+1) if DTG is not zero 1: dead-time is tCLK*(DTG+1)*16 if DTG is not zero This bit cannot be modified as long as LOCK level 1 has been programmed.
     #[inline(always)]

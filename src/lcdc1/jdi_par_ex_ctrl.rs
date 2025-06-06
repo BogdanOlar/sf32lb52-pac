@@ -6,10 +6,6 @@ pub type W = crate::W<JDI_PAR_EX_CTRLrs>;
 pub type MaxCntR = crate::FieldReader<u32>;
 ///Field `MAX_CNT` writer - VCOM/FRP/XFRP max counter
 pub type MaxCntW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 ///Field `CNT_EN` reader - VCOM/FRP/XFRP counter enable
 pub type CntEnR = crate::BitReader;
 ///Field `CNT_EN` writer - VCOM/FRP/XFRP counter enable
@@ -31,11 +27,6 @@ impl R {
     #[inline(always)]
     pub fn max_cnt(&self) -> MaxCntR {
         MaxCntR::new(self.bits & 0x00ff_ffff)
-    }
-    ///Bits 24:27
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0x0f) as u8)
     }
     ///Bit 28 - VCOM/FRP/XFRP counter enable
     #[inline(always)]
@@ -65,7 +56,6 @@ impl core::fmt::Debug for R {
             .field("frp", &self.frp())
             .field("xfrp", &self.xfrp())
             .field("cnt_en", &self.cnt_en())
-            .field("rsvd", &self.rsvd())
             .field("max_cnt", &self.max_cnt())
             .finish()
     }
@@ -75,11 +65,6 @@ impl W {
     #[inline(always)]
     pub fn max_cnt(&mut self) -> MaxCntW<JDI_PAR_EX_CTRLrs> {
         MaxCntW::new(self, 0)
-    }
-    ///Bits 24:27
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<JDI_PAR_EX_CTRLrs> {
-        RsvdW::new(self, 24)
     }
     ///Bit 28 - VCOM/FRP/XFRP counter enable
     #[inline(always)]

@@ -22,10 +22,6 @@ pub type TempTrimW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type Clk96mEnR = crate::BitReader;
 ///Field `CLK96M_EN` writer -
 pub type Clk96mEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `CLKHP_EN` reader -
 pub type ClkhpEnR = crate::BitReader;
 ///Field `CLKHP_EN` writer -
@@ -50,10 +46,6 @@ pub type ClklpSelW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type ClklpStrR = crate::FieldReader;
 ///Field `CLKLP_STR` writer -
 pub type ClklpStrW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::BitReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `DLY` reader - number of cycles for BG ready. 0 - one cycle of CLK_LP; 1 - two cycles of CLK_LP
 pub type DlyR = crate::BitReader;
 ///Field `DLY` writer - number of cycles for BG ready. 0 - one cycle of CLK_LP; 1 - two cycles of CLK_LP
@@ -83,11 +75,6 @@ impl R {
     #[inline(always)]
     pub fn clk96m_en(&self) -> Clk96mEnR {
         Clk96mEnR::new(((self.bits >> 18) & 1) != 0)
-    }
-    ///Bit 19
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 19) & 1) != 0)
     }
     ///Bit 20
     #[inline(always)]
@@ -119,11 +106,6 @@ impl R {
     pub fn clklp_str(&self) -> ClklpStrR {
         ClklpStrR::new(((self.bits >> 28) & 3) as u8)
     }
-    ///Bit 30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 30) & 1) != 0)
-    }
     ///Bit 31 - number of cycles for BG ready. 0 - one cycle of CLK_LP; 1 - two cycles of CLK_LP
     #[inline(always)]
     pub fn dly(&self) -> DlyR {
@@ -134,14 +116,12 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("HRC_CR")
             .field("dly", &self.dly())
-            .field("rsvd", &self.rsvd())
             .field("clklp_str", &self.clklp_str())
             .field("clklp_sel", &self.clklp_sel())
             .field("clklp_en", &self.clklp_en())
             .field("clkhp_str", &self.clkhp_str())
             .field("clkhp_sel", &self.clkhp_sel())
             .field("clkhp_en", &self.clkhp_en())
-            .field("rsvd2", &self.rsvd2())
             .field("clk96m_en", &self.clk96m_en())
             .field("temp_trim", &self.temp_trim())
             .field("freq_trim", &self.freq_trim())
@@ -176,11 +156,6 @@ impl W {
     pub fn clk96m_en(&mut self) -> Clk96mEnW<HRC_CRrs> {
         Clk96mEnW::new(self, 18)
     }
-    ///Bit 19
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<HRC_CRrs> {
-        Rsvd2W::new(self, 19)
-    }
     ///Bit 20
     #[inline(always)]
     pub fn clkhp_en(&mut self) -> ClkhpEnW<HRC_CRrs> {
@@ -210,11 +185,6 @@ impl W {
     #[inline(always)]
     pub fn clklp_str(&mut self) -> ClklpStrW<HRC_CRrs> {
         ClklpStrW::new(self, 28)
-    }
-    ///Bit 30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<HRC_CRrs> {
-        RsvdW::new(self, 30)
     }
     ///Bit 31 - number of cycles for BG ready. 0 - one cycle of CLK_LP; 1 - two cycles of CLK_LP
     #[inline(always)]

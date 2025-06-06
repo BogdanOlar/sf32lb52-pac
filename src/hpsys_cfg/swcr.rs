@@ -6,26 +6,16 @@ pub type W = crate::W<SWCRrs>;
 pub type SwselR = crate::BitReader;
 ///Field `SWSEL` writer - reserved for debug
 pub type SwselW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 impl R {
     ///Bit 0 - reserved for debug
     #[inline(always)]
     pub fn swsel(&self) -> SwselR {
         SwselR::new((self.bits & 1) != 0)
     }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 1) & 0x7fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SWCR")
-            .field("rsvd", &self.rsvd())
             .field("swsel", &self.swsel())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn swsel(&mut self) -> SwselW<SWCRrs> {
         SwselW::new(self, 0)
-    }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SWCRrs> {
-        RsvdW::new(self, 1)
     }
 }
 ///SW Control Register

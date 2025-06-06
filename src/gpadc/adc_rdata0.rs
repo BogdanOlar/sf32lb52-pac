@@ -6,46 +6,26 @@ pub type W = crate::W<ADC_RDATA0rs>;
 pub type Slot0RdataR = crate::FieldReader<u16>;
 ///Field `SLOT0_RDATA` writer -
 pub type Slot0RdataW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 ///Field `SLOT1_RDATA` reader -
 pub type Slot1RdataR = crate::FieldReader<u16>;
 ///Field `SLOT1_RDATA` writer -
 pub type Slot1RdataW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     ///Bits 0:11
     #[inline(always)]
     pub fn slot0_rdata(&self) -> Slot0RdataR {
         Slot0RdataR::new((self.bits & 0x0fff) as u16)
     }
-    ///Bits 12:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 12) & 0x0f) as u8)
-    }
     ///Bits 16:27
     #[inline(always)]
     pub fn slot1_rdata(&self) -> Slot1RdataR {
         Slot1RdataR::new(((self.bits >> 16) & 0x0fff) as u16)
     }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 28) & 0x0f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ADC_RDATA0")
-            .field("rsvd", &self.rsvd())
             .field("slot1_rdata", &self.slot1_rdata())
-            .field("rsvd2", &self.rsvd2())
             .field("slot0_rdata", &self.slot0_rdata())
             .finish()
     }
@@ -56,20 +36,10 @@ impl W {
     pub fn slot0_rdata(&mut self) -> Slot0RdataW<ADC_RDATA0rs> {
         Slot0RdataW::new(self, 0)
     }
-    ///Bits 12:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ADC_RDATA0rs> {
-        Rsvd2W::new(self, 12)
-    }
     ///Bits 16:27
     #[inline(always)]
     pub fn slot1_rdata(&mut self) -> Slot1RdataW<ADC_RDATA0rs> {
         Slot1RdataW::new(self, 16)
-    }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ADC_RDATA0rs> {
-        RsvdW::new(self, 28)
     }
 }
 ///ADC Read Data0

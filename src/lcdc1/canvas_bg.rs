@@ -30,10 +30,6 @@ pub type LbBypassW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type HMirrorR = crate::BitReader;
 ///Field `H_MIRROR` writer - set 1 to do horizontal mirror for output image
 pub type HMirrorW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     ///Bits 0:7 - blue color
     #[inline(always)]
@@ -70,16 +66,10 @@ impl R {
     pub fn h_mirror(&self) -> HMirrorR {
         HMirrorR::new(((self.bits >> 27) & 1) != 0)
     }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 28) & 0x0f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CANVAS_BG")
-            .field("rsvd", &self.rsvd())
             .field("h_mirror", &self.h_mirror())
             .field("lb_bypass", &self.lb_bypass())
             .field("all_blending_bypass", &self.all_blending_bypass())
@@ -125,11 +115,6 @@ impl W {
     #[inline(always)]
     pub fn h_mirror(&mut self) -> HMirrorW<CANVAS_BGrs> {
         HMirrorW::new(self, 27)
-    }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CANVAS_BGrs> {
-        RsvdW::new(self, 28)
     }
 }
 ///

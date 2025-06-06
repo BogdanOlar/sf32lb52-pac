@@ -30,10 +30,6 @@ pub type PfDf0W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type PfPr0R = crate::FieldReader;
 ///Field `PF_PR0` writer -
 pub type PfPr0W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 ///Field `DONE_REQ1` reader -
 pub type DoneReq1R = crate::BitReader;
 ///Field `DONE_REQ1` writer -
@@ -62,10 +58,6 @@ pub type PfDf1W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type PfPr1R = crate::FieldReader;
 ///Field `PF_PR1` writer -
 pub type PfPr1W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -102,11 +94,6 @@ impl R {
     pub fn pf_pr0(&self) -> PfPr0R {
         PfPr0R::new(((self.bits >> 9) & 7) as u8)
     }
-    ///Bits 12:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 12) & 0x0f) as u8)
-    }
     ///Bit 16
     #[inline(always)]
     pub fn done_req1(&self) -> DoneReq1R {
@@ -142,16 +129,10 @@ impl R {
     pub fn pf_pr1(&self) -> PfPr1R {
         PfPr1R::new(((self.bits >> 25) & 7) as u8)
     }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 28) & 0x0f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("OL_STAT")
-            .field("rsvd", &self.rsvd())
             .field("pf_pr1", &self.pf_pr1())
             .field("pf_df1", &self.pf_df1())
             .field("data_conv1", &self.data_conv1())
@@ -159,7 +140,6 @@ impl core::fmt::Debug for R {
             .field("prefetch_out1", &self.prefetch_out1())
             .field("prefetch_hold1", &self.prefetch_hold1())
             .field("done_req1", &self.done_req1())
-            .field("rsvd2", &self.rsvd2())
             .field("pf_pr0", &self.pf_pr0())
             .field("pf_df0", &self.pf_df0())
             .field("data_conv0", &self.data_conv0())
@@ -206,11 +186,6 @@ impl W {
     pub fn pf_pr0(&mut self) -> PfPr0W<OL_STATrs> {
         PfPr0W::new(self, 9)
     }
-    ///Bits 12:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<OL_STATrs> {
-        Rsvd2W::new(self, 12)
-    }
     ///Bit 16
     #[inline(always)]
     pub fn done_req1(&mut self) -> DoneReq1W<OL_STATrs> {
@@ -245,11 +220,6 @@ impl W {
     #[inline(always)]
     pub fn pf_pr1(&mut self) -> PfPr1W<OL_STATrs> {
         PfPr1W::new(self, 25)
-    }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<OL_STATrs> {
-        RsvdW::new(self, 28)
     }
 }
 ///

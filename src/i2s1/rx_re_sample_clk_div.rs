@@ -6,26 +6,16 @@ pub type W = crate::W<RX_RE_SAMPLE_CLK_DIVrs>;
 pub type RsDutyR = crate::FieldReader<u16>;
 ///Field `RS_DUTY` writer - source PCM sample clock duty cycle: 250 for 48K FS 272 for 44.1K FS 375 for 32K FS 500 for 24K FS 544 for 22.05K FS 750 for 16K FS 1000 for 12K FS 1088 for 11.025K FS 1500 for 8K FS Note: 1)duty_cycle = 12M/FS
 pub type RsDutyW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bits 0:12 - source PCM sample clock duty cycle: 250 for 48K FS 272 for 44.1K FS 375 for 32K FS 500 for 24K FS 544 for 22.05K FS 750 for 16K FS 1000 for 12K FS 1088 for 11.025K FS 1500 for 8K FS Note: 1)duty_cycle = 12M/FS
     #[inline(always)]
     pub fn rs_duty(&self) -> RsDutyR {
         RsDutyR::new((self.bits & 0x1fff) as u16)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("RX_RE_SAMPLE_CLK_DIV")
-            .field("rsvd", &self.rsvd())
             .field("rs_duty", &self.rs_duty())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn rs_duty(&mut self) -> RsDutyW<RX_RE_SAMPLE_CLK_DIVrs> {
         RsDutyW::new(self, 0)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RX_RE_SAMPLE_CLK_DIVrs> {
-        RsvdW::new(self, 13)
     }
 }
 ///

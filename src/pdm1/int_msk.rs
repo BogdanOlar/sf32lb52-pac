@@ -10,10 +10,6 @@ pub type IntMaskRW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type IntMaskLR = crate::BitReader;
 ///Field `INT_MASK_L` writer - 1:disable left channel irq to system; 0: enable left channel irq to system
 pub type IntMaskLW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - 1:disable right channel irq to system; 0: enable right channel irq to system
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn int_mask_l(&self) -> IntMaskLR {
         IntMaskLR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("INT_MSK")
-            .field("rsvd", &self.rsvd())
             .field("int_mask_l", &self.int_mask_l())
             .field("int_mask_r", &self.int_mask_r())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn int_mask_l(&mut self) -> IntMaskLW<INT_MSKrs> {
         IntMaskLW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<INT_MSKrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///

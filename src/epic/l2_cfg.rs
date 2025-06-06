@@ -14,10 +14,6 @@ pub type AlphaSelW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AlphaR = crate::FieldReader;
 ///Field `ALPHA` writer - layer alpha value
 pub type AlphaW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `FILTER_EN` reader - layer color filter enable
 pub type FilterEnR = crate::BitReader;
 ///Field `FILTER_EN` writer - layer color filter enable
@@ -54,11 +50,6 @@ impl R {
     pub fn alpha(&self) -> AlphaR {
         AlphaR::new(((self.bits >> 5) & 0xff) as u8)
     }
-    ///Bits 13:14
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 13) & 3) as u8)
-    }
     ///Bit 15 - layer color filter enable
     #[inline(always)]
     pub fn filter_en(&self) -> FilterEnR {
@@ -93,7 +84,6 @@ impl core::fmt::Debug for R {
             .field("prefetch_en", &self.prefetch_en())
             .field("width", &self.width())
             .field("filter_en", &self.filter_en())
-            .field("rsvd", &self.rsvd())
             .field("alpha", &self.alpha())
             .field("alpha_sel", &self.alpha_sel())
             .field("format", &self.format())
@@ -115,11 +105,6 @@ impl W {
     #[inline(always)]
     pub fn alpha(&mut self) -> AlphaW<L2_CFGrs> {
         AlphaW::new(self, 5)
-    }
-    ///Bits 13:14
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<L2_CFGrs> {
-        RsvdW::new(self, 13)
     }
     ///Bit 15 - layer color filter enable
     #[inline(always)]

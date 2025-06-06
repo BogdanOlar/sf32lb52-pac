@@ -6,26 +6,16 @@ pub type W = crate::W<AEZIP_CTRLrs>;
 pub type AezipCtrlR = crate::BitReader;
 ///Field `AEZIP_CTRL` writer - AEZIP ctrl
 pub type AezipCtrlW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 impl R {
     ///Bit 0 - AEZIP ctrl
     #[inline(always)]
     pub fn aezip_ctrl(&self) -> AezipCtrlR {
         AezipCtrlR::new((self.bits & 1) != 0)
     }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 1) & 0x7fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AEZIP_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("aezip_ctrl", &self.aezip_ctrl())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn aezip_ctrl(&mut self) -> AezipCtrlW<AEZIP_CTRLrs> {
         AezipCtrlW::new(self, 0)
-    }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AEZIP_CTRLrs> {
-        RsvdW::new(self, 1)
     }
 }
 ///AEZIP ctrl

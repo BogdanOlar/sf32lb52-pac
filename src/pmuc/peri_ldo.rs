@@ -14,10 +14,6 @@ pub type Ldo18VrefSelW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type Ldo18PdR = crate::BitReader;
 ///Field `LDO18_PD` writer -
 pub type Ldo18PdW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::FieldReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `EN_VDD33_LDO2` reader -
 pub type EnVdd33Ldo2R = crate::BitReader;
 ///Field `EN_VDD33_LDO2` writer -
@@ -30,10 +26,6 @@ pub type Vdd33Ldo2SetVoutW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type Vdd33Ldo2PdR = crate::BitReader;
 ///Field `VDD33_LDO2_PD` writer -
 pub type Vdd33Ldo2PdW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `EN_VDD33_LDO3` reader -
 pub type EnVdd33Ldo3R = crate::BitReader;
 ///Field `EN_VDD33_LDO3` writer -
@@ -46,10 +38,6 @@ pub type Vdd33Ldo3SetVoutW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type Vdd33Ldo3PdR = crate::BitReader;
 ///Field `VDD33_LDO3_PD` writer -
 pub type Vdd33Ldo3PdW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -66,11 +54,6 @@ impl R {
     pub fn ldo18_pd(&self) -> Ldo18PdR {
         Ldo18PdR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:7
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 6) & 3) as u8)
-    }
     ///Bit 8
     #[inline(always)]
     pub fn en_vdd33_ldo2(&self) -> EnVdd33Ldo2R {
@@ -85,11 +68,6 @@ impl R {
     #[inline(always)]
     pub fn vdd33_ldo2_pd(&self) -> Vdd33Ldo2PdR {
         Vdd33Ldo2PdR::new(((self.bits >> 13) & 1) != 0)
-    }
-    ///Bits 14:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 14) & 3) as u8)
     }
     ///Bit 16
     #[inline(always)]
@@ -106,24 +84,16 @@ impl R {
     pub fn vdd33_ldo3_pd(&self) -> Vdd33Ldo3PdR {
         Vdd33Ldo3PdR::new(((self.bits >> 21) & 1) != 0)
     }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 22) & 0x03ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PERI_LDO")
-            .field("rsvd", &self.rsvd())
             .field("vdd33_ldo3_pd", &self.vdd33_ldo3_pd())
             .field("vdd33_ldo3_set_vout", &self.vdd33_ldo3_set_vout())
             .field("en_vdd33_ldo3", &self.en_vdd33_ldo3())
-            .field("rsvd2", &self.rsvd2())
             .field("vdd33_ldo2_pd", &self.vdd33_ldo2_pd())
             .field("vdd33_ldo2_set_vout", &self.vdd33_ldo2_set_vout())
             .field("en_vdd33_ldo2", &self.en_vdd33_ldo2())
-            .field("rsvd3", &self.rsvd3())
             .field("ldo18_pd", &self.ldo18_pd())
             .field("ldo18_vref_sel", &self.ldo18_vref_sel())
             .field("en_ldo18", &self.en_ldo18())
@@ -146,11 +116,6 @@ impl W {
     pub fn ldo18_pd(&mut self) -> Ldo18PdW<PERI_LDOrs> {
         Ldo18PdW::new(self, 5)
     }
-    ///Bits 6:7
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<PERI_LDOrs> {
-        Rsvd3W::new(self, 6)
-    }
     ///Bit 8
     #[inline(always)]
     pub fn en_vdd33_ldo2(&mut self) -> EnVdd33Ldo2W<PERI_LDOrs> {
@@ -166,11 +131,6 @@ impl W {
     pub fn vdd33_ldo2_pd(&mut self) -> Vdd33Ldo2PdW<PERI_LDOrs> {
         Vdd33Ldo2PdW::new(self, 13)
     }
-    ///Bits 14:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<PERI_LDOrs> {
-        Rsvd2W::new(self, 14)
-    }
     ///Bit 16
     #[inline(always)]
     pub fn en_vdd33_ldo3(&mut self) -> EnVdd33Ldo3W<PERI_LDOrs> {
@@ -185,11 +145,6 @@ impl W {
     #[inline(always)]
     pub fn vdd33_ldo3_pd(&mut self) -> Vdd33Ldo3PdW<PERI_LDOrs> {
         Vdd33Ldo3PdW::new(self, 21)
-    }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PERI_LDOrs> {
-        RsvdW::new(self, 22)
     }
 }
 ///Peripherals LDO

@@ -14,10 +14,6 @@ pub type Reserve1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 pub type Reserve2R = crate::FieldReader;
 ///Field `RESERVE2` writer -
 pub type Reserve2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:7
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn reserve2(&self) -> Reserve2R {
         Reserve2R::new(((self.bits >> 16) & 0xff) as u8)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CAU_RSVD")
-            .field("rsvd", &self.rsvd())
             .field("reserve2", &self.reserve2())
             .field("reserve1", &self.reserve1())
             .field("reserve0", &self.reserve0())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn reserve2(&mut self) -> Reserve2W<CAU_RSVDrs> {
         Reserve2W::new(self, 16)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CAU_RSVDrs> {
-        RsvdW::new(self, 24)
     }
 }
 ///CAU Reserved Register

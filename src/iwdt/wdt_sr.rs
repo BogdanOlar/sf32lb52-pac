@@ -10,10 +10,6 @@ pub type IntAssertW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type WdtActiveR = crate::BitReader;
 ///Field `WDT_ACTIVE` writer - Watchdog runs when 1, else 0
 pub type WdtActiveW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - Interrupt assert when 1
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn wdt_active(&self) -> WdtActiveR {
         WdtActiveR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("WDT_SR")
-            .field("rsvd", &self.rsvd())
             .field("wdt_active", &self.wdt_active())
             .field("int_assert", &self.int_assert())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn wdt_active(&mut self) -> WdtActiveW<WDT_SRrs> {
         WdtActiveW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<WDT_SRrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///WatchDog Status Register

@@ -18,10 +18,6 @@ pub type BalVolW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type EnR = crate::FieldReader;
 ///Field `EN` writer - LR balance enable: 00: both left and right in full volume 10: left channel balance volume adjustment enable 01: right channel balance volume adjustment enable 11: reserved, still kepp left and right in full volume
 pub type EnW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
     ///Bits 0:3 - Balance volume control: 0000: Reserved, 0001: -1.5dB, 0010: -3.0dB, 0011: -4.5dB, 0100: -6.0dB, 0101: -7.5dB, 0110: -9.0dB, 0111: -10.5dB, 1000: -12dB, 1001: -13.5dB, 1010: -15dB, 1011: -16.5dB, 1100: -18dB, 1101: -19.5dB, 1110: -21dB, 1111: mute Note: 1) bit\[5:0\]
     ///= 101111 for left mute 2) bit\[5:0\]
@@ -37,16 +33,10 @@ impl R {
     pub fn en(&self) -> EnR {
         EnR::new(((self.bits >> 4) & 3) as u8)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TX_LR_BAL_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("en", &self.en())
             .field("bal_vol", &self.bal_vol())
             .finish()
@@ -66,11 +56,6 @@ impl W {
     #[inline(always)]
     pub fn en(&mut self) -> EnW<TX_LR_BAL_CTRLrs> {
         EnW::new(self, 4)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TX_LR_BAL_CTRLrs> {
-        RsvdW::new(self, 6)
     }
 }
 ///

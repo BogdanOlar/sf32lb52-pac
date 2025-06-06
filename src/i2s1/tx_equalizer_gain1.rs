@@ -26,10 +26,6 @@ pub type Band5GainW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 pub type Band6GainR = crate::FieldReader;
 ///Field `BAND6_GAIN` writer -
 pub type Band6GainW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     ///Bits 0:4
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn band6_gain(&self) -> Band6GainR {
         Band6GainR::new(((self.bits >> 25) & 0x1f) as u8)
     }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 30) & 3) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TX_EQUALIZER_GAIN1")
-            .field("rsvd", &self.rsvd())
             .field("band6_gain", &self.band6_gain())
             .field("band5_gain", &self.band5_gain())
             .field("band4_gain", &self.band4_gain())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn band6_gain(&mut self) -> Band6GainW<TX_EQUALIZER_GAIN1rs> {
         Band6GainW::new(self, 25)
-    }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TX_EQUALIZER_GAIN1rs> {
-        RsvdW::new(self, 30)
     }
 }
 ///

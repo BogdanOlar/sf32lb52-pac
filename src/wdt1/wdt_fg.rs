@@ -18,10 +18,6 @@ pub type SyncFgClrW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SyncFgR = crate::BitReader;
 ///Field `SYNC_FG` writer - 1 indicates one transition from system clk to wdt clk has complicated
 pub type SyncFgW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0 - SinglePulse/A pulse to clear reset flag
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn sync_fg(&self) -> SyncFgR {
         SyncFgR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("WDT_FG")
-            .field("rsvd", &self.rsvd())
             .field("sync_fg", &self.sync_fg())
             .field("sync_fg_clr", &self.sync_fg_clr())
             .field("rst_fg", &self.rst_fg())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn sync_fg(&mut self) -> SyncFgW<WDT_FGrs> {
         SyncFgW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<WDT_FGrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///WatchDog Flag Register

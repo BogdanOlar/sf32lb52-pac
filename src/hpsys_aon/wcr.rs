@@ -2,10 +2,6 @@
 pub type R = crate::R<WCRrs>;
 ///Register `WCR` writer
 pub type W = crate::W<WCRrs>;
-///Field `RSVD3` reader - Note: for RTC/IO(PA)/LPTIM/PMUC, clear the wakeup status directly in the orignal module
-pub type Rsvd3R = crate::FieldReader;
-///Field `RSVD3` writer - Note: for RTC/IO(PA)/LPTIM/PMUC, clear the wakeup status directly in the orignal module
-pub type Rsvd3W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 ///Field `PIN0` reader - Write 1 to clear PA24 wakeup source. Only valid if PIN wakeup is configured as edge trigger
 pub type Pin0R = crate::BitReader;
 ///Field `PIN0` writer - Write 1 to clear PA24 wakeup source. Only valid if PIN wakeup is configured as edge trigger
@@ -22,10 +18,6 @@ pub type Pin2W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Pin3R = crate::BitReader;
 ///Field `PIN3` writer - Write 1 to clear PA27 wakeup source. Only valid if PIN wakeup is configured as edge trigger
 pub type Pin3W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `PIN10` reader - Write 1 to clear PA34 wakeup source. Only valid if PIN wakeup is configured as edge trigger
 pub type Pin10R = crate::BitReader;
 ///Field `PIN10` writer - Write 1 to clear PA34 wakeup source. Only valid if PIN wakeup is configured as edge trigger
@@ -70,20 +62,11 @@ pub type Pin19W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Pin20R = crate::BitReader;
 ///Field `PIN20` writer - Write 1 to clear PA44 wakeup source. Only valid if PIN wakeup is configured as edge trigger
 pub type Pin20W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `AON` reader - Write 1 to clear the AON wakeup IRQ status
 pub type AonR = crate::BitReader;
 ///Field `AON` writer - Write 1 to clear the AON wakeup IRQ status
 pub type AonW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    ///Bits 0:7 - Note: for RTC/IO(PA)/LPTIM/PMUC, clear the wakeup status directly in the orignal module
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new((self.bits & 0xff) as u8)
-    }
     ///Bit 8 - Write 1 to clear PA24 wakeup source. Only valid if PIN wakeup is configured as edge trigger
     #[inline(always)]
     pub fn pin0(&self) -> Pin0R {
@@ -103,11 +86,6 @@ impl R {
     #[inline(always)]
     pub fn pin3(&self) -> Pin3R {
         Pin3R::new(((self.bits >> 11) & 1) != 0)
-    }
-    ///Bits 12:17
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 12) & 0x3f) as u8)
     }
     ///Bit 18 - Write 1 to clear PA34 wakeup source. Only valid if PIN wakeup is configured as edge trigger
     #[inline(always)]
@@ -164,11 +142,6 @@ impl R {
     pub fn pin20(&self) -> Pin20R {
         Pin20R::new(((self.bits >> 28) & 1) != 0)
     }
-    ///Bits 29:30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 29) & 3) as u8)
-    }
     ///Bit 31 - Write 1 to clear the AON wakeup IRQ status
     #[inline(always)]
     pub fn aon(&self) -> AonR {
@@ -179,7 +152,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("WCR")
             .field("aon", &self.aon())
-            .field("rsvd", &self.rsvd())
             .field("pin20", &self.pin20())
             .field("pin19", &self.pin19())
             .field("pin18", &self.pin18())
@@ -191,21 +163,14 @@ impl core::fmt::Debug for R {
             .field("pin12", &self.pin12())
             .field("pin11", &self.pin11())
             .field("pin10", &self.pin10())
-            .field("rsvd2", &self.rsvd2())
             .field("pin3", &self.pin3())
             .field("pin2", &self.pin2())
             .field("pin1", &self.pin1())
             .field("pin0", &self.pin0())
-            .field("rsvd3", &self.rsvd3())
             .finish()
     }
 }
 impl W {
-    ///Bits 0:7 - Note: for RTC/IO(PA)/LPTIM/PMUC, clear the wakeup status directly in the orignal module
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<WCRrs> {
-        Rsvd3W::new(self, 0)
-    }
     ///Bit 8 - Write 1 to clear PA24 wakeup source. Only valid if PIN wakeup is configured as edge trigger
     #[inline(always)]
     pub fn pin0(&mut self) -> Pin0W<WCRrs> {
@@ -225,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn pin3(&mut self) -> Pin3W<WCRrs> {
         Pin3W::new(self, 11)
-    }
-    ///Bits 12:17
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<WCRrs> {
-        Rsvd2W::new(self, 12)
     }
     ///Bit 18 - Write 1 to clear PA34 wakeup source. Only valid if PIN wakeup is configured as edge trigger
     #[inline(always)]
@@ -285,11 +245,6 @@ impl W {
     #[inline(always)]
     pub fn pin20(&mut self) -> Pin20W<WCRrs> {
         Pin20W::new(self, 28)
-    }
-    ///Bits 29:30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<WCRrs> {
-        RsvdW::new(self, 29)
     }
     ///Bit 31 - Write 1 to clear the AON wakeup IRQ status
     #[inline(always)]

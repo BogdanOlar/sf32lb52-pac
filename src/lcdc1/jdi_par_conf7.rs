@@ -10,10 +10,6 @@ pub type HckDlyW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 pub type DpModeR = crate::BitReader;
 ///Field `DP_MODE` writer - double pixel mode. Some jdi parallel screens use large pixel+small pixel structure. Set this bit to 1 to support this structure.
 pub type DpModeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
 impl R {
     ///Bits 0:15 - jdi parallel interface HST to HCK delay
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn dp_mode(&self) -> DpModeR {
         DpModeR::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bits 17:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 17) & 0x7fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("JDI_PAR_CONF7")
-            .field("rsvd", &self.rsvd())
             .field("dp_mode", &self.dp_mode())
             .field("hck_dly", &self.hck_dly())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn dp_mode(&mut self) -> DpModeW<JDI_PAR_CONF7rs> {
         DpModeW::new(self, 16)
-    }
-    ///Bits 17:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<JDI_PAR_CONF7rs> {
-        RsvdW::new(self, 17)
     }
 }
 ///

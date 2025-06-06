@@ -18,10 +18,6 @@ pub type DpiSdW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DpiUcR = crate::BitReader;
 ///Field `DPI_UC` writer - dpi update config
 pub type DpiUcW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0 - dpi interface enable
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn dpi_uc(&self) -> DpiUcR {
         DpiUcR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DPI_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("dpi_uc", &self.dpi_uc())
             .field("dpi_sd", &self.dpi_sd())
             .field("dpi_cm", &self.dpi_cm())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn dpi_uc(&mut self) -> DpiUcW<DPI_CTRLrs> {
         DpiUcW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DPI_CTRLrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///

@@ -18,10 +18,6 @@ pub type PrecStatW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type FetchStatR = crate::FieldReader;
 ///Field `FETCH_STAT` writer - fetch status
 pub type FetchStatW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 impl R {
     ///Bits 0:2 - pre calc fifo count
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn fetch_stat(&self) -> FetchStatR {
         FetchStatR::new(((self.bits >> 9) & 7) as u8)
     }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 12) & 0x000f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CANVAS_STAT1")
-            .field("rsvd", &self.rsvd())
             .field("fetch_stat", &self.fetch_stat())
             .field("prec_stat", &self.prec_stat())
             .field("postc_stat", &self.postc_stat())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn fetch_stat(&mut self) -> FetchStatW<CANVAS_STAT1rs> {
         FetchStatW::new(self, 9)
-    }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CANVAS_STAT1rs> {
-        RsvdW::new(self, 12)
     }
 }
 ///

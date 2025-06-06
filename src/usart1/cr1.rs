@@ -6,10 +6,6 @@ pub type W = crate::W<CR1rs>;
 pub type UeR = crate::BitReader;
 ///Field `UE` writer - USART enable 0: disabled 1: enabled
 pub type UeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD9` reader -
-pub type Rsvd9R = crate::BitReader;
-///Field `RSVD9` writer -
-pub type Rsvd9W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `RE` reader - Receiver enable 0: receiver is disabled 1: receiver is enabled
 pub type ReR = crate::BitReader;
 ///Field `RE` writer - Receiver enable 0: receiver is disabled 1: receiver is enabled
@@ -46,56 +42,19 @@ pub type PsW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PceR = crate::BitReader;
 ///Field `PCE` writer - Parity check enable. If enabled, parity bit is inserted at the MSB position 0: parity check disabled 1: parity check enabled
 pub type PceW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD8` reader -
-pub type Rsvd8R = crate::BitReader;
-///Field `RSVD8` writer -
-pub type Rsvd8W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD7` reader -
-pub type Rsvd7R = crate::BitReader;
-///Field `RSVD7` writer -
-pub type Rsvd7W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD6` reader -
-pub type Rsvd6R = crate::BitReader;
-///Field `RSVD6` writer -
-pub type Rsvd6W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `OVER8` reader - Oversampling mode 0: Oversampling by 16 1: Oversampling by 8
 pub type Over8R = crate::BitReader;
 ///Field `OVER8` writer - Oversampling mode 0: Oversampling by 16 1: Oversampling by 8
 pub type Over8W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD5` reader -
-pub type Rsvd5R = crate::FieldReader;
-///Field `RSVD5` writer -
-pub type Rsvd5W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-///Field `RSVD4` reader -
-pub type Rsvd4R = crate::FieldReader;
-///Field `RSVD4` writer -
-pub type Rsvd4W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `M` reader - Mode bit indicates the length of the packet, including data bits and parity. Stop bits not included. 0: 6 bits (e.g. 6 data bits + no parity bit) 1: 7 bits (e.g. 6 data bits + 1 parity bit) 2: 8 bits (e.g. 7 data bits + 1 parity bit, or 6 data bits + 2 parity bits) 3: 9 bits (e.g. 8 data bits + 1 parity bit, or 7 data bits + 2 parity bits)
 pub type MR = crate::FieldReader;
 ///Field `M` writer - Mode bit indicates the length of the packet, including data bits and parity. Stop bits not included. 0: 6 bits (e.g. 6 data bits + no parity bit) 1: 7 bits (e.g. 6 data bits + 1 parity bit) 2: 8 bits (e.g. 7 data bits + 1 parity bit, or 6 data bits + 2 parity bits) 3: 9 bits (e.g. 8 data bits + 1 parity bit, or 7 data bits + 2 parity bits)
 pub type MW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     ///Bit 0 - USART enable 0: disabled 1: enabled
     #[inline(always)]
     pub fn ue(&self) -> UeR {
         UeR::new((self.bits & 1) != 0)
-    }
-    ///Bit 1
-    #[inline(always)]
-    pub fn rsvd9(&self) -> Rsvd9R {
-        Rsvd9R::new(((self.bits >> 1) & 1) != 0)
     }
     ///Bit 2 - Receiver enable 0: receiver is disabled 1: receiver is enabled
     #[inline(always)]
@@ -142,70 +101,22 @@ impl R {
     pub fn pce(&self) -> PceR {
         PceR::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bit 11
-    #[inline(always)]
-    pub fn rsvd8(&self) -> Rsvd8R {
-        Rsvd8R::new(((self.bits >> 11) & 1) != 0)
-    }
-    ///Bit 12
-    #[inline(always)]
-    pub fn rsvd7(&self) -> Rsvd7R {
-        Rsvd7R::new(((self.bits >> 12) & 1) != 0)
-    }
-    ///Bit 13
-    #[inline(always)]
-    pub fn rsvd6(&self) -> Rsvd6R {
-        Rsvd6R::new(((self.bits >> 13) & 1) != 0)
-    }
     ///Bit 14 - Oversampling mode 0: Oversampling by 16 1: Oversampling by 8
     #[inline(always)]
     pub fn over8(&self) -> Over8R {
         Over8R::new(((self.bits >> 14) & 1) != 0)
-    }
-    ///Bits 15:19
-    #[inline(always)]
-    pub fn rsvd5(&self) -> Rsvd5R {
-        Rsvd5R::new(((self.bits >> 15) & 0x1f) as u8)
-    }
-    ///Bits 20:24
-    #[inline(always)]
-    pub fn rsvd4(&self) -> Rsvd4R {
-        Rsvd4R::new(((self.bits >> 20) & 0x1f) as u8)
-    }
-    ///Bit 25
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 25) & 1) != 0)
-    }
-    ///Bit 26
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 26) & 1) != 0)
     }
     ///Bits 27:28 - Mode bit indicates the length of the packet, including data bits and parity. Stop bits not included. 0: 6 bits (e.g. 6 data bits + no parity bit) 1: 7 bits (e.g. 6 data bits + 1 parity bit) 2: 8 bits (e.g. 7 data bits + 1 parity bit, or 6 data bits + 2 parity bits) 3: 9 bits (e.g. 8 data bits + 1 parity bit, or 7 data bits + 2 parity bits)
     #[inline(always)]
     pub fn m(&self) -> MR {
         MR::new(((self.bits >> 27) & 3) as u8)
     }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 29) & 7) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CR1")
-            .field("rsvd", &self.rsvd())
             .field("m", &self.m())
-            .field("rsvd2", &self.rsvd2())
-            .field("rsvd3", &self.rsvd3())
-            .field("rsvd4", &self.rsvd4())
-            .field("rsvd5", &self.rsvd5())
             .field("over8", &self.over8())
-            .field("rsvd6", &self.rsvd6())
-            .field("rsvd7", &self.rsvd7())
-            .field("rsvd8", &self.rsvd8())
             .field("pce", &self.pce())
             .field("ps", &self.ps())
             .field("peie", &self.peie())
@@ -215,7 +126,6 @@ impl core::fmt::Debug for R {
             .field("idleie", &self.idleie())
             .field("te", &self.te())
             .field("re", &self.re())
-            .field("rsvd9", &self.rsvd9())
             .field("ue", &self.ue())
             .finish()
     }
@@ -225,11 +135,6 @@ impl W {
     #[inline(always)]
     pub fn ue(&mut self) -> UeW<CR1rs> {
         UeW::new(self, 0)
-    }
-    ///Bit 1
-    #[inline(always)]
-    pub fn rsvd9(&mut self) -> Rsvd9W<CR1rs> {
-        Rsvd9W::new(self, 1)
     }
     ///Bit 2 - Receiver enable 0: receiver is disabled 1: receiver is enabled
     #[inline(always)]
@@ -276,55 +181,15 @@ impl W {
     pub fn pce(&mut self) -> PceW<CR1rs> {
         PceW::new(self, 10)
     }
-    ///Bit 11
-    #[inline(always)]
-    pub fn rsvd8(&mut self) -> Rsvd8W<CR1rs> {
-        Rsvd8W::new(self, 11)
-    }
-    ///Bit 12
-    #[inline(always)]
-    pub fn rsvd7(&mut self) -> Rsvd7W<CR1rs> {
-        Rsvd7W::new(self, 12)
-    }
-    ///Bit 13
-    #[inline(always)]
-    pub fn rsvd6(&mut self) -> Rsvd6W<CR1rs> {
-        Rsvd6W::new(self, 13)
-    }
     ///Bit 14 - Oversampling mode 0: Oversampling by 16 1: Oversampling by 8
     #[inline(always)]
     pub fn over8(&mut self) -> Over8W<CR1rs> {
         Over8W::new(self, 14)
     }
-    ///Bits 15:19
-    #[inline(always)]
-    pub fn rsvd5(&mut self) -> Rsvd5W<CR1rs> {
-        Rsvd5W::new(self, 15)
-    }
-    ///Bits 20:24
-    #[inline(always)]
-    pub fn rsvd4(&mut self) -> Rsvd4W<CR1rs> {
-        Rsvd4W::new(self, 20)
-    }
-    ///Bit 25
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<CR1rs> {
-        Rsvd3W::new(self, 25)
-    }
-    ///Bit 26
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CR1rs> {
-        Rsvd2W::new(self, 26)
-    }
     ///Bits 27:28 - Mode bit indicates the length of the packet, including data bits and parity. Stop bits not included. 0: 6 bits (e.g. 6 data bits + no parity bit) 1: 7 bits (e.g. 6 data bits + 1 parity bit) 2: 8 bits (e.g. 7 data bits + 1 parity bit, or 6 data bits + 2 parity bits) 3: 9 bits (e.g. 8 data bits + 1 parity bit, or 7 data bits + 2 parity bits)
     #[inline(always)]
     pub fn m(&mut self) -> MW<CR1rs> {
         MW::new(self, 27)
-    }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CR1rs> {
-        RsvdW::new(self, 29)
     }
 }
 ///Control Register 1

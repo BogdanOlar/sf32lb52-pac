@@ -14,10 +14,6 @@ pub type DcBrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type DcMrR = crate::FieldReader;
 ///Field `DC_MR` writer - DC test Macro select
 pub type DcMrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bits 0:2 - DC test point select
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn dc_mr(&self) -> DcMrR {
         DcMrR::new(((self.bits >> 6) & 7) as u8)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("COMMON_CFG")
-            .field("rsvd", &self.rsvd())
             .field("dc_mr", &self.dc_mr())
             .field("dc_br", &self.dc_br())
             .field("dc_tr", &self.dc_tr())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn dc_mr(&mut self) -> DcMrW<COMMON_CFGrs> {
         DcMrW::new(self, 6)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<COMMON_CFGrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///

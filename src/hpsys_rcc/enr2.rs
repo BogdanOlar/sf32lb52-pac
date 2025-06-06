@@ -14,26 +14,14 @@ pub type Mpi1W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Mpi2R = crate::BitReader;
 ///Field `MPI2` writer - write 1 to set module enable, write 0 to disable module
 pub type Mpi2W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD8` reader -
-pub type Rsvd8R = crate::BitReader;
-///Field `RSVD8` writer -
-pub type Rsvd8W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `SDMMC1` reader - write 1 to set module enable, write 0 to disable module
 pub type Sdmmc1R = crate::BitReader;
 ///Field `SDMMC1` writer - write 1 to set module enable, write 0 to disable module
 pub type Sdmmc1W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD7` reader -
-pub type Rsvd7R = crate::BitReader;
-///Field `RSVD7` writer -
-pub type Rsvd7W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `USBC` reader - write 1 to set module enable, write 0 to disable module
 pub type UsbcR = crate::BitReader;
 ///Field `USBC` writer - write 1 to set module enable, write 0 to disable module
 pub type UsbcW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD6` reader -
-pub type Rsvd6R = crate::BitReader;
-///Field `RSVD6` writer -
-pub type Rsvd6W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `I2C3` reader - write 1 to set module enable, write 0 to disable module
 pub type I2c3R = crate::BitReader;
 ///Field `I2C3` writer - write 1 to set module enable, write 0 to disable module
@@ -42,18 +30,10 @@ pub type I2c3W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Atim1R = crate::BitReader;
 ///Field `ATIM1` writer - write 1 to set module enable, write 0 to disable module
 pub type Atim1W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD5` reader -
-pub type Rsvd5R = crate::FieldReader;
-///Field `RSVD5` writer -
-pub type Rsvd5W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `USART3` reader - write 1 to set module enable, write 0 to disable module
 pub type Usart3R = crate::BitReader;
 ///Field `USART3` writer - write 1 to set module enable, write 0 to disable module
 pub type Usart3W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD4` reader -
-pub type Rsvd4R = crate::FieldReader;
-///Field `RSVD4` writer -
-pub type Rsvd4W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `AUDCODEC` reader - write 1 to set module enable, write 0 to disable module
 pub type AudcodecR = crate::BitReader;
 ///Field `AUDCODEC` writer - write 1 to set module enable, write 0 to disable module
@@ -62,10 +42,6 @@ pub type AudcodecW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AudprcR = crate::BitReader;
 ///Field `AUDPRC` writer - write 1 to set module enable, write 0 to disable module
 pub type AudprcW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `GPADC` reader - write 1 to set module enable, write 0 to disable module
 pub type GpadcR = crate::BitReader;
 ///Field `GPADC` writer - write 1 to set module enable, write 0 to disable module
@@ -74,18 +50,10 @@ pub type GpadcW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TsenR = crate::BitReader;
 ///Field `TSEN` writer - write 1 to set module enable, write 0 to disable module
 pub type TsenW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `I2C4` reader - write 1 to set module enable, write 0 to disable module
 pub type I2c4R = crate::BitReader;
 ///Field `I2C4` writer - write 1 to set module enable, write 0 to disable module
 pub type I2c4W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bit 0 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
@@ -102,30 +70,15 @@ impl R {
     pub fn mpi2(&self) -> Mpi2R {
         Mpi2R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 3
-    #[inline(always)]
-    pub fn rsvd8(&self) -> Rsvd8R {
-        Rsvd8R::new(((self.bits >> 3) & 1) != 0)
-    }
     ///Bit 4 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
     pub fn sdmmc1(&self) -> Sdmmc1R {
         Sdmmc1R::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 5
-    #[inline(always)]
-    pub fn rsvd7(&self) -> Rsvd7R {
-        Rsvd7R::new(((self.bits >> 5) & 1) != 0)
-    }
     ///Bit 6 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
     pub fn usbc(&self) -> UsbcR {
         UsbcR::new(((self.bits >> 6) & 1) != 0)
-    }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd6(&self) -> Rsvd6R {
-        Rsvd6R::new(((self.bits >> 7) & 1) != 0)
     }
     ///Bit 8 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
@@ -137,20 +90,10 @@ impl R {
     pub fn atim1(&self) -> Atim1R {
         Atim1R::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bits 10:11
-    #[inline(always)]
-    pub fn rsvd5(&self) -> Rsvd5R {
-        Rsvd5R::new(((self.bits >> 10) & 3) as u8)
-    }
     ///Bit 12 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
     pub fn usart3(&self) -> Usart3R {
         Usart3R::new(((self.bits >> 12) & 1) != 0)
-    }
-    ///Bits 13:18
-    #[inline(always)]
-    pub fn rsvd4(&self) -> Rsvd4R {
-        Rsvd4R::new(((self.bits >> 13) & 0x3f) as u8)
     }
     ///Bit 19 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
@@ -162,11 +105,6 @@ impl R {
     pub fn audprc(&self) -> AudprcR {
         AudprcR::new(((self.bits >> 20) & 1) != 0)
     }
-    ///Bit 21
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 21) & 1) != 0)
-    }
     ///Bit 22 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
     pub fn gpadc(&self) -> GpadcR {
@@ -177,43 +115,25 @@ impl R {
     pub fn tsen(&self) -> TsenR {
         TsenR::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bit 24
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 24) & 1) != 0)
-    }
     ///Bit 25 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
     pub fn i2c4(&self) -> I2c4R {
         I2c4R::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ENR2")
-            .field("rsvd", &self.rsvd())
             .field("i2c4", &self.i2c4())
-            .field("rsvd2", &self.rsvd2())
             .field("tsen", &self.tsen())
             .field("gpadc", &self.gpadc())
-            .field("rsvd3", &self.rsvd3())
             .field("audprc", &self.audprc())
             .field("audcodec", &self.audcodec())
-            .field("rsvd4", &self.rsvd4())
             .field("usart3", &self.usart3())
-            .field("rsvd5", &self.rsvd5())
             .field("atim1", &self.atim1())
             .field("i2c3", &self.i2c3())
-            .field("rsvd6", &self.rsvd6())
             .field("usbc", &self.usbc())
-            .field("rsvd7", &self.rsvd7())
             .field("sdmmc1", &self.sdmmc1())
-            .field("rsvd8", &self.rsvd8())
             .field("mpi2", &self.mpi2())
             .field("mpi1", &self.mpi1())
             .field("gpio1", &self.gpio1())
@@ -236,30 +156,15 @@ impl W {
     pub fn mpi2(&mut self) -> Mpi2W<ENR2rs> {
         Mpi2W::new(self, 2)
     }
-    ///Bit 3
-    #[inline(always)]
-    pub fn rsvd8(&mut self) -> Rsvd8W<ENR2rs> {
-        Rsvd8W::new(self, 3)
-    }
     ///Bit 4 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
     pub fn sdmmc1(&mut self) -> Sdmmc1W<ENR2rs> {
         Sdmmc1W::new(self, 4)
     }
-    ///Bit 5
-    #[inline(always)]
-    pub fn rsvd7(&mut self) -> Rsvd7W<ENR2rs> {
-        Rsvd7W::new(self, 5)
-    }
     ///Bit 6 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
     pub fn usbc(&mut self) -> UsbcW<ENR2rs> {
         UsbcW::new(self, 6)
-    }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd6(&mut self) -> Rsvd6W<ENR2rs> {
-        Rsvd6W::new(self, 7)
     }
     ///Bit 8 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
@@ -271,20 +176,10 @@ impl W {
     pub fn atim1(&mut self) -> Atim1W<ENR2rs> {
         Atim1W::new(self, 9)
     }
-    ///Bits 10:11
-    #[inline(always)]
-    pub fn rsvd5(&mut self) -> Rsvd5W<ENR2rs> {
-        Rsvd5W::new(self, 10)
-    }
     ///Bit 12 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
     pub fn usart3(&mut self) -> Usart3W<ENR2rs> {
         Usart3W::new(self, 12)
-    }
-    ///Bits 13:18
-    #[inline(always)]
-    pub fn rsvd4(&mut self) -> Rsvd4W<ENR2rs> {
-        Rsvd4W::new(self, 13)
     }
     ///Bit 19 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
@@ -296,11 +191,6 @@ impl W {
     pub fn audprc(&mut self) -> AudprcW<ENR2rs> {
         AudprcW::new(self, 20)
     }
-    ///Bit 21
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<ENR2rs> {
-        Rsvd3W::new(self, 21)
-    }
     ///Bit 22 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
     pub fn gpadc(&mut self) -> GpadcW<ENR2rs> {
@@ -311,20 +201,10 @@ impl W {
     pub fn tsen(&mut self) -> TsenW<ENR2rs> {
         TsenW::new(self, 23)
     }
-    ///Bit 24
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ENR2rs> {
-        Rsvd2W::new(self, 24)
-    }
     ///Bit 25 - write 1 to set module enable, write 0 to disable module
     #[inline(always)]
     pub fn i2c4(&mut self) -> I2c4W<ENR2rs> {
         I2c4W::new(self, 25)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ENR2rs> {
-        RsvdW::new(self, 26)
     }
 }
 ///Enable Register 2

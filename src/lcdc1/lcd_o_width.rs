@@ -6,26 +6,16 @@ pub type W = crate::W<LCD_O_WIDTHrs>;
 pub type OffsetR = crate::FieldReader<u16>;
 ///Field `OFFSET` writer - AHB RAM address offset for each line
 pub type OffsetW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:15 - AHB RAM address offset for each line
     #[inline(always)]
     pub fn offset(&self) -> OffsetR {
         OffsetR::new((self.bits & 0xffff) as u16)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LCD_O_WIDTH")
-            .field("rsvd", &self.rsvd())
             .field("offset", &self.offset())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn offset(&mut self) -> OffsetW<LCD_O_WIDTHrs> {
         OffsetW::new(self, 0)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LCD_O_WIDTHrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///

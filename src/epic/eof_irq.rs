@@ -10,10 +10,6 @@ pub type IrqCauseW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LineHitCauseR = crate::BitReader;
 ///Field `LINE_HIT_CAUSE` writer - line hit interrupt, can be masked by LINE_IRQ_MASK
 pub type LineHitCauseW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader<u16>;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 ///Field `IRQ_STATUS` reader - raw status of end of frame interrupt
 pub type IrqStatusR = crate::BitReader;
 ///Field `IRQ_STATUS` writer - raw status of end of frame interrupt
@@ -22,10 +18,6 @@ pub type IrqStatusW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LineHitStatusR = crate::BitReader;
 ///Field `LINE_HIT_STATUS` writer - raw status of line hit interrupt
 pub type LineHitStatusW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 impl R {
     ///Bit 0 - end of frame interrupt, can be masked by EOF_IRQ_MASK
     #[inline(always)]
@@ -37,11 +29,6 @@ impl R {
     pub fn line_hit_cause(&self) -> LineHitCauseR {
         LineHitCauseR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 2) & 0x3fff) as u16)
-    }
     ///Bit 16 - raw status of end of frame interrupt
     #[inline(always)]
     pub fn irq_status(&self) -> IrqStatusR {
@@ -52,19 +39,12 @@ impl R {
     pub fn line_hit_status(&self) -> LineHitStatusR {
         LineHitStatusR::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 18) & 0x3fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("EOF_IRQ")
-            .field("rsvd", &self.rsvd())
             .field("line_hit_status", &self.line_hit_status())
             .field("irq_status", &self.irq_status())
-            .field("rsvd2", &self.rsvd2())
             .field("line_hit_cause", &self.line_hit_cause())
             .field("irq_cause", &self.irq_cause())
             .finish()
@@ -81,11 +61,6 @@ impl W {
     pub fn line_hit_cause(&mut self) -> LineHitCauseW<EOF_IRQrs> {
         LineHitCauseW::new(self, 1)
     }
-    ///Bits 2:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<EOF_IRQrs> {
-        Rsvd2W::new(self, 2)
-    }
     ///Bit 16 - raw status of end of frame interrupt
     #[inline(always)]
     pub fn irq_status(&mut self) -> IrqStatusW<EOF_IRQrs> {
@@ -95,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn line_hit_status(&mut self) -> LineHitStatusW<EOF_IRQrs> {
         LineHitStatusW::new(self, 17)
-    }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<EOF_IRQrs> {
-        RsvdW::new(self, 18)
     }
 }
 ///

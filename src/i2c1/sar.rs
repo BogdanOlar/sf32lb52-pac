@@ -6,28 +6,16 @@ pub type W = crate::W<SARrs>;
 pub type AddrR = crate::FieldReader;
 ///Field `ADDR` writer - The seven-bit address to which the I2C responds when in slave-receive mode
 pub type AddrW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 25, u32>;
 impl R {
     ///Bits 0:6 - The seven-bit address to which the I2C responds when in slave-receive mode
     #[inline(always)]
     pub fn addr(&self) -> AddrR {
         AddrR::new((self.bits & 0x7f) as u8)
     }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 7) & 0x01ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SAR")
-            .field("rsvd", &self.rsvd())
-            .field("addr", &self.addr())
-            .finish()
+        f.debug_struct("SAR").field("addr", &self.addr()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn addr(&mut self) -> AddrW<SARrs> {
         AddrW::new(self, 0)
-    }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SARrs> {
-        RsvdW::new(self, 7)
     }
 }
 ///Slave Address Register

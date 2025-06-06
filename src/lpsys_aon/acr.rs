@@ -18,10 +18,6 @@ pub type PwrReqW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ExtpwrReqR = crate::BitReader;
 ///Field `EXTPWR_REQ` writer - for debug only
 pub type ExtpwrReqW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 ///Field `HRC48_RDY` reader - Indicate hrc48 is ready
 pub type Hrc48RdyR = crate::BitReader;
 ///Field `HRC48_RDY` writer - Indicate hrc48 is ready
@@ -51,11 +47,6 @@ impl R {
     pub fn extpwr_req(&self) -> ExtpwrReqR {
         ExtpwrReqR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:29
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x03ff_ffff)
-    }
     ///Bit 30 - Indicate hrc48 is ready
     #[inline(always)]
     pub fn hrc48_rdy(&self) -> Hrc48RdyR {
@@ -72,7 +63,6 @@ impl core::fmt::Debug for R {
         f.debug_struct("ACR")
             .field("hxt48_rdy", &self.hxt48_rdy())
             .field("hrc48_rdy", &self.hrc48_rdy())
-            .field("rsvd", &self.rsvd())
             .field("extpwr_req", &self.extpwr_req())
             .field("pwr_req", &self.pwr_req())
             .field("hxt48_req", &self.hxt48_req())
@@ -100,11 +90,6 @@ impl W {
     #[inline(always)]
     pub fn extpwr_req(&mut self) -> ExtpwrReqW<ACRrs> {
         ExtpwrReqW::new(self, 3)
-    }
-    ///Bits 4:29
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ACRrs> {
-        RsvdW::new(self, 4)
     }
     ///Bit 30 - Indicate hrc48 is ready
     #[inline(always)]

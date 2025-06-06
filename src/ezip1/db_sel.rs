@@ -42,10 +42,6 @@ pub type DbSelR = crate::FieldReader<u16>;
 ///0:ezip_on 1:para_val bit\[0\]
 ///0:ezip_int 1:para_req
 pub type DbSelW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:15 - bit\[15\]
     ///0:line_first 1:out_buf_en\[1\]
@@ -70,16 +66,10 @@ impl R {
     pub fn db_sel(&self) -> DbSelR {
         DbSelR::new((self.bits & 0xffff) as u16)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DB_SEL")
-            .field("rsvd", &self.rsvd())
             .field("db_sel", &self.db_sel())
             .finish()
     }
@@ -107,11 +97,6 @@ impl W {
     #[inline(always)]
     pub fn db_sel(&mut self) -> DbSelW<DB_SELrs> {
         DbSelW::new(self, 0)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DB_SELrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///ezip decoder debug sel

@@ -22,10 +22,6 @@ pub type GenRandNumStopW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type GenRandNumSuspendR = crate::BitReader;
 ///Field `GEN_RAND_NUM_SUSPEND` writer - Set 1 to suspend random number generation and update. Set 0 to recover the process.
 pub type GenRandNumSuspendW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 27, u32>;
 impl R {
     ///Bit 0 - write 1 to trigger the random seed generation engine
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn gen_rand_num_suspend(&self) -> GenRandNumSuspendR {
         GenRandNumSuspendR::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 5) & 0x07ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CTRL")
-            .field("rsvd", &self.rsvd())
             .field("gen_rand_num_suspend", &self.gen_rand_num_suspend())
             .field("gen_rand_num_stop", &self.gen_rand_num_stop())
             .field("gen_seed_stop", &self.gen_seed_stop())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn gen_rand_num_suspend(&mut self) -> GenRandNumSuspendW<CTRLrs> {
         GenRandNumSuspendW::new(self, 4)
-    }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CTRLrs> {
-        RsvdW::new(self, 5)
     }
 }
 ///

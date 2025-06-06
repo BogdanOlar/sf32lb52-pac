@@ -18,10 +18,6 @@ pub type RdTrigW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LcdBusyR = crate::BitReader;
 ///Field `LCD_BUSY` writer - LCD/SPI LCD interface is busy for single access
 pub type LcdBusyW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0 - LCD access type, this bit could affect all LCD interface including SPI, parellel and AHB 1'b0: command 1'b1: data
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn lcd_busy(&self) -> LcdBusyR {
         LcdBusyR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LCD_SINGLE")
-            .field("rsvd", &self.rsvd())
             .field("lcd_busy", &self.lcd_busy())
             .field("rd_trig", &self.rd_trig())
             .field("wr_trig", &self.wr_trig())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn lcd_busy(&mut self) -> LcdBusyW<LCD_SINGLErs> {
         LcdBusyW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LCD_SINGLErs> {
-        RsvdW::new(self, 4)
     }
 }
 ///

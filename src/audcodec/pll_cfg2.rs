@@ -42,10 +42,6 @@ pub type SelLfVcinW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type EnLfVcinR = crate::BitReader;
 ///Field `EN_LF_VCIN` writer - enable vcin for vco
 pub type EnLfVcinW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 impl R {
     ///Bits 0:1 - mmd stg
     #[inline(always)]
@@ -97,16 +93,10 @@ impl R {
     pub fn en_lf_vcin(&self) -> EnLfVcinR {
         EnLfVcinR::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bits 19:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 19) & 0x1fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PLL_CFG2")
-            .field("rsvd", &self.rsvd())
             .field("en_lf_vcin", &self.en_lf_vcin())
             .field("sel_lf_vcin", &self.sel_lf_vcin())
             .field("en_lf_tstbuf", &self.en_lf_tstbuf())
@@ -170,11 +160,6 @@ impl W {
     #[inline(always)]
     pub fn en_lf_vcin(&mut self) -> EnLfVcinW<PLL_CFG2rs> {
         EnLfVcinW::new(self, 18)
-    }
-    ///Bits 19:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PLL_CFG2rs> {
-        RsvdW::new(self, 19)
     }
 }
 ///

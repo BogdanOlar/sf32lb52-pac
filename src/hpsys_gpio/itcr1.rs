@@ -6,28 +6,16 @@ pub type W = crate::W<ITCR1rs>;
 pub type ItcR = crate::FieldReader<u16>;
 ///Field `ITC` writer - set 1 for level-sensitive interrupt mode of corresponding GPIO\[44:32\]
 pub type ItcW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bits 0:12 - set 1 for level-sensitive interrupt mode of corresponding GPIO\[44:32\]
     #[inline(always)]
     pub fn itc(&self) -> ItcR {
         ItcR::new((self.bits & 0x1fff) as u16)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ITCR1")
-            .field("rsvd", &self.rsvd())
-            .field("itc", &self.itc())
-            .finish()
+        f.debug_struct("ITCR1").field("itc", &self.itc()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn itc(&mut self) -> ItcW<ITCR1rs> {
         ItcW::new(self, 0)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ITCR1rs> {
-        RsvdW::new(self, 13)
     }
 }
 ///Interrupt Type Clear Register

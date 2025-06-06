@@ -22,10 +22,6 @@ pub type DwW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 pub type TrackFlagR = crate::BitReader;
 ///Field `TRACK_FLAG` writer - 0: stereo 1: mono
 pub type TrackFlagW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
     ///Bits 0:4 - tx source pcm data width N(N>=8) common value is 8,13,14,16,18,20,22,24 This data width indicate the tx fifo output data width. When writing to tx fifo, please refer to following format: Mono 8 bit: fifo_data\[31:0\]
     ///= {L3,L2,L1,L0}, each word contains 4 samples, so four samples need read one word Stereo 8 bit: fifo_data\[31:0\]
@@ -43,16 +39,10 @@ impl R {
     pub fn track_flag(&self) -> TrackFlagR {
         TrackFlagR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TX_PCM_FORMAT")
-            .field("rsvd", &self.rsvd())
             .field("track_flag", &self.track_flag())
             .field("dw", &self.dw())
             .finish()
@@ -74,11 +64,6 @@ impl W {
     #[inline(always)]
     pub fn track_flag(&mut self) -> TrackFlagW<TX_PCM_FORMATrs> {
         TrackFlagW::new(self, 5)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TX_PCM_FORMATrs> {
-        RsvdW::new(self, 6)
     }
 }
 ///

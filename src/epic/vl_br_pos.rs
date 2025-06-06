@@ -6,46 +6,26 @@ pub type W = crate::W<VL_BR_POSrs>;
 pub type X1R = crate::FieldReader<u16>;
 ///Field `X1` writer - Coordinate X-value
 pub type X1W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `Y1` reader - Coordingate Y-value
 pub type Y1R = crate::FieldReader<u16>;
 ///Field `Y1` writer - Coordingate Y-value
 pub type Y1W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bits 0:9 - Coordinate X-value
     #[inline(always)]
     pub fn x1(&self) -> X1R {
         X1R::new((self.bits & 0x03ff) as u16)
     }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 10) & 0x3f) as u8)
-    }
     ///Bits 16:25 - Coordingate Y-value
     #[inline(always)]
     pub fn y1(&self) -> Y1R {
         Y1R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("VL_BR_POS")
-            .field("rsvd", &self.rsvd())
             .field("y1", &self.y1())
-            .field("rsvd2", &self.rsvd2())
             .field("x1", &self.x1())
             .finish()
     }
@@ -56,20 +36,10 @@ impl W {
     pub fn x1(&mut self) -> X1W<VL_BR_POSrs> {
         X1W::new(self, 0)
     }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<VL_BR_POSrs> {
-        Rsvd2W::new(self, 10)
-    }
     ///Bits 16:25 - Coordingate Y-value
     #[inline(always)]
     pub fn y1(&mut self) -> Y1W<VL_BR_POSrs> {
         Y1W::new(self, 16)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<VL_BR_POSrs> {
-        RsvdW::new(self, 26)
     }
 }
 ///

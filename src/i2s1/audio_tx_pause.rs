@@ -6,26 +6,16 @@ pub type W = crate::W<AUDIO_TX_PAUSErs>;
 pub type TxPauseR = crate::BitReader;
 ///Field `TX_PAUSE` writer - TX pause control when tx_enable = 1. 1: pause 0: TX work
 pub type TxPauseW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 impl R {
     ///Bit 0 - TX pause control when tx_enable = 1. 1: pause 0: TX work
     #[inline(always)]
     pub fn tx_pause(&self) -> TxPauseR {
         TxPauseR::new((self.bits & 1) != 0)
     }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 1) & 0x7fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AUDIO_TX_PAUSE")
-            .field("rsvd", &self.rsvd())
             .field("tx_pause", &self.tx_pause())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn tx_pause(&mut self) -> TxPauseW<AUDIO_TX_PAUSErs> {
         TxPauseW::new(self, 0)
-    }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AUDIO_TX_PAUSErs> {
-        RsvdW::new(self, 1)
     }
 }
 ///

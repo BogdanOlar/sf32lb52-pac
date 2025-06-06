@@ -6,10 +6,6 @@ pub type W = crate::W<LPIRQrs>;
 pub type Sel0R = crate::FieldReader;
 ///Field `SEL0` writer - select hp2lp0 interrupt source
 pub type Sel0W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `IF0` reader - hp2lp0 interrupt status. Write 1 to clear.
 pub type If0R = crate::BitReader;
 ///Field `IF0` writer - hp2lp0 interrupt status. Write 1 to clear.
@@ -18,28 +14,15 @@ pub type If0W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Sel1R = crate::FieldReader;
 ///Field `SEL1` writer - select hp2lp1 interrupt source
 pub type Sel1W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `IF1` reader - hp2lp1 interrupt status. Write 1 to clear.
 pub type If1R = crate::BitReader;
 ///Field `IF1` writer - hp2lp1 interrupt status. Write 1 to clear.
 pub type If1W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:5 - select hp2lp0 interrupt source
     #[inline(always)]
     pub fn sel0(&self) -> Sel0R {
         Sel0R::new((self.bits & 0x3f) as u8)
-    }
-    ///Bit 6
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 6) & 1) != 0)
     }
     ///Bit 7 - hp2lp0 interrupt status. Write 1 to clear.
     #[inline(always)]
@@ -51,31 +34,18 @@ impl R {
     pub fn sel1(&self) -> Sel1R {
         Sel1R::new(((self.bits >> 8) & 0x3f) as u8)
     }
-    ///Bit 14
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 14) & 1) != 0)
-    }
     ///Bit 15 - hp2lp1 interrupt status. Write 1 to clear.
     #[inline(always)]
     pub fn if1(&self) -> If1R {
         If1R::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LPIRQ")
-            .field("rsvd", &self.rsvd())
             .field("if1", &self.if1())
-            .field("rsvd2", &self.rsvd2())
             .field("sel1", &self.sel1())
             .field("if0", &self.if0())
-            .field("rsvd3", &self.rsvd3())
             .field("sel0", &self.sel0())
             .finish()
     }
@@ -85,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn sel0(&mut self) -> Sel0W<LPIRQrs> {
         Sel0W::new(self, 0)
-    }
-    ///Bit 6
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<LPIRQrs> {
-        Rsvd3W::new(self, 6)
     }
     ///Bit 7 - hp2lp0 interrupt status. Write 1 to clear.
     #[inline(always)]
@@ -101,20 +66,10 @@ impl W {
     pub fn sel1(&mut self) -> Sel1W<LPIRQrs> {
         Sel1W::new(self, 8)
     }
-    ///Bit 14
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<LPIRQrs> {
-        Rsvd2W::new(self, 14)
-    }
     ///Bit 15 - hp2lp1 interrupt status. Write 1 to clear.
     #[inline(always)]
     pub fn if1(&mut self) -> If1W<LPIRQrs> {
         If1W::new(self, 15)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LPIRQrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///Interrupt Selection for LCPU

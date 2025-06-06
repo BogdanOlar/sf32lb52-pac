@@ -10,10 +10,6 @@ pub type BlendOpW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 pub type DisposeOpR = crate::FieldReader;
 ///Field `DISPOSE_OP` writer - AEZIP type of frame area disposal to be done after rendering this frame
 pub type DisposeOpW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:7 - AEZIP type of frame area renndering for this frame
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn dispose_op(&self) -> DisposeOpR {
         DisposeOpR::new(((self.bits >> 8) & 0xff) as u8)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("FRAME_TYPE")
-            .field("rsvd", &self.rsvd())
             .field("dispose_op", &self.dispose_op())
             .field("blend_op", &self.blend_op())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn dispose_op(&mut self) -> DisposeOpW<FRAME_TYPErs> {
         DisposeOpW::new(self, 8)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<FRAME_TYPErs> {
-        RsvdW::new(self, 16)
     }
 }
 ///

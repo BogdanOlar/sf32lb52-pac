@@ -14,10 +14,6 @@ pub type FugW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 pub type FyR = crate::FieldReader<u16>;
 ///Field `FY` writer - YUV Fy coef
 pub type FyW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     ///Bits 0:9 - YUV Fub coef
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn fy(&self) -> FyR {
         FyR::new(((self.bits >> 20) & 0x03ff) as u16)
     }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 30) & 3) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("COEF0")
-            .field("rsvd", &self.rsvd())
             .field("fy", &self.fy())
             .field("fug", &self.fug())
             .field("fub", &self.fub())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn fy(&mut self) -> FyW<COEF0rs> {
         FyW::new(self, 20)
-    }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<COEF0rs> {
-        RsvdW::new(self, 30)
     }
 }
 ///

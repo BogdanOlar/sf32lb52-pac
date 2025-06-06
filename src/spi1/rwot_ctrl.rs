@@ -22,10 +22,6 @@ pub type ClrRwotCycleW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type MaskRwotLastSampleR = crate::BitReader;
 ///Field `MASK_RWOT_LAST_SAMPLE` writer - Mask last_sample_flag in RWOT Mode 1: Mask 0: Unmask
 pub type MaskRwotLastSampleW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 27, u32>;
 impl R {
     ///Bit 0 - Receive Without Transmit 0: Transmit/receive mode 1: Receive without transmit mode
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn mask_rwot_last_sample(&self) -> MaskRwotLastSampleR {
         MaskRwotLastSampleR::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 5) & 0x07ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("RWOT_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("mask_rwot_last_sample", &self.mask_rwot_last_sample())
             .field("clr_rwot_cycle", &self.clr_rwot_cycle())
             .field("set_rwot_cycle", &self.set_rwot_cycle())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn mask_rwot_last_sample(&mut self) -> MaskRwotLastSampleW<RWOT_CTRLrs> {
         MaskRwotLastSampleW::new(self, 4)
-    }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RWOT_CTRLrs> {
-        RsvdW::new(self, 5)
     }
 }
 ///RWOT Control Register

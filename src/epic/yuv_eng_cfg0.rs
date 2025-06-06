@@ -18,10 +18,6 @@ pub type FormatW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type RangeSelR = crate::BitReader;
 ///Field `RANGE_SEL` writer - yuv input range 1'h0: tv range 1'h1: pc range
 pub type RangeSelW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     ///Bits 0:12 - yuv u vector line width, unit is bytes
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn range_sel(&self) -> RangeSelR {
         RangeSelR::new(((self.bits >> 29) & 1) != 0)
     }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 30) & 3) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("YUV_ENG_CFG0")
-            .field("rsvd", &self.rsvd())
             .field("range_sel", &self.range_sel())
             .field("format", &self.format())
             .field("width_y", &self.width_y())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn range_sel(&mut self) -> RangeSelW<YUV_ENG_CFG0rs> {
         RangeSelW::new(self, 29)
-    }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<YUV_ENG_CFG0rs> {
-        RsvdW::new(self, 30)
     }
 }
 ///

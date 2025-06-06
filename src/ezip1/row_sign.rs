@@ -6,26 +6,16 @@ pub type W = crate::W<ROW_SIGNrs>;
 pub type RowSignR = crate::FieldReader<u16>;
 ///Field `ROW_SIGN` writer - arrived row sign,ezip can generate a interrupt
 pub type RowSignW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:15 - arrived row sign,ezip can generate a interrupt
     #[inline(always)]
     pub fn row_sign(&self) -> RowSignR {
         RowSignR::new((self.bits & 0xffff) as u16)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ROW_SIGN")
-            .field("rsvd", &self.rsvd())
             .field("row_sign", &self.row_sign())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn row_sign(&mut self) -> RowSignW<ROW_SIGNrs> {
         RowSignW::new(self, 0)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ROW_SIGNrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///ezip decoder row sign

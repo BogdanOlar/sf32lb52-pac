@@ -6,26 +6,16 @@ pub type W = crate::W<WDT_ICRrs>;
 pub type IntClrR = crate::BitReader;
 ///Field `INT_CLR` writer - SinglePulse /A pulse to clear interrupt
 pub type IntClrW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 impl R {
     ///Bit 0 - SinglePulse /A pulse to clear interrupt
     #[inline(always)]
     pub fn int_clr(&self) -> IntClrR {
         IntClrR::new((self.bits & 1) != 0)
     }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 1) & 0x7fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("WDT_ICR")
-            .field("rsvd", &self.rsvd())
             .field("int_clr", &self.int_clr())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn int_clr(&mut self) -> IntClrW<WDT_ICRrs> {
         IntClrW::new(self, 0)
-    }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<WDT_ICRrs> {
-        RsvdW::new(self, 1)
     }
 }
 ///WatchDog Interrupt Clear Register

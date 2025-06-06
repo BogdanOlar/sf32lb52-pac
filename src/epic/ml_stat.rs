@@ -26,10 +26,6 @@ pub type MfDfW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type MfPrR = crate::FieldReader;
 ///Field `MF_PR` writer -
 pub type MfPrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn mf_pr(&self) -> MfPrR {
         MfPrR::new(((self.bits >> 7) & 7) as u8)
     }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 10) & 0x003f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ML_STAT")
-            .field("rsvd", &self.rsvd())
             .field("mf_pr", &self.mf_pr())
             .field("mf_df", &self.mf_df())
             .field("prefetch_read", &self.prefetch_read())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn mf_pr(&mut self) -> MfPrW<ML_STATrs> {
         MfPrW::new(self, 7)
-    }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ML_STATrs> {
-        RsvdW::new(self, 10)
     }
 }
 ///

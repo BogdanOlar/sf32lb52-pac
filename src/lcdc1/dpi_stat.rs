@@ -10,10 +10,6 @@ pub type HposW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 pub type HstatR = crate::FieldReader;
 ///Field `HSTAT` writer - horizontal status 0: idle 1: prep 2: hsync 3: hbp 4: hact 5: hfp 6: wait
 pub type HstatW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `VPOS` reader - dpi vertical position
 pub type VposR = crate::FieldReader<u16>;
 ///Field `VPOS` writer - dpi vertical position
@@ -29,11 +25,6 @@ impl R {
     pub fn hstat(&self) -> HstatR {
         HstatR::new(((self.bits >> 11) & 7) as u8)
     }
-    ///Bits 14:15
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 14) & 3) as u8)
-    }
     ///Bits 16:31 - dpi vertical position
     #[inline(always)]
     pub fn vpos(&self) -> VposR {
@@ -44,7 +35,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DPI_STAT")
             .field("vpos", &self.vpos())
-            .field("rsvd", &self.rsvd())
             .field("hstat", &self.hstat())
             .field("hpos", &self.hpos())
             .finish()
@@ -60,11 +50,6 @@ impl W {
     #[inline(always)]
     pub fn hstat(&mut self) -> HstatW<DPI_STATrs> {
         HstatW::new(self, 11)
-    }
-    ///Bits 14:15
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DPI_STATrs> {
-        RsvdW::new(self, 14)
     }
     ///Bits 16:31 - dpi vertical position
     #[inline(always)]

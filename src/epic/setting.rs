@@ -14,18 +14,10 @@ pub type LineIrqMaskW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AutoGateEnR = crate::BitReader;
 ///Field `AUTO_GATE_EN` writer - auto clock gating enable
 pub type AutoGateEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader<u16>;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 ///Field `LINE_IRQ_NUM` reader - canvas line hit interrupt line number
 pub type LineIrqNumR = crate::FieldReader<u16>;
 ///Field `LINE_IRQ_NUM` writer - canvas line hit interrupt line number
 pub type LineIrqNumW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bit 0 - end of frame interrupt mask, 0: mask the interrupt
     #[inline(always)]
@@ -42,28 +34,16 @@ impl R {
     pub fn auto_gate_en(&self) -> AutoGateEnR {
         AutoGateEnR::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 3:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 3) & 0x1fff) as u16)
-    }
     ///Bits 16:25 - canvas line hit interrupt line number
     #[inline(always)]
     pub fn line_irq_num(&self) -> LineIrqNumR {
         LineIrqNumR::new(((self.bits >> 16) & 0x03ff) as u16)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SETTING")
-            .field("rsvd", &self.rsvd())
             .field("line_irq_num", &self.line_irq_num())
-            .field("rsvd2", &self.rsvd2())
             .field("auto_gate_en", &self.auto_gate_en())
             .field("line_irq_mask", &self.line_irq_mask())
             .field("eof_irq_mask", &self.eof_irq_mask())
@@ -86,20 +66,10 @@ impl W {
     pub fn auto_gate_en(&mut self) -> AutoGateEnW<SETTINGrs> {
         AutoGateEnW::new(self, 2)
     }
-    ///Bits 3:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<SETTINGrs> {
-        Rsvd2W::new(self, 3)
-    }
     ///Bits 16:25 - canvas line hit interrupt line number
     #[inline(always)]
     pub fn line_irq_num(&mut self) -> LineIrqNumW<SETTINGrs> {
         LineIrqNumW::new(self, 16)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SETTINGrs> {
-        RsvdW::new(self, 26)
     }
 }
 ///

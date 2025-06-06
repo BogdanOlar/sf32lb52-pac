@@ -26,10 +26,6 @@ pub type ForceGpioW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SysclkSwbtR = crate::BitReader;
 ///Field `SYSCLK_SWBT` writer - If set to 1, clk_lpsys will: switch from clk_hrc48 to clk_hxt48 when MAC active; switch from clk_hxt48 to clk_hrc48 when MAC sleep;
 pub type SysclkSwbtW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
     ///Bit 0 - for debug only
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn sysclk_swbt(&self) -> SysclkSwbtR {
         SysclkSwbtR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DBGR")
-            .field("rsvd", &self.rsvd())
             .field("sysclk_swbt", &self.sysclk_swbt())
             .field("force_gpio", &self.force_gpio())
             .field("force_mac", &self.force_mac())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn sysclk_swbt(&mut self) -> SysclkSwbtW<DBGRrs> {
         SysclkSwbtW::new(self, 5)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DBGRrs> {
-        RsvdW::new(self, 6)
     }
 }
 ///Debug Register

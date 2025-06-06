@@ -10,10 +10,6 @@ pub type RcmdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 pub type WcmdR = crate::FieldReader;
 ///Field `WCMD` writer - AHB write command. During XIP, the AHB write transaction will be translated into this Write Command on memory interface
 pub type WcmdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:7 - AHB read command. During XIP, the AHB read transaction will be translated into this Read Command on memory interface
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn wcmd(&self) -> WcmdR {
         WcmdR::new(((self.bits >> 8) & 0xff) as u8)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("HCMDR")
-            .field("rsvd", &self.rsvd())
             .field("wcmd", &self.wcmd())
             .field("rcmd", &self.rcmd())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn wcmd(&mut self) -> WcmdW<HCMDRrs> {
         WcmdW::new(self, 8)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<HCMDRrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///AHB Command Register

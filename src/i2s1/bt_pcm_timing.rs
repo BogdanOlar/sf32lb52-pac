@@ -14,10 +14,6 @@ pub type SyncFlagW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ClkPolR = crate::BitReader;
 ///Field `CLK_POL` writer - BT PCM master output pcm clock polarity: 0: rising edge for data transmitting, falling edge for data receiving 1: rising edge for data receiving, falling edge for data transmitting
 pub type ClkPolW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
 impl R {
     ///Bit 0 - Serial PCM data bit sequence. 0: MSB first, 1: LSB first
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn clk_pol(&self) -> ClkPolR {
         ClkPolR::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 3) & 0x1fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("BT_PCM_TIMING")
-            .field("rsvd", &self.rsvd())
             .field("clk_pol", &self.clk_pol())
             .field("sync_flag", &self.sync_flag())
             .field("lsb_flag", &self.lsb_flag())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn clk_pol(&mut self) -> ClkPolW<BT_PCM_TIMINGrs> {
         ClkPolW::new(self, 2)
-    }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<BT_PCM_TIMINGrs> {
-        RsvdW::new(self, 3)
     }
 }
 ///

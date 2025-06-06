@@ -22,10 +22,6 @@ pub type HashResetW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AutoGateR = crate::BitReader;
 ///Field `AUTO_GATE` writer - auto clock gating
 pub type AutoGateW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 27, u32>;
 impl R {
     ///Bit 0 - write 1 to trigger the AES_ACC block
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn auto_gate(&self) -> AutoGateR {
         AutoGateR::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 5) & 0x07ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("COMMAND")
-            .field("rsvd", &self.rsvd())
             .field("auto_gate", &self.auto_gate())
             .field("hash_reset", &self.hash_reset())
             .field("hash_start", &self.hash_start())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn auto_gate(&mut self) -> AutoGateW<COMMANDrs> {
         AutoGateW::new(self, 4)
-    }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<COMMANDrs> {
-        RsvdW::new(self, 5)
     }
 }
 ///

@@ -10,10 +10,6 @@ pub type TcphrW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type TcphwR = crate::FieldReader;
 ///Field `TCPHW` writer - For special use by AP 32Mb PSRAM.Reserved-Do not modify
 pub type TcphwW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bits 0:3 - For special use by AP 32Mb PSRAM.Reserved-Do not modify
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn tcphw(&self) -> TcphwR {
         TcphwR::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("APM32CR")
-            .field("rsvd", &self.rsvd())
             .field("tcphw", &self.tcphw())
             .field("tcphr", &self.tcphr())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn tcphw(&mut self) -> TcphwW<APM32CRrs> {
         TcphwW::new(self, 4)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<APM32CRrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///APM32 Control Register

@@ -6,26 +6,16 @@ pub type W = crate::W<RIRrs>;
 pub type RspIndexR = crate::FieldReader;
 ///Field `RSP_INDEX` writer - Response command index
 pub type RspIndexW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
     ///Bits 0:5 - Response command index
     #[inline(always)]
     pub fn rsp_index(&self) -> RspIndexR {
         RspIndexR::new((self.bits & 0x3f) as u8)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("RIR")
-            .field("rsvd", &self.rsvd())
             .field("rsp_index", &self.rsp_index())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn rsp_index(&mut self) -> RspIndexW<RIRrs> {
         RspIndexW::new(self, 0)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RIRrs> {
-        RsvdW::new(self, 6)
     }
 }
 ///response command index register

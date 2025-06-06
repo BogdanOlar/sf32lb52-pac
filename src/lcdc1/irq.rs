@@ -30,10 +30,6 @@ pub type JdiParUdrStatW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LineDoneStatR = crate::BitReader;
 ///Field `LINE_DONE_STAT` writer - line process done interrupt, masked by mask register
 pub type LineDoneStatW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader<u16>;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 ///Field `EOF_RAW_STAT` reader - raw status of end of frame interrupt
 pub type EofRawStatR = crate::BitReader;
 ///Field `EOF_RAW_STAT` writer - raw status of end of frame interrupt
@@ -62,10 +58,6 @@ pub type JdiParUdrRawStatW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LineDoneRawStatR = crate::BitReader;
 ///Field `LINE_DONE_RAW_STAT` writer - raw_status of line process done interrupt
 pub type LineDoneRawStatW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 impl R {
     ///Bit 0 - end of frame interrupt, masked by mask register
     #[inline(always)]
@@ -102,11 +94,6 @@ impl R {
     pub fn line_done_stat(&self) -> LineDoneStatR {
         LineDoneStatR::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bits 7:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 7) & 0x01ff) as u16)
-    }
     ///Bit 16 - raw status of end of frame interrupt
     #[inline(always)]
     pub fn eof_raw_stat(&self) -> EofRawStatR {
@@ -142,16 +129,10 @@ impl R {
     pub fn line_done_raw_stat(&self) -> LineDoneRawStatR {
         LineDoneRawStatR::new(((self.bits >> 22) & 1) != 0)
     }
-    ///Bits 23:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 23) & 0x01ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("IRQ")
-            .field("rsvd", &self.rsvd())
             .field("line_done_raw_stat", &self.line_done_raw_stat())
             .field("jdi_par_udr_raw_stat", &self.jdi_par_udr_raw_stat())
             .field("jdi_parl_intr_raw_stat", &self.jdi_parl_intr_raw_stat())
@@ -159,7 +140,6 @@ impl core::fmt::Debug for R {
             .field("dpil_intr_raw_stat", &self.dpil_intr_raw_stat())
             .field("icb_of_raw_stat", &self.icb_of_raw_stat())
             .field("eof_raw_stat", &self.eof_raw_stat())
-            .field("rsvd2", &self.rsvd2())
             .field("line_done_stat", &self.line_done_stat())
             .field("jdi_par_udr_stat", &self.jdi_par_udr_stat())
             .field("jdi_parl_intr_stat", &self.jdi_parl_intr_stat())
@@ -206,11 +186,6 @@ impl W {
     pub fn line_done_stat(&mut self) -> LineDoneStatW<IRQrs> {
         LineDoneStatW::new(self, 6)
     }
-    ///Bits 7:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<IRQrs> {
-        Rsvd2W::new(self, 7)
-    }
     ///Bit 16 - raw status of end of frame interrupt
     #[inline(always)]
     pub fn eof_raw_stat(&mut self) -> EofRawStatW<IRQrs> {
@@ -245,11 +220,6 @@ impl W {
     #[inline(always)]
     pub fn line_done_raw_stat(&mut self) -> LineDoneRawStatW<IRQrs> {
         LineDoneRawStatW::new(self, 22)
-    }
-    ///Bits 23:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<IRQrs> {
-        RsvdW::new(self, 23)
     }
 }
 ///

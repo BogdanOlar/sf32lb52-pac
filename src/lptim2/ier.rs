@@ -18,10 +18,6 @@ pub type OcieW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type EtieR = crate::BitReader;
 ///Field `ETIE` writer - External trigger valid edge Interrupt Enable 0: External trigger interrupt disabled 1: External trigger interrupt enabled
 pub type EtieW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 ///Field `UEWE` reader - Update event Wakeup enable 0: Update event Wakeup disabled 1: Update event Wakeup enabled
 pub type UeweR = crate::BitReader;
 ///Field `UEWE` writer - Update event Wakeup enable 0: Update event Wakeup disabled 1: Update event Wakeup enabled
@@ -34,10 +30,6 @@ pub type OfweW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type OcweR = crate::BitReader;
 ///Field `OCWE` writer - Output compare Wakeup Enable 0: Output compare wakeup disabled 1: Output compare wakeup enabled
 pub type OcweW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 21, u32>;
 impl R {
     ///Bit 0 - Update event interrupt enable 0: Update event interrupt disabled 1: Update event interrupt enabled
     #[inline(always)]
@@ -59,11 +51,6 @@ impl R {
     pub fn etie(&self) -> EtieR {
         EtieR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 4) & 0x0f) as u8)
-    }
     ///Bit 8 - Update event Wakeup enable 0: Update event Wakeup disabled 1: Update event Wakeup enabled
     #[inline(always)]
     pub fn uewe(&self) -> UeweR {
@@ -79,20 +66,13 @@ impl R {
     pub fn ocwe(&self) -> OcweR {
         OcweR::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bits 11:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 11) & 0x001f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("IER")
-            .field("rsvd", &self.rsvd())
             .field("ocwe", &self.ocwe())
             .field("ofwe", &self.ofwe())
             .field("uewe", &self.uewe())
-            .field("rsvd2", &self.rsvd2())
             .field("etie", &self.etie())
             .field("ocie", &self.ocie())
             .field("ofie", &self.ofie())
@@ -121,11 +101,6 @@ impl W {
     pub fn etie(&mut self) -> EtieW<IERrs> {
         EtieW::new(self, 3)
     }
-    ///Bits 4:7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<IERrs> {
-        Rsvd2W::new(self, 4)
-    }
     ///Bit 8 - Update event Wakeup enable 0: Update event Wakeup disabled 1: Update event Wakeup enabled
     #[inline(always)]
     pub fn uewe(&mut self) -> UeweW<IERrs> {
@@ -140,11 +115,6 @@ impl W {
     #[inline(always)]
     pub fn ocwe(&mut self) -> OcweW<IERrs> {
         OcweW::new(self, 10)
-    }
-    ///Bits 11:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<IERrs> {
-        RsvdW::new(self, 11)
     }
 }
 ///LPTIM interrupt and wakeup enable register

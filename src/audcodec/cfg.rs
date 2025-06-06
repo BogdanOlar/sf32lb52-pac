@@ -18,10 +18,6 @@ pub type Dac1kModeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AdcEnDlySelR = crate::FieldReader;
 ///Field `ADC_EN_DLY_SEL` writer - codec adc enable delay count 0: no delay 1: 32 pclk 2: 64 pclk 3: 128 pclk
 pub type AdcEnDlySelW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 27, u32>;
 impl R {
     ///Bit 0 - adc codec enable
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn adc_en_dly_sel(&self) -> AdcEnDlySelR {
         AdcEnDlySelR::new(((self.bits >> 3) & 3) as u8)
     }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 5) & 0x07ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CFG")
-            .field("rsvd", &self.rsvd())
             .field("adc_en_dly_sel", &self.adc_en_dly_sel())
             .field("dac_1k_mode", &self.dac_1k_mode())
             .field("dac_enable", &self.dac_enable())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn adc_en_dly_sel(&mut self) -> AdcEnDlySelW<CFGrs> {
         AdcEnDlySelW::new(self, 3)
-    }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CFGrs> {
-        RsvdW::new(self, 5)
     }
 }
 ///

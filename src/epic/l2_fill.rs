@@ -22,10 +22,6 @@ pub type BgModeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type EndianR = crate::BitReader;
 ///Field `ENDIAN` writer - input 565 data format endian 0: {R\[4:0\], G\[5:3\], G\[2:0\], B\[4:0\]} 1: {G\[2:0\], R\[4:0\], B\[4:0\], G\[5:3\]}
 pub type EndianW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bits 0:7 - background b color
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn endian(&self) -> EndianR {
         EndianR::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("L2_FILL")
-            .field("rsvd", &self.rsvd())
             .field("endian", &self.endian())
             .field("bg_mode", &self.bg_mode())
             .field("bg_r", &self.bg_r())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn endian(&mut self) -> EndianW<L2_FILLrs> {
         EndianW::new(self, 25)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<L2_FILLrs> {
-        RsvdW::new(self, 26)
     }
 }
 ///

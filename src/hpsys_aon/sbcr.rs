@@ -18,10 +18,6 @@ pub type PwrReqW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ExtpwrReqR = crate::BitReader;
 ///Field `EXTPWR_REQ` writer - for debug only
 pub type ExtpwrReqW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `PD_RAM0` reader - for debug only
 pub type PdRam0R = crate::BitReader;
 ///Field `PD_RAM0` writer - for debug only
@@ -34,10 +30,6 @@ pub type PdRam1W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PdRam2R = crate::BitReader;
 ///Field `PD_RAM2` writer - for debug only
 pub type PdRam2W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bit 0 - Request hrc48 in Standby mode
     #[inline(always)]
@@ -59,11 +51,6 @@ impl R {
     pub fn extpwr_req(&self) -> ExtpwrReqR {
         ExtpwrReqR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:5
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 4) & 3) as u8)
-    }
     ///Bit 6 - for debug only
     #[inline(always)]
     pub fn pd_ram0(&self) -> PdRam0R {
@@ -79,20 +66,13 @@ impl R {
     pub fn pd_ram2(&self) -> PdRam2R {
         PdRam2R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SBCR")
-            .field("rsvd", &self.rsvd())
             .field("pd_ram2", &self.pd_ram2())
             .field("pd_ram1", &self.pd_ram1())
             .field("pd_ram0", &self.pd_ram0())
-            .field("rsvd2", &self.rsvd2())
             .field("extpwr_req", &self.extpwr_req())
             .field("pwr_req", &self.pwr_req())
             .field("hxt48_req", &self.hxt48_req())
@@ -121,11 +101,6 @@ impl W {
     pub fn extpwr_req(&mut self) -> ExtpwrReqW<SBCRrs> {
         ExtpwrReqW::new(self, 3)
     }
-    ///Bits 4:5
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<SBCRrs> {
-        Rsvd2W::new(self, 4)
-    }
     ///Bit 6 - for debug only
     #[inline(always)]
     pub fn pd_ram0(&mut self) -> PdRam0W<SBCRrs> {
@@ -140,11 +115,6 @@ impl W {
     #[inline(always)]
     pub fn pd_ram2(&mut self) -> PdRam2W<SBCRrs> {
         PdRam2W::new(self, 8)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SBCRrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///Standby Mode Ctrl Register

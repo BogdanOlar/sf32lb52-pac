@@ -44,10 +44,6 @@ pub type SatDetEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SatDetLenR = crate::FieldReader;
 ///Field `SAT_DET_LEN` writer - adc saturation detect pattern length 2'b00: 16 2'b01: 24 2'b10: 32 2'b11: 48
 pub type SatDetLenW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     ///Bit 0 - adc channel enable
     #[inline(always)]
@@ -100,16 +96,10 @@ impl R {
     pub fn sat_det_len(&self) -> SatDetLenR {
         SatDetLenR::new(((self.bits >> 18) & 3) as u8)
     }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 20) & 0x0fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ADC_CH1_CFG")
-            .field("rsvd", &self.rsvd())
             .field("sat_det_len", &self.sat_det_len())
             .field("sat_det_en", &self.sat_det_en())
             .field("data_format", &self.data_format())
@@ -174,11 +164,6 @@ impl W {
     #[inline(always)]
     pub fn sat_det_len(&mut self) -> SatDetLenW<ADC_CH1_CFGrs> {
         SatDetLenW::new(self, 18)
-    }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ADC_CH1_CFGrs> {
-        RsvdW::new(self, 20)
     }
 }
 ///

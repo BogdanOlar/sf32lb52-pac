@@ -18,10 +18,6 @@ pub type Pin2ModeW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type Pin3ModeR = crate::FieldReader;
 ///Field `PIN3_MODE` writer - mode for wakeup PIN3 (PA27)
 pub type Pin3ModeW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 ///Field `PINOUT_SEL0` reader - for debug only
 pub type PinoutSel0R = crate::FieldReader;
 ///Field `PINOUT_SEL0` writer - for debug only
@@ -55,11 +51,6 @@ impl R {
     pub fn pin3_mode(&self) -> Pin3ModeR {
         Pin3ModeR::new(((self.bits >> 9) & 7) as u8)
     }
-    ///Bits 12:24
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 12) & 0x1fff) as u16)
-    }
     ///Bits 25:27 - for debug only
     #[inline(always)]
     pub fn pinout_sel0(&self) -> PinoutSel0R {
@@ -82,7 +73,6 @@ impl core::fmt::Debug for R {
             .field("gtim_en", &self.gtim_en())
             .field("pinout_sel1", &self.pinout_sel1())
             .field("pinout_sel0", &self.pinout_sel0())
-            .field("rsvd", &self.rsvd())
             .field("pin3_mode", &self.pin3_mode())
             .field("pin2_mode", &self.pin2_mode())
             .field("pin1_mode", &self.pin1_mode())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn pin3_mode(&mut self) -> Pin3ModeW<CR1rs> {
         Pin3ModeW::new(self, 9)
-    }
-    ///Bits 12:24
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CR1rs> {
-        RsvdW::new(self, 12)
     }
     ///Bits 25:27 - for debug only
     #[inline(always)]

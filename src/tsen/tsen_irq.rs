@@ -18,10 +18,6 @@ pub type TsenIrsrW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TsenIsrR = crate::BitReader;
 ///Field `TSEN_ISR` writer -
 pub type TsenIsrW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn tsen_isr(&self) -> TsenIsrR {
         TsenIsrR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TSEN_IRQ")
-            .field("rsvd", &self.rsvd())
             .field("tsen_isr", &self.tsen_isr())
             .field("tsen_irsr", &self.tsen_irsr())
             .field("tsen_imr", &self.tsen_imr())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn tsen_isr(&mut self) -> TsenIsrW<TSEN_IRQrs> {
         TsenIsrW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TSEN_IRQrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///Tsen IRQ Register

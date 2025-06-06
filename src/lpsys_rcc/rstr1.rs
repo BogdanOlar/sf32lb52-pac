@@ -30,10 +30,6 @@ pub type Usart4W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Usart5R = crate::BitReader;
 ///Field `USART5` writer - 0 - no reset; 1 - reset
 pub type Usart5W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD4` reader -
-pub type Rsvd4R = crate::BitReader;
-///Field `RSVD4` writer -
-pub type Rsvd4W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `PTC2` reader - 0 - no reset; 1 - reset
 pub type Ptc2R = crate::BitReader;
 ///Field `PTC2` writer - 0 - no reset; 1 - reset
@@ -46,10 +42,6 @@ pub type Btim3W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Btim4R = crate::BitReader;
 ///Field `BTIM4` writer - 0 - no reset; 1 - reset
 pub type Btim4W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::FieldReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 ///Field `SYSCFG2` reader - 0 - no reset; 1 - reset
 pub type Syscfg2R = crate::BitReader;
 ///Field `SYSCFG2` writer - 0 - no reset; 1 - reset
@@ -58,10 +50,6 @@ pub type Syscfg2W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Gpio2R = crate::BitReader;
 ///Field `GPIO2` writer - 0 - no reset; 1 - reset
 pub type Gpio2W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `RFC` reader - 0 - no reset; 1 - reset
 pub type RfcR = crate::BitReader;
 ///Field `RFC` writer - 0 - no reset; 1 - reset
@@ -78,10 +66,6 @@ pub type MacW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Crc2R = crate::BitReader;
 ///Field `CRC2` writer - 0 - no reset; 1 - reset
 pub type Crc2W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
     ///Bit 0 - 0 - no reset; 1 - reset
     #[inline(always)]
@@ -118,11 +102,6 @@ impl R {
     pub fn usart5(&self) -> Usart5R {
         Usart5R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd4(&self) -> Rsvd4R {
-        Rsvd4R::new(((self.bits >> 7) & 1) != 0)
-    }
     ///Bit 8 - 0 - no reset; 1 - reset
     #[inline(always)]
     pub fn ptc2(&self) -> Ptc2R {
@@ -138,11 +117,6 @@ impl R {
     pub fn btim4(&self) -> Btim4R {
         Btim4R::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bits 11:14
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 11) & 0x0f) as u8)
-    }
     ///Bit 15 - 0 - no reset; 1 - reset
     #[inline(always)]
     pub fn syscfg2(&self) -> Syscfg2R {
@@ -152,11 +126,6 @@ impl R {
     #[inline(always)]
     pub fn gpio2(&self) -> Gpio2R {
         Gpio2R::new(((self.bits >> 16) & 1) != 0)
-    }
-    ///Bit 17
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 17) & 1) != 0)
     }
     ///Bit 18 - 0 - no reset; 1 - reset
     #[inline(always)]
@@ -178,28 +147,19 @@ impl R {
     pub fn crc2(&self) -> Crc2R {
         Crc2R::new(((self.bits >> 21) & 1) != 0)
     }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 22) & 0x03ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("RSTR1")
-            .field("rsvd", &self.rsvd())
             .field("crc2", &self.crc2())
             .field("mac", &self.mac())
             .field("phy", &self.phy())
             .field("rfc", &self.rfc())
-            .field("rsvd2", &self.rsvd2())
             .field("gpio2", &self.gpio2())
             .field("syscfg2", &self.syscfg2())
-            .field("rsvd3", &self.rsvd3())
             .field("btim4", &self.btim4())
             .field("btim3", &self.btim3())
             .field("ptc2", &self.ptc2())
-            .field("rsvd4", &self.rsvd4())
             .field("usart5", &self.usart5())
             .field("usart4", &self.usart4())
             .field("patch", &self.patch())
@@ -246,11 +206,6 @@ impl W {
     pub fn usart5(&mut self) -> Usart5W<RSTR1rs> {
         Usart5W::new(self, 6)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd4(&mut self) -> Rsvd4W<RSTR1rs> {
-        Rsvd4W::new(self, 7)
-    }
     ///Bit 8 - 0 - no reset; 1 - reset
     #[inline(always)]
     pub fn ptc2(&mut self) -> Ptc2W<RSTR1rs> {
@@ -266,11 +221,6 @@ impl W {
     pub fn btim4(&mut self) -> Btim4W<RSTR1rs> {
         Btim4W::new(self, 10)
     }
-    ///Bits 11:14
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<RSTR1rs> {
-        Rsvd3W::new(self, 11)
-    }
     ///Bit 15 - 0 - no reset; 1 - reset
     #[inline(always)]
     pub fn syscfg2(&mut self) -> Syscfg2W<RSTR1rs> {
@@ -280,11 +230,6 @@ impl W {
     #[inline(always)]
     pub fn gpio2(&mut self) -> Gpio2W<RSTR1rs> {
         Gpio2W::new(self, 16)
-    }
-    ///Bit 17
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<RSTR1rs> {
-        Rsvd2W::new(self, 17)
     }
     ///Bit 18 - 0 - no reset; 1 - reset
     #[inline(always)]
@@ -305,11 +250,6 @@ impl W {
     #[inline(always)]
     pub fn crc2(&mut self) -> Crc2W<RSTR1rs> {
         Crc2W::new(self, 21)
-    }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RSTR1rs> {
-        RsvdW::new(self, 22)
     }
 }
 ///Reset Register 1

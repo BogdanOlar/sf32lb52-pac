@@ -42,10 +42,6 @@ pub type GcW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 pub type FspR = crate::FieldReader;
 ///Field `FSP` writer - sampling frequency: 0x0:9.6M 0x1:8.82M 0x2:4.8M 0x3:4.41M
 pub type FspW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 impl R {
     ///Bits 0:1 - peripheral circuits biasmode
     #[inline(always)]
@@ -97,16 +93,10 @@ impl R {
     pub fn fsp(&self) -> FspR {
         FspR::new(((self.bits >> 23) & 3) as u8)
     }
-    ///Bits 25:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 25) & 0x7f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ADC2_CFG1")
-            .field("rsvd", &self.rsvd())
             .field("fsp", &self.fsp())
             .field("gc", &self.gc())
             .field("vst_sel", &self.vst_sel())
@@ -170,11 +160,6 @@ impl W {
     #[inline(always)]
     pub fn fsp(&mut self) -> FspW<ADC2_CFG1rs> {
         FspW::new(self, 23)
-    }
-    ///Bits 25:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ADC2_CFG1rs> {
-        RsvdW::new(self, 25)
     }
 }
 ///

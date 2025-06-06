@@ -10,10 +10,6 @@ pub type FracW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type IntR = crate::FieldReader<u16>;
 ///Field `INT` writer - Integer part of baud rate prescaler If OVER8 = 0, Baud Rate = 48000000 / (INT + FRAC/16) / 16 If OVER8 = 1, Baud Rate = 48000000 / (INT + FRAC/16) / 8 For example: OVER=0, INT=3, FRAC=0, Baud Rate = 48000000/(3+0)/16 = 1Mbps OVER=0, INT=3, FRAC=4, Baud Rate = 48000000/(3+4/16)/16 = 923077 = 921600 + 1.6‰ OVER=1, INT=52, FRAC=1, Baud Rate = 48000000/(52+1/16)/8 = 115246 = 115200 + 0.4‰
 pub type IntW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:3 - Fractional part of baud rate prescaler
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn int(&self) -> IntR {
         IntR::new(((self.bits >> 4) & 0x0fff) as u16)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("BRR")
-            .field("rsvd", &self.rsvd())
             .field("int", &self.int())
             .field("frac", &self.frac())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn int(&mut self) -> IntW<BRRrs> {
         IntW::new(self, 4)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<BRRrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///Baud Rate Register

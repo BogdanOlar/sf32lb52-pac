@@ -6,28 +6,16 @@ pub type W = crate::W<RCRrs>;
 pub type RepR = crate::FieldReader;
 ///Field `REP` writer - Repetition counter value These bits allow the user to set-up the update rate of the compare registers (i.e. periodic transfers from preload to active registers) when preload registers are enable, as well as the update interrupt generation rate, if this interrupt is enable. Each time the REP_CNT related downcounter reaches zero, an update event is generated and it restarts counting from REP value. As REP_CNT is reloaded with REP value only at the repetition update event, any write to the RCR register is not taken in account until the next repetition update event. It means in PWM mode (REP+1) corresponds to the number of PWM periods in edge-aligned mode.
 pub type RepW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bits 0:7 - Repetition counter value These bits allow the user to set-up the update rate of the compare registers (i.e. periodic transfers from preload to active registers) when preload registers are enable, as well as the update interrupt generation rate, if this interrupt is enable. Each time the REP_CNT related downcounter reaches zero, an update event is generated and it restarts counting from REP value. As REP_CNT is reloaded with REP value only at the repetition update event, any write to the RCR register is not taken in account until the next repetition update event. It means in PWM mode (REP+1) corresponds to the number of PWM periods in edge-aligned mode.
     #[inline(always)]
     pub fn rep(&self) -> RepR {
         RepR::new((self.bits & 0xff) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("RCR")
-            .field("rsvd", &self.rsvd())
-            .field("rep", &self.rep())
-            .finish()
+        f.debug_struct("RCR").field("rep", &self.rep()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn rep(&mut self) -> RepW<RCRrs> {
         RepW::new(self, 0)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RCRrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///Repetition counter register

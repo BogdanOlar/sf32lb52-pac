@@ -18,10 +18,6 @@ pub type DcTeAtest1W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DcUrAtest1R = crate::FieldReader;
 ///Field `DC_UR_ATEST1` writer - reserved for debug
 pub type DcUrAtest1W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bit 0 - reserved for debug
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn dc_ur_atest1(&self) -> DcUrAtest1R {
         DcUrAtest1R::new(((self.bits >> 5) & 7) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ANATR")
-            .field("rsvd", &self.rsvd())
             .field("dc_ur_atest1", &self.dc_ur_atest1())
             .field("dc_te_atest1", &self.dc_te_atest1())
             .field("dc_ur_atest0", &self.dc_ur_atest0())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn dc_ur_atest1(&mut self) -> DcUrAtest1W<ANATRrs> {
         DcUrAtest1W::new(self, 5)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ANATRrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///Analog Test Register

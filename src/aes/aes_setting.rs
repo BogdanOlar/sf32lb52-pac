@@ -26,10 +26,6 @@ pub type AesOpModeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AesBypassR = crate::BitReader;
 ///Field `AES_BYPASS` writer - 1'h0: normal operation 1'h1: bypass
 pub type AesBypassW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bits 0:2 - AES Mode: 3'h0: ECB 3'h1: CTR 3'h2: CBC Others: Reserved
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn aes_bypass(&self) -> AesBypassR {
         AesBypassR::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AES_SETTING")
-            .field("rsvd", &self.rsvd())
             .field("aes_bypass", &self.aes_bypass())
             .field("aes_op_mode", &self.aes_op_mode())
             .field("algo_standard", &self.algo_standard())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn aes_bypass(&mut self) -> AesBypassW<AES_SETTINGrs> {
         AesBypassW::new(self, 8)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AES_SETTINGrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///

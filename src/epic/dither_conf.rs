@@ -26,10 +26,6 @@ pub type LfsrLoadSelW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type LfsrLoadR = crate::BitReader;
 ///Field `LFSR_LOAD` writer - load lfsr init value
 pub type LfsrLoadW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bit 0 - dither enable
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn lfsr_load(&self) -> LfsrLoadR {
         LfsrLoadR::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DITHER_CONF")
-            .field("rsvd", &self.rsvd())
             .field("lfsr_load", &self.lfsr_load())
             .field("lfsr_load_sel", &self.lfsr_load_sel())
             .field("w_r", &self.w_r())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn lfsr_load(&mut self) -> LfsrLoadW<DITHER_CONFrs> {
         LfsrLoadW::new(self, 12)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DITHER_CONFrs> {
-        RsvdW::new(self, 13)
     }
 }
 ///

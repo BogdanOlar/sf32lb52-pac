@@ -34,10 +34,6 @@ pub type IeEocModeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type IeEocR = crate::BitReader;
 ///Field `IE_EOC` writer -
 pub type IeEocW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 ///Field `IM_VBUS_RDY` reader - 0 - high level, 1 - low level, 2 - pos edge, 3 - neg edge, others - both edge
 pub type ImVbusRdyR = crate::FieldReader;
 ///Field `IM_VBUS_RDY` writer - 0 - high level, 1 - low level, 2 - pos edge, 3 - neg edge, others - both edge
@@ -107,11 +103,6 @@ impl R {
     pub fn ie_eoc(&self) -> IeEocR {
         IeEocR::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:10
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 8) & 7) as u8)
-    }
     ///Bits 11:13 - 0 - high level, 1 - low level, 2 - pos edge, 3 - neg edge, others - both edge
     #[inline(always)]
     pub fn im_vbus_rdy(&self) -> ImVbusRdyR {
@@ -158,7 +149,6 @@ impl core::fmt::Debug for R {
             .field("im_above_rep", &self.im_above_rep())
             .field("im_vbat_high", &self.im_vbat_high())
             .field("im_vbus_rdy", &self.im_vbus_rdy())
-            .field("rsvd", &self.rsvd())
             .field("ie_eoc", &self.ie_eoc())
             .field("ie_eoc_mode", &self.ie_eoc_mode())
             .field("ie_cv_mode", &self.ie_cv_mode())
@@ -210,11 +200,6 @@ impl W {
     #[inline(always)]
     pub fn ie_eoc(&mut self) -> IeEocW<CHG_CR4rs> {
         IeEocW::new(self, 7)
-    }
-    ///Bits 8:10
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CHG_CR4rs> {
-        RsvdW::new(self, 8)
     }
     ///Bits 11:13 - 0 - high level, 1 - low level, 2 - pos edge, 3 - neg edge, others - both edge
     #[inline(always)]

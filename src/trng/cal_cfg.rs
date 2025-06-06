@@ -18,10 +18,6 @@ pub type EnableW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DoneR = crate::BitReader;
 ///Field `DONE` writer - calibration done
 pub type DoneW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 ///Field `LENGTH` reader - calibration length
 pub type LengthR = crate::FieldReader<u16>;
 ///Field `LENGTH` writer - calibration length
@@ -47,11 +43,6 @@ impl R {
     pub fn done(&self) -> DoneR {
         DoneR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:15
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 6) & 0x03ff) as u16)
-    }
     ///Bits 16:31 - calibration length
     #[inline(always)]
     pub fn length(&self) -> LengthR {
@@ -62,7 +53,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CAL_CFG")
             .field("length", &self.length())
-            .field("rsvd", &self.rsvd())
             .field("done", &self.done())
             .field("enable", &self.enable())
             .field("osc_clk_sel", &self.osc_clk_sel())
@@ -90,11 +80,6 @@ impl W {
     #[inline(always)]
     pub fn done(&mut self) -> DoneW<CAL_CFGrs> {
         DoneW::new(self, 5)
-    }
-    ///Bits 6:15
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CAL_CFGrs> {
-        RsvdW::new(self, 6)
     }
     ///Bits 16:31 - calibration length
     #[inline(always)]

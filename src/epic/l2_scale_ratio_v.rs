@@ -6,26 +6,16 @@ pub type W = crate::W<L2_SCALE_RATIO_Vrs>;
 pub type YpitchR = crate::FieldReader<u32>;
 ///Field `YPITCH` writer - y-axis rescaling ratio, 10.16 fixed point number, YPITCH lt MAX_LINE/(Y1-Y0)
 pub type YpitchW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bits 0:25 - y-axis rescaling ratio, 10.16 fixed point number, YPITCH lt MAX_LINE/(Y1-Y0)
     #[inline(always)]
     pub fn ypitch(&self) -> YpitchR {
         YpitchR::new(self.bits & 0x03ff_ffff)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("L2_SCALE_RATIO_V")
-            .field("rsvd", &self.rsvd())
             .field("ypitch", &self.ypitch())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn ypitch(&mut self) -> YpitchW<L2_SCALE_RATIO_Vrs> {
         YpitchW::new(self, 0)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<L2_SCALE_RATIO_Vrs> {
-        RsvdW::new(self, 26)
     }
 }
 ///

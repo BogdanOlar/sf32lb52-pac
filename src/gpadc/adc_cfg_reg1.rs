@@ -6,10 +6,6 @@ pub type W = crate::W<ADC_CFG_REG1rs>;
 pub type AnauGpadcCmrefFastEnR = crate::BitReader;
 ///Field `ANAU_GPADC_CMREF_FAST_EN` writer -
 pub type AnauGpadcCmrefFastEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `ANAU_GPADC_P_INT_EN` reader -
 pub type AnauGpadcPIntEnR = crate::BitReader;
 ///Field `ANAU_GPADC_P_INT_EN` writer -
@@ -58,20 +54,11 @@ pub type AnauGpadcCmpclW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type AnauGpadcCmmR = crate::FieldReader;
 ///Field `ANAU_GPADC_CMM` writer - Tune CDAC CM voltage 375mV range (increasing) / 25mV step, 8: for 0.5V Vcm,in
 pub type AnauGpadcCmmW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     ///Bit 0
     #[inline(always)]
     pub fn anau_gpadc_cmref_fast_en(&self) -> AnauGpadcCmrefFastEnR {
         AnauGpadcCmrefFastEnR::new((self.bits & 1) != 0)
-    }
-    ///Bit 1
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 1) & 1) != 0)
     }
     ///Bit 2
     #[inline(always)]
@@ -133,16 +120,10 @@ impl R {
     pub fn anau_gpadc_cmm(&self) -> AnauGpadcCmmR {
         AnauGpadcCmmR::new(((self.bits >> 25) & 0x1f) as u8)
     }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 30) & 3) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ADC_CFG_REG1")
-            .field("rsvd", &self.rsvd())
             .field("anau_gpadc_cmm", &self.anau_gpadc_cmm())
             .field("anau_gpadc_cmpcl", &self.anau_gpadc_cmpcl())
             .field("anau_gpadc_vsp", &self.anau_gpadc_vsp())
@@ -155,7 +136,6 @@ impl core::fmt::Debug for R {
             .field("anau_gpadc_en_v18", &self.anau_gpadc_en_v18())
             .field("anau_gpadc_cl_dly", &self.anau_gpadc_cl_dly())
             .field("anau_gpadc_p_int_en", &self.anau_gpadc_p_int_en())
-            .field("rsvd2", &self.rsvd2())
             .field("anau_gpadc_cmref_fast_en", &self.anau_gpadc_cmref_fast_en())
             .finish()
     }
@@ -165,11 +145,6 @@ impl W {
     #[inline(always)]
     pub fn anau_gpadc_cmref_fast_en(&mut self) -> AnauGpadcCmrefFastEnW<ADC_CFG_REG1rs> {
         AnauGpadcCmrefFastEnW::new(self, 0)
-    }
-    ///Bit 1
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ADC_CFG_REG1rs> {
-        Rsvd2W::new(self, 1)
     }
     ///Bit 2
     #[inline(always)]
@@ -230,11 +205,6 @@ impl W {
     #[inline(always)]
     pub fn anau_gpadc_cmm(&mut self) -> AnauGpadcCmmW<ADC_CFG_REG1rs> {
         AnauGpadcCmmW::new(self, 25)
-    }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ADC_CFG_REG1rs> {
-        RsvdW::new(self, 30)
     }
 }
 ///ADC Analog Config Register 1

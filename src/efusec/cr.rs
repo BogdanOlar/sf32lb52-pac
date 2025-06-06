@@ -18,10 +18,6 @@ pub type BankselW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type IeR = crate::BitReader;
 ///Field `IE` writer - Interrupt enable
 pub type IeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 27, u32>;
 impl R {
     ///Bit 0 - Write 1 to enable PGM/READ. Self clear
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn ie(&self) -> IeR {
         IeR::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 5) & 0x07ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CR")
-            .field("rsvd", &self.rsvd())
             .field("ie", &self.ie())
             .field("banksel", &self.banksel())
             .field("mode", &self.mode())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn ie(&mut self) -> IeW<CRrs> {
         IeW::new(self, 4)
-    }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CRrs> {
-        RsvdW::new(self, 5)
     }
 }
 ///Control Register

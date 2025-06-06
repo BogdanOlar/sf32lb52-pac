@@ -10,10 +10,6 @@ pub type EnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DoneR = crate::BitReader;
 ///Field `DONE` writer - calibration done
 pub type DoneW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 ///Field `LEN` reader - calibration length
 pub type LenR = crate::FieldReader<u16>;
 ///Field `LEN` writer - calibration length
@@ -29,11 +25,6 @@ impl R {
     pub fn done(&self) -> DoneR {
         DoneR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:15
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 2) & 0x3fff) as u16)
-    }
     ///Bits 16:31 - calibration length
     #[inline(always)]
     pub fn len(&self) -> LenR {
@@ -44,7 +35,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PLL_CAL_CFG")
             .field("len", &self.len())
-            .field("rsvd", &self.rsvd())
             .field("done", &self.done())
             .field("en", &self.en())
             .finish()
@@ -60,11 +50,6 @@ impl W {
     #[inline(always)]
     pub fn done(&mut self) -> DoneW<PLL_CAL_CFGrs> {
         DoneW::new(self, 1)
-    }
-    ///Bits 2:15
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PLL_CAL_CFGrs> {
-        RsvdW::new(self, 2)
     }
     ///Bits 16:31 - calibration length
     #[inline(always)]

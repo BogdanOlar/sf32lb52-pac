@@ -62,10 +62,6 @@ pub type ComdeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TdeR = crate::BitReader;
 ///Field `TDE` writer - Trigger DMA request enable 0: Trigger DMA request disabled. 1: Trigger DMA request enabled.
 pub type TdeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `CC5IE` reader - Capture/Compare 5 interrupt enable 0: CC5 interrupt disabled. 1: CC5 interrupt enabled
 pub type Cc5ieR = crate::BitReader;
 ///Field `CC5IE` writer - Capture/Compare 5 interrupt enable 0: CC5 interrupt disabled. 1: CC5 interrupt enabled
@@ -74,10 +70,6 @@ pub type Cc5ieW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Cc6ieR = crate::BitReader;
 ///Field `CC6IE` writer - Capture/Compare 6 interrupt enable 0: CC6 interrupt disabled. 1: CC6 interrupt enabled
 pub type Cc6ieW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 impl R {
     ///Bit 0 - Update interrupt enable 0: Update interrupt disabled. 1: Update interrupt enabled
     #[inline(always)]
@@ -154,11 +146,6 @@ impl R {
     pub fn tde(&self) -> TdeR {
         TdeR::new(((self.bits >> 14) & 1) != 0)
     }
-    ///Bit 15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 15) & 1) != 0)
-    }
     ///Bit 16 - Capture/Compare 5 interrupt enable 0: CC5 interrupt disabled. 1: CC5 interrupt enabled
     #[inline(always)]
     pub fn cc5ie(&self) -> Cc5ieR {
@@ -169,19 +156,12 @@ impl R {
     pub fn cc6ie(&self) -> Cc6ieR {
         Cc6ieR::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 18) & 0x3fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DIER")
-            .field("rsvd", &self.rsvd())
             .field("cc6ie", &self.cc6ie())
             .field("cc5ie", &self.cc5ie())
-            .field("rsvd2", &self.rsvd2())
             .field("tde", &self.tde())
             .field("comde", &self.comde())
             .field("cc4de", &self.cc4de())
@@ -276,11 +256,6 @@ impl W {
     pub fn tde(&mut self) -> TdeW<DIERrs> {
         TdeW::new(self, 14)
     }
-    ///Bit 15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<DIERrs> {
-        Rsvd2W::new(self, 15)
-    }
     ///Bit 16 - Capture/Compare 5 interrupt enable 0: CC5 interrupt disabled. 1: CC5 interrupt enabled
     #[inline(always)]
     pub fn cc5ie(&mut self) -> Cc5ieW<DIERrs> {
@@ -290,11 +265,6 @@ impl W {
     #[inline(always)]
     pub fn cc6ie(&mut self) -> Cc6ieW<DIERrs> {
         Cc6ieW::new(self, 17)
-    }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DIERrs> {
-        RsvdW::new(self, 18)
     }
 }
 ///TIM DMA/Interrupt enable register

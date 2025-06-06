@@ -2,10 +2,6 @@
 pub type R = crate::R<CCMR3rs>;
 ///Register `CCMR3` writer
 pub type W = crate::W<CCMR3rs>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::FieldReader<u16>;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 ///Field `GC5C1` reader - Group Channel 5 and Channel 1 Distortion on Channel 1 output: 0: No effect of OC5REF on OC1REFC5 1: OC1REFC is the logical AND of OC1REFC and OC5REF This bit can either have immediate effect or be preloaded and taken into account after an update event (if preload feature is selected in TIMxCCMR1).
 pub type Gc5c1R = crate::BitReader;
 ///Field `GC5C1` writer - Group Channel 5 and Channel 1 Distortion on Channel 1 output: 0: No effect of OC5REF on OC1REFC5 1: OC1REFC is the logical AND of OC1REFC and OC5REF This bit can either have immediate effect or be preloaded and taken into account after an update event (if preload feature is selected in TIMxCCMR1).
@@ -22,10 +18,6 @@ pub type Gc5c3W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Oc5ceR = crate::BitReader;
 ///Field `OC5CE` writer - Output compare 5 clear enable
 pub type Oc5ceW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `OC5PE` reader - Output compare 5 preload enable
 pub type Oc5peR = crate::BitReader;
 ///Field `OC5PE` writer - Output compare 5 preload enable
@@ -38,10 +30,6 @@ pub type Oc5mW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type Oc6ceR = crate::BitReader;
 ///Field `OC6CE` writer - Output compare 6 clear enable
 pub type Oc6ceW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `OC6PE` reader - Output compare 6 preload enable
 pub type Oc6peR = crate::BitReader;
 ///Field `OC6PE` writer - Output compare 6 preload enable
@@ -51,11 +39,6 @@ pub type Oc6mR = crate::FieldReader;
 ///Field `OC6M` writer - Output compare 6 mode
 pub type Oc6mW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    ///Bits 0:12
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new((self.bits & 0x1fff) as u16)
-    }
     ///Bit 13 - Group Channel 5 and Channel 1 Distortion on Channel 1 output: 0: No effect of OC5REF on OC1REFC5 1: OC1REFC is the logical AND of OC1REFC and OC5REF This bit can either have immediate effect or be preloaded and taken into account after an update event (if preload feature is selected in TIMxCCMR1).
     #[inline(always)]
     pub fn gc5c1(&self) -> Gc5c1R {
@@ -76,11 +59,6 @@ impl R {
     pub fn oc5ce(&self) -> Oc5ceR {
         Oc5ceR::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bits 17:18
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 17) & 3) as u8)
-    }
     ///Bit 19 - Output compare 5 preload enable
     #[inline(always)]
     pub fn oc5pe(&self) -> Oc5peR {
@@ -95,11 +73,6 @@ impl R {
     #[inline(always)]
     pub fn oc6ce(&self) -> Oc6ceR {
         Oc6ceR::new(((self.bits >> 24) & 1) != 0)
-    }
-    ///Bits 25:26
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 25) & 3) as u8)
     }
     ///Bit 27 - Output compare 6 preload enable
     #[inline(always)]
@@ -117,25 +90,17 @@ impl core::fmt::Debug for R {
         f.debug_struct("CCMR3")
             .field("oc6m", &self.oc6m())
             .field("oc6pe", &self.oc6pe())
-            .field("rsvd", &self.rsvd())
             .field("oc6ce", &self.oc6ce())
             .field("oc5m", &self.oc5m())
             .field("oc5pe", &self.oc5pe())
-            .field("rsvd2", &self.rsvd2())
             .field("oc5ce", &self.oc5ce())
             .field("gc5c3", &self.gc5c3())
             .field("gc5c2", &self.gc5c2())
             .field("gc5c1", &self.gc5c1())
-            .field("rsvd3", &self.rsvd3())
             .finish()
     }
 }
 impl W {
-    ///Bits 0:12
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<CCMR3rs> {
-        Rsvd3W::new(self, 0)
-    }
     ///Bit 13 - Group Channel 5 and Channel 1 Distortion on Channel 1 output: 0: No effect of OC5REF on OC1REFC5 1: OC1REFC is the logical AND of OC1REFC and OC5REF This bit can either have immediate effect or be preloaded and taken into account after an update event (if preload feature is selected in TIMxCCMR1).
     #[inline(always)]
     pub fn gc5c1(&mut self) -> Gc5c1W<CCMR3rs> {
@@ -156,11 +121,6 @@ impl W {
     pub fn oc5ce(&mut self) -> Oc5ceW<CCMR3rs> {
         Oc5ceW::new(self, 16)
     }
-    ///Bits 17:18
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CCMR3rs> {
-        Rsvd2W::new(self, 17)
-    }
     ///Bit 19 - Output compare 5 preload enable
     #[inline(always)]
     pub fn oc5pe(&mut self) -> Oc5peW<CCMR3rs> {
@@ -175,11 +135,6 @@ impl W {
     #[inline(always)]
     pub fn oc6ce(&mut self) -> Oc6ceW<CCMR3rs> {
         Oc6ceW::new(self, 24)
-    }
-    ///Bits 25:26
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CCMR3rs> {
-        RsvdW::new(self, 25)
     }
     ///Bit 27 - Output compare 6 preload enable
     #[inline(always)]

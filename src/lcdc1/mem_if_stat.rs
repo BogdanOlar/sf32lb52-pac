@@ -14,10 +14,6 @@ pub type ArbReadPortW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type ArbMainR = crate::FieldReader;
 ///Field `ARB_MAIN` writer -
 pub type ArbMainW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
 impl R {
     ///Bits 0:3
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn arb_main(&self) -> ArbMainR {
         ArbMainR::new(((self.bits >> 7) & 7) as u8)
     }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 10) & 0x003f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("MEM_IF_STAT")
-            .field("rsvd", &self.rsvd())
             .field("arb_main", &self.arb_main())
             .field("arb_read_port", &self.arb_read_port())
             .field("ahb", &self.ahb())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn arb_main(&mut self) -> ArbMainW<MEM_IF_STATrs> {
         ArbMainW::new(self, 7)
-    }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<MEM_IF_STATrs> {
-        RsvdW::new(self, 10)
     }
 }
 ///

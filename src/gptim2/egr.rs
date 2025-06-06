@@ -22,18 +22,10 @@ pub type Cc3gW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Cc4gR = crate::BitReader;
 ///Field `CC4G` writer - Capture/compare 4 generation
 pub type Cc4gW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `TG` reader - Trigger generation This bit is set by software in order to generate an event, it is automatically cleared by hardware. 0: No action 1: The TIF flag is set in SR register. Related interrupt or DMA transfer can occur if enabled.
 pub type TgR = crate::BitReader;
 ///Field `TG` writer - Trigger generation This bit is set by software in order to generate an event, it is automatically cleared by hardware. 0: No action 1: The TIF flag is set in SR register. Related interrupt or DMA transfer can occur if enabled.
 pub type TgW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 25, u32>;
 impl R {
     ///Bit 0 - Update generation This bit can be set by software, it is automatically cleared by hardware. 0: No action 1: Re-initialize the counter and generates an update of the registers. Note that the prescaler counter is cleared too (anyway the prescaler ratio is not affected). The counter is cleared if the center-aligned mode is selected or if DIR=0 (upcounting), else it takes the auto-reload value (ARR) if DIR=1 (downcounting).
     #[inline(always)]
@@ -60,28 +52,16 @@ impl R {
     pub fn cc4g(&self) -> Cc4gR {
         Cc4gR::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 5
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 5) & 1) != 0)
-    }
     ///Bit 6 - Trigger generation This bit is set by software in order to generate an event, it is automatically cleared by hardware. 0: No action 1: The TIF flag is set in SR register. Related interrupt or DMA transfer can occur if enabled.
     #[inline(always)]
     pub fn tg(&self) -> TgR {
         TgR::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 7) & 0x01ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("EGR")
-            .field("rsvd", &self.rsvd())
             .field("tg", &self.tg())
-            .field("rsvd2", &self.rsvd2())
             .field("cc4g", &self.cc4g())
             .field("cc3g", &self.cc3g())
             .field("cc2g", &self.cc2g())
@@ -116,20 +96,10 @@ impl W {
     pub fn cc4g(&mut self) -> Cc4gW<EGRrs> {
         Cc4gW::new(self, 4)
     }
-    ///Bit 5
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<EGRrs> {
-        Rsvd2W::new(self, 5)
-    }
     ///Bit 6 - Trigger generation This bit is set by software in order to generate an event, it is automatically cleared by hardware. 0: No action 1: The TIF flag is set in SR register. Related interrupt or DMA transfer can occur if enabled.
     #[inline(always)]
     pub fn tg(&mut self) -> TgW<EGRrs> {
         TgW::new(self, 6)
-    }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<EGRrs> {
-        RsvdW::new(self, 7)
     }
 }
 ///Event generation register

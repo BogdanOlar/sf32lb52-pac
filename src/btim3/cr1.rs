@@ -18,18 +18,10 @@ pub type UrsW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type OpmR = crate::BitReader;
 ///Field `OPM` writer - One-pulse mode 0: Counter is not stopped at update event 1: Counter stops counting at the next update event (clearing the bit CEN)
 pub type OpmW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 ///Field `ARPE` reader - Auto-reload preload enable 0: ARR register is not buffered 1: ARR register is buffered
 pub type ArpeR = crate::BitReader;
 ///Field `ARPE` writer - Auto-reload preload enable 0: ARR register is not buffered 1: ARR register is buffered
 pub type ArpeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bit 0 - Counter enable 0: Counter disabled 1: Counter enabled Note: Gated mode can work only if the CEN bit has been previously set by software. However trigger mode can set the CEN bit automatically by hardware. CEN is cleared automatically in one-pulse mode, when an update event occurs.
     #[inline(always)]
@@ -51,28 +43,16 @@ impl R {
     pub fn opm(&self) -> OpmR {
         OpmR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:6
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 4) & 7) as u8)
-    }
     ///Bit 7 - Auto-reload preload enable 0: ARR register is not buffered 1: ARR register is buffered
     #[inline(always)]
     pub fn arpe(&self) -> ArpeR {
         ArpeR::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CR1")
-            .field("rsvd", &self.rsvd())
             .field("arpe", &self.arpe())
-            .field("rsvd2", &self.rsvd2())
             .field("opm", &self.opm())
             .field("urs", &self.urs())
             .field("udis", &self.udis())
@@ -101,20 +81,10 @@ impl W {
     pub fn opm(&mut self) -> OpmW<CR1rs> {
         OpmW::new(self, 3)
     }
-    ///Bits 4:6
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CR1rs> {
-        Rsvd2W::new(self, 4)
-    }
     ///Bit 7 - Auto-reload preload enable 0: ARR register is not buffered 1: ARR register is buffered
     #[inline(always)]
     pub fn arpe(&mut self) -> ArpeW<CR1rs> {
         ArpeW::new(self, 7)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CR1rs> {
-        RsvdW::new(self, 8)
     }
 }
 ///TIM control register 1

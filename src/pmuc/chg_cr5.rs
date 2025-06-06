@@ -34,10 +34,6 @@ pub type IcEocModeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type IcEocR = crate::BitReader;
 ///Field `IC_EOC` writer -
 pub type IcEocW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 ///Field `IS_VBUS_RDY` reader -
 pub type IsVbusRdyR = crate::BitReader;
 ///Field `IS_VBUS_RDY` writer -
@@ -70,10 +66,6 @@ pub type IsEocModeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type IsEocR = crate::BitReader;
 ///Field `IS_EOC` writer -
 pub type IsEocW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -115,11 +107,6 @@ impl R {
     pub fn ic_eoc(&self) -> IcEocR {
         IcEocR::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 8) & 0xff) as u8)
-    }
     ///Bit 16
     #[inline(always)]
     pub fn is_vbus_rdy(&self) -> IsVbusRdyR {
@@ -160,16 +147,10 @@ impl R {
     pub fn is_eoc(&self) -> IsEocR {
         IsEocR::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CHG_CR5")
-            .field("rsvd", &self.rsvd())
             .field("is_eoc", &self.is_eoc())
             .field("is_eoc_mode", &self.is_eoc_mode())
             .field("is_cv_mode", &self.is_cv_mode())
@@ -178,7 +159,6 @@ impl core::fmt::Debug for R {
             .field("is_above_rep", &self.is_above_rep())
             .field("is_vbat_high", &self.is_vbat_high())
             .field("is_vbus_rdy", &self.is_vbus_rdy())
-            .field("rsvd2", &self.rsvd2())
             .field("ic_eoc", &self.ic_eoc())
             .field("ic_eoc_mode", &self.ic_eoc_mode())
             .field("ic_cv_mode", &self.ic_cv_mode())
@@ -231,11 +211,6 @@ impl W {
     pub fn ic_eoc(&mut self) -> IcEocW<CHG_CR5rs> {
         IcEocW::new(self, 7)
     }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CHG_CR5rs> {
-        Rsvd2W::new(self, 8)
-    }
     ///Bit 16
     #[inline(always)]
     pub fn is_vbus_rdy(&mut self) -> IsVbusRdyW<CHG_CR5rs> {
@@ -275,11 +250,6 @@ impl W {
     #[inline(always)]
     pub fn is_eoc(&mut self) -> IsEocW<CHG_CR5rs> {
         IsEocW::new(self, 23)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CHG_CR5rs> {
-        RsvdW::new(self, 24)
     }
 }
 ///Charger Control Register 5

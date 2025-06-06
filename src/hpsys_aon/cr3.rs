@@ -22,10 +22,6 @@ pub type Pin19ModeW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type Pin20ModeR = crate::FieldReader;
 ///Field `PIN20_MODE` writer - mode for wakeup PIN20 (PA44)
 pub type Pin20ModeW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 17, u32>;
 impl R {
     ///Bits 0:2 - mode for wakeup PIN16 (PA40) 0 - high level, 1 - low level, 2 - pos edge, 3 - neg edge, 4/5/6/7: pos or neg edge
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn pin20_mode(&self) -> Pin20ModeR {
         Pin20ModeR::new(((self.bits >> 12) & 7) as u8)
     }
-    ///Bits 15:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 15) & 0x0001_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CR3")
-            .field("rsvd", &self.rsvd())
             .field("pin20_mode", &self.pin20_mode())
             .field("pin19_mode", &self.pin19_mode())
             .field("pin18_mode", &self.pin18_mode())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn pin20_mode(&mut self) -> Pin20ModeW<CR3rs> {
         Pin20ModeW::new(self, 12)
-    }
-    ///Bits 15:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CR3rs> {
-        RsvdW::new(self, 15)
     }
 }
 ///Control Register 3

@@ -54,10 +54,6 @@ pub type GmEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CbankSelR = crate::FieldReader<u16>;
 ///Field `CBANK_SEL` writer -
 pub type CbankSelW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -124,16 +120,10 @@ impl R {
     pub fn cbank_sel(&self) -> CbankSelR {
         CbankSelR::new(((self.bits >> 20) & 0x03ff) as u16)
     }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 30) & 3) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("HXT_CR1")
-            .field("rsvd", &self.rsvd())
             .field("cbank_sel", &self.cbank_sel())
             .field("gm_en", &self.gm_en())
             .field("ldo_flt_rsel", &self.ldo_flt_rsel())
@@ -215,11 +205,6 @@ impl W {
     #[inline(always)]
     pub fn cbank_sel(&mut self) -> CbankSelW<HXT_CR1rs> {
         CbankSelW::new(self, 20)
-    }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<HXT_CR1rs> {
-        RsvdW::new(self, 30)
     }
 }
 ///HXT48 Control Register 1

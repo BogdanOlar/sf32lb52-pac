@@ -62,10 +62,6 @@ pub type EnClkAdc0W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SelClkAdcSourceR = crate::FieldReader;
 ///Field `SEL_CLK_ADC_SOURCE` writer - 0: xtal, 1: pll
 pub type SelClkAdcSourceW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bits 0:3 - select clk to test
     #[inline(always)]
@@ -142,16 +138,10 @@ impl R {
     pub fn sel_clk_adc_source(&self) -> SelClkAdcSourceR {
         SelClkAdcSourceR::new(((self.bits >> 24) & 3) as u8)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PLL_CFG6")
-            .field("rsvd", &self.rsvd())
             .field("sel_clk_adc_source", &self.sel_clk_adc_source())
             .field("en_clk_adc0", &self.en_clk_adc0())
             .field("diva_clk_adc0", &self.diva_clk_adc0())
@@ -245,11 +235,6 @@ impl W {
     #[inline(always)]
     pub fn sel_clk_adc_source(&mut self) -> SelClkAdcSourceW<PLL_CFG6rs> {
         SelClkAdcSourceW::new(self, 24)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PLL_CFG6rs> {
-        RsvdW::new(self, 26)
     }
 }
 ///

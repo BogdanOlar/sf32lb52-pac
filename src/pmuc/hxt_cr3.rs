@@ -14,10 +14,6 @@ pub type BufOsloStrW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type DlyR = crate::FieldReader;
 ///Field `DLY` writer -
 pub type DlyW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
 impl R {
     ///Bits 0:1
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn dly(&self) -> DlyR {
         DlyR::new(((self.bits >> 4) & 0x3f) as u8)
     }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 10) & 0x003f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("HXT_CR3")
-            .field("rsvd", &self.rsvd())
             .field("dly", &self.dly())
             .field("buf_oslo_str", &self.buf_oslo_str())
             .field("buf_dac_str", &self.buf_dac_str())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn dly(&mut self) -> DlyW<HXT_CR3rs> {
         DlyW::new(self, 4)
-    }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<HXT_CR3rs> {
-        RsvdW::new(self, 10)
     }
 }
 ///HXT48 Control Register 3

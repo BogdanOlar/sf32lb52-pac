@@ -10,10 +10,6 @@ pub type OverflowRW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type OverflowLR = crate::BitReader;
 ///Field `OVERFLOW_L` writer - 1 indicates left channel fifo has already overflowed and as irq at same time
 pub type OverflowLW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - 1 indicates right channel fifo has already overflowed and as irq at same time
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn overflow_l(&self) -> OverflowLR {
         OverflowLR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("INT_ST")
-            .field("rsvd", &self.rsvd())
             .field("overflow_l", &self.overflow_l())
             .field("overflow_r", &self.overflow_r())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn overflow_l(&mut self) -> OverflowLW<INT_STrs> {
         OverflowLW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<INT_STrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///

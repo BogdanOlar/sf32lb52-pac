@@ -26,10 +26,6 @@ pub type SckinvW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DtrpreR = crate::BitReader;
 ///Field `DTRPRE` writer - Enable pre-sampling for DTRReserved-Do not modify
 pub type DtrpreW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::BitReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `DBGSEL` reader -
 pub type DbgselR = crate::FieldReader;
 ///Field `DBGSEL` writer -
@@ -65,11 +61,6 @@ impl R {
     pub fn dtrpre(&self) -> DtrpreR {
         DtrpreR::new(((self.bits >> 26) & 1) != 0)
     }
-    ///Bit 27
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 27) & 1) != 0)
-    }
     ///Bits 28:31
     #[inline(always)]
     pub fn dbgsel(&self) -> DbgselR {
@@ -80,7 +71,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("MISCR")
             .field("dbgsel", &self.dbgsel())
-            .field("rsvd", &self.rsvd())
             .field("dtrpre", &self.dtrpre())
             .field("sckinv", &self.sckinv())
             .field("rxclkinv", &self.rxclkinv())
@@ -120,11 +110,6 @@ impl W {
     #[inline(always)]
     pub fn dtrpre(&mut self) -> DtrpreW<MISCRrs> {
         DtrpreW::new(self, 26)
-    }
-    ///Bit 27
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<MISCRrs> {
-        RsvdW::new(self, 27)
     }
     ///Bits 28:31
     #[inline(always)]

@@ -10,10 +10,6 @@ pub type VolW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type VolAdjEnR = crate::BitReader;
 ///Field `VOL_ADJ_EN` writer - BT volume adjust enable
 pub type VolAdjEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bits 0:2 - BT master volume
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn vol_adj_en(&self) -> VolAdjEnR {
         VolAdjEnR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("BT_VOL_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("vol_adj_en", &self.vol_adj_en())
             .field("vol", &self.vol())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn vol_adj_en(&mut self) -> VolAdjEnW<BT_VOL_CTRLrs> {
         VolAdjEnW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<BT_VOL_CTRLrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///

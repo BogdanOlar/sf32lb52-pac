@@ -10,10 +10,6 @@ pub type RightChannelSelW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type LeftChannelSelR = crate::FieldReader;
 ///Field `LEFT_CHANNEL_SEL` writer - TX re-sampling module setting: 00: TX left = source left 01: TX left = source right 10,11: TX left = (source left + source right)/2
 pub type LeftChannelSelW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bits 0:1 - TX re-sampling module setting: 00: TX right = source right 01: TX right = source left 10,11: TX right = (source left + source right)/2
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn left_channel_sel(&self) -> LeftChannelSelR {
         LeftChannelSelR::new(((self.bits >> 2) & 3) as u8)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TX_PCM_CH_SEL")
-            .field("rsvd", &self.rsvd())
             .field("left_channel_sel", &self.left_channel_sel())
             .field("right_channel_sel", &self.right_channel_sel())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn left_channel_sel(&mut self) -> LeftChannelSelW<TX_PCM_CH_SELrs> {
         LeftChannelSelW::new(self, 2)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TX_PCM_CH_SELrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///

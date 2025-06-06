@@ -26,10 +26,6 @@ pub type HashBusErrStatW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type HashPadErrStatR = crate::BitReader;
 ///Field `HASH_PAD_ERR_STAT` writer - HASH_ACC padding error status
 pub type HashPadErrStatW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader<u16>;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 ///Field `DONE_RAW_STAT` reader - AES_ACC done raw status
 pub type DoneRawStatR = crate::BitReader;
 ///Field `DONE_RAW_STAT` writer - AES_ACC done raw status
@@ -54,10 +50,6 @@ pub type HashBusErrRawStatW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type HashPadErrRawStatR = crate::BitReader;
 ///Field `HASH_PAD_ERR_RAW_STAT` writer - HASH_ACC padding error raw status
 pub type HashPadErrRawStatW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
     ///Bit 0 - AES_ACC done status
     #[inline(always)]
@@ -89,11 +81,6 @@ impl R {
     pub fn hash_pad_err_stat(&self) -> HashPadErrStatR {
         HashPadErrStatR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 6) & 0x03ff) as u16)
-    }
     ///Bit 16 - AES_ACC done raw status
     #[inline(always)]
     pub fn done_raw_stat(&self) -> DoneRawStatR {
@@ -124,23 +111,16 @@ impl R {
     pub fn hash_pad_err_raw_stat(&self) -> HashPadErrRawStatR {
         HashPadErrRawStatR::new(((self.bits >> 21) & 1) != 0)
     }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 22) & 0x03ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("IRQ")
-            .field("rsvd", &self.rsvd())
             .field("hash_pad_err_raw_stat", &self.hash_pad_err_raw_stat())
             .field("hash_bus_err_raw_stat", &self.hash_bus_err_raw_stat())
             .field("hash_done_raw_stat", &self.hash_done_raw_stat())
             .field("setup_err_raw_stat", &self.setup_err_raw_stat())
             .field("bus_err_raw_stat", &self.bus_err_raw_stat())
             .field("done_raw_stat", &self.done_raw_stat())
-            .field("rsvd2", &self.rsvd2())
             .field("hash_pad_err_stat", &self.hash_pad_err_stat())
             .field("hash_bus_err_stat", &self.hash_bus_err_stat())
             .field("hash_done_stat", &self.hash_done_stat())
@@ -181,11 +161,6 @@ impl W {
     pub fn hash_pad_err_stat(&mut self) -> HashPadErrStatW<IRQrs> {
         HashPadErrStatW::new(self, 5)
     }
-    ///Bits 6:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<IRQrs> {
-        Rsvd2W::new(self, 6)
-    }
     ///Bit 16 - AES_ACC done raw status
     #[inline(always)]
     pub fn done_raw_stat(&mut self) -> DoneRawStatW<IRQrs> {
@@ -215,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn hash_pad_err_raw_stat(&mut self) -> HashPadErrRawStatW<IRQrs> {
         HashPadErrRawStatW::new(self, 21)
-    }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<IRQrs> {
-        RsvdW::new(self, 22)
     }
 }
 ///

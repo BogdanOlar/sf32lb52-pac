@@ -34,10 +34,6 @@ pub type Tcif7W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Tcif8R = crate::BitReader;
 ///Field `TCIF8` writer - task complete interrupt flag for task 8
 pub type Tcif8W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 ///Field `TEIF1` reader - transfer error flag for task 1
 pub type Teif1R = crate::BitReader;
 ///Field `TEIF1` writer - transfer error flag for task 1
@@ -70,10 +66,6 @@ pub type Teif7W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Teif8R = crate::BitReader;
 ///Field `TEIF8` writer - transfer error flag for task 8
 pub type Teif8W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bit 0 - task complete interrupt flag for task 1
     #[inline(always)]
@@ -115,11 +107,6 @@ impl R {
     pub fn tcif8(&self) -> Tcif8R {
         Tcif8R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 8) & 0xff) as u8)
-    }
     ///Bit 16 - transfer error flag for task 1
     #[inline(always)]
     pub fn teif1(&self) -> Teif1R {
@@ -160,16 +147,10 @@ impl R {
     pub fn teif8(&self) -> Teif8R {
         Teif8R::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ISR")
-            .field("rsvd", &self.rsvd())
             .field("teif8", &self.teif8())
             .field("teif7", &self.teif7())
             .field("teif6", &self.teif6())
@@ -178,7 +159,6 @@ impl core::fmt::Debug for R {
             .field("teif3", &self.teif3())
             .field("teif2", &self.teif2())
             .field("teif1", &self.teif1())
-            .field("rsvd2", &self.rsvd2())
             .field("tcif8", &self.tcif8())
             .field("tcif7", &self.tcif7())
             .field("tcif6", &self.tcif6())
@@ -231,11 +211,6 @@ impl W {
     pub fn tcif8(&mut self) -> Tcif8W<ISRrs> {
         Tcif8W::new(self, 7)
     }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ISRrs> {
-        Rsvd2W::new(self, 8)
-    }
     ///Bit 16 - transfer error flag for task 1
     #[inline(always)]
     pub fn teif1(&mut self) -> Teif1W<ISRrs> {
@@ -275,11 +250,6 @@ impl W {
     #[inline(always)]
     pub fn teif8(&mut self) -> Teif8W<ISRrs> {
         Teif8W::new(self, 23)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ISRrs> {
-        RsvdW::new(self, 24)
     }
 }
 ///interrupt status register

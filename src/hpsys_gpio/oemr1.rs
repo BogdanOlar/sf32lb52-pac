@@ -6,28 +6,16 @@ pub type W = crate::W<OEMR1rs>;
 pub type OemR = crate::FieldReader<u16>;
 ///Field `OEM` writer - output mode of corresponding GPIO\[44:32\]
 pub type OemW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bits 0:12 - output mode of corresponding GPIO\[44:32\]
     #[inline(always)]
     pub fn oem(&self) -> OemR {
         OemR::new((self.bits & 0x1fff) as u16)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("OEMR1")
-            .field("rsvd", &self.rsvd())
-            .field("oem", &self.oem())
-            .finish()
+        f.debug_struct("OEMR1").field("oem", &self.oem()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn oem(&mut self) -> OemW<OEMR1rs> {
         OemW::new(self, 0)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<OEMR1rs> {
-        RsvdW::new(self, 13)
     }
 }
 ///output mode Register

@@ -6,28 +6,16 @@ pub type W = crate::W<USBCRrs>;
 pub type DivR = crate::FieldReader;
 ///Field `DIV` writer - USB function clock is USB source clock divided by DIV. After divider, USB function clock must be 60MHz. For example, if USBC clock source is 240MHz clk_dll2, DIV should be 4.
 pub type DivW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
 impl R {
     ///Bits 0:2 - USB function clock is USB source clock divided by DIV. After divider, USB function clock must be 60MHz. For example, if USBC clock source is 240MHz clk_dll2, DIV should be 4.
     #[inline(always)]
     pub fn div(&self) -> DivR {
         DivR::new((self.bits & 7) as u8)
     }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 3) & 0x1fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USBCR")
-            .field("rsvd", &self.rsvd())
-            .field("div", &self.div())
-            .finish()
+        f.debug_struct("USBCR").field("div", &self.div()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn div(&mut self) -> DivW<USBCRrs> {
         DivW::new(self, 0)
-    }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<USBCRrs> {
-        RsvdW::new(self, 3)
     }
 }
 ///USBC Control Register

@@ -18,10 +18,6 @@ pub type HtieW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TeieR = crate::BitReader;
 ///Field `TEIE` writer - transfer error interrupt enable 0: disabled 1: enabled
 pub type TeieW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::FieldReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `DSTINC` reader - destination increment mode Defines the increment mode for each DMA transfer to the destination memory. 0: disabled 1: enabled
 pub type DstincR = crate::BitReader;
 ///Field `DSTINC` writer - destination increment mode Defines the increment mode for each DMA transfer to the destination memory. 0: disabled 1: enabled
@@ -38,10 +34,6 @@ pub type DstsizeW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type SrcsizeR = crate::FieldReader;
 ///Field `SRCSIZE` writer - source size Defines the data size of each DMA transfer to the source memory. Should be fixed to 10 (32 bits), word access allowed only.
 pub type SrcsizeW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 ///Field `DSTBURST` reader - destination burst transfer configuration 00: single transfer 01: INCR4 (incremental burst of 4 beats) 10: INCR8 (incremental burst of 8 beats) 11: INCR16 (incremental burst of 16 beats)
 pub type DstburstR = crate::FieldReader;
 ///Field `DSTBURST` writer - destination burst transfer configuration 00: single transfer 01: INCR4 (incremental burst of 4 beats) 10: INCR8 (incremental burst of 8 beats) 11: INCR16 (incremental burst of 16 beats)
@@ -50,10 +42,6 @@ pub type DstburstW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type SrcburstR = crate::FieldReader;
 ///Field `SRCBURST` writer - source burst transfer configuration 00: single transfer 01: INCR4 (incremental burst of 4 beats) 10: INCR8 (incremental burst of 8 beats) 11: INCR16 (incremental burst of 16 beats)
 pub type SrcburstW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 ///Field `RESET` reader - Software reset, will clear extdma status. Active high. Will be cleared by HW automatically
 pub type ResetR = crate::BitReader;
 ///Field `RESET` writer - Software reset, will clear extdma status. Active high. Will be cleared by HW automatically
@@ -79,11 +67,6 @@ impl R {
     pub fn teie(&self) -> TeieR {
         TeieR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:5
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 4) & 3) as u8)
-    }
     ///Bit 6 - destination increment mode Defines the increment mode for each DMA transfer to the destination memory. 0: disabled 1: enabled
     #[inline(always)]
     pub fn dstinc(&self) -> DstincR {
@@ -104,11 +87,6 @@ impl R {
     pub fn srcsize(&self) -> SrcsizeR {
         SrcsizeR::new(((self.bits >> 10) & 3) as u8)
     }
-    ///Bits 12:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 12) & 0x0f) as u8)
-    }
     ///Bits 16:17 - destination burst transfer configuration 00: single transfer 01: INCR4 (incremental burst of 4 beats) 10: INCR8 (incremental burst of 8 beats) 11: INCR16 (incremental burst of 16 beats)
     #[inline(always)]
     pub fn dstburst(&self) -> DstburstR {
@@ -118,11 +96,6 @@ impl R {
     #[inline(always)]
     pub fn srcburst(&self) -> SrcburstR {
         SrcburstR::new(((self.bits >> 18) & 3) as u8)
-    }
-    ///Bits 20:30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 20) & 0x07ff) as u16)
     }
     ///Bit 31 - Software reset, will clear extdma status. Active high. Will be cleared by HW automatically
     #[inline(always)]
@@ -134,15 +107,12 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CCR")
             .field("reset", &self.reset())
-            .field("rsvd", &self.rsvd())
             .field("srcburst", &self.srcburst())
             .field("dstburst", &self.dstburst())
-            .field("rsvd2", &self.rsvd2())
             .field("srcsize", &self.srcsize())
             .field("dstsize", &self.dstsize())
             .field("srcinc", &self.srcinc())
             .field("dstinc", &self.dstinc())
-            .field("rsvd3", &self.rsvd3())
             .field("teie", &self.teie())
             .field("htie", &self.htie())
             .field("tcie", &self.tcie())
@@ -171,11 +141,6 @@ impl W {
     pub fn teie(&mut self) -> TeieW<CCRrs> {
         TeieW::new(self, 3)
     }
-    ///Bits 4:5
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<CCRrs> {
-        Rsvd3W::new(self, 4)
-    }
     ///Bit 6 - destination increment mode Defines the increment mode for each DMA transfer to the destination memory. 0: disabled 1: enabled
     #[inline(always)]
     pub fn dstinc(&mut self) -> DstincW<CCRrs> {
@@ -196,11 +161,6 @@ impl W {
     pub fn srcsize(&mut self) -> SrcsizeW<CCRrs> {
         SrcsizeW::new(self, 10)
     }
-    ///Bits 12:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CCRrs> {
-        Rsvd2W::new(self, 12)
-    }
     ///Bits 16:17 - destination burst transfer configuration 00: single transfer 01: INCR4 (incremental burst of 4 beats) 10: INCR8 (incremental burst of 8 beats) 11: INCR16 (incremental burst of 16 beats)
     #[inline(always)]
     pub fn dstburst(&mut self) -> DstburstW<CCRrs> {
@@ -210,11 +170,6 @@ impl W {
     #[inline(always)]
     pub fn srcburst(&mut self) -> SrcburstW<CCRrs> {
         SrcburstW::new(self, 18)
-    }
-    ///Bits 20:30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CCRrs> {
-        RsvdW::new(self, 20)
     }
     ///Bit 31 - Software reset, will clear extdma status. Active high. Will be cleared by HW automatically
     #[inline(always)]

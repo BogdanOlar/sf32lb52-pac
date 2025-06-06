@@ -6,26 +6,16 @@ pub type W = crate::W<TX_EQUALIZER_ENrs>;
 pub type TxEqualizerEnR = crate::BitReader;
 ///Field `TX_EQUALIZER_EN` writer - 0: Disable TX equalizer 1: Enable TX equalizer equalizer is not implemented
 pub type TxEqualizerEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 impl R {
     ///Bit 0 - 0: Disable TX equalizer 1: Enable TX equalizer equalizer is not implemented
     #[inline(always)]
     pub fn tx_equalizer_en(&self) -> TxEqualizerEnR {
         TxEqualizerEnR::new((self.bits & 1) != 0)
     }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 1) & 0x7fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TX_EQUALIZER_EN")
-            .field("rsvd", &self.rsvd())
             .field("tx_equalizer_en", &self.tx_equalizer_en())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn tx_equalizer_en(&mut self) -> TxEqualizerEnW<TX_EQUALIZER_ENrs> {
         TxEqualizerEnW::new(self, 0)
-    }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TX_EQUALIZER_ENrs> {
-        RsvdW::new(self, 1)
     }
 }
 ///

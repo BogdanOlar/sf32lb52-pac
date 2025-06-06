@@ -10,10 +10,6 @@ pub type SleepReqW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type WkupReqR = crate::BitReader;
 ///Field `WKUP_REQ` writer - software request to wakeup bt. Will be cleared automatically
 pub type WkupReqW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `SLEEP_STATUS` reader - bt sleep status. 1 means bt is sleeping and sleep_cnt is counting up
 pub type SleepStatusR = crate::BitReader;
 ///Field `SLEEP_STATUS` writer - bt sleep status. 1 means bt is sleeping and sleep_cnt is counting up
@@ -26,10 +22,6 @@ pub type XtalReqW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type BtWkupR = crate::BitReader;
 ///Field `BT_WKUP` writer - bt wakeup source. 1 means bt has not enter sleep or has enter wakeup procedure
 pub type BtWkupW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 25, u32>;
 impl R {
     ///Bit 0 - bt sleep request. Will be cleared automatically
     #[inline(always)]
@@ -40,11 +32,6 @@ impl R {
     #[inline(always)]
     pub fn wkup_req(&self) -> WkupReqR {
         WkupReqR::new(((self.bits >> 1) & 1) != 0)
-    }
-    ///Bits 2:3
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 2) & 3) as u8)
     }
     ///Bit 4 - bt sleep status. 1 means bt is sleeping and sleep_cnt is counting up
     #[inline(always)]
@@ -61,20 +48,13 @@ impl R {
     pub fn bt_wkup(&self) -> BtWkupR {
         BtWkupR::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 7) & 0x01ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SLP_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("bt_wkup", &self.bt_wkup())
             .field("xtal_req", &self.xtal_req())
             .field("sleep_status", &self.sleep_status())
-            .field("rsvd2", &self.rsvd2())
             .field("wkup_req", &self.wkup_req())
             .field("sleep_req", &self.sleep_req())
             .finish()
@@ -91,11 +71,6 @@ impl W {
     pub fn wkup_req(&mut self) -> WkupReqW<SLP_CTRLrs> {
         WkupReqW::new(self, 1)
     }
-    ///Bits 2:3
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<SLP_CTRLrs> {
-        Rsvd2W::new(self, 2)
-    }
     ///Bit 4 - bt sleep status. 1 means bt is sleeping and sleep_cnt is counting up
     #[inline(always)]
     pub fn sleep_status(&mut self) -> SleepStatusW<SLP_CTRLrs> {
@@ -110,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn bt_wkup(&mut self) -> BtWkupW<SLP_CTRLrs> {
         BtWkupW::new(self, 6)
-    }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SLP_CTRLrs> {
-        RsvdW::new(self, 7)
     }
 }
 ///BT sleep control

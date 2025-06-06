@@ -18,18 +18,10 @@ pub type OcclrW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type EtclrR = crate::BitReader;
 ///Field `ETCLR` writer - External trigger valid edge clear flag Writing 1 to this bit clears the ET flag in the LPTIM_ISR register
 pub type EtclrW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 ///Field `WKUPCLR` reader - wakeup status clear flag Writing 1 to this bit clears all wakeup status flags in the LPTIM_ISR register.
 pub type WkupclrR = crate::BitReader;
 ///Field `WKUPCLR` writer - wakeup status clear flag Writing 1 to this bit clears all wakeup status flags in the LPTIM_ISR register.
 pub type WkupclrW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bit 0 - Update event clear flag Writing 1 to this bit clear the UE flag in the LPTIM_ISR register.
     #[inline(always)]
@@ -51,28 +43,16 @@ impl R {
     pub fn etclr(&self) -> EtclrR {
         EtclrR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 4) & 0x0f) as u8)
-    }
     ///Bit 8 - wakeup status clear flag Writing 1 to this bit clears all wakeup status flags in the LPTIM_ISR register.
     #[inline(always)]
     pub fn wkupclr(&self) -> WkupclrR {
         WkupclrR::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ICR")
-            .field("rsvd", &self.rsvd())
             .field("wkupclr", &self.wkupclr())
-            .field("rsvd2", &self.rsvd2())
             .field("etclr", &self.etclr())
             .field("occlr", &self.occlr())
             .field("ofclr", &self.ofclr())
@@ -101,20 +81,10 @@ impl W {
     pub fn etclr(&mut self) -> EtclrW<ICRrs> {
         EtclrW::new(self, 3)
     }
-    ///Bits 4:7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ICRrs> {
-        Rsvd2W::new(self, 4)
-    }
     ///Bit 8 - wakeup status clear flag Writing 1 to this bit clears all wakeup status flags in the LPTIM_ISR register.
     #[inline(always)]
     pub fn wkupclr(&mut self) -> WkupclrW<ICRrs> {
         WkupclrW::new(self, 8)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ICRrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///LPTIM interrupt and status clear register

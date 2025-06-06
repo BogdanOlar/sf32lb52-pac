@@ -38,10 +38,6 @@ pub type BgW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type B2gR = crate::BitReader;
 ///Field `B2G` writer - Break 2 generation This bit is set by software in order to generate an event, it is automatically cleared by hardware. 0: No action 1: A break 2 event is generated. MOE bit is cleared and B2IF flag is set. Related interrupt can occur if enabled.
 pub type B2gW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bit 0 - Update generation This bit can be set by software, it is automatically cleared by hardware. 0: No action 1: Re-initialize the counter and generates an update of the registers. The prescaler counter is cleared too (anyway the prescaler ratio is not affected). The counter is cleared if the center-aligned mode is selected or if DIR=0 (upcounting), else it takes the auto-reload value (ARR) if DIR=1 (downcounting).
     #[inline(always)]
@@ -88,16 +84,10 @@ impl R {
     pub fn b2g(&self) -> B2gR {
         B2gR::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("EGR")
-            .field("rsvd", &self.rsvd())
             .field("b2g", &self.b2g())
             .field("bg", &self.bg())
             .field("tg", &self.tg())
@@ -155,11 +145,6 @@ impl W {
     #[inline(always)]
     pub fn b2g(&mut self) -> B2gW<EGRrs> {
         B2gW::new(self, 8)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<EGRrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///Event generation register

@@ -14,10 +14,6 @@ pub type SlippedUpW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SlippedDnR = crate::BitReader;
 ///Field `SLIPPED_DN` writer - slip dn
 pub type SlippedDnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
 impl R {
     ///Bit 0 - 1:pll unlock
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn slipped_dn(&self) -> SlippedDnR {
         SlippedDnR::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 3) & 0x1fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PLL_STAT")
-            .field("rsvd", &self.rsvd())
             .field("slipped_dn", &self.slipped_dn())
             .field("slipped_up", &self.slipped_up())
             .field("unlock", &self.unlock())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn slipped_dn(&mut self) -> SlippedDnW<PLL_STATrs> {
         SlippedDnW::new(self, 2)
-    }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PLL_STATrs> {
-        RsvdW::new(self, 3)
     }
 }
 ///

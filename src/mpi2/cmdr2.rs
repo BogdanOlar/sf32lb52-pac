@@ -6,28 +6,16 @@ pub type W = crate::W<CMDR2rs>;
 pub type CmdR = crate::FieldReader;
 ///Field `CMD` writer - Command 2. If CMD2E is enabled, the CMD2 sequence will be issued after CMD1 as specified in CCR2 Note: CMD2 sequence cannot be issue individually
 pub type CmdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bits 0:7 - Command 2. If CMD2E is enabled, the CMD2 sequence will be issued after CMD1 as specified in CCR2 Note: CMD2 sequence cannot be issue individually
     #[inline(always)]
     pub fn cmd(&self) -> CmdR {
         CmdR::new((self.bits & 0xff) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CMDR2")
-            .field("rsvd", &self.rsvd())
-            .field("cmd", &self.cmd())
-            .finish()
+        f.debug_struct("CMDR2").field("cmd", &self.cmd()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn cmd(&mut self) -> CmdW<CMDR2rs> {
         CmdW::new(self, 0)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CMDR2rs> {
-        RsvdW::new(self, 8)
     }
 }
 ///Command Register

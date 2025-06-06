@@ -26,10 +26,6 @@ pub type EtypeErrEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AezipIntEnR = crate::BitReader;
 ///Field `AEZIP_INT_EN` writer - aezip_frame_int_en
 pub type AezipIntEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
     ///Bit 0 - ezip_end _int_en
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn aezip_int_en(&self) -> AezipIntEnR {
         AezipIntEnR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("INT_EN")
-            .field("rsvd", &self.rsvd())
             .field("aezip_int_en", &self.aezip_int_en())
             .field("etype_err_en", &self.etype_err_en())
             .field("btype_err_en", &self.btype_err_en())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn aezip_int_en(&mut self) -> AezipIntEnW<INT_ENrs> {
         AezipIntEnW::new(self, 5)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<INT_ENrs> {
-        RsvdW::new(self, 6)
     }
 }
 ///ezip decoder _int_en

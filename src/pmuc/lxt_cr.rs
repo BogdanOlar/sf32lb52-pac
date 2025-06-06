@@ -38,10 +38,6 @@ pub type CapSelW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ExtEnR = crate::BitReader;
 ///Field `EXT_EN` writer - use external 32K from Pin
 pub type ExtEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
 ///Field `RDY` reader -
 pub type RdyR = crate::BitReader;
 ///Field `RDY` writer -
@@ -92,11 +88,6 @@ impl R {
     pub fn ext_en(&self) -> ExtEnR {
         ExtEnR::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bits 16:30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0x7fff) as u16)
-    }
     ///Bit 31
     #[inline(always)]
     pub fn rdy(&self) -> RdyR {
@@ -107,7 +98,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LXT_CR")
             .field("rdy", &self.rdy())
-            .field("rsvd", &self.rsvd())
             .field("ext_en", &self.ext_en())
             .field("cap_sel", &self.cap_sel())
             .field("bmstart", &self.bmstart())
@@ -165,11 +155,6 @@ impl W {
     #[inline(always)]
     pub fn ext_en(&mut self) -> ExtEnW<LXT_CRrs> {
         ExtEnW::new(self, 15)
-    }
-    ///Bits 16:30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LXT_CRrs> {
-        RsvdW::new(self, 16)
     }
     ///Bit 31
     #[inline(always)]

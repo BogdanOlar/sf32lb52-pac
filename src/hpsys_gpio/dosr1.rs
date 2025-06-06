@@ -6,28 +6,16 @@ pub type W = crate::W<DOSR1rs>;
 pub type DosR = crate::FieldReader<u16>;
 ///Field `DOS` writer - set 1 to pull up output of corresponding GPIO\[44:32\]
 pub type DosW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bits 0:12 - set 1 to pull up output of corresponding GPIO\[44:32\]
     #[inline(always)]
     pub fn dos(&self) -> DosR {
         DosR::new((self.bits & 0x1fff) as u16)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DOSR1")
-            .field("rsvd", &self.rsvd())
-            .field("dos", &self.dos())
-            .finish()
+        f.debug_struct("DOSR1").field("dos", &self.dos()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn dos(&mut self) -> DosW<DOSR1rs> {
         DosW::new(self, 0)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DOSR1rs> {
-        RsvdW::new(self, 13)
     }
 }
 ///Data Output Set Register

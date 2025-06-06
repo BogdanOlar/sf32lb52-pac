@@ -26,10 +26,6 @@ pub type LastnackW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LaststopR = crate::BitReader;
 ///Field `LASTSTOP` writer - Generate STOP for last DMA transfer
 pub type LaststopW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `MSDE` reader - Master Stop Detected Enable: 0 = Master Stop Detect (MSD) status is not enabled. 1 = Master Stop Detect (MSD) status is enabled.
 pub type MsdeR = crate::BitReader;
 ///Field `MSDE` writer - Master Stop Detected Enable: 0 = Master Stop Detect (MSD) status is not enabled. 1 = Master Stop Detect (MSD) status is enabled.
@@ -38,10 +34,6 @@ pub type MsdeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SclppR = crate::BitReader;
 ///Field `SCLPP` writer - Push-pull mode Enable for SCL. 0 = open drain output for SCL. 1 = Push-pull output for SCL
 pub type SclppW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `SLVEN` reader - Slave mode Enable for SCL. 0 = Disable slave mode. Will not monitor slave address on I2C bus. 1 = Enable slave mode. Will monitor slave address on I2C bus.
 pub type SlvenR = crate::BitReader;
 ///Field `SLVEN` writer - Slave mode Enable for SCL. 0 = Disable slave mode. Will not monitor slave address on I2C bus. 1 = Enable slave mode. Will monitor slave address on I2C bus.
@@ -50,10 +42,6 @@ pub type SlvenW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DnfR = crate::FieldReader;
 ///Field `DNF` writer - Digital noise filter These bits are used to configure the digital noise filter on SDA and SCL input. The digital filter will filter spikes with a length of up to DNF*Tfclk. 0: Digital filter disabled 1: Digital filter enabled and filtering capability up to 1 Tfclk ... 7: digital filter enabled and filtering capability up to 7 Tfclk Digital filter is added to analog filter. Digital filter will introduce delay on SCL and SDA processing, which is essential in hs-mode.
 pub type DnfW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 ///Field `BRGRST` reader - Reset bus related state machine and signals. Will be cleared by HW automatically 1 = request for reset 0 = reset finished
 pub type BrgrstR = crate::BitReader;
 ///Field `BRGRST` writer - Reset bus related state machine and signals. Will be cleared by HW automatically 1 = request for reset 0 = reset finished
@@ -97,11 +85,6 @@ impl R {
     pub fn laststop(&self) -> LaststopR {
         LaststopR::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 7) & 1) != 0)
-    }
     ///Bit 8 - Master Stop Detected Enable: 0 = Master Stop Detect (MSD) status is not enabled. 1 = Master Stop Detect (MSD) status is enabled.
     #[inline(always)]
     pub fn msde(&self) -> MsdeR {
@@ -112,11 +95,6 @@ impl R {
     pub fn sclpp(&self) -> SclppR {
         SclppR::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bit 10
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 10) & 1) != 0)
-    }
     ///Bit 11 - Slave mode Enable for SCL. 0 = Disable slave mode. Will not monitor slave address on I2C bus. 1 = Enable slave mode. Will monitor slave address on I2C bus.
     #[inline(always)]
     pub fn slven(&self) -> SlvenR {
@@ -126,11 +104,6 @@ impl R {
     #[inline(always)]
     pub fn dnf(&self) -> DnfR {
         DnfR::new(((self.bits >> 12) & 7) as u8)
-    }
-    ///Bits 15:28
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 15) & 0x3fff) as u16)
     }
     ///Bit 29 - Reset bus related state machine and signals. Will be cleared by HW automatically 1 = request for reset 0 = reset finished
     #[inline(always)]
@@ -154,13 +127,10 @@ impl core::fmt::Debug for R {
             .field("ur", &self.ur())
             .field("rstreq", &self.rstreq())
             .field("brgrst", &self.brgrst())
-            .field("rsvd", &self.rsvd())
             .field("dnf", &self.dnf())
             .field("slven", &self.slven())
-            .field("rsvd2", &self.rsvd2())
             .field("sclpp", &self.sclpp())
             .field("msde", &self.msde())
-            .field("rsvd3", &self.rsvd3())
             .field("laststop", &self.laststop())
             .field("lastnack", &self.lastnack())
             .field("dmaen", &self.dmaen())
@@ -201,11 +171,6 @@ impl W {
     pub fn laststop(&mut self) -> LaststopW<CRrs> {
         LaststopW::new(self, 6)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<CRrs> {
-        Rsvd3W::new(self, 7)
-    }
     ///Bit 8 - Master Stop Detected Enable: 0 = Master Stop Detect (MSD) status is not enabled. 1 = Master Stop Detect (MSD) status is enabled.
     #[inline(always)]
     pub fn msde(&mut self) -> MsdeW<CRrs> {
@@ -216,11 +181,6 @@ impl W {
     pub fn sclpp(&mut self) -> SclppW<CRrs> {
         SclppW::new(self, 9)
     }
-    ///Bit 10
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CRrs> {
-        Rsvd2W::new(self, 10)
-    }
     ///Bit 11 - Slave mode Enable for SCL. 0 = Disable slave mode. Will not monitor slave address on I2C bus. 1 = Enable slave mode. Will monitor slave address on I2C bus.
     #[inline(always)]
     pub fn slven(&mut self) -> SlvenW<CRrs> {
@@ -230,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn dnf(&mut self) -> DnfW<CRrs> {
         DnfW::new(self, 12)
-    }
-    ///Bits 15:28
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CRrs> {
-        RsvdW::new(self, 15)
     }
     ///Bit 29 - Reset bus related state machine and signals. Will be cleared by HW automatically 1 = request for reset 0 = reset finished
     #[inline(always)]

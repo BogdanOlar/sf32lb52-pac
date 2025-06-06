@@ -26,10 +26,6 @@ pub type DacCh1OutUfW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DacCh1StbOfR = crate::BitReader;
 ///Field `DAC_CH1_STB_OF` writer - interrupt mask. 0: mask the interrupt.
 pub type DacCh1StbOfW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader<u16>;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 ///Field `ADC_CH0_APB_OF` reader - interrupt mask. 0: mask the interrupt.
 pub type AdcCh0ApbOfR = crate::BitReader;
 ///Field `ADC_CH0_APB_OF` writer - interrupt mask. 0: mask the interrupt.
@@ -54,10 +50,6 @@ pub type AdcCh1ApbUfW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AdcCh1SatR = crate::BitReader;
 ///Field `ADC_CH1_SAT` writer - interrupt mask. 0: mask the interrupt.
 pub type AdcCh1SatW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
     ///Bit 0 - interrupt mask. 0: mask the interrupt.
     #[inline(always)]
@@ -89,11 +81,6 @@ impl R {
     pub fn dac_ch1_stb_of(&self) -> DacCh1StbOfR {
         DacCh1StbOfR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 6) & 0x03ff) as u16)
-    }
     ///Bit 16 - interrupt mask. 0: mask the interrupt.
     #[inline(always)]
     pub fn adc_ch0_apb_of(&self) -> AdcCh0ApbOfR {
@@ -124,23 +111,16 @@ impl R {
     pub fn adc_ch1_sat(&self) -> AdcCh1SatR {
         AdcCh1SatR::new(((self.bits >> 21) & 1) != 0)
     }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 22) & 0x03ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("IRQ_MSK")
-            .field("rsvd", &self.rsvd())
             .field("adc_ch1_sat", &self.adc_ch1_sat())
             .field("adc_ch1_apb_uf", &self.adc_ch1_apb_uf())
             .field("adc_ch1_apb_of", &self.adc_ch1_apb_of())
             .field("adc_ch0_sat", &self.adc_ch0_sat())
             .field("adc_ch0_apb_uf", &self.adc_ch0_apb_uf())
             .field("adc_ch0_apb_of", &self.adc_ch0_apb_of())
-            .field("rsvd2", &self.rsvd2())
             .field("dac_ch1_stb_of", &self.dac_ch1_stb_of())
             .field("dac_ch1_out_uf", &self.dac_ch1_out_uf())
             .field("dac_ch1_apb_of", &self.dac_ch1_apb_of())
@@ -181,11 +161,6 @@ impl W {
     pub fn dac_ch1_stb_of(&mut self) -> DacCh1StbOfW<IRQ_MSKrs> {
         DacCh1StbOfW::new(self, 5)
     }
-    ///Bits 6:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<IRQ_MSKrs> {
-        Rsvd2W::new(self, 6)
-    }
     ///Bit 16 - interrupt mask. 0: mask the interrupt.
     #[inline(always)]
     pub fn adc_ch0_apb_of(&mut self) -> AdcCh0ApbOfW<IRQ_MSKrs> {
@@ -215,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn adc_ch1_sat(&mut self) -> AdcCh1SatW<IRQ_MSKrs> {
         AdcCh1SatW::new(self, 21)
-    }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<IRQ_MSKrs> {
-        RsvdW::new(self, 22)
     }
 }
 ///

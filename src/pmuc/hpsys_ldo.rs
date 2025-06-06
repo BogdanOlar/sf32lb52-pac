@@ -26,10 +26,6 @@ pub type DlyW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 pub type RdyR = crate::BitReader;
 ///Field `RDY` writer -
 pub type RdyW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn rdy(&self) -> RdyR {
         RdyR::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bits 17:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 17) & 0x7fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("HPSYS_LDO")
-            .field("rsvd", &self.rsvd())
             .field("rdy", &self.rdy())
             .field("dly", &self.dly())
             .field("vref2", &self.vref2())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn rdy(&mut self) -> RdyW<HPSYS_LDOrs> {
         RdyW::new(self, 16)
-    }
-    ///Bits 17:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<HPSYS_LDOrs> {
-        RsvdW::new(self, 17)
     }
 }
 ///HPSYS LDO Control Register

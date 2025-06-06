@@ -6,10 +6,6 @@ pub type W = crate::W<ADC_SLOT5_REGrs>;
 pub type SlotEnR = crate::BitReader;
 ///Field `SLOT_EN` writer -
 pub type SlotEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 ///Field `PCHNL_SEL` reader -
 pub type PchnlSelR = crate::FieldReader;
 ///Field `PCHNL_SEL` writer -
@@ -18,20 +14,11 @@ pub type PchnlSelW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type NchnlSelR = crate::FieldReader;
 ///Field `NCHNL_SEL` writer -
 pub type NchnlSelW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 18, u32>;
 impl R {
     ///Bit 0
     #[inline(always)]
     pub fn slot_en(&self) -> SlotEnR {
         SlotEnR::new((self.bits & 1) != 0)
-    }
-    ///Bits 1:7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 1) & 0x7f) as u8)
     }
     ///Bits 8:10
     #[inline(always)]
@@ -43,19 +30,12 @@ impl R {
     pub fn nchnl_sel(&self) -> NchnlSelR {
         NchnlSelR::new(((self.bits >> 11) & 7) as u8)
     }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 14) & 0x0003_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ADC_SLOT5_REG")
-            .field("rsvd", &self.rsvd())
             .field("nchnl_sel", &self.nchnl_sel())
             .field("pchnl_sel", &self.pchnl_sel())
-            .field("rsvd2", &self.rsvd2())
             .field("slot_en", &self.slot_en())
             .finish()
     }
@@ -66,11 +46,6 @@ impl W {
     pub fn slot_en(&mut self) -> SlotEnW<ADC_SLOT5_REGrs> {
         SlotEnW::new(self, 0)
     }
-    ///Bits 1:7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ADC_SLOT5_REGrs> {
-        Rsvd2W::new(self, 1)
-    }
     ///Bits 8:10
     #[inline(always)]
     pub fn pchnl_sel(&mut self) -> PchnlSelW<ADC_SLOT5_REGrs> {
@@ -80,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn nchnl_sel(&mut self) -> NchnlSelW<ADC_SLOT5_REGrs> {
         NchnlSelW::new(self, 11)
-    }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ADC_SLOT5_REGrs> {
-        RsvdW::new(self, 14)
     }
 }
 ///ADC Slot5 Config Register

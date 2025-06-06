@@ -18,10 +18,6 @@ pub type RandNumGenBusyW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type RandNumValidR = crate::BitReader;
 ///Field `RAND_NUM_VALID` writer - random number valid flag
 pub type RandNumValidW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0 - random seed engine busy flag
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn rand_num_valid(&self) -> RandNumValidR {
         RandNumValidR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("STAT")
-            .field("rsvd", &self.rsvd())
             .field("rand_num_valid", &self.rand_num_valid())
             .field("rand_num_gen_busy", &self.rand_num_gen_busy())
             .field("seed_valid", &self.seed_valid())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn rand_num_valid(&mut self) -> RandNumValidW<STATrs> {
         RandNumValidW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<STATrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///

@@ -38,10 +38,6 @@ pub type EnAmpW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SetVcR = crate::BitReader;
 ///Field `SET_VC` writer - set vc
 pub type SetVcW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 18, u32>;
 impl R {
     ///Bit 0 - enable bandgap
     #[inline(always)]
@@ -88,16 +84,10 @@ impl R {
     pub fn set_vc(&self) -> SetVcR {
         SetVcR::new(((self.bits >> 13) & 1) != 0)
     }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 14) & 0x0003_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("BG_CFG0")
-            .field("rsvd", &self.rsvd())
             .field("set_vc", &self.set_vc())
             .field("en_amp", &self.en_amp())
             .field("mic_vref_sel", &self.mic_vref_sel())
@@ -155,11 +145,6 @@ impl W {
     #[inline(always)]
     pub fn set_vc(&mut self) -> SetVcW<BG_CFG0rs> {
         SetVcW::new(self, 13)
-    }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<BG_CFG0rs> {
-        RsvdW::new(self, 14)
     }
 }
 ///

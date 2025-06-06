@@ -54,10 +54,6 @@ pub type SincRateSelMW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type SdmOsrSelMR = crate::FieldReader;
 ///Field `SDM_OSR_SEL_M` writer - 0:100 1:150 2:300 3:256
 pub type SdmOsrSelMW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     ///Bits 0:3 - DAC oversample rate 4'b0000: 100 4'b0001: 150 4'b0010: 200 4'b0011: 300(sdm osr = 150) 4'b0100: 300(sdm osr = 300) 4'b0101: 400 4'b0110: 600 4'b0111: 800 4'b1000: 1200 4'b1001: 256 4'b1010: 512 4'b1011: 1024 other: reserved
     #[inline(always)]
@@ -124,16 +120,10 @@ impl R {
     pub fn sdm_osr_sel_m(&self) -> SdmOsrSelMR {
         SdmOsrSelMR::new(((self.bits >> 25) & 3) as u8)
     }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 27) & 0x1f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DAC_CFG")
-            .field("rsvd", &self.rsvd())
             .field("sdm_osr_sel_m", &self.sdm_osr_sel_m())
             .field("sinc_rate_sel_m", &self.sinc_rate_sel_m())
             .field("interp3_bypass_m", &self.interp3_bypass_m())
@@ -215,11 +205,6 @@ impl W {
     #[inline(always)]
     pub fn sdm_osr_sel_m(&mut self) -> SdmOsrSelMW<DAC_CFGrs> {
         SdmOsrSelMW::new(self, 25)
-    }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DAC_CFGrs> {
-        RsvdW::new(self, 27)
     }
 }
 ///

@@ -34,18 +34,10 @@ pub type Ctcif7W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Ctcif8R = crate::BitReader;
 ///Field `CTCIF8` writer - clear task complete interrupt flag for task 8
 pub type Ctcif8W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 ///Field `CTEIF` reader - clear transfer error flag
 pub type CteifR = crate::BitReader;
 ///Field `CTEIF` writer - clear transfer error flag
 pub type CteifW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
 impl R {
     ///Bit 0 - clear task complete interrupt flag for task 1
     #[inline(always)]
@@ -87,28 +79,16 @@ impl R {
     pub fn ctcif8(&self) -> Ctcif8R {
         Ctcif8R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 8) & 0xff) as u8)
-    }
     ///Bit 16 - clear transfer error flag
     #[inline(always)]
     pub fn cteif(&self) -> CteifR {
         CteifR::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bits 17:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 17) & 0x7fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ICR")
-            .field("rsvd", &self.rsvd())
             .field("cteif", &self.cteif())
-            .field("rsvd2", &self.rsvd2())
             .field("ctcif8", &self.ctcif8())
             .field("ctcif7", &self.ctcif7())
             .field("ctcif6", &self.ctcif6())
@@ -161,20 +141,10 @@ impl W {
     pub fn ctcif8(&mut self) -> Ctcif8W<ICRrs> {
         Ctcif8W::new(self, 7)
     }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ICRrs> {
-        Rsvd2W::new(self, 8)
-    }
     ///Bit 16 - clear transfer error flag
     #[inline(always)]
     pub fn cteif(&mut self) -> CteifW<ICRrs> {
         CteifW::new(self, 16)
-    }
-    ///Bits 17:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ICRrs> {
-        RsvdW::new(self, 17)
     }
 }
 ///interrupt clear register

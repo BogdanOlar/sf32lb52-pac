@@ -38,10 +38,6 @@ pub type Ds1W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PoeR = crate::BitReader;
 ///Field `POE` writer - Reserved. Always set to logic LOW
 pub type PoeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 impl R {
     ///Bits 0:3 - Function Select
     #[inline(always)]
@@ -88,16 +84,10 @@ impl R {
     pub fn poe(&self) -> PoeR {
         PoeR::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 12) & 0x000f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PAD_PA01")
-            .field("rsvd", &self.rsvd())
             .field("poe", &self.poe())
             .field("ds1", &self.ds1())
             .field("ds0", &self.ds0())
@@ -155,11 +145,6 @@ impl W {
     #[inline(always)]
     pub fn poe(&mut self) -> PoeW<PAD_PA01rs> {
         PoeW::new(self, 11)
-    }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PAD_PA01rs> {
-        RsvdW::new(self, 12)
     }
 }
 ///

@@ -14,10 +14,6 @@ pub type FlashKeyValidW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type HashBusyR = crate::BitReader;
 ///Field `HASH_BUSY` writer - HASH_ACC block is busy
 pub type HashBusyW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
 impl R {
     ///Bit 0 - AES_ACC block is busy
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn hash_busy(&self) -> HashBusyR {
         HashBusyR::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 3) & 0x1fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("STATUS")
-            .field("rsvd", &self.rsvd())
             .field("hash_busy", &self.hash_busy())
             .field("flash_key_valid", &self.flash_key_valid())
             .field("busy", &self.busy())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn hash_busy(&mut self) -> HashBusyW<STATUSrs> {
         HashBusyW::new(self, 2)
-    }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<STATUSrs> {
-        RsvdW::new(self, 3)
     }
 }
 ///

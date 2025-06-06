@@ -6,28 +6,16 @@ pub type W = crate::W<CBSR1rs>;
 pub type BsR = crate::FieldReader;
 ///Field `BS` writer - burst size in non-m2m mode When BS>1, DMA will transfer for BS times for each request if left NDT is larger than BS, or else transfer for left NDT times. When BS=0 or 1, DMA will always do single transfer for each request. In memory-to-memory mode, BS is ignored.
 pub type BsW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bits 0:7 - burst size in non-m2m mode When BS>1, DMA will transfer for BS times for each request if left NDT is larger than BS, or else transfer for left NDT times. When BS=0 or 1, DMA will always do single transfer for each request. In memory-to-memory mode, BS is ignored.
     #[inline(always)]
     pub fn bs(&self) -> BsR {
         BsR::new((self.bits & 0xff) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CBSR1")
-            .field("rsvd", &self.rsvd())
-            .field("bs", &self.bs())
-            .finish()
+        f.debug_struct("CBSR1").field("bs", &self.bs()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn bs(&mut self) -> BsW<CBSR1rs> {
         BsW::new(self, 0)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CBSR1rs> {
-        RsvdW::new(self, 8)
     }
 }
 ///

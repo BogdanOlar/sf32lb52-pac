@@ -14,10 +14,6 @@ pub type Gpio2W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Lptim3R = crate::BitReader;
 ///Field `LPTIM3` writer - Indicates the wakeup status from LPTIM3. Note: the status is masked by WER
 pub type Lptim3W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::FieldReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `BT` reader - Indicates the wakeup status from BT. Note: the status is masked by WER
 pub type BtR = crate::BitReader;
 ///Field `BT` writer - Indicates the wakeup status from BT. Note: the status is masked by WER
@@ -46,10 +42,6 @@ pub type Pin2W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Pin3R = crate::BitReader;
 ///Field `PIN3` writer - Indicates the wakeup status from PA27 request. Note: the status is masked by WER
 pub type Pin3W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `PIN10` reader - Indicates the wakeup status from PA34 request. Note: the status is masked by WER
 pub type Pin10R = crate::BitReader;
 ///Field `PIN10` writer - Indicates the wakeup status from PA34 request. Note: the status is masked by WER
@@ -94,10 +86,6 @@ pub type Pin19W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Pin20R = crate::BitReader;
 ///Field `PIN20` writer - Indicates the wakeup status from PA44 request. Note: the status is masked by WER
 pub type Pin20W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     ///Bit 0 - Indicates the wakeup status from RTC. Note: the status is masked by WER
     #[inline(always)]
@@ -113,11 +101,6 @@ impl R {
     #[inline(always)]
     pub fn lptim3(&self) -> Lptim3R {
         Lptim3R::new(((self.bits >> 2) & 1) != 0)
-    }
-    ///Bits 3:4
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 3) & 3) as u8)
     }
     ///Bit 5 - Indicates the wakeup status from BT. Note: the status is masked by WER
     #[inline(always)]
@@ -153,11 +136,6 @@ impl R {
     #[inline(always)]
     pub fn pin3(&self) -> Pin3R {
         Pin3R::new(((self.bits >> 11) & 1) != 0)
-    }
-    ///Bits 12:17
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 12) & 0x3f) as u8)
     }
     ///Bit 18 - Indicates the wakeup status from PA34 request. Note: the status is masked by WER
     #[inline(always)]
@@ -214,16 +192,10 @@ impl R {
     pub fn pin20(&self) -> Pin20R {
         Pin20R::new(((self.bits >> 28) & 1) != 0)
     }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 29) & 7) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("WSR")
-            .field("rsvd", &self.rsvd())
             .field("pin20", &self.pin20())
             .field("pin19", &self.pin19())
             .field("pin18", &self.pin18())
@@ -235,7 +207,6 @@ impl core::fmt::Debug for R {
             .field("pin12", &self.pin12())
             .field("pin11", &self.pin11())
             .field("pin10", &self.pin10())
-            .field("rsvd2", &self.rsvd2())
             .field("pin3", &self.pin3())
             .field("pin2", &self.pin2())
             .field("pin1", &self.pin1())
@@ -243,7 +214,6 @@ impl core::fmt::Debug for R {
             .field("hp2lp_irq", &self.hp2lp_irq())
             .field("hp2lp_req", &self.hp2lp_req())
             .field("bt", &self.bt())
-            .field("rsvd3", &self.rsvd3())
             .field("lptim3", &self.lptim3())
             .field("gpio2", &self.gpio2())
             .field("rtc", &self.rtc())
@@ -265,11 +235,6 @@ impl W {
     #[inline(always)]
     pub fn lptim3(&mut self) -> Lptim3W<WSRrs> {
         Lptim3W::new(self, 2)
-    }
-    ///Bits 3:4
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<WSRrs> {
-        Rsvd3W::new(self, 3)
     }
     ///Bit 5 - Indicates the wakeup status from BT. Note: the status is masked by WER
     #[inline(always)]
@@ -305,11 +270,6 @@ impl W {
     #[inline(always)]
     pub fn pin3(&mut self) -> Pin3W<WSRrs> {
         Pin3W::new(self, 11)
-    }
-    ///Bits 12:17
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<WSRrs> {
-        Rsvd2W::new(self, 12)
     }
     ///Bit 18 - Indicates the wakeup status from PA34 request. Note: the status is masked by WER
     #[inline(always)]
@@ -365,11 +325,6 @@ impl W {
     #[inline(always)]
     pub fn pin20(&mut self) -> Pin20W<WSRrs> {
         Pin20W::new(self, 28)
-    }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<WSRrs> {
-        RsvdW::new(self, 29)
     }
 }
 ///Wakeup Status register

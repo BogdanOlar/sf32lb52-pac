@@ -46,10 +46,6 @@ pub type DivaClkDigW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 pub type EnClkDigR = crate::BitReader;
 ///Field `EN_CLK_DIG` writer - enable dig clk
 pub type EnClkDigW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:1 - DIVB dac chop clk
     #[inline(always)]
@@ -106,16 +102,10 @@ impl R {
     pub fn en_clk_dig(&self) -> EnClkDigR {
         EnClkDigR::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PLL_CFG4")
-            .field("rsvd", &self.rsvd())
             .field("en_clk_dig", &self.en_clk_dig())
             .field("diva_clk_dig", &self.diva_clk_dig())
             .field("clk_dig_str", &self.clk_dig_str())
@@ -185,11 +175,6 @@ impl W {
     #[inline(always)]
     pub fn en_clk_dig(&mut self) -> EnClkDigW<PLL_CFG4rs> {
         EnClkDigW::new(self, 23)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PLL_CFG4rs> {
-        RsvdW::new(self, 24)
     }
 }
 ///

@@ -14,18 +14,10 @@ pub type VoidFifoErrorW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ClkTuneSelR = crate::FieldReader;
 ///Field `CLK_TUNE_SEL` writer - select clock delay for rx sample 0: no delay 1: delay level 1 (~1.5ns typical) 2: delay level 2 (~3ns typical) 3: delay level 3 (~5ns typical)
 pub type ClkTuneSelW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 ///Field `DIV` reader - Divide card clock counter. 0 is illegal. sd_clock = hclk/(div + 1) If hclk is 240M and div is 599, 400KHz SD clock will be generated.
 pub type DivR = crate::FieldReader<u16>;
 ///Field `DIV` writer - Divide card clock counter. 0 is illegal. sd_clock = hclk/(div + 1) If hclk is 240M and div is 599, 400KHz SD clock will be generated.
 pub type DivW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 impl R {
     ///Bit 0 - Disable SD card clock 1: stop SD card clock 0: SD card clock generated
     #[inline(always)]
@@ -42,28 +34,16 @@ impl R {
     pub fn clk_tune_sel(&self) -> ClkTuneSelR {
         ClkTuneSelR::new(((self.bits >> 2) & 3) as u8)
     }
-    ///Bits 4:7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 4) & 0x0f) as u8)
-    }
     ///Bits 8:20 - Divide card clock counter. 0 is illegal. sd_clock = hclk/(div + 1) If hclk is 240M and div is 599, 400KHz SD clock will be generated.
     #[inline(always)]
     pub fn div(&self) -> DivR {
         DivR::new(((self.bits >> 8) & 0x1fff) as u16)
     }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 21) & 0x07ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CLKCR")
-            .field("rsvd", &self.rsvd())
             .field("div", &self.div())
-            .field("rsvd2", &self.rsvd2())
             .field("clk_tune_sel", &self.clk_tune_sel())
             .field("void_fifo_error", &self.void_fifo_error())
             .field("stop_clk", &self.stop_clk())
@@ -86,20 +66,10 @@ impl W {
     pub fn clk_tune_sel(&mut self) -> ClkTuneSelW<CLKCRrs> {
         ClkTuneSelW::new(self, 2)
     }
-    ///Bits 4:7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CLKCRrs> {
-        Rsvd2W::new(self, 4)
-    }
     ///Bits 8:20 - Divide card clock counter. 0 is illegal. sd_clock = hclk/(div + 1) If hclk is 240M and div is 599, 400KHz SD clock will be generated.
     #[inline(always)]
     pub fn div(&mut self) -> DivW<CLKCRrs> {
         DivW::new(self, 8)
-    }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CLKCRrs> {
-        RsvdW::new(self, 21)
     }
 }
 ///clock control register

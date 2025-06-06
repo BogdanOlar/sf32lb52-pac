@@ -10,10 +10,6 @@ pub type DataOutW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 pub type BypassR = crate::BitReader;
 ///Field `BYPASS` writer - debug bypass mode
 pub type BypassW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
 impl R {
     ///Bits 0:15 - debug dac output
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn bypass(&self) -> BypassR {
         BypassR::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bits 17:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 17) & 0x7fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DAC_CH1_DEBUG")
-            .field("rsvd", &self.rsvd())
             .field("bypass", &self.bypass())
             .field("data_out", &self.data_out())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn bypass(&mut self) -> BypassW<DAC_CH1_DEBUGrs> {
         BypassW::new(self, 16)
-    }
-    ///Bits 17:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DAC_CH1_DEBUGrs> {
-        RsvdW::new(self, 17)
     }
 }
 ///

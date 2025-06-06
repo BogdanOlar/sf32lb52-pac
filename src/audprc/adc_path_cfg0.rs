@@ -30,10 +30,6 @@ pub type DataSwapW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Rx2txLoopbackR = crate::BitReader;
 ///Field `RX2TX_LOOPBACK` writer - rx to tx loopback enable
 pub type Rx2txLoopbackW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 impl R {
     ///Bits 0:3 - adc left channel rough volume control range from -36dB to 54dB step is 6dB 4'h0: -36dB 4'h1: -30dB ...... 4'h6: 0dB ...... 4'he: 48dB 4'hf: 54dB
     #[inline(always)]
@@ -70,16 +66,10 @@ impl R {
     pub fn rx2tx_loopback(&self) -> Rx2txLoopbackR {
         Rx2txLoopbackR::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bits 19:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 19) & 0x1fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ADC_PATH_CFG0")
-            .field("rsvd", &self.rsvd())
             .field("rx2tx_loopback", &self.rx2tx_loopback())
             .field("data_swap", &self.data_swap())
             .field("src_sel", &self.src_sel())
@@ -125,11 +115,6 @@ impl W {
     #[inline(always)]
     pub fn rx2tx_loopback(&mut self) -> Rx2txLoopbackW<ADC_PATH_CFG0rs> {
         Rx2txLoopbackW::new(self, 18)
-    }
-    ///Bits 19:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ADC_PATH_CFG0rs> {
-        RsvdW::new(self, 19)
     }
 }
 ///

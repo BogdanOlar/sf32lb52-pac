@@ -6,28 +6,16 @@ pub type W = crate::W<PSCrs>;
 pub type PscR = crate::FieldReader<u16>;
 ///Field `PSC` writer - Prescaler value The counter clock frequency is fCLK/(PSC+1). PSC contains the value to be loaded in the active prescaler register at each update event (including when the counter is cleared through UG bit of EGR register or through trigger controller when configured in "reset mode").
 pub type PscW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:15 - Prescaler value The counter clock frequency is fCLK/(PSC+1). PSC contains the value to be loaded in the active prescaler register at each update event (including when the counter is cleared through UG bit of EGR register or through trigger controller when configured in "reset mode").
     #[inline(always)]
     pub fn psc(&self) -> PscR {
         PscR::new((self.bits & 0xffff) as u16)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PSC")
-            .field("rsvd", &self.rsvd())
-            .field("psc", &self.psc())
-            .finish()
+        f.debug_struct("PSC").field("psc", &self.psc()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn psc(&mut self) -> PscW<PSCrs> {
         PscW::new(self, 0)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PSCrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///Prescaler

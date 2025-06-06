@@ -2,10 +2,6 @@
 pub type R = crate::R<SLP_CFGrs>;
 ///Register `SLP_CFG` writer
 pub type W = crate::W<SLP_CFGrs>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `XTAL_ALWAYS_ON` reader - for debug only
 pub type XtalAlwaysOnR = crate::BitReader;
 ///Field `XTAL_ALWAYS_ON` writer - for debug only
@@ -14,16 +10,7 @@ pub type XtalAlwaysOnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type XtalForceOffR = crate::BitReader;
 ///Field `XTAL_FORCE_OFF` writer - for debug only
 pub type XtalForceOffW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
-    ///Bits 0:1
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new((self.bits & 3) as u8)
-    }
     ///Bit 2 - for debug only
     #[inline(always)]
     pub fn xtal_always_on(&self) -> XtalAlwaysOnR {
@@ -34,28 +21,16 @@ impl R {
     pub fn xtal_force_off(&self) -> XtalForceOffR {
         XtalForceOffR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SLP_CFG")
-            .field("rsvd", &self.rsvd())
             .field("xtal_force_off", &self.xtal_force_off())
             .field("xtal_always_on", &self.xtal_always_on())
-            .field("rsvd2", &self.rsvd2())
             .finish()
     }
 }
 impl W {
-    ///Bits 0:1
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<SLP_CFGrs> {
-        Rsvd2W::new(self, 0)
-    }
     ///Bit 2 - for debug only
     #[inline(always)]
     pub fn xtal_always_on(&mut self) -> XtalAlwaysOnW<SLP_CFGrs> {
@@ -65,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn xtal_force_off(&mut self) -> XtalForceOffW<SLP_CFGrs> {
         XtalForceOffW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SLP_CFGrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///BT sleep configuration

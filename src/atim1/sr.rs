@@ -58,14 +58,6 @@ pub type Cc4ofW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SbifR = crate::BitReader;
 ///Field `SBIF` writer - System Break interrupt flag This flag is set by hardware as soon as the system break input goes active. It can be cleared by software if the system break input is not active. This flag must be reset to re-start PWM operation. 0: No break event occurred. 1: An active level has been detected on the system break input. An interrupt is generated if BIE=1 in the DIER register.
 pub type SbifW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `CC5IF` reader - Compare 5 interrupt flag
 pub type Cc5ifR = crate::BitReader;
 ///Field `CC5IF` writer - Compare 5 interrupt flag
@@ -74,10 +66,6 @@ pub type Cc5ifW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Cc6ifR = crate::BitReader;
 ///Field `CC6IF` writer - Compare 6 interrupt flag
 pub type Cc6ifW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 impl R {
     ///Bit 0 - Update interrupt flag This bit is set by hardware on an update event. It is cleared by software. 0: No update occurred 1: Update interrupt pending. This bit is set by hardware when the registers are updated: - At overflow or underflow regarding the repetition counter value (update if repetition counter = 0) and if UDIS=0 in the CR1 register. - When CNT is reinitialized by software using the UG bit in EGR register, if URS=0 and UDIS=0 in the CR1 register. - When CNT is reinitialized by a trigger event, if URS=0 and UDIS=0 in the CR1 register.
     #[inline(always)]
@@ -149,16 +137,6 @@ impl R {
     pub fn sbif(&self) -> SbifR {
         SbifR::new(((self.bits >> 13) & 1) != 0)
     }
-    ///Bit 14
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 14) & 1) != 0)
-    }
-    ///Bit 15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 15) & 1) != 0)
-    }
     ///Bit 16 - Compare 5 interrupt flag
     #[inline(always)]
     pub fn cc5if(&self) -> Cc5ifR {
@@ -169,20 +147,12 @@ impl R {
     pub fn cc6if(&self) -> Cc6ifR {
         Cc6ifR::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 18) & 0x3fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SR")
-            .field("rsvd", &self.rsvd())
             .field("cc6if", &self.cc6if())
             .field("cc5if", &self.cc5if())
-            .field("rsvd2", &self.rsvd2())
-            .field("rsvd3", &self.rsvd3())
             .field("sbif", &self.sbif())
             .field("cc4of", &self.cc4of())
             .field("cc3of", &self.cc3of())
@@ -271,16 +241,6 @@ impl W {
     pub fn sbif(&mut self) -> SbifW<SRrs> {
         SbifW::new(self, 13)
     }
-    ///Bit 14
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<SRrs> {
-        Rsvd3W::new(self, 14)
-    }
-    ///Bit 15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<SRrs> {
-        Rsvd2W::new(self, 15)
-    }
     ///Bit 16 - Compare 5 interrupt flag
     #[inline(always)]
     pub fn cc5if(&mut self) -> Cc5ifW<SRrs> {
@@ -290,11 +250,6 @@ impl W {
     #[inline(always)]
     pub fn cc6if(&mut self) -> Cc6ifW<SRrs> {
         Cc6ifW::new(self, 17)
-    }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SRrs> {
-        RsvdW::new(self, 18)
     }
 }
 ///TIM status register

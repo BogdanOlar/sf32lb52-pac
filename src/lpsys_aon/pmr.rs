@@ -10,10 +10,6 @@ pub type ModeW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type CpuwaitR = crate::BitReader;
 ///Field `CPUWAIT` writer - Stall CPU out of reset. Should be cleared before LCPU run
 pub type CpuwaitW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 ///Field `FORCE_SLEEP` reader - Set 1 to force enter low power mode. Will be cleared automatically
 pub type ForceSleepR = crate::BitReader;
 ///Field `FORCE_SLEEP` writer - Set 1 to force enter low power mode. Will be cleared automatically
@@ -29,11 +25,6 @@ impl R {
     pub fn cpuwait(&self) -> CpuwaitR {
         CpuwaitR::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 3:30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 3) & 0x0fff_ffff)
-    }
     ///Bit 31 - Set 1 to force enter low power mode. Will be cleared automatically
     #[inline(always)]
     pub fn force_sleep(&self) -> ForceSleepR {
@@ -44,7 +35,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PMR")
             .field("force_sleep", &self.force_sleep())
-            .field("rsvd", &self.rsvd())
             .field("cpuwait", &self.cpuwait())
             .field("mode", &self.mode())
             .finish()
@@ -60,11 +50,6 @@ impl W {
     #[inline(always)]
     pub fn cpuwait(&mut self) -> CpuwaitW<PMRrs> {
         CpuwaitW::new(self, 2)
-    }
-    ///Bits 3:30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PMRrs> {
-        RsvdW::new(self, 3)
     }
     ///Bit 31 - Set 1 to force enter low power mode. Will be cleared automatically
     #[inline(always)]

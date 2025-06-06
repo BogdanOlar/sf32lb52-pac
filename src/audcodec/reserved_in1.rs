@@ -10,10 +10,6 @@ pub type Ctrl4W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 pub type Ctrl5R = crate::FieldReader;
 ///Field `CTRL5` writer - reserved control 5
 pub type Ctrl5W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:7 - reserved control 4
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn ctrl5(&self) -> Ctrl5R {
         Ctrl5R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("RESERVED_IN1")
-            .field("rsvd", &self.rsvd())
             .field("ctrl5", &self.ctrl5())
             .field("ctrl4", &self.ctrl4())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn ctrl5(&mut self) -> Ctrl5W<RESERVED_IN1rs> {
         Ctrl5W::new(self, 8)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RESERVED_IN1rs> {
-        RsvdW::new(self, 16)
     }
 }
 ///

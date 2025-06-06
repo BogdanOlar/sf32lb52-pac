@@ -2,10 +2,6 @@
 pub type R = crate::R<LPF_CFG6rs>;
 ///Register `LPF_CFG6` writer
 pub type W = crate::W<LPF_CFG6rs>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader<u16>;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 ///Field `LPF_DS` reader - 1:downsampling rate of low pass filter is two;0:No downsampling of low pass filter
 pub type LpfDsR = crate::BitReader;
 ///Field `LPF_DS` writer - 1:downsampling rate of low pass filter is two;0:No downsampling of low pass filter
@@ -14,16 +10,7 @@ pub type LpfDsW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LpfBypassR = crate::BitReader;
 ///Field `LPF_BYPASS` writer - 1:bypass low-pass filter ; 0: enable low-pass filter
 pub type LpfBypassW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 18, u32>;
 impl R {
-    ///Bits 0:11
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new((self.bits & 0x0fff) as u16)
-    }
     ///Bit 12 - 1:downsampling rate of low pass filter is two;0:No downsampling of low pass filter
     #[inline(always)]
     pub fn lpf_ds(&self) -> LpfDsR {
@@ -34,28 +21,16 @@ impl R {
     pub fn lpf_bypass(&self) -> LpfBypassR {
         LpfBypassR::new(((self.bits >> 13) & 1) != 0)
     }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 14) & 0x0003_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LPF_CFG6")
-            .field("rsvd", &self.rsvd())
             .field("lpf_bypass", &self.lpf_bypass())
             .field("lpf_ds", &self.lpf_ds())
-            .field("rsvd2", &self.rsvd2())
             .finish()
     }
 }
 impl W {
-    ///Bits 0:11
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<LPF_CFG6rs> {
-        Rsvd2W::new(self, 0)
-    }
     ///Bit 12 - 1:downsampling rate of low pass filter is two;0:No downsampling of low pass filter
     #[inline(always)]
     pub fn lpf_ds(&mut self) -> LpfDsW<LPF_CFG6rs> {
@@ -65,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn lpf_bypass(&mut self) -> LpfBypassW<LPF_CFG6rs> {
         LpfBypassW::new(self, 13)
-    }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LPF_CFG6rs> {
-        RsvdW::new(self, 14)
     }
 }
 ///

@@ -2,10 +2,6 @@
 pub type R = crate::R<SMCRrs>;
 ///Register `SMCR` writer
 pub type W = crate::W<SMCRrs>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 ///Field `TS` reader - Trigger selection This bit-field selects the trigger input to be used to synchronize the counter. 000: Internal Trigger 0 (ITR0) 001: Internal Trigger 1 (ITR1) 010: Internal Trigger 2 (ITR2) 011: Internal Trigger 3 (ITR3) 100: TI1 Edge Detector (TI1F_ED) 101: Filtered Timer Input 1 (TI1FP1) 110: Filtered Timer Input 2 (TI2FP2) 111: External Trigger input (ETRF)
 pub type TsR = crate::FieldReader;
 ///Field `TS` writer - Trigger selection This bit-field selects the trigger input to be used to synchronize the counter. 000: Internal Trigger 0 (ITR0) 001: Internal Trigger 1 (ITR1) 010: Internal Trigger 2 (ITR2) 011: Internal Trigger 3 (ITR3) 100: TI1 Edge Detector (TI1F_ED) 101: Filtered Timer Input 1 (TI1FP1) 110: Filtered Timer Input 2 (TI2FP2) 111: External Trigger input (ETRF)
@@ -34,16 +30,7 @@ pub type EtpW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SmsR = crate::FieldReader;
 ///Field `SMS` writer - Slave mode selection When external signals are selected the active edge of the trigger signal (TRGI) is linked to the polarity selected on the external input. 0000: Slave mode disabled. 0001: Encoder mode 1 - Counter counts up/down on TI1FP1 edge depending on TI2FP2 level. 0010: Encoder mode 2 - Counter counts up/down on TI2FP2 edge depending on TI1FP1 level. 0011: Encoder mode 3 - Counter counts up/down on both TI1FP1 and TI2FP2 edges depending on the level of the other input. 0100: Reset Mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter and generates an update of the registers. 0101: Gated Mode - The counter clock is enabled when the trigger input (TRGI) is high. The counter stops (but is not reset) as soon as the trigger becomes low. Both start and stop of the counter are controlled. 0110: Trigger Mode - The counter starts at a rising edge of the trigger TRGI (but it is not reset). Only the start of the counter is controlled. 0111: External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter. 1000: Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter.
 pub type SmsW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
-    ///Bits 0:3
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new((self.bits & 0x0f) as u8)
-    }
     ///Bits 4:6 - Trigger selection This bit-field selects the trigger input to be used to synchronize the counter. 000: Internal Trigger 0 (ITR0) 001: Internal Trigger 1 (ITR1) 010: Internal Trigger 2 (ITR2) 011: Internal Trigger 3 (ITR3) 100: TI1 Edge Detector (TI1F_ED) 101: Filtered Timer Input 1 (TI1FP1) 110: Filtered Timer Input 2 (TI2FP2) 111: External Trigger input (ETRF)
     #[inline(always)]
     pub fn ts(&self) -> TsR {
@@ -79,16 +66,10 @@ impl R {
     pub fn sms(&self) -> SmsR {
         SmsR::new(((self.bits >> 16) & 0x0f) as u8)
     }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 20) & 0x0fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SMCR")
-            .field("rsvd", &self.rsvd())
             .field("sms", &self.sms())
             .field("etp", &self.etp())
             .field("ece", &self.ece())
@@ -96,16 +77,10 @@ impl core::fmt::Debug for R {
             .field("etf", &self.etf())
             .field("msm", &self.msm())
             .field("ts", &self.ts())
-            .field("rsvd2", &self.rsvd2())
             .finish()
     }
 }
 impl W {
-    ///Bits 0:3
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<SMCRrs> {
-        Rsvd2W::new(self, 0)
-    }
     ///Bits 4:6 - Trigger selection This bit-field selects the trigger input to be used to synchronize the counter. 000: Internal Trigger 0 (ITR0) 001: Internal Trigger 1 (ITR1) 010: Internal Trigger 2 (ITR2) 011: Internal Trigger 3 (ITR3) 100: TI1 Edge Detector (TI1F_ED) 101: Filtered Timer Input 1 (TI1FP1) 110: Filtered Timer Input 2 (TI2FP2) 111: External Trigger input (ETRF)
     #[inline(always)]
     pub fn ts(&mut self) -> TsW<SMCRrs> {
@@ -140,11 +115,6 @@ impl W {
     #[inline(always)]
     pub fn sms(&mut self) -> SmsW<SMCRrs> {
         SmsW::new(self, 16)
-    }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SMCRrs> {
-        RsvdW::new(self, 20)
     }
 }
 ///TIM slave mode control register

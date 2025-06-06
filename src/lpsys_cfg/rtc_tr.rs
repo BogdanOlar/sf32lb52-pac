@@ -6,10 +6,6 @@ pub type W = crate::W<RTC_TRrs>;
 pub type SsR = crate::FieldReader<u16>;
 ///Field `SS` writer - Sub-second counter
 pub type SsW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::BitReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `SU` reader - Second units in BCD format
 pub type SuR = crate::FieldReader;
 ///Field `SU` writer - Second units in BCD format
@@ -43,11 +39,6 @@ impl R {
     #[inline(always)]
     pub fn ss(&self) -> SsR {
         SsR::new((self.bits & 0x03ff) as u16)
-    }
-    ///Bit 10
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 10) & 1) != 0)
     }
     ///Bits 11:14 - Second units in BCD format
     #[inline(always)]
@@ -95,7 +86,6 @@ impl core::fmt::Debug for R {
             .field("mnu", &self.mnu())
             .field("st", &self.st())
             .field("su", &self.su())
-            .field("rsvd", &self.rsvd())
             .field("ss", &self.ss())
             .finish()
     }
@@ -105,11 +95,6 @@ impl W {
     #[inline(always)]
     pub fn ss(&mut self) -> SsW<RTC_TRrs> {
         SsW::new(self, 0)
-    }
-    ///Bit 10
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RTC_TRrs> {
-        RsvdW::new(self, 10)
     }
     ///Bits 11:14 - Second units in BCD format
     #[inline(always)]

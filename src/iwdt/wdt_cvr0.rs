@@ -6,26 +6,16 @@ pub type W = crate::W<WDT_CVR0rs>;
 pub type CountValue0R = crate::FieldReader<u32>;
 ///Field `COUNT_VALUE_0` writer - Count Value for 1st TimeOut
 pub type CountValue0W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:23 - Count Value for 1st TimeOut
     #[inline(always)]
     pub fn count_value_0(&self) -> CountValue0R {
         CountValue0R::new(self.bits & 0x00ff_ffff)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("WDT_CVR0")
-            .field("rsvd", &self.rsvd())
             .field("count_value_0", &self.count_value_0())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn count_value_0(&mut self) -> CountValue0W<WDT_CVR0rs> {
         CountValue0W::new(self, 0)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<WDT_CVR0rs> {
-        RsvdW::new(self, 24)
     }
 }
 ///WatchDog Counter Value 0

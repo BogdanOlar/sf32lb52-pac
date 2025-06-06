@@ -30,10 +30,6 @@ pub type StereoEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SwapEnR = crate::BitReader;
 ///Field `SWAP_EN` writer - 1: Swap right channel and left channel pdm data; 0: Not swap right channel and left channel pdm data
 pub type SwapEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
 impl R {
     ///Bit 0 - 1:Enable pdm module; 0: Disable pdm module
     #[inline(always)]
@@ -70,16 +66,10 @@ impl R {
     pub fn swap_en(&self) -> SwapEnR {
         SwapEnR::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 10) & 0x003f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CFG0")
-            .field("rsvd", &self.rsvd())
             .field("swap_en", &self.swap_en())
             .field("stereo_en", &self.stereo_en())
             .field("right_en", &self.right_en())
@@ -125,11 +115,6 @@ impl W {
     #[inline(always)]
     pub fn swap_en(&mut self) -> SwapEnW<CFG0rs> {
         SwapEnW::new(self, 9)
-    }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CFG0rs> {
-        RsvdW::new(self, 10)
     }
 }
 ///

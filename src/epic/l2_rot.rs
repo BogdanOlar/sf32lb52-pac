@@ -18,10 +18,6 @@ pub type RotDegW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 pub type CalcDoneR = crate::BitReader;
 ///Field `CALC_DONE` writer - calculation done indicator
 pub type CalcDoneW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 impl R {
     ///Bit 0 - rot_max_col and rot_max_line calculation request. Write 1 to trigger the calculation.
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn calc_done(&self) -> CalcDoneR {
         CalcDoneR::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 12) & 0x000f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("L2_ROT")
-            .field("rsvd", &self.rsvd())
             .field("calc_done", &self.calc_done())
             .field("rot_deg", &self.rot_deg())
             .field("calc_clr", &self.calc_clr())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn calc_done(&mut self) -> CalcDoneW<L2_ROTrs> {
         CalcDoneW::new(self, 11)
-    }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<L2_ROTrs> {
-        RsvdW::new(self, 12)
     }
 }
 ///

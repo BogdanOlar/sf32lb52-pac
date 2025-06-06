@@ -58,10 +58,6 @@ pub type Cc4eW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Cc4pR = crate::BitReader;
 ///Field `CC4P` writer - Capture/Compare 4 output Polarity.
 pub type Cc4pW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD4` reader -
-pub type Rsvd4R = crate::BitReader;
-///Field `RSVD4` writer -
-pub type Rsvd4W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `CC4NP` reader - Capture/Compare 4 complementary output polarity
 pub type Cc4npR = crate::BitReader;
 ///Field `CC4NP` writer - Capture/Compare 4 complementary output polarity
@@ -74,14 +70,6 @@ pub type Cc5eW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Cc5pR = crate::BitReader;
 ///Field `CC5P` writer - Capture/Compare 5 output Polarity.
 pub type Cc5pW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `CC6E` reader - Capture/Compare 6 output enable.
 pub type Cc6eR = crate::BitReader;
 ///Field `CC6E` writer - Capture/Compare 6 output enable.
@@ -90,10 +78,6 @@ pub type Cc6eW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Cc6pR = crate::BitReader;
 ///Field `CC6P` writer - Capture/Compare 6 output Polarity.
 pub type Cc6pW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
     ///Bit 0 - Capture/Compare 1 output enable CC1 channel configured as output: 0: Off - OC1 is not active. OC1 level is then function of MOE, OSSI, OSSR, OIS1, OIS1N and CC1NE bits. 1: On - OC1 signal is output on the corresponding output pin depending on MOE, OSSI, OSSR, OIS1, OIS1N and CC1NE bits. CC1 channel configured as input: This bit determines if a capture of the counter value can actually be done into the input capture/compare register 1 (CCR1) or not. 0: Capture disabled. 1: Capture enabled. On channels having a complementary output, this bit is preloaded. If the CCPC bit is set in the CR2 register then the CC1E active bit takes the new value from the preloaded bit only when a Commutation event is generated.
     #[inline(always)]
@@ -165,11 +149,6 @@ impl R {
     pub fn cc4p(&self) -> Cc4pR {
         Cc4pR::new(((self.bits >> 13) & 1) != 0)
     }
-    ///Bit 14
-    #[inline(always)]
-    pub fn rsvd4(&self) -> Rsvd4R {
-        Rsvd4R::new(((self.bits >> 14) & 1) != 0)
-    }
     ///Bit 15 - Capture/Compare 4 complementary output polarity
     #[inline(always)]
     pub fn cc4np(&self) -> Cc4npR {
@@ -185,16 +164,6 @@ impl R {
     pub fn cc5p(&self) -> Cc5pR {
         Cc5pR::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bit 18
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 18) & 1) != 0)
-    }
-    ///Bit 19
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 19) & 1) != 0)
-    }
     ///Bit 20 - Capture/Compare 6 output enable.
     #[inline(always)]
     pub fn cc6e(&self) -> Cc6eR {
@@ -205,24 +174,15 @@ impl R {
     pub fn cc6p(&self) -> Cc6pR {
         Cc6pR::new(((self.bits >> 21) & 1) != 0)
     }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 22) & 0x03ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CCER")
-            .field("rsvd", &self.rsvd())
             .field("cc6p", &self.cc6p())
             .field("cc6e", &self.cc6e())
-            .field("rsvd2", &self.rsvd2())
-            .field("rsvd3", &self.rsvd3())
             .field("cc5p", &self.cc5p())
             .field("cc5e", &self.cc5e())
             .field("cc4np", &self.cc4np())
-            .field("rsvd4", &self.rsvd4())
             .field("cc4p", &self.cc4p())
             .field("cc4e", &self.cc4e())
             .field("cc3np", &self.cc3np())
@@ -311,11 +271,6 @@ impl W {
     pub fn cc4p(&mut self) -> Cc4pW<CCERrs> {
         Cc4pW::new(self, 13)
     }
-    ///Bit 14
-    #[inline(always)]
-    pub fn rsvd4(&mut self) -> Rsvd4W<CCERrs> {
-        Rsvd4W::new(self, 14)
-    }
     ///Bit 15 - Capture/Compare 4 complementary output polarity
     #[inline(always)]
     pub fn cc4np(&mut self) -> Cc4npW<CCERrs> {
@@ -331,16 +286,6 @@ impl W {
     pub fn cc5p(&mut self) -> Cc5pW<CCERrs> {
         Cc5pW::new(self, 17)
     }
-    ///Bit 18
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<CCERrs> {
-        Rsvd3W::new(self, 18)
-    }
-    ///Bit 19
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CCERrs> {
-        Rsvd2W::new(self, 19)
-    }
     ///Bit 20 - Capture/Compare 6 output enable.
     #[inline(always)]
     pub fn cc6e(&mut self) -> Cc6eW<CCERrs> {
@@ -350,11 +295,6 @@ impl W {
     #[inline(always)]
     pub fn cc6p(&mut self) -> Cc6pW<CCERrs> {
         Cc6pW::new(self, 21)
-    }
-    ///Bits 22:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CCERrs> {
-        RsvdW::new(self, 22)
     }
 }
 ///Capture/Compare enable register

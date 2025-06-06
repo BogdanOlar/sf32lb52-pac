@@ -14,10 +14,6 @@ pub type SlaveEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LrckPolR = crate::BitReader;
 ///Field `LRCK_POL` writer - TX LRCK polarity control. 0: disable TX_LRCK inventor 1: enable TX_LRCK inventor for standard I2S, set tx_lrck_pol to low for Left/Right Justified, set tx_lrck_pol to hgih
 pub type LrckPolW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bits 0:1 - 00: I2S mode 01: Left justified 10: right justified 11: reserved
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn lrck_pol(&self) -> LrckPolR {
         LrckPolR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AUDIO_SERIAL_TIMING")
-            .field("rsvd", &self.rsvd())
             .field("lrck_pol", &self.lrck_pol())
             .field("slave_en", &self.slave_en())
             .field("timing", &self.timing())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn lrck_pol(&mut self) -> LrckPolW<AUDIO_SERIAL_TIMINGrs> {
         LrckPolW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AUDIO_SERIAL_TIMINGrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///

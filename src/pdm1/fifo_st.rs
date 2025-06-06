@@ -34,10 +34,6 @@ pub type EmptyLW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type FullLR = crate::BitReader;
 ///Field `FULL_L` writer - 1 indicates left channel fifo is full
 pub type FullLW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bit 0 - 1 indicates right channel fifo is less than two datas left
     #[inline(always)]
@@ -79,16 +75,10 @@ impl R {
     pub fn full_l(&self) -> FullLR {
         FullLR::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("FIFO_ST")
-            .field("rsvd", &self.rsvd())
             .field("full_l", &self.full_l())
             .field("empty_l", &self.empty_l())
             .field("almost_full_l", &self.almost_full_l())
@@ -140,11 +130,6 @@ impl W {
     #[inline(always)]
     pub fn full_l(&mut self) -> FullLW<FIFO_STrs> {
         FullLW::new(self, 7)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<FIFO_STrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///

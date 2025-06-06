@@ -14,10 +14,6 @@ pub type HpfBypassW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type HpfRstR = crate::BitReader;
 ///Field `HPF_RST` writer - 1:high-pass filter normal operation ; 0:reset high-pass filter
 pub type HpfRstW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
     ///Bits 0:3 - coefficient of high-pass filter
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn hpf_rst(&self) -> HpfRstR {
         HpfRstR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("HPF_CFG")
-            .field("rsvd", &self.rsvd())
             .field("hpf_rst", &self.hpf_rst())
             .field("hpf_bypass", &self.hpf_bypass())
             .field("hpf_coeff", &self.hpf_coeff())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn hpf_rst(&mut self) -> HpfRstW<HPF_CFGrs> {
         HpfRstW::new(self, 5)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<HPF_CFGrs> {
-        RsvdW::new(self, 6)
     }
 }
 ///

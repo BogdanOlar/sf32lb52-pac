@@ -22,10 +22,6 @@ pub type EfuseVddPdW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DcMrR = crate::FieldReader;
 ///Field `DC_MR` writer - reserved for debug
 pub type DcMrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 25, u32>;
 impl R {
     ///Bit 0 - reserved for debug
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn dc_mr(&self) -> DcMrR {
         DcMrR::new(((self.bits >> 4) & 7) as u8)
     }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 7) & 0x01ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ANAU_CR")
-            .field("rsvd", &self.rsvd())
             .field("dc_mr", &self.dc_mr())
             .field("efuse_vdd_pd", &self.efuse_vdd_pd())
             .field("efuse_vdd_en", &self.efuse_vdd_en())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn dc_mr(&mut self) -> DcMrW<ANAU_CRrs> {
         DcMrW::new(self, 4)
-    }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ANAU_CRrs> {
-        RsvdW::new(self, 7)
     }
 }
 ///ANAU Control Register

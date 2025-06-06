@@ -2,20 +2,11 @@
 pub type R = crate::R<PRSARrs>;
 ///Register `PRSAR` writer
 pub type W = crate::W<PRSARrs>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 ///Field `SA` reader - Starting address of the prefetch area If prefetch is enabled and the read address falls into \[PRSAR, PREAR), controller will prefetch the following data
 pub type SaR = crate::FieldReader<u32>;
 ///Field `SA` writer - Starting address of the prefetch area If prefetch is enabled and the read address falls into \[PRSAR, PREAR), controller will prefetch the following data
 pub type SaW<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
 impl R {
-    ///Bits 0:9
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits & 0x03ff) as u16)
-    }
     ///Bits 10:31 - Starting address of the prefetch area If prefetch is enabled and the read address falls into \[PRSAR, PREAR), controller will prefetch the following data
     #[inline(always)]
     pub fn sa(&self) -> SaR {
@@ -24,18 +15,10 @@ impl R {
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PRSAR")
-            .field("sa", &self.sa())
-            .field("rsvd", &self.rsvd())
-            .finish()
+        f.debug_struct("PRSAR").field("sa", &self.sa()).finish()
     }
 }
 impl W {
-    ///Bits 0:9
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PRSARrs> {
-        RsvdW::new(self, 0)
-    }
     ///Bits 10:31 - Starting address of the prefetch area If prefetch is enabled and the read address falls into \[PRSAR, PREAR), controller will prefetch the following data
     #[inline(always)]
     pub fn sa(&mut self) -> SaW<PRSARrs> {

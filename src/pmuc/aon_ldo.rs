@@ -10,10 +10,6 @@ pub type VbatLdoSetVoutW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type VbatPorThR = crate::FieldReader;
 ///Field `VBAT_POR_TH` writer -
 pub type VbatPorThW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 25, u32>;
 impl R {
     ///Bits 0:3
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn vbat_por_th(&self) -> VbatPorThR {
         VbatPorThR::new(((self.bits >> 4) & 7) as u8)
     }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 7) & 0x01ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AON_LDO")
-            .field("rsvd", &self.rsvd())
             .field("vbat_por_th", &self.vbat_por_th())
             .field("vbat_ldo_set_vout", &self.vbat_ldo_set_vout())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn vbat_por_th(&mut self) -> VbatPorThW<AON_LDOrs> {
         VbatPorThW::new(self, 4)
-    }
-    ///Bits 7:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AON_LDOrs> {
-        RsvdW::new(self, 7)
     }
 }
 ///AON LDO Register

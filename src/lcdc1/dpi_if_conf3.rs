@@ -6,46 +6,26 @@ pub type W = crate::W<DPI_IF_CONF3rs>;
 pub type VfpR = crate::FieldReader<u16>;
 ///Field `VFP` writer - vertical front porch
 pub type VfpW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 ///Field `HFP` reader - horizontal front porch
 pub type HfpR = crate::FieldReader<u16>;
 ///Field `HFP` writer - horizontal front porch
 pub type HfpW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     ///Bits 0:10 - vertical front porch
     #[inline(always)]
     pub fn vfp(&self) -> VfpR {
         VfpR::new((self.bits & 0x07ff) as u16)
     }
-    ///Bits 11:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 11) & 0x1f) as u8)
-    }
     ///Bits 16:26 - horizontal front porch
     #[inline(always)]
     pub fn hfp(&self) -> HfpR {
         HfpR::new(((self.bits >> 16) & 0x07ff) as u16)
     }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 27) & 0x1f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DPI_IF_CONF3")
-            .field("rsvd", &self.rsvd())
             .field("hfp", &self.hfp())
-            .field("rsvd2", &self.rsvd2())
             .field("vfp", &self.vfp())
             .finish()
     }
@@ -56,20 +36,10 @@ impl W {
     pub fn vfp(&mut self) -> VfpW<DPI_IF_CONF3rs> {
         VfpW::new(self, 0)
     }
-    ///Bits 11:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<DPI_IF_CONF3rs> {
-        Rsvd2W::new(self, 11)
-    }
     ///Bits 16:26 - horizontal front porch
     #[inline(always)]
     pub fn hfp(&mut self) -> HfpW<DPI_IF_CONF3rs> {
         HfpW::new(self, 16)
-    }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DPI_IF_CONF3rs> {
-        RsvdW::new(self, 27)
     }
 }
 ///

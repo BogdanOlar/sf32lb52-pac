@@ -6,10 +6,6 @@ pub type W = crate::W<CCRrs>;
 pub type CmdStartR = crate::BitReader;
 ///Field `CMD_START` writer - Command start write 1 to start command TX, and when begin to TX command, the bit will return into 0.
 pub type CmdStartW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::FieldReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 ///Field `CMD_TX_EN` reader - TX command enable 1: enable TX command 0: disable TX command
 pub type CmdTxEnR = crate::BitReader;
 ///Field `CMD_TX_EN` writer - TX command enable 1: enable TX command 0: disable TX command
@@ -18,10 +14,6 @@ pub type CmdTxEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CmdPendR = crate::BitReader;
 ///Field `CMD_PEND` writer - Command pending enable When prepare to send stop command, this bit should be set. Controller will calculate a proper time point to send out the command to guarantee all the data have been transferred. And this is mainly used in stream mode. Recommend using set_block_count (SD/MMC basis command) to control transferring data for block mode. If send stop command for canceling this transfer (such as CRC error in multi-block), no need to set the bit.
 pub type CmdPendW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `CMD_HAS_RSP` reader - 1: Response expected after command 0: No response expected after command
 pub type CmdHasRspR = crate::BitReader;
 ///Field `CMD_HAS_RSP` writer - 1: Response expected after command 0: No response expected after command
@@ -34,20 +26,11 @@ pub type CmdLongRspW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CmdIndexR = crate::FieldReader;
 ///Field `CMD_INDEX` writer - Command index
 pub type CmdIndexW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bit 0 - Command start write 1 to start command TX, and when begin to TX command, the bit will return into 0.
     #[inline(always)]
     pub fn cmd_start(&self) -> CmdStartR {
         CmdStartR::new((self.bits & 1) != 0)
-    }
-    ///Bits 1:7
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 1) & 0x7f) as u8)
     }
     ///Bit 8 - TX command enable 1: enable TX command 0: disable TX command
     #[inline(always)]
@@ -58,11 +41,6 @@ impl R {
     #[inline(always)]
     pub fn cmd_pend(&self) -> CmdPendR {
         CmdPendR::new(((self.bits >> 9) & 1) != 0)
-    }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 10) & 0x3f) as u8)
     }
     ///Bit 16 - 1: Response expected after command 0: No response expected after command
     #[inline(always)]
@@ -79,23 +57,15 @@ impl R {
     pub fn cmd_index(&self) -> CmdIndexR {
         CmdIndexR::new(((self.bits >> 18) & 0x3f) as u8)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CCR")
-            .field("rsvd", &self.rsvd())
             .field("cmd_index", &self.cmd_index())
             .field("cmd_long_rsp", &self.cmd_long_rsp())
             .field("cmd_has_rsp", &self.cmd_has_rsp())
-            .field("rsvd2", &self.rsvd2())
             .field("cmd_pend", &self.cmd_pend())
             .field("cmd_tx_en", &self.cmd_tx_en())
-            .field("rsvd3", &self.rsvd3())
             .field("cmd_start", &self.cmd_start())
             .finish()
     }
@@ -106,11 +76,6 @@ impl W {
     pub fn cmd_start(&mut self) -> CmdStartW<CCRrs> {
         CmdStartW::new(self, 0)
     }
-    ///Bits 1:7
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<CCRrs> {
-        Rsvd3W::new(self, 1)
-    }
     ///Bit 8 - TX command enable 1: enable TX command 0: disable TX command
     #[inline(always)]
     pub fn cmd_tx_en(&mut self) -> CmdTxEnW<CCRrs> {
@@ -120,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn cmd_pend(&mut self) -> CmdPendW<CCRrs> {
         CmdPendW::new(self, 9)
-    }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CCRrs> {
-        Rsvd2W::new(self, 10)
     }
     ///Bit 16 - 1: Response expected after command 0: No response expected after command
     #[inline(always)]
@@ -140,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn cmd_index(&mut self) -> CmdIndexW<CCRrs> {
         CmdIndexW::new(self, 18)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CCRrs> {
-        RsvdW::new(self, 24)
     }
 }
 ///command control register

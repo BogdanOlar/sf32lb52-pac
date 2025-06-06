@@ -22,10 +22,6 @@ pub type ForceGpioW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ForceHpR = crate::BitReader;
 ///Field `FORCE_HP` writer - for debug only
 pub type ForceHpW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 27, u32>;
 impl R {
     ///Bit 0 - for debug only
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn force_hp(&self) -> ForceHpR {
         ForceHpR::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 5) & 0x07ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DBGR")
-            .field("rsvd", &self.rsvd())
             .field("force_hp", &self.force_hp())
             .field("force_gpio", &self.force_gpio())
             .field("force_bus", &self.force_bus())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn force_hp(&mut self) -> ForceHpW<DBGRrs> {
         ForceHpW::new(self, 4)
-    }
-    ///Bits 5:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DBGRrs> {
-        RsvdW::new(self, 5)
     }
 }
 ///Debug Register

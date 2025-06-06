@@ -22,18 +22,10 @@ pub type Cc3ifW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Cc4ifR = crate::BitReader;
 ///Field `CC4IF` writer - Capture/Compare 4 interrupt flag
 pub type Cc4ifW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `TIF` reader - Trigger interrupt flag This flag is set by hardware on trigger event (active edge detected on TRGI input when the slave mode controller is enabled in all modes but gated mode). It is set when the counter starts or stops when gated mode is selected. It is cleared by software. 0: No trigger event occurred. 1: Trigger interrupt pending.
 pub type TifR = crate::BitReader;
 ///Field `TIF` writer - Trigger interrupt flag This flag is set by hardware on trigger event (active edge detected on TRGI input when the slave mode controller is enabled in all modes but gated mode). It is set when the counter starts or stops when gated mode is selected. It is cleared by software. 0: No trigger event occurred. 1: Trigger interrupt pending.
 pub type TifW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `CC1OF` reader - Capture/Compare 1 overcapture flag This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0'. 0: No overcapture has been detected. 1: The counter value has been captured in CCR1 register while CC1IF flag was already set
 pub type Cc1ofR = crate::BitReader;
 ///Field `CC1OF` writer - Capture/Compare 1 overcapture flag This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0'. 0: No overcapture has been detected. 1: The counter value has been captured in CCR1 register while CC1IF flag was already set
@@ -50,10 +42,6 @@ pub type Cc3ofW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Cc4ofR = crate::BitReader;
 ///Field `CC4OF` writer - Capture/Compare 4 overcapture flag
 pub type Cc4ofW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bit 0 - Update interrupt flag This bit is set by hardware on an update event. It is cleared by software. 0: No update occurred 1: Update interrupt pending. This bit is set by hardware when the registers are updated: At overflow or underflow and if UDIS=0 in the CR1 register. When CNT is reinitialized by software using the UG bit in EGR register, if URS=0 and UDIS=0 in the CR1 register. When CNT is reinitialized by a trigger event, if URS=0 and UDIS=0 in the CR1 register.
     #[inline(always)]
@@ -80,20 +68,10 @@ impl R {
     pub fn cc4if(&self) -> Cc4ifR {
         Cc4ifR::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 5
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 5) & 1) != 0)
-    }
     ///Bit 6 - Trigger interrupt flag This flag is set by hardware on trigger event (active edge detected on TRGI input when the slave mode controller is enabled in all modes but gated mode). It is set when the counter starts or stops when gated mode is selected. It is cleared by software. 0: No trigger event occurred. 1: Trigger interrupt pending.
     #[inline(always)]
     pub fn tif(&self) -> TifR {
         TifR::new(((self.bits >> 6) & 1) != 0)
-    }
-    ///Bits 7:8
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 7) & 3) as u8)
     }
     ///Bit 9 - Capture/Compare 1 overcapture flag This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0'. 0: No overcapture has been detected. 1: The counter value has been captured in CCR1 register while CC1IF flag was already set
     #[inline(always)]
@@ -115,23 +93,15 @@ impl R {
     pub fn cc4of(&self) -> Cc4ofR {
         Cc4ofR::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SR")
-            .field("rsvd", &self.rsvd())
             .field("cc4of", &self.cc4of())
             .field("cc3of", &self.cc3of())
             .field("cc2of", &self.cc2of())
             .field("cc1of", &self.cc1of())
-            .field("rsvd2", &self.rsvd2())
             .field("tif", &self.tif())
-            .field("rsvd3", &self.rsvd3())
             .field("cc4if", &self.cc4if())
             .field("cc3if", &self.cc3if())
             .field("cc2if", &self.cc2if())
@@ -166,20 +136,10 @@ impl W {
     pub fn cc4if(&mut self) -> Cc4ifW<SRrs> {
         Cc4ifW::new(self, 4)
     }
-    ///Bit 5
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<SRrs> {
-        Rsvd3W::new(self, 5)
-    }
     ///Bit 6 - Trigger interrupt flag This flag is set by hardware on trigger event (active edge detected on TRGI input when the slave mode controller is enabled in all modes but gated mode). It is set when the counter starts or stops when gated mode is selected. It is cleared by software. 0: No trigger event occurred. 1: Trigger interrupt pending.
     #[inline(always)]
     pub fn tif(&mut self) -> TifW<SRrs> {
         TifW::new(self, 6)
-    }
-    ///Bits 7:8
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<SRrs> {
-        Rsvd2W::new(self, 7)
     }
     ///Bit 9 - Capture/Compare 1 overcapture flag This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0'. 0: No overcapture has been detected. 1: The counter value has been captured in CCR1 register while CC1IF flag was already set
     #[inline(always)]
@@ -200,11 +160,6 @@ impl W {
     #[inline(always)]
     pub fn cc4of(&mut self) -> Cc4ofW<SRrs> {
         Cc4ofW::new(self, 12)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SRrs> {
-        RsvdW::new(self, 13)
     }
 }
 ///TIM status register

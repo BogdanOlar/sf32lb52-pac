@@ -6,26 +6,16 @@ pub type W = crate::W<AUDIO_TX_BCLK_DIVrs>;
 pub type DutyR = crate::FieldReader;
 ///Field `DUTY` writer - TX serial bit clock duty cycle 5 for 48K FS 4 for 44.1K FS 5 for 32KFS 10 for 24K FS 8 for 22.05K FS 15 for 16K FS 20 for 12K FS 16 for 11.025K FS 30 for 8KFs
 pub type DutyW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
     ///Bits 0:5 - TX serial bit clock duty cycle 5 for 48K FS 4 for 44.1K FS 5 for 32KFS 10 for 24K FS 8 for 22.05K FS 15 for 16K FS 20 for 12K FS 16 for 11.025K FS 30 for 8KFs
     #[inline(always)]
     pub fn duty(&self) -> DutyR {
         DutyR::new((self.bits & 0x3f) as u8)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AUDIO_TX_BCLK_DIV")
-            .field("rsvd", &self.rsvd())
             .field("duty", &self.duty())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn duty(&mut self) -> DutyW<AUDIO_TX_BCLK_DIVrs> {
         DutyW::new(self, 0)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AUDIO_TX_BCLK_DIVrs> {
-        RsvdW::new(self, 6)
     }
 }
 ///

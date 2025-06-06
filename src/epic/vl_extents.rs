@@ -6,46 +6,26 @@ pub type W = crate::W<VL_EXTENTSrs>;
 pub type MaxLineR = crate::FieldReader<u16>;
 ///Field `MAX_LINE` writer - number of pixels of each column of source image(not including padding)
 pub type MaxLineW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `MAX_COL` reader - number of pixels of each line of source image(not including padding)
 pub type MaxColR = crate::FieldReader<u16>;
 ///Field `MAX_COL` writer - number of pixels of each line of source image(not including padding)
 pub type MaxColW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bits 0:9 - number of pixels of each column of source image(not including padding)
     #[inline(always)]
     pub fn max_line(&self) -> MaxLineR {
         MaxLineR::new((self.bits & 0x03ff) as u16)
     }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 10) & 0x3f) as u8)
-    }
     ///Bits 16:25 - number of pixels of each line of source image(not including padding)
     #[inline(always)]
     pub fn max_col(&self) -> MaxColR {
         MaxColR::new(((self.bits >> 16) & 0x03ff) as u16)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("VL_EXTENTS")
-            .field("rsvd", &self.rsvd())
             .field("max_col", &self.max_col())
-            .field("rsvd2", &self.rsvd2())
             .field("max_line", &self.max_line())
             .finish()
     }
@@ -56,20 +36,10 @@ impl W {
     pub fn max_line(&mut self) -> MaxLineW<VL_EXTENTSrs> {
         MaxLineW::new(self, 0)
     }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<VL_EXTENTSrs> {
-        Rsvd2W::new(self, 10)
-    }
     ///Bits 16:25 - number of pixels of each line of source image(not including padding)
     #[inline(always)]
     pub fn max_col(&mut self) -> MaxColW<VL_EXTENTSrs> {
         MaxColW::new(self, 16)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<VL_EXTENTSrs> {
-        RsvdW::new(self, 26)
     }
 }
 ///

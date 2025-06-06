@@ -50,10 +50,6 @@ pub type PlW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type Mem2memR = crate::BitReader;
 ///Field `MEM2MEM` writer - memory-to-memory mode 0: disabled 1: enabled
 pub type Mem2memW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 17, u32>;
 impl R {
     ///Bit 0 - channel enable When a channel transfer error occurs, this bit is cleared by hardware. It can not be set again by software (channel x re-activated) until the TEIFx bit of the ISR register is cleared (by setting the CTEIFx bit of the IFCR register). 0: disabled 1: enabled
     #[inline(always)]
@@ -115,16 +111,10 @@ impl R {
     pub fn mem2mem(&self) -> Mem2memR {
         Mem2memR::new(((self.bits >> 14) & 1) != 0)
     }
-    ///Bits 15:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 15) & 0x0001_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CCR7")
-            .field("rsvd", &self.rsvd())
             .field("mem2mem", &self.mem2mem())
             .field("pl", &self.pl())
             .field("msize", &self.msize())
@@ -200,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn mem2mem(&mut self) -> Mem2memW<CCR7rs> {
         Mem2memW::new(self, 14)
-    }
-    ///Bits 15:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CCR7rs> {
-        RsvdW::new(self, 15)
     }
 }
 ///

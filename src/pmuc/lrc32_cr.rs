@@ -22,10 +22,6 @@ pub type ChgcrtW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type RselR = crate::FieldReader;
 ///Field `RSEL` writer -
 pub type RselW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 21, u32>;
 ///Field `RDY` reader -
 pub type RdyR = crate::BitReader;
 ///Field `RDY` writer -
@@ -56,11 +52,6 @@ impl R {
     pub fn rsel(&self) -> RselR {
         RselR::new(((self.bits >> 6) & 0x0f) as u8)
     }
-    ///Bits 10:30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 10) & 0x001f_ffff)
-    }
     ///Bit 31
     #[inline(always)]
     pub fn rdy(&self) -> RdyR {
@@ -71,7 +62,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LRC32_CR")
             .field("rdy", &self.rdy())
-            .field("rsvd", &self.rsvd())
             .field("rsel", &self.rsel())
             .field("chgcrt", &self.chgcrt())
             .field("cmpbm2", &self.cmpbm2())
@@ -105,11 +95,6 @@ impl W {
     #[inline(always)]
     pub fn rsel(&mut self) -> RselW<LRC32_CRrs> {
         RselW::new(self, 6)
-    }
-    ///Bits 10:30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LRC32_CRrs> {
-        RsvdW::new(self, 10)
     }
     ///Bit 31
     #[inline(always)]

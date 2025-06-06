@@ -6,26 +6,16 @@ pub type W = crate::W<DAC_EQ_CFG16rs>;
 pub type CoefR = crate::FieldReader<u32>;
 ///Field `COEF` writer -
 pub type CoefW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:23
     #[inline(always)]
     pub fn coef(&self) -> CoefR {
         CoefR::new(self.bits & 0x00ff_ffff)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DAC_EQ_CFG16")
-            .field("rsvd", &self.rsvd())
             .field("coef", &self.coef())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn coef(&mut self) -> CoefW<DAC_EQ_CFG16rs> {
         CoefW::new(self, 0)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DAC_EQ_CFG16rs> {
-        RsvdW::new(self, 24)
     }
 }
 ///

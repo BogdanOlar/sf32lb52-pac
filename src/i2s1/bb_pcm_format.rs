@@ -26,10 +26,6 @@ pub type I2sLrckPolW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PcmClkPolR = crate::BitReader;
 ///Field `PCM_CLK_POL` writer - input BB pcm clock polarity: 0: rising edge for data transmitting, falling edge for data receiving 1: rising edge for data receiving, falling edge for data transmitting
 pub type PcmClkPolW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 21, u32>;
 impl R {
     ///Bits 0:4 - Baseband Master PCM data width (>=8) Common value: 8, 13,14, 16, 18, 20, 22, 24. for I2S/Left Justified/Right Kistified timing, bb_pcm_dw >=16 For PCM timing, only 8, 13, 14, 16 configure value is available.
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn pcm_clk_pol(&self) -> PcmClkPolR {
         PcmClkPolR::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bits 11:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 11) & 0x001f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("BB_PCM_FORMAT")
-            .field("rsvd", &self.rsvd())
             .field("pcm_clk_pol", &self.pcm_clk_pol())
             .field("i2s_lrck_pol", &self.i2s_lrck_pol())
             .field("pcm_lsb_flag", &self.pcm_lsb_flag())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn pcm_clk_pol(&mut self) -> PcmClkPolW<BB_PCM_FORMATrs> {
         PcmClkPolW::new(self, 10)
-    }
-    ///Bits 11:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<BB_PCM_FORMATrs> {
-        RsvdW::new(self, 11)
     }
 }
 ///

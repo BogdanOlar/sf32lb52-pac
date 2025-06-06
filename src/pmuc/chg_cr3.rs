@@ -10,10 +10,6 @@ pub type Dly1W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 pub type Dly2R = crate::FieldReader;
 ///Field `DLY2` writer -
 pub type Dly2W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 ///Field `FORCE_RST` reader - When charger plugged out, this bit will auto reset
 pub type ForceRstR = crate::BitReader;
 ///Field `FORCE_RST` writer - When charger plugged out, this bit will auto reset
@@ -33,11 +29,6 @@ impl R {
     pub fn dly2(&self) -> Dly2R {
         Dly2R::new(((self.bits >> 6) & 0x1f) as u8)
     }
-    ///Bits 11:29
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 11) & 0x0007_ffff)
-    }
     ///Bit 30 - When charger plugged out, this bit will auto reset
     #[inline(always)]
     pub fn force_rst(&self) -> ForceRstR {
@@ -54,7 +45,6 @@ impl core::fmt::Debug for R {
         f.debug_struct("CHG_CR3")
             .field("force_ctrl", &self.force_ctrl())
             .field("force_rst", &self.force_rst())
-            .field("rsvd", &self.rsvd())
             .field("dly2", &self.dly2())
             .field("dly1", &self.dly1())
             .finish()
@@ -70,11 +60,6 @@ impl W {
     #[inline(always)]
     pub fn dly2(&mut self) -> Dly2W<CHG_CR3rs> {
         Dly2W::new(self, 6)
-    }
-    ///Bits 11:29
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CHG_CR3rs> {
-        RsvdW::new(self, 11)
     }
     ///Bit 30 - When charger plugged out, this bit will auto reset
     #[inline(always)]

@@ -6,26 +6,16 @@ pub type W = crate::W<DMA_DATArs>;
 pub type SizeR = crate::FieldReader<u32>;
 ///Field `SIZE` writer - AES_ACC data block size, AES_ACC only support block aligned transaction. Each block contains 16 bytes.
 pub type SizeW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     ///Bits 0:27 - AES_ACC data block size, AES_ACC only support block aligned transaction. Each block contains 16 bytes.
     #[inline(always)]
     pub fn size(&self) -> SizeR {
         SizeR::new(self.bits & 0x0fff_ffff)
     }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 28) & 0x0f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DMA_DATA")
-            .field("rsvd", &self.rsvd())
             .field("size", &self.size())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn size(&mut self) -> SizeW<DMA_DATArs> {
         SizeW::new(self, 0)
-    }
-    ///Bits 28:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DMA_DATArs> {
-        RsvdW::new(self, 28)
     }
 }
 ///

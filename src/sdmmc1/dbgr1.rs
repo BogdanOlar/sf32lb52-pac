@@ -10,10 +10,6 @@ pub type CmdStW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 pub type DataStR = crate::FieldReader<u16>;
 ///Field `DATA_ST` writer - data state for debug only
 pub type DataStW<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::BitReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     ///Bits 0:15 - command state for debug only
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn data_st(&self) -> DataStR {
         DataStR::new(((self.bits >> 16) & 0x7fff) as u16)
     }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 31) & 1) != 0)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DBGR1")
-            .field("rsvd", &self.rsvd())
             .field("data_st", &self.data_st())
             .field("cmd_st", &self.cmd_st())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn data_st(&mut self) -> DataStW<DBGR1rs> {
         DataStW::new(self, 16)
-    }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DBGR1rs> {
-        RsvdW::new(self, 31)
     }
 }
 ///card debug port1 register

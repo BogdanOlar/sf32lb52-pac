@@ -30,10 +30,6 @@ pub type SpoW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SphR = crate::BitReader;
 ///Field `SPH` writer - Motorola SPI SPI_CLK phase setting 0: SPI_CLK is inactive until one cycle after the start of a frame and active until 1/2 cycle before the end of a frame 1: SPI_CLK is inactive until 1/2 cycle after the start of a frame and active until one cycle before the end of a frame
 pub type SphW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `TRAIL` reader - Trailing Byte 0: Trailing bytes are handled by CPU 1: Trailing bytes are handled by DMA bursts
 pub type TrailR = crate::BitReader;
 ///Field `TRAIL` writer - Trailing Byte 0: Trailing bytes are handled by CPU 1: Trailing bytes are handled by DMA bursts
@@ -46,10 +42,6 @@ pub type HoldFrameLowW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type IfsR = crate::BitReader;
 ///Field `IFS` writer - Invert Frame Signal 0: SPI_CS polarity is as defined in protocol 1: SPI_CS will be inverted from normal-SPI_CS
 pub type IfsW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `TTE` reader - SPI_DO Three-State Enable 0: SPI_DO output signal is not three-stated 1: SPI_DO is three-stated when not transmitting data
 pub type TteR = crate::BitReader;
 ///Field `TTE` writer - SPI_DO Three-State Enable 0: SPI_DO output signal is not three-stated 1: SPI_DO is three-stated when not transmitting data
@@ -58,10 +50,6 @@ pub type TteW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TtelpR = crate::BitReader;
 ///Field `TTELP` writer - SPI_DO Three-state Enable On Last Phase (can be set only when TI-SSP) 0: SPI_DO is three-stated 1/2 clock cycle after the beginning of the LSB 1: SPI_DO output signal is three-stated on the clock edge that ends the LSB
 pub type TtelpW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 impl R {
     ///Bit 0 - SPI controller Enable 0: SPI controller is disabled 1: SPI controller is enabled
     #[inline(always)]
@@ -98,11 +86,6 @@ impl R {
     pub fn sph(&self) -> SphR {
         SphR::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 12
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 12) & 1) != 0)
-    }
     ///Bit 13 - Trailing Byte 0: Trailing bytes are handled by CPU 1: Trailing bytes are handled by DMA bursts
     #[inline(always)]
     pub fn trail(&self) -> TrailR {
@@ -118,11 +101,6 @@ impl R {
     pub fn ifs(&self) -> IfsR {
         IfsR::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bit 16
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 16) & 1) != 0)
-    }
     ///Bit 17 - SPI_DO Three-State Enable 0: SPI_DO output signal is not three-stated 1: SPI_DO is three-stated when not transmitting data
     #[inline(always)]
     pub fn tte(&self) -> TteR {
@@ -133,23 +111,15 @@ impl R {
     pub fn ttelp(&self) -> TtelpR {
         TtelpR::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bits 19:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 19) & 0x1fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TOP_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("ttelp", &self.ttelp())
             .field("tte", &self.tte())
-            .field("rsvd2", &self.rsvd2())
             .field("ifs", &self.ifs())
             .field("hold_frame_low", &self.hold_frame_low())
             .field("trail", &self.trail())
-            .field("rsvd3", &self.rsvd3())
             .field("sph", &self.sph())
             .field("spo", &self.spo())
             .field("dss", &self.dss())
@@ -196,11 +166,6 @@ impl W {
     pub fn sph(&mut self) -> SphW<TOP_CTRLrs> {
         SphW::new(self, 11)
     }
-    ///Bit 12
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<TOP_CTRLrs> {
-        Rsvd3W::new(self, 12)
-    }
     ///Bit 13 - Trailing Byte 0: Trailing bytes are handled by CPU 1: Trailing bytes are handled by DMA bursts
     #[inline(always)]
     pub fn trail(&mut self) -> TrailW<TOP_CTRLrs> {
@@ -216,11 +181,6 @@ impl W {
     pub fn ifs(&mut self) -> IfsW<TOP_CTRLrs> {
         IfsW::new(self, 15)
     }
-    ///Bit 16
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<TOP_CTRLrs> {
-        Rsvd2W::new(self, 16)
-    }
     ///Bit 17 - SPI_DO Three-State Enable 0: SPI_DO output signal is not three-stated 1: SPI_DO is three-stated when not transmitting data
     #[inline(always)]
     pub fn tte(&mut self) -> TteW<TOP_CTRLrs> {
@@ -230,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn ttelp(&mut self) -> TtelpW<TOP_CTRLrs> {
         TtelpW::new(self, 18)
-    }
-    ///Bits 19:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TOP_CTRLrs> {
-        RsvdW::new(self, 19)
     }
 }
 ///Top Control Register

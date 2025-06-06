@@ -26,10 +26,6 @@ pub type SinForceValueW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 pub type DegForceR = crate::BitReader;
 ///Field `DEG_FORCE` writer - force epic use external sin and cos value, quadrant is still calculated from ROT_DEG.
 pub type DegForceW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     ///Bit 0 - VL CLUT select: 1'h1: select pallette1 1'h0: select pallette0
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn deg_force(&self) -> DegForceR {
         DegForceR::new(((self.bits >> 29) & 1) != 0)
     }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 30) & 3) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("VL_MISC_CFG")
-            .field("rsvd", &self.rsvd())
             .field("deg_force", &self.deg_force())
             .field("sin_force_value", &self.sin_force_value())
             .field("cos_force_value", &self.cos_force_value())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn deg_force(&mut self) -> DegForceW<VL_MISC_CFGrs> {
         DegForceW::new(self, 29)
-    }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<VL_MISC_CFGrs> {
-        RsvdW::new(self, 30)
     }
 }
 ///

@@ -6,28 +6,16 @@ pub type W = crate::W<TDRrs>;
 pub type TdrR = crate::FieldReader<u16>;
 ///Field `TDR` writer - Transmit data
 pub type TdrW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bits 0:8 - Transmit data
     #[inline(always)]
     pub fn tdr(&self) -> TdrR {
         TdrR::new((self.bits & 0x01ff) as u16)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("TDR")
-            .field("rsvd", &self.rsvd())
-            .field("tdr", &self.tdr())
-            .finish()
+        f.debug_struct("TDR").field("tdr", &self.tdr()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn tdr(&mut self) -> TdrW<TDRrs> {
         TdrW::new(self, 0)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TDRrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///Transmit Data Register

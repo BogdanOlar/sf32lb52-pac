@@ -26,10 +26,6 @@ pub type CntstrtW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CountrstR = crate::BitReader;
 ///Field `COUNTRST` writer - Counter reset This bit is set by software and cleared by hardware. When set to 1 this bit will trigger a synchronous reset of the CNT register. Due to the synchronous nature of this reset, it only takes place after a synchronization delay. COUNTRST must never be set to 1 by software before it is already cleared to 0 by hardware. Software should consequently check that COUNTRST bit is already cleared to 0 before attempting to set it to 1.
 pub type CountrstW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0 - LPTIM enable The ENABLE bit is set and cleared by software. 0:LPTIM is disabled 1:LPTIM is enabled
     #[inline(always)]
@@ -55,16 +51,10 @@ impl R {
     pub fn countrst(&self) -> CountrstR {
         CountrstR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CR")
-            .field("rsvd", &self.rsvd())
             .field("countrst", &self.countrst())
             .field("cntstrt", &self.cntstrt())
             .field("sngstrt", &self.sngstrt())
@@ -96,11 +86,6 @@ impl W {
     #[inline(always)]
     pub fn countrst(&mut self) -> CountrstW<CRrs> {
         CountrstW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CRrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///LPTIM control register

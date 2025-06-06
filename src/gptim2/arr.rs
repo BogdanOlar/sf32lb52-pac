@@ -6,28 +6,16 @@ pub type W = crate::W<ARRrs>;
 pub type ArrR = crate::FieldReader<u16>;
 ///Field `ARR` writer - Auto-reload value ARR is the value to be loaded in the actual auto-reload register.
 pub type ArrW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:15 - Auto-reload value ARR is the value to be loaded in the actual auto-reload register.
     #[inline(always)]
     pub fn arr(&self) -> ArrR {
         ArrR::new((self.bits & 0xffff) as u16)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ARR")
-            .field("rsvd", &self.rsvd())
-            .field("arr", &self.arr())
-            .finish()
+        f.debug_struct("ARR").field("arr", &self.arr()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn arr(&mut self) -> ArrW<ARRrs> {
         ArrW::new(self, 0)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ARRrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///Auto-reload register

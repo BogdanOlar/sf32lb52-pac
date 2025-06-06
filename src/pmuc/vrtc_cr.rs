@@ -18,10 +18,6 @@ pub type BorEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type BorVtTrimR = crate::FieldReader;
 ///Field `BOR_VT_TRIM` writer -
 pub type BorVtTrimW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bits 0:3
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn bor_vt_trim(&self) -> BorVtTrimR {
         BorVtTrimR::new(((self.bits >> 9) & 0x0f) as u8)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("VRTC_CR")
-            .field("rsvd", &self.rsvd())
             .field("bor_vt_trim", &self.bor_vt_trim())
             .field("bor_en", &self.bor_en())
             .field("vrtc_trim", &self.vrtc_trim())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn bor_vt_trim(&mut self) -> BorVtTrimW<VRTC_CRrs> {
         BorVtTrimW::new(self, 9)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<VRTC_CRrs> {
-        RsvdW::new(self, 13)
     }
 }
 ///VRTC Control Register

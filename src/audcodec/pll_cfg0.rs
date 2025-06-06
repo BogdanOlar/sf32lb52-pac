@@ -50,10 +50,6 @@ pub type EnIaryW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SelCkrefR = crate::FieldReader;
 ///Field `SEL_CKREF` writer - select ref clock, 2: 24MHz
 pub type SelCkrefW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::BitReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     ///Bits 0:4 - Icp os
     #[inline(always)]
@@ -115,16 +111,10 @@ impl R {
     pub fn sel_ckref(&self) -> SelCkrefR {
         SelCkrefR::new(((self.bits >> 29) & 3) as u8)
     }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 31) & 1) != 0)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PLL_CFG0")
-            .field("rsvd", &self.rsvd())
             .field("sel_ckref", &self.sel_ckref())
             .field("en_iary", &self.en_iary())
             .field("en_vco", &self.en_vco())
@@ -200,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn sel_ckref(&mut self) -> SelCkrefW<PLL_CFG0rs> {
         SelCkrefW::new(self, 29)
-    }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PLL_CFG0rs> {
-        RsvdW::new(self, 31)
     }
 }
 ///

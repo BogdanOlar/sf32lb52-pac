@@ -6,26 +6,16 @@ pub type W = crate::W<TOrs>;
 pub type TimeoutR = crate::FieldReader<u32>;
 ///Field `TIMEOUT` writer - Timeout Value TIMEOUT value is the value (0 to 2^24-1) that defines the time-out interval. The time-out interval is given by the equation shown in the TIMEOUT Interval Equation.
 pub type TimeoutW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:23 - Timeout Value TIMEOUT value is the value (0 to 2^24-1) that defines the time-out interval. The time-out interval is given by the equation shown in the TIMEOUT Interval Equation.
     #[inline(always)]
     pub fn timeout(&self) -> TimeoutR {
         TimeoutR::new(self.bits & 0x00ff_ffff)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TO")
-            .field("rsvd", &self.rsvd())
             .field("timeout", &self.timeout())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn timeout(&mut self) -> TimeoutW<TOrs> {
         TimeoutW::new(self, 0)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TOrs> {
-        RsvdW::new(self, 24)
     }
 }
 ///SPI Time Out Register

@@ -18,10 +18,6 @@ pub type Sdio4wiresIrqW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Sdio4wiresMultiIrqR = crate::BitReader;
 ///Field `SDIO_4WIRES_MULTI_IRQ` writer - Select the sdio host 4 wires interrupt on multi-block support 0: host not support 4 wires interrupt on multi-block data transfers 1: host support 4 wires interrupt on multi-block data transfers
 pub type Sdio4wiresMultiIrqW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0 - Select the card type, default is sd card 0: sd card mode 1: CE-ATA device mode
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn sdio_4wires_multi_irq(&self) -> Sdio4wiresMultiIrqR {
         Sdio4wiresMultiIrqR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CEATA")
-            .field("rsvd", &self.rsvd())
             .field("sdio_4wires_multi_irq", &self.sdio_4wires_multi_irq())
             .field("sdio_4wires_irq", &self.sdio_4wires_irq())
             .field("enable_sdio_irq", &self.enable_sdio_irq())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn sdio_4wires_multi_irq(&mut self) -> Sdio4wiresMultiIrqW<CEATArs> {
         Sdio4wiresMultiIrqW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CEATArs> {
-        RsvdW::new(self, 4)
     }
 }
 ///CE-ATA/SDIO mode register

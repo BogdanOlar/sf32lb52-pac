@@ -14,10 +14,6 @@ pub type DpiRunW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type JdiParRunR = crate::BitReader;
 ///Field `JDI_PAR_RUN` writer - JDI parallel interface is running
 pub type JdiParRunW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
 impl R {
     ///Bit 0 - LCS controll busy flag
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn jdi_par_run(&self) -> JdiParRunR {
         JdiParRunR::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 3) & 0x1fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("STATUS")
-            .field("rsvd", &self.rsvd())
             .field("jdi_par_run", &self.jdi_par_run())
             .field("dpi_run", &self.dpi_run())
             .field("lcd_busy", &self.lcd_busy())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn jdi_par_run(&mut self) -> JdiParRunW<STATUSrs> {
         JdiParRunW::new(self, 2)
-    }
-    ///Bits 3:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<STATUSrs> {
-        RsvdW::new(self, 3)
     }
 }
 ///

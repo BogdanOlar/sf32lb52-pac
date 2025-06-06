@@ -6,28 +6,16 @@ pub type W = crate::W<FIFOrs>;
 pub type DataR = crate::FieldReader;
 ///Field `DATA` writer - Write to push send data into FIFO. Read to pop received data from FIFO
 pub type DataW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bits 0:7 - Write to push send data into FIFO. Read to pop received data from FIFO
     #[inline(always)]
     pub fn data(&self) -> DataR {
         DataR::new((self.bits & 0xff) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FIFO")
-            .field("rsvd", &self.rsvd())
-            .field("data", &self.data())
-            .finish()
+        f.debug_struct("FIFO").field("data", &self.data()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn data(&mut self) -> DataW<FIFOrs> {
         DataW::new(self, 0)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<FIFOrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///FIFO Register

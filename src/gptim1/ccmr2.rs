@@ -30,10 +30,6 @@ pub type Ic4fW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type Oc3ceR = crate::BitReader;
 ///Field `OC3CE` writer - Output compare 3 clear enable
 pub type Oc3ceW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `OC3PE` reader - Output compare 3 preload enable
 pub type Oc3peR = crate::BitReader;
 ///Field `OC3PE` writer - Output compare 3 preload enable
@@ -46,10 +42,6 @@ pub type Oc3mW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type Oc4ceR = crate::BitReader;
 ///Field `OC4CE` writer - Output compare 4 clear enable
 pub type Oc4ceW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `OC4PE` reader - Output compare 4 preload enable
 pub type Oc4peR = crate::BitReader;
 ///Field `OC4PE` writer - Output compare 4 preload enable
@@ -94,11 +86,6 @@ impl R {
     pub fn oc3ce(&self) -> Oc3ceR {
         Oc3ceR::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bits 17:18
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 17) & 3) as u8)
-    }
     ///Bit 19 - Output compare 3 preload enable
     #[inline(always)]
     pub fn oc3pe(&self) -> Oc3peR {
@@ -113,11 +100,6 @@ impl R {
     #[inline(always)]
     pub fn oc4ce(&self) -> Oc4ceR {
         Oc4ceR::new(((self.bits >> 24) & 1) != 0)
-    }
-    ///Bits 25:26
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 25) & 3) as u8)
     }
     ///Bit 27 - Output compare 4 preload enable
     #[inline(always)]
@@ -135,11 +117,9 @@ impl core::fmt::Debug for R {
         f.debug_struct("CCMR2")
             .field("oc4m", &self.oc4m())
             .field("oc4pe", &self.oc4pe())
-            .field("rsvd", &self.rsvd())
             .field("oc4ce", &self.oc4ce())
             .field("oc3m", &self.oc3m())
             .field("oc3pe", &self.oc3pe())
-            .field("rsvd2", &self.rsvd2())
             .field("oc3ce", &self.oc3ce())
             .field("ic4f", &self.ic4f())
             .field("ic4psc", &self.ic4psc())
@@ -186,11 +166,6 @@ impl W {
     pub fn oc3ce(&mut self) -> Oc3ceW<CCMR2rs> {
         Oc3ceW::new(self, 16)
     }
-    ///Bits 17:18
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CCMR2rs> {
-        Rsvd2W::new(self, 17)
-    }
     ///Bit 19 - Output compare 3 preload enable
     #[inline(always)]
     pub fn oc3pe(&mut self) -> Oc3peW<CCMR2rs> {
@@ -205,11 +180,6 @@ impl W {
     #[inline(always)]
     pub fn oc4ce(&mut self) -> Oc4ceW<CCMR2rs> {
         Oc4ceW::new(self, 24)
-    }
-    ///Bits 25:26
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CCMR2rs> {
-        RsvdW::new(self, 25)
     }
     ///Bit 27 - Output compare 4 preload enable
     #[inline(always)]

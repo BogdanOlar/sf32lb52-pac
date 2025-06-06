@@ -10,10 +10,6 @@ pub type Stat0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 pub type Stat1R = crate::FieldReader;
 ///Field `STAT1` writer - reserved status1
 pub type Stat1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:7 - reserved status0
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn stat1(&self) -> Stat1R {
         Stat1R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("RESERVED_OUT")
-            .field("rsvd", &self.rsvd())
             .field("stat1", &self.stat1())
             .field("stat0", &self.stat0())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn stat1(&mut self) -> Stat1W<RESERVED_OUTrs> {
         Stat1W::new(self, 8)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RESERVED_OUTrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///

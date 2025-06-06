@@ -2,20 +2,11 @@
 pub type R = crate::R<AAOARrs>;
 ///Register `AAOAR` writer
 pub type W = crate::W<AAOARrs>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 ///Field `OA` reader - The offset to be added to the original address
 pub type OaR = crate::FieldReader<u32>;
 ///Field `OA` writer - The offset to be added to the original address
 pub type OaW<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
 impl R {
-    ///Bits 0:9
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits & 0x03ff) as u16)
-    }
     ///Bits 10:31 - The offset to be added to the original address
     #[inline(always)]
     pub fn oa(&self) -> OaR {
@@ -24,18 +15,10 @@ impl R {
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("AAOAR")
-            .field("oa", &self.oa())
-            .field("rsvd", &self.rsvd())
-            .finish()
+        f.debug_struct("AAOAR").field("oa", &self.oa()).finish()
     }
 }
 impl W {
-    ///Bits 0:9
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AAOARrs> {
-        RsvdW::new(self, 0)
-    }
     ///Bits 10:31 - The offset to be added to the original address
     #[inline(always)]
     pub fn oa(&mut self) -> OaW<AAOARrs> {

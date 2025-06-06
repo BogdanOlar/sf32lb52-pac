@@ -14,26 +14,14 @@ pub type Ad2daLoopBackW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SpClkSelR = crate::BitReader;
 ///Field `SP_CLK_SEL` writer - clock select 0: xtal clock 1: pll clock
 pub type SpClkSelW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::FieldReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 ///Field `SP_CLK_DIV_UPDATE` reader - update sp clock divider
 pub type SpClkDivUpdateR = crate::BitReader;
 ///Field `SP_CLK_DIV_UPDATE` writer - update sp clock divider
 pub type SpClkDivUpdateW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 ///Field `SP_CLK_DIV` reader - sp clock divider value
 pub type SpClkDivR = crate::FieldReader;
 ///Field `SP_CLK_DIV` writer - sp clock divider value
 pub type SpClkDivW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bit 0 - TX-->RX Loop debug control: 0: disable 1: enable, internally connect TX SDTO to RX SDTI
     #[inline(always)]
@@ -50,40 +38,22 @@ impl R {
     pub fn sp_clk_sel(&self) -> SpClkSelR {
         SpClkSelR::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 3:7
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 3) & 0x1f) as u8)
-    }
     ///Bit 8 - update sp clock divider
     #[inline(always)]
     pub fn sp_clk_div_update(&self) -> SpClkDivUpdateR {
         SpClkDivUpdateR::new(((self.bits >> 8) & 1) != 0)
-    }
-    ///Bits 9:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 9) & 0x7f) as u8)
     }
     ///Bits 16:23 - sp clock divider value
     #[inline(always)]
     pub fn sp_clk_div(&self) -> SpClkDivR {
         SpClkDivR::new(((self.bits >> 16) & 0xff) as u8)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DEBUG_LOOP")
-            .field("rsvd", &self.rsvd())
             .field("sp_clk_div", &self.sp_clk_div())
-            .field("rsvd2", &self.rsvd2())
             .field("sp_clk_div_update", &self.sp_clk_div_update())
-            .field("rsvd3", &self.rsvd3())
             .field("sp_clk_sel", &self.sp_clk_sel())
             .field("ad2da_loop_back", &self.ad2da_loop_back())
             .field("da2ad_loop_back", &self.da2ad_loop_back())
@@ -106,30 +76,15 @@ impl W {
     pub fn sp_clk_sel(&mut self) -> SpClkSelW<DEBUG_LOOPrs> {
         SpClkSelW::new(self, 2)
     }
-    ///Bits 3:7
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<DEBUG_LOOPrs> {
-        Rsvd3W::new(self, 3)
-    }
     ///Bit 8 - update sp clock divider
     #[inline(always)]
     pub fn sp_clk_div_update(&mut self) -> SpClkDivUpdateW<DEBUG_LOOPrs> {
         SpClkDivUpdateW::new(self, 8)
     }
-    ///Bits 9:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<DEBUG_LOOPrs> {
-        Rsvd2W::new(self, 9)
-    }
     ///Bits 16:23 - sp clock divider value
     #[inline(always)]
     pub fn sp_clk_div(&mut self) -> SpClkDivW<DEBUG_LOOPrs> {
         SpClkDivW::new(self, 16)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DEBUG_LOOPrs> {
-        RsvdW::new(self, 24)
     }
 }
 ///

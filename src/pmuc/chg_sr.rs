@@ -30,18 +30,10 @@ pub type CvModeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type EocModeR = crate::BitReader;
 ///Field `EOC_MODE` writer -
 pub type EocModeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `CHG_STATE` reader - Charger finite state machine
 pub type ChgStateR = crate::FieldReader;
 ///Field `CHG_STATE` writer - Charger finite state machine
 pub type ChgStateW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 17, u32>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -78,28 +70,16 @@ impl R {
     pub fn eoc_mode(&self) -> EocModeR {
         EocModeR::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 7) & 1) != 0)
-    }
     ///Bits 8:14 - Charger finite state machine
     #[inline(always)]
     pub fn chg_state(&self) -> ChgStateR {
         ChgStateR::new(((self.bits >> 8) & 0x7f) as u8)
     }
-    ///Bits 15:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 15) & 0x0001_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CHG_SR")
-            .field("rsvd", &self.rsvd())
             .field("chg_state", &self.chg_state())
-            .field("rsvd2", &self.rsvd2())
             .field("eoc_mode", &self.eoc_mode())
             .field("cv_mode", &self.cv_mode())
             .field("cc_mode", &self.cc_mode())
@@ -146,20 +126,10 @@ impl W {
     pub fn eoc_mode(&mut self) -> EocModeW<CHG_SRrs> {
         EocModeW::new(self, 6)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CHG_SRrs> {
-        Rsvd2W::new(self, 7)
-    }
     ///Bits 8:14 - Charger finite state machine
     #[inline(always)]
     pub fn chg_state(&mut self) -> ChgStateW<CHG_SRrs> {
         ChgStateW::new(self, 8)
-    }
-    ///Bits 15:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CHG_SRrs> {
-        RsvdW::new(self, 15)
     }
 }
 ///Charger Status Register

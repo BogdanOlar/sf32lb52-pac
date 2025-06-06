@@ -22,10 +22,6 @@ pub type BgBlendingBypassW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AllBlendingBypassR = crate::BitReader;
 ///Field `ALL_BLENDING_BYPASS` writer - if this bit is set, epic is in pure dma mode. No blending operation.
 pub type AllBlendingBypassW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bits 0:7 - blue color
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn all_blending_bypass(&self) -> AllBlendingBypassR {
         AllBlendingBypassR::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CANVAS_BG")
-            .field("rsvd", &self.rsvd())
             .field("all_blending_bypass", &self.all_blending_bypass())
             .field("bg_blending_bypass", &self.bg_blending_bypass())
             .field("red", &self.red())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn all_blending_bypass(&mut self) -> AllBlendingBypassW<CANVAS_BGrs> {
         AllBlendingBypassW::new(self, 25)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CANVAS_BGrs> {
-        RsvdW::new(self, 26)
     }
 }
 ///Background color

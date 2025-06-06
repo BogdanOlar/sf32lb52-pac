@@ -6,26 +6,16 @@ pub type W = crate::W<RECORD_DATA_SELrs>;
 pub type RsDataSelR = crate::BitReader;
 ///Field `RS_DATA_SEL` writer - 0: I2S audio recording 1: BT recording
 pub type RsDataSelW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 impl R {
     ///Bit 0 - 0: I2S audio recording 1: BT recording
     #[inline(always)]
     pub fn rs_data_sel(&self) -> RsDataSelR {
         RsDataSelR::new((self.bits & 1) != 0)
     }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 1) & 0x7fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("RECORD_DATA_SEL")
-            .field("rsvd", &self.rsvd())
             .field("rs_data_sel", &self.rs_data_sel())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn rs_data_sel(&mut self) -> RsDataSelW<RECORD_DATA_SELrs> {
         RsDataSelW::new(self, 0)
-    }
-    ///Bits 1:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RECORD_DATA_SELrs> {
-        RsvdW::new(self, 1)
     }
 }
 ///

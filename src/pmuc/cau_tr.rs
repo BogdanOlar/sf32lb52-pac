@@ -14,10 +14,6 @@ pub type CauDcBrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type CauDcMrR = crate::FieldReader;
 ///Field `CAU_DC_MR` writer -
 pub type CauDcMrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bits 0:2
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn cau_dc_mr(&self) -> CauDcMrR {
         CauDcMrR::new(((self.bits >> 6) & 7) as u8)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CAU_TR")
-            .field("rsvd", &self.rsvd())
             .field("cau_dc_mr", &self.cau_dc_mr())
             .field("cau_dc_br", &self.cau_dc_br())
             .field("cau_dc_tr", &self.cau_dc_tr())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn cau_dc_mr(&mut self) -> CauDcMrW<CAU_TRrs> {
         CauDcMrW::new(self, 6)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CAU_TRrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///CAU Test Register

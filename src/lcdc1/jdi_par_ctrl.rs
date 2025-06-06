@@ -6,10 +6,6 @@ pub type W = crate::W<JDI_PAR_CTRLrs>;
 pub type EnableR = crate::BitReader;
 ///Field `ENABLE` writer - jdi parallel interface enable
 pub type EnableW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 ///Field `XRST` reader - jdi parallel interface XRST
 pub type XrstR = crate::BitReader;
 ///Field `XRST` writer - jdi parallel interface XRST
@@ -34,10 +30,6 @@ pub type VckpolW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type VstpolR = crate::BitReader;
 ///Field `VSTPOL` writer - jdi parallel vst polarity
 pub type VstpolW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `INT_LINE_NUM` reader - jdi parallel interface interrupt line number, line number start from 0.
 pub type IntLineNumR = crate::FieldReader<u16>;
 ///Field `INT_LINE_NUM` writer - jdi parallel interface interrupt line number, line number start from 0.
@@ -47,11 +39,6 @@ impl R {
     #[inline(always)]
     pub fn enable(&self) -> EnableR {
         EnableR::new((self.bits & 1) != 0)
-    }
-    ///Bits 1:3
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 1) & 7) as u8)
     }
     ///Bit 4 - jdi parallel interface XRST
     #[inline(always)]
@@ -83,11 +70,6 @@ impl R {
     pub fn vstpol(&self) -> VstpolR {
         VstpolR::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 10) & 0x3f) as u8)
-    }
     ///Bits 16:31 - jdi parallel interface interrupt line number, line number start from 0.
     #[inline(always)]
     pub fn int_line_num(&self) -> IntLineNumR {
@@ -98,14 +80,12 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("JDI_PAR_CTRL")
             .field("int_line_num", &self.int_line_num())
-            .field("rsvd", &self.rsvd())
             .field("vstpol", &self.vstpol())
             .field("vckpol", &self.vckpol())
             .field("hstpol", &self.hstpol())
             .field("hckpol", &self.hckpol())
             .field("enbpol", &self.enbpol())
             .field("xrst", &self.xrst())
-            .field("rsvd2", &self.rsvd2())
             .field("enable", &self.enable())
             .finish()
     }
@@ -115,11 +95,6 @@ impl W {
     #[inline(always)]
     pub fn enable(&mut self) -> EnableW<JDI_PAR_CTRLrs> {
         EnableW::new(self, 0)
-    }
-    ///Bits 1:3
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<JDI_PAR_CTRLrs> {
-        Rsvd2W::new(self, 1)
     }
     ///Bit 4 - jdi parallel interface XRST
     #[inline(always)]
@@ -150,11 +125,6 @@ impl W {
     #[inline(always)]
     pub fn vstpol(&mut self) -> VstpolW<JDI_PAR_CTRLrs> {
         VstpolW::new(self, 9)
-    }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<JDI_PAR_CTRLrs> {
-        RsvdW::new(self, 10)
     }
     ///Bits 16:31 - jdi parallel interface interrupt line number, line number start from 0.
     #[inline(always)]

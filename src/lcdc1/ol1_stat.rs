@@ -26,10 +26,6 @@ pub type PfDfW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type PfPrR = crate::FieldReader;
 ///Field `PF_PR` writer -
 pub type PfPrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 21, u32>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn pf_pr(&self) -> PfPrR {
         PfPrR::new(((self.bits >> 8) & 7) as u8)
     }
-    ///Bits 11:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 11) & 0x001f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("OL1_STAT")
-            .field("rsvd", &self.rsvd())
             .field("pf_pr", &self.pf_pr())
             .field("pf_df", &self.pf_df())
             .field("data_conv", &self.data_conv())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn pf_pr(&mut self) -> PfPrW<OL1_STATrs> {
         PfPrW::new(self, 8)
-    }
-    ///Bits 11:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<OL1_STATrs> {
-        RsvdW::new(self, 11)
     }
 }
 ///

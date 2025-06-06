@@ -6,26 +6,16 @@ pub type W = crate::W<IPLCR1rs>;
 pub type IplcR = crate::FieldReader<u16>;
 ///Field `IPLC` writer - set 1 for disable falling edge in edge mode, or low level in level mode of corresponding GPIO\[44:32\]
 pub type IplcW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bits 0:12 - set 1 for disable falling edge in edge mode, or low level in level mode of corresponding GPIO\[44:32\]
     #[inline(always)]
     pub fn iplc(&self) -> IplcR {
         IplcR::new((self.bits & 0x1fff) as u16)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("IPLCR1")
-            .field("rsvd", &self.rsvd())
             .field("iplc", &self.iplc())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn iplc(&mut self) -> IplcW<IPLCR1rs> {
         IplcW::new(self, 0)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<IPLCR1rs> {
-        RsvdW::new(self, 13)
     }
 }
 ///Interrupt Polarity Low Clear Register

@@ -42,10 +42,6 @@ pub type AlphaBlendW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type VMirrorR = crate::BitReader;
 ///Field `V_MIRROR` writer - set 1 to do vertical mirror for the layer
 pub type VMirrorW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::BitReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     ///Bits 0:2 - overlay layer input format 3'h0: RGB565 3'h1: RGB888 3'h2: ARGB8888 3'h3: ARGB8565 3'h4: RGB332 3'h5: A8 3'h6: L8 others: reserved
     #[inline(always)]
@@ -97,16 +93,10 @@ impl R {
     pub fn v_mirror(&self) -> VMirrorR {
         VMirrorR::new(((self.bits >> 30) & 1) != 0)
     }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 31) & 1) != 0)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LAYER0_CONFIG")
-            .field("rsvd", &self.rsvd())
             .field("v_mirror", &self.v_mirror())
             .field("alpha_blend", &self.alpha_blend())
             .field("active", &self.active())
@@ -170,11 +160,6 @@ impl W {
     #[inline(always)]
     pub fn v_mirror(&mut self) -> VMirrorW<LAYER0_CONFIGrs> {
         VMirrorW::new(self, 30)
-    }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LAYER0_CONFIGrs> {
-        RsvdW::new(self, 31)
     }
 }
 ///

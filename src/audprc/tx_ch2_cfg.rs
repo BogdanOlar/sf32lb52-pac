@@ -22,10 +22,6 @@ pub type DmaMskW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type FifoCntR = crate::FieldReader;
 ///Field `FIFO_CNT` writer - tx fifo counter
 pub type FifoCntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bit 0 - tx channel 0 enable
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn fifo_cnt(&self) -> FifoCntR {
         FifoCntR::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TX_CH2_CFG")
-            .field("rsvd", &self.rsvd())
             .field("fifo_cnt", &self.fifo_cnt())
             .field("dma_msk", &self.dma_msk())
             .field("mode", &self.mode())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn fifo_cnt(&mut self) -> FifoCntW<TX_CH2_CFGrs> {
         FifoCntW::new(self, 4)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TX_CH2_CFGrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///

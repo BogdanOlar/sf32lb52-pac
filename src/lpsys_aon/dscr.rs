@@ -18,10 +18,6 @@ pub type PwrReqW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ExtpwrReqR = crate::BitReader;
 ///Field `EXTPWR_REQ` writer - for debug only
 pub type ExtpwrReqW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0 - Request hrc48 in Deep Sleep mode
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn extpwr_req(&self) -> ExtpwrReqR {
         ExtpwrReqR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DSCR")
-            .field("rsvd", &self.rsvd())
             .field("extpwr_req", &self.extpwr_req())
             .field("pwr_req", &self.pwr_req())
             .field("hxt48_req", &self.hxt48_req())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn extpwr_req(&mut self) -> ExtpwrReqW<DSCRrs> {
         ExtpwrReqW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DSCRrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///Deep Sleep Ctrl Register

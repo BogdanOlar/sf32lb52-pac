@@ -26,10 +26,6 @@ pub type CsdRstW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CsdEnR = crate::BitReader;
 ///Field `CSD_EN` writer - enable CSD
 pub type CsdEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bits 0:3 - select R3
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn csd_en(&self) -> CsdEnR {
         CsdEnR::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PLL_CFG1")
-            .field("rsvd", &self.rsvd())
             .field("csd_en", &self.csd_en())
             .field("csd_rst", &self.csd_rst())
             .field("cz_sel", &self.cz_sel())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn csd_en(&mut self) -> CsdEnW<PLL_CFG1rs> {
         CsdEnW::new(self, 15)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PLL_CFG1rs> {
-        RsvdW::new(self, 16)
     }
 }
 ///

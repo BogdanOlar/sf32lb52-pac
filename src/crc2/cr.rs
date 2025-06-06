@@ -22,10 +22,6 @@ pub type RevInW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type RevOutR = crate::BitReader;
 ///Field `REV_OUT` writer - Reverse output data This bit controls the reversal of the bit order of the output data. 0: Bit order not affected 1: Bit-reversed output format
 pub type RevOutW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bit 0 - This bit is set by software to reset the CRC calculation unit and set the data register to the value stored in the CRC_INIT register. This bit can only be set, it is automatically cleared by hardware
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn rev_out(&self) -> RevOutR {
         RevOutR::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CR")
-            .field("rsvd", &self.rsvd())
             .field("rev_out", &self.rev_out())
             .field("rev_in", &self.rev_in())
             .field("polysize", &self.polysize())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn rev_out(&mut self) -> RevOutW<CRrs> {
         RevOutW::new(self, 7)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CRrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///Control register

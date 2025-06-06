@@ -8,10 +8,6 @@ pub type DoeR = crate::FieldReader<u16>;
 ///Field `DOE` writer - GPIO\[44:32\]
 ///output enable
 pub type DoeW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bits 0:12 - GPIO\[44:32\]
     ///output enable
@@ -19,18 +15,10 @@ impl R {
     pub fn doe(&self) -> DoeR {
         DoeR::new((self.bits & 0x1fff) as u16)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DOER1")
-            .field("rsvd", &self.rsvd())
-            .field("doe", &self.doe())
-            .finish()
+        f.debug_struct("DOER1").field("doe", &self.doe()).finish()
     }
 }
 impl W {
@@ -39,11 +27,6 @@ impl W {
     #[inline(always)]
     pub fn doe(&mut self) -> DoeW<DOER1rs> {
         DoeW::new(self, 0)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DOER1rs> {
-        RsvdW::new(self, 13)
     }
 }
 ///Data Output Enable Register

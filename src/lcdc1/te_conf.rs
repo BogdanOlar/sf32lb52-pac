@@ -26,10 +26,6 @@ pub type FmarkModeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type FmarkSourceR = crate::BitReader;
 ///Field `FMARK_SOURCE` writer - TE signal source 1: use TE signal from DSI 0: use TE signal from external pin
 pub type FmarkSourceW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 impl R {
     ///Bit 0 - TE enable
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn fmark_source(&self) -> FmarkSourceR {
         FmarkSourceR::new(((self.bits >> 20) & 1) != 0)
     }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 21) & 0x07ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TE_CONF")
-            .field("rsvd", &self.rsvd())
             .field("fmark_source", &self.fmark_source())
             .field("fmark_mode", &self.fmark_mode())
             .field("vsync_det_cnt", &self.vsync_det_cnt())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn fmark_source(&mut self) -> FmarkSourceW<TE_CONFrs> {
         FmarkSourceW::new(self, 20)
-    }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TE_CONFrs> {
-        RsvdW::new(self, 21)
     }
 }
 ///

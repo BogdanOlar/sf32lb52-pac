@@ -6,26 +6,16 @@ pub type W = crate::W<BT_PCM_CLK_DUTYrs>;
 pub type ClkDutyR = crate::FieldReader<u16>;
 ///Field `CLK_DUTY` writer - BT_PCM_CLK duty cycle = (GCLK/(bt_pcm_sync*bt_pcm_dw))
 pub type ClkDutyW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
 impl R {
     ///Bits 0:9 - BT_PCM_CLK duty cycle = (GCLK/(bt_pcm_sync*bt_pcm_dw))
     #[inline(always)]
     pub fn clk_duty(&self) -> ClkDutyR {
         ClkDutyR::new((self.bits & 0x03ff) as u16)
     }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 10) & 0x003f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("BT_PCM_CLK_DUTY")
-            .field("rsvd", &self.rsvd())
             .field("clk_duty", &self.clk_duty())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn clk_duty(&mut self) -> ClkDutyW<BT_PCM_CLK_DUTYrs> {
         ClkDutyW::new(self, 0)
-    }
-    ///Bits 10:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<BT_PCM_CLK_DUTYrs> {
-        RsvdW::new(self, 10)
     }
 }
 ///

@@ -10,10 +10,6 @@ pub type EnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CtrlR = crate::BitReader;
 ///Field `CTRL` writer -
 pub type CtrlW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 ///Field `MOT_CTUNE` reader -
 pub type MotCtuneR = crate::FieldReader;
 ///Field `MOT_CTUNE` writer -
@@ -84,11 +80,6 @@ impl R {
     #[inline(always)]
     pub fn ctrl(&self) -> CtrlR {
         CtrlR::new(((self.bits >> 1) & 1) != 0)
-    }
-    ///Bits 2:5
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 2) & 0x0f) as u8)
     }
     ///Bits 6:8
     #[inline(always)]
@@ -184,7 +175,6 @@ impl core::fmt::Debug for R {
             .field("comp_bm_ahi", &self.comp_bm_ahi())
             .field("cot_ctune", &self.cot_ctune())
             .field("mot_ctune", &self.mot_ctune())
-            .field("rsvd", &self.rsvd())
             .field("ctrl", &self.ctrl())
             .field("en", &self.en())
             .finish()
@@ -200,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn ctrl(&mut self) -> CtrlW<BUCK_CR1rs> {
         CtrlW::new(self, 1)
-    }
-    ///Bits 2:5
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<BUCK_CR1rs> {
-        RsvdW::new(self, 2)
     }
     ///Bits 6:8
     #[inline(always)]

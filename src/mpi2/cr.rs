@@ -38,14 +38,6 @@ pub type CtrmW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TcieR = crate::BitReader;
 ///Field `TCIE` writer - Transfer complete interrupt enable
 pub type TcieW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD4` reader -
-pub type Rsvd4R = crate::BitReader;
-///Field `RSVD4` writer -
-pub type Rsvd4W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `SMIE` reader - Status match interrupt enable
 pub type SmieR = crate::BitReader;
 ///Field `SMIE` writer - Status match interrupt enable
@@ -58,10 +50,6 @@ pub type CsvieW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type RbxieR = crate::BitReader;
 ///Field `RBXIE` writer - Row boundary crossing interrupt enable
 pub type RbxieW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `CMD2E` reader - Enable CMD2 0: disabled 1: CMD2 is enabled and will be issued after CMD1 with an interval of TI2
 pub type Cmd2eR = crate::BitReader;
 ///Field `CMD2E` writer - Enable CMD2 0: disabled 1: CMD2 is enabled and will be issued after CMD1 with an interval of TI2
@@ -102,10 +90,6 @@ pub type DfmW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AhbdisR = crate::BitReader;
 ///Field `AHBDIS` writer - Hold hreadyout low if AHB access
 pub type AhbdisW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 ///Field `ABORT` reader - Write 1 to abort internal state machine. For debug purpose only
 pub type AbortR = crate::BitReader;
 ///Field `ABORT` writer - Write 1 to abort internal state machine. For debug purpose only
@@ -156,16 +140,6 @@ impl R {
     pub fn tcie(&self) -> TcieR {
         TcieR::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 9
-    #[inline(always)]
-    pub fn rsvd4(&self) -> Rsvd4R {
-        Rsvd4R::new(((self.bits >> 9) & 1) != 0)
-    }
-    ///Bit 10
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 10) & 1) != 0)
-    }
     ///Bit 11 - Status match interrupt enable
     #[inline(always)]
     pub fn smie(&self) -> SmieR {
@@ -180,11 +154,6 @@ impl R {
     #[inline(always)]
     pub fn rbxie(&self) -> RbxieR {
         RbxieR::new(((self.bits >> 13) & 1) != 0)
-    }
-    ///Bits 14:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 14) & 3) as u8)
     }
     ///Bit 16 - Enable CMD2 0: disabled 1: CMD2 is enabled and will be issued after CMD1 with an interval of TI2
     #[inline(always)]
@@ -236,11 +205,6 @@ impl R {
     pub fn ahbdis(&self) -> AhbdisR {
         AhbdisR::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bits 26:30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x1f) as u8)
-    }
     ///Bit 31 - Write 1 to abort internal state machine. For debug purpose only
     #[inline(always)]
     pub fn abort(&self) -> AbortR {
@@ -251,7 +215,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CR")
             .field("abort", &self.abort())
-            .field("rsvd", &self.rsvd())
             .field("ahbdis", &self.ahbdis())
             .field("dfm", &self.dfm())
             .field("mx16", &self.mx16())
@@ -262,12 +225,9 @@ impl core::fmt::Debug for R {
             .field("sme2", &self.sme2())
             .field("sme1", &self.sme1())
             .field("cmd2e", &self.cmd2e())
-            .field("rsvd2", &self.rsvd2())
             .field("rbxie", &self.rbxie())
             .field("csvie", &self.csvie())
             .field("smie", &self.smie())
-            .field("rsvd3", &self.rsvd3())
-            .field("rsvd4", &self.rsvd4())
             .field("tcie", &self.tcie())
             .field("ctrm", &self.ctrm())
             .field("ctre", &self.ctre())
@@ -326,16 +286,6 @@ impl W {
     pub fn tcie(&mut self) -> TcieW<CRrs> {
         TcieW::new(self, 8)
     }
-    ///Bit 9
-    #[inline(always)]
-    pub fn rsvd4(&mut self) -> Rsvd4W<CRrs> {
-        Rsvd4W::new(self, 9)
-    }
-    ///Bit 10
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<CRrs> {
-        Rsvd3W::new(self, 10)
-    }
     ///Bit 11 - Status match interrupt enable
     #[inline(always)]
     pub fn smie(&mut self) -> SmieW<CRrs> {
@@ -350,11 +300,6 @@ impl W {
     #[inline(always)]
     pub fn rbxie(&mut self) -> RbxieW<CRrs> {
         RbxieW::new(self, 13)
-    }
-    ///Bits 14:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CRrs> {
-        Rsvd2W::new(self, 14)
     }
     ///Bit 16 - Enable CMD2 0: disabled 1: CMD2 is enabled and will be issued after CMD1 with an interval of TI2
     #[inline(always)]
@@ -405,11 +350,6 @@ impl W {
     #[inline(always)]
     pub fn ahbdis(&mut self) -> AhbdisW<CRrs> {
         AhbdisW::new(self, 25)
-    }
-    ///Bits 26:30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CRrs> {
-        RsvdW::new(self, 26)
     }
     ///Bit 31 - Write 1 to abort internal state machine. For debug purpose only
     #[inline(always)]

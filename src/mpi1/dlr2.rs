@@ -6,28 +6,16 @@ pub type W = crate::W<DLR2rs>;
 pub type DlenR = crate::FieldReader<u32>;
 ///Field `DLEN` writer - Data length in CMD2 sequence
 pub type DlenW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     ///Bits 0:19 - Data length in CMD2 sequence
     #[inline(always)]
     pub fn dlen(&self) -> DlenR {
         DlenR::new(self.bits & 0x000f_ffff)
     }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 20) & 0x0fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DLR2")
-            .field("rsvd", &self.rsvd())
-            .field("dlen", &self.dlen())
-            .finish()
+        f.debug_struct("DLR2").field("dlen", &self.dlen()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn dlen(&mut self) -> DlenW<DLR2rs> {
         DlenW::new(self, 0)
-    }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DLR2rs> {
-        RsvdW::new(self, 20)
     }
 }
 ///Data Length Register

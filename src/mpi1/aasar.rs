@@ -2,20 +2,11 @@
 pub type R = crate::R<AASARrs>;
 ///Register `AASAR` writer
 pub type W = crate::W<AASARrs>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 ///Field `SA` reader - Starting address of the address aliasing area. Always 1KB aligned.Together with AAEAR, the aliasing area is \[AASAR, AAEAR). If the address falls into this area, an offset AAOAR is added and the aliased address will be used to access external memory
 pub type SaR = crate::FieldReader<u32>;
 ///Field `SA` writer - Starting address of the address aliasing area. Always 1KB aligned.Together with AAEAR, the aliasing area is \[AASAR, AAEAR). If the address falls into this area, an offset AAOAR is added and the aliased address will be used to access external memory
 pub type SaW<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
 impl R {
-    ///Bits 0:9
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits & 0x03ff) as u16)
-    }
     ///Bits 10:31 - Starting address of the address aliasing area. Always 1KB aligned.Together with AAEAR, the aliasing area is \[AASAR, AAEAR). If the address falls into this area, an offset AAOAR is added and the aliased address will be used to access external memory
     #[inline(always)]
     pub fn sa(&self) -> SaR {
@@ -24,18 +15,10 @@ impl R {
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("AASAR")
-            .field("sa", &self.sa())
-            .field("rsvd", &self.rsvd())
-            .finish()
+        f.debug_struct("AASAR").field("sa", &self.sa()).finish()
     }
 }
 impl W {
-    ///Bits 0:9
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AASARrs> {
-        RsvdW::new(self, 0)
-    }
     ///Bits 10:31 - Starting address of the address aliasing area. Always 1KB aligned.Together with AAEAR, the aliasing area is \[AASAR, AAEAR). If the address falls into this area, an offset AAOAR is added and the aliased address will be used to access external memory
     #[inline(always)]
     pub fn sa(&mut self) -> SaW<AASARrs> {

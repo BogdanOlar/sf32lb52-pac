@@ -54,10 +54,6 @@ pub type EnDacW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SelVstartR = crate::FieldReader;
 ///Field `SEL_VSTART` writer - select Vstart
 pub type SelVstartW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bit 0 - enable os dac
     #[inline(always)]
@@ -124,16 +120,10 @@ impl R {
     pub fn sel_vstart(&self) -> SelVstartR {
         SelVstartR::new(((self.bits >> 24) & 3) as u8)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DAC1_CFG")
-            .field("rsvd", &self.rsvd())
             .field("sel_vstart", &self.sel_vstart())
             .field("en_dac", &self.en_dac())
             .field("en_vcm", &self.en_vcm())
@@ -215,11 +205,6 @@ impl W {
     #[inline(always)]
     pub fn sel_vstart(&mut self) -> SelVstartW<DAC1_CFGrs> {
         SelVstartW::new(self, 24)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DAC1_CFGrs> {
-        RsvdW::new(self, 26)
     }
 }
 ///

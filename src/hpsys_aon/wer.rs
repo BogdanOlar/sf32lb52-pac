@@ -18,10 +18,6 @@ pub type Lptim1W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PmucR = crate::BitReader;
 ///Field `PMUC` writer - Set 1 to enable PMUC as wakeup source
 pub type PmucW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::FieldReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `LP2HP_REQ` reader - Set 1 to enable LPSYS request as wakeup source
 pub type Lp2hpReqR = crate::BitReader;
 ///Field `LP2HP_REQ` writer - Set 1 to enable LPSYS request as wakeup source
@@ -46,10 +42,6 @@ pub type Pin2W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Pin3R = crate::BitReader;
 ///Field `PIN3` writer - Set 1 to enable PA27 as wakeup source
 pub type Pin3W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `PIN10` reader - Set 1 to enable PA34 as wakeup source
 pub type Pin10R = crate::BitReader;
 ///Field `PIN10` writer - Set 1 to enable PA34 as wakeup source
@@ -94,10 +86,6 @@ pub type Pin19W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Pin20R = crate::BitReader;
 ///Field `PIN20` writer - Set 1 to enable PA44 as wakeup source
 pub type Pin20W<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     ///Bit 0 - Set 1 to enable RTC as wakeup source
     #[inline(always)]
@@ -118,11 +106,6 @@ impl R {
     #[inline(always)]
     pub fn pmuc(&self) -> PmucR {
         PmucR::new(((self.bits >> 3) & 1) != 0)
-    }
-    ///Bits 4:5
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 4) & 3) as u8)
     }
     ///Bit 6 - Set 1 to enable LPSYS request as wakeup source
     #[inline(always)]
@@ -153,11 +136,6 @@ impl R {
     #[inline(always)]
     pub fn pin3(&self) -> Pin3R {
         Pin3R::new(((self.bits >> 11) & 1) != 0)
-    }
-    ///Bits 12:17
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 12) & 0x3f) as u8)
     }
     ///Bit 18 - Set 1 to enable PA34 as wakeup source
     #[inline(always)]
@@ -214,16 +192,10 @@ impl R {
     pub fn pin20(&self) -> Pin20R {
         Pin20R::new(((self.bits >> 28) & 1) != 0)
     }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 29) & 7) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("WER")
-            .field("rsvd", &self.rsvd())
             .field("pin20", &self.pin20())
             .field("pin19", &self.pin19())
             .field("pin18", &self.pin18())
@@ -235,14 +207,12 @@ impl core::fmt::Debug for R {
             .field("pin12", &self.pin12())
             .field("pin11", &self.pin11())
             .field("pin10", &self.pin10())
-            .field("rsvd2", &self.rsvd2())
             .field("pin3", &self.pin3())
             .field("pin2", &self.pin2())
             .field("pin1", &self.pin1())
             .field("pin0", &self.pin0())
             .field("lp2hp_irq", &self.lp2hp_irq())
             .field("lp2hp_req", &self.lp2hp_req())
-            .field("rsvd3", &self.rsvd3())
             .field("pmuc", &self.pmuc())
             .field("lptim1", &self.lptim1())
             .field("gpio1", &self.gpio1())
@@ -270,11 +240,6 @@ impl W {
     #[inline(always)]
     pub fn pmuc(&mut self) -> PmucW<WERrs> {
         PmucW::new(self, 3)
-    }
-    ///Bits 4:5
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<WERrs> {
-        Rsvd3W::new(self, 4)
     }
     ///Bit 6 - Set 1 to enable LPSYS request as wakeup source
     #[inline(always)]
@@ -305,11 +270,6 @@ impl W {
     #[inline(always)]
     pub fn pin3(&mut self) -> Pin3W<WERrs> {
         Pin3W::new(self, 11)
-    }
-    ///Bits 12:17
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<WERrs> {
-        Rsvd2W::new(self, 12)
     }
     ///Bit 18 - Set 1 to enable PA34 as wakeup source
     #[inline(always)]
@@ -365,11 +325,6 @@ impl W {
     #[inline(always)]
     pub fn pin20(&mut self) -> Pin20W<WERrs> {
         Pin20W::new(self, 28)
-    }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<WERrs> {
-        RsvdW::new(self, 29)
     }
 }
 ///Wakeup Enable register

@@ -30,18 +30,10 @@ pub type StopLongRspW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CacheBlockR = crate::FieldReader;
 ///Field `CACHE_BLOCK` writer - cache depth is cache_block blocks
 pub type CacheBlockW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `CACHE_PREF_BLOCK` reader - cache prefetch depth is cache_pref_block blocks. Should be no less than cache_block
 pub type CachePrefBlockR = crate::FieldReader;
 ///Field `CACHE_PREF_BLOCK` writer - cache prefetch depth is cache_pref_block blocks. Should be no less than cache_block
 pub type CachePrefBlockW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `CACHE_HRESP` reader - 1: generate ahb error response when error occur 0: no ahb error response generated. Could check cache_err interrupt
 pub type CacheHrespR = crate::BitReader;
 ///Field `CACHE_HRESP` writer - 1: generate ahb error response when error occur 0: no ahb error response generated. Could check cache_err interrupt
@@ -102,20 +94,10 @@ impl R {
     pub fn cache_block(&self) -> CacheBlockR {
         CacheBlockR::new(((self.bits >> 16) & 7) as u8)
     }
-    ///Bit 19
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 19) & 1) != 0)
-    }
     ///Bits 20:23 - cache prefetch depth is cache_pref_block blocks. Should be no less than cache_block
     #[inline(always)]
     pub fn cache_pref_block(&self) -> CachePrefBlockR {
         CachePrefBlockR::new(((self.bits >> 20) & 0x0f) as u8)
-    }
-    ///Bits 24:25
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 3) as u8)
     }
     ///Bit 26 - 1: generate ahb error response when error occur 0: no ahb error response generated. Could check cache_err interrupt
     #[inline(always)]
@@ -157,9 +139,7 @@ impl core::fmt::Debug for R {
             .field("cache_sdsc", &self.cache_sdsc())
             .field("cache_nocrc", &self.cache_nocrc())
             .field("cache_hresp", &self.cache_hresp())
-            .field("rsvd", &self.rsvd())
             .field("cache_pref_block", &self.cache_pref_block())
-            .field("rsvd2", &self.rsvd2())
             .field("cache_block", &self.cache_block())
             .field("stop_long_rsp", &self.stop_long_rsp())
             .field("stop_has_rsp", &self.stop_has_rsp())
@@ -206,20 +186,10 @@ impl W {
     pub fn cache_block(&mut self) -> CacheBlockW<CACRrs> {
         CacheBlockW::new(self, 16)
     }
-    ///Bit 19
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CACRrs> {
-        Rsvd2W::new(self, 19)
-    }
     ///Bits 20:23 - cache prefetch depth is cache_pref_block blocks. Should be no less than cache_block
     #[inline(always)]
     pub fn cache_pref_block(&mut self) -> CachePrefBlockW<CACRrs> {
         CachePrefBlockW::new(self, 20)
-    }
-    ///Bits 24:25
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CACRrs> {
-        RsvdW::new(self, 24)
     }
     ///Bit 26 - 1: generate ahb error response when error occur 0: no ahb error response generated. Could check cache_err interrupt
     #[inline(always)]

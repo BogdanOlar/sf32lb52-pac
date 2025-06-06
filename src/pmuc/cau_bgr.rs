@@ -22,10 +22,6 @@ pub type LpbgVref06W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type LpbgVref12R = crate::FieldReader;
 ///Field `LPBG_VREF12` writer -
 pub type LpbgVref12W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 21, u32>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn lpbg_vref12(&self) -> LpbgVref12R {
         LpbgVref12R::new(((self.bits >> 7) & 0x0f) as u8)
     }
-    ///Bits 11:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 11) & 0x001f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CAU_BGR")
-            .field("rsvd", &self.rsvd())
             .field("lpbg_vref12", &self.lpbg_vref12())
             .field("lpbg_vref06", &self.lpbg_vref06())
             .field("lpbg_en", &self.lpbg_en())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn lpbg_vref12(&mut self) -> LpbgVref12W<CAU_BGRrs> {
         LpbgVref12W::new(self, 7)
-    }
-    ///Bits 11:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CAU_BGRrs> {
-        RsvdW::new(self, 11)
     }
 }
 ///CAU Bandgap Register

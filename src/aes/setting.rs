@@ -26,10 +26,6 @@ pub type HashBusErrMaskW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type HashPadErrMaskR = crate::BitReader;
 ///Field `HASH_PAD_ERR_MASK` writer - HASH_ACC padding error interrupt mask, 0: mask the interrupt
 pub type HashPadErrMaskW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
     ///Bit 0 - AES_ACC done interrupt mask, 0: mask the interrupt
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn hash_pad_err_mask(&self) -> HashPadErrMaskR {
         HashPadErrMaskR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SETTING")
-            .field("rsvd", &self.rsvd())
             .field("hash_pad_err_mask", &self.hash_pad_err_mask())
             .field("hash_bus_err_mask", &self.hash_bus_err_mask())
             .field("hash_done_mask", &self.hash_done_mask())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn hash_pad_err_mask(&mut self) -> HashPadErrMaskW<SETTINGrs> {
         HashPadErrMaskW::new(self, 5)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SETTINGrs> {
-        RsvdW::new(self, 6)
     }
 }
 ///

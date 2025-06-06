@@ -26,10 +26,6 @@ pub type RxDmaMskLW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LrChgR = crate::BitReader;
 ///Field `LR_CHG` writer - 1:exchange storage location of left and right channel; 0: don't exchange storage location of left and right channel
 pub type LrChgW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bit 0 - 1: combine left channel and right channel; 0: not combine left channel and right channel
     #[inline(always)]
@@ -61,16 +57,10 @@ impl R {
     pub fn lr_chg(&self) -> LrChgR {
         LrChgR::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("FIFO_CFG")
-            .field("rsvd", &self.rsvd())
             .field("lr_chg", &self.lr_chg())
             .field("rx_dma_msk_l", &self.rx_dma_msk_l())
             .field("rx_dma_msk_r", &self.rx_dma_msk_r())
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn lr_chg(&mut self) -> LrChgW<FIFO_CFGrs> {
         LrChgW::new(self, 8)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<FIFO_CFGrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///

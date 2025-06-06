@@ -6,10 +6,6 @@ pub type W = crate::W<ULPMCRrs>;
 pub type RamRmR = crate::FieldReader;
 ///Field `RAM_RM` writer - reserved for debug
 pub type RamRmW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD4` reader -
-pub type Rsvd4R = crate::FieldReader;
-///Field `RSVD4` writer -
-pub type Rsvd4W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `RAM_RME` reader - reserved for debug
 pub type RamRmeR = crate::BitReader;
 ///Field `RAM_RME` writer - reserved for debug
@@ -26,26 +22,14 @@ pub type RamWaW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type RamWpulseR = crate::FieldReader;
 ///Field `RAM_WPULSE` writer - reserved for debug
 pub type RamWpulseW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::FieldReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 ///Field `ROM_RM` reader - reserved for debug
 pub type RomRmR = crate::FieldReader;
 ///Field `ROM_RM` writer - reserved for debug
 pub type RomRmW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `ROM_RME` reader - reserved for debug
 pub type RomRmeR = crate::BitReader;
 ///Field `ROM_RME` writer - reserved for debug
 pub type RomRmeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 ///Field `ROM_DIS` reader - reserved for debug
 pub type RomDisR = crate::BitReader;
 ///Field `ROM_DIS` writer - reserved for debug
@@ -59,11 +43,6 @@ impl R {
     #[inline(always)]
     pub fn ram_rm(&self) -> RamRmR {
         RamRmR::new((self.bits & 3) as u8)
-    }
-    ///Bits 2:3
-    #[inline(always)]
-    pub fn rsvd4(&self) -> Rsvd4R {
-        Rsvd4R::new(((self.bits >> 2) & 3) as u8)
     }
     ///Bit 4 - reserved for debug
     #[inline(always)]
@@ -85,30 +64,15 @@ impl R {
     pub fn ram_wpulse(&self) -> RamWpulseR {
         RamWpulseR::new(((self.bits >> 10) & 7) as u8)
     }
-    ///Bits 13:15
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 13) & 7) as u8)
-    }
     ///Bits 16:17 - reserved for debug
     #[inline(always)]
     pub fn rom_rm(&self) -> RomRmR {
         RomRmR::new(((self.bits >> 16) & 3) as u8)
     }
-    ///Bits 18:19
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 18) & 3) as u8)
-    }
     ///Bit 20 - reserved for debug
     #[inline(always)]
     pub fn rom_rme(&self) -> RomRmeR {
         RomRmeR::new(((self.bits >> 20) & 1) != 0)
-    }
-    ///Bits 21:29
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 21) & 0x01ff) as u16)
     }
     ///Bit 30 - reserved for debug
     #[inline(always)]
@@ -126,16 +90,12 @@ impl core::fmt::Debug for R {
         f.debug_struct("ULPMCR")
             .field("force_on", &self.force_on())
             .field("rom_dis", &self.rom_dis())
-            .field("rsvd", &self.rsvd())
             .field("rom_rme", &self.rom_rme())
-            .field("rsvd2", &self.rsvd2())
             .field("rom_rm", &self.rom_rm())
-            .field("rsvd3", &self.rsvd3())
             .field("ram_wpulse", &self.ram_wpulse())
             .field("ram_wa", &self.ram_wa())
             .field("ram_ra", &self.ram_ra())
             .field("ram_rme", &self.ram_rme())
-            .field("rsvd4", &self.rsvd4())
             .field("ram_rm", &self.ram_rm())
             .finish()
     }
@@ -145,11 +105,6 @@ impl W {
     #[inline(always)]
     pub fn ram_rm(&mut self) -> RamRmW<ULPMCRrs> {
         RamRmW::new(self, 0)
-    }
-    ///Bits 2:3
-    #[inline(always)]
-    pub fn rsvd4(&mut self) -> Rsvd4W<ULPMCRrs> {
-        Rsvd4W::new(self, 2)
     }
     ///Bit 4 - reserved for debug
     #[inline(always)]
@@ -171,30 +126,15 @@ impl W {
     pub fn ram_wpulse(&mut self) -> RamWpulseW<ULPMCRrs> {
         RamWpulseW::new(self, 10)
     }
-    ///Bits 13:15
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<ULPMCRrs> {
-        Rsvd3W::new(self, 13)
-    }
     ///Bits 16:17 - reserved for debug
     #[inline(always)]
     pub fn rom_rm(&mut self) -> RomRmW<ULPMCRrs> {
         RomRmW::new(self, 16)
     }
-    ///Bits 18:19
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ULPMCRrs> {
-        Rsvd2W::new(self, 18)
-    }
     ///Bit 20 - reserved for debug
     #[inline(always)]
     pub fn rom_rme(&mut self) -> RomRmeW<ULPMCRrs> {
         RomRmeW::new(self, 20)
-    }
-    ///Bits 21:29
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ULPMCRrs> {
-        RsvdW::new(self, 21)
     }
     ///Bit 30 - reserved for debug
     #[inline(always)]

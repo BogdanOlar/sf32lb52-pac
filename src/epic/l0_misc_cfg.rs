@@ -10,10 +10,6 @@ pub type ClutSelW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type VMirrorR = crate::BitReader;
 ///Field `V_MIRROR` writer - vertical mirror enable
 pub type VMirrorW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - L0 CLUT select: 1'h1: select pallette1 1'h0: select pallette0
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn v_mirror(&self) -> VMirrorR {
         VMirrorR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("L0_MISC_CFG")
-            .field("rsvd", &self.rsvd())
             .field("v_mirror", &self.v_mirror())
             .field("clut_sel", &self.clut_sel())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn v_mirror(&mut self) -> VMirrorW<L0_MISC_CFGrs> {
         VMirrorW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<L0_MISC_CFGrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///

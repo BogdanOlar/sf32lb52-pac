@@ -10,18 +10,10 @@ pub type AutoClockEnableW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type UseExtSeedR = crate::BitReader;
 ///Field `USE_EXT_SEED` writer - set 1 to use external seed to generate random number
 pub type UseExtSeedW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `REJECT_THRESHOLD` reader - random seed internal VN corrector check threshold
 pub type RejectThresholdR = crate::FieldReader;
 ///Field `REJECT_THRESHOLD` writer - random seed internal VN corrector check threshold
 pub type RejectThresholdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bit 0 - auto clock gating enable
     #[inline(always)]
@@ -33,28 +25,16 @@ impl R {
     pub fn use_ext_seed(&self) -> UseExtSeedR {
         UseExtSeedR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 2) & 0x3f) as u8)
-    }
     ///Bits 8:15 - random seed internal VN corrector check threshold
     #[inline(always)]
     pub fn reject_threshold(&self) -> RejectThresholdR {
         RejectThresholdR::new(((self.bits >> 8) & 0xff) as u8)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CFG")
-            .field("rsvd", &self.rsvd())
             .field("reject_threshold", &self.reject_threshold())
-            .field("rsvd2", &self.rsvd2())
             .field("use_ext_seed", &self.use_ext_seed())
             .field("auto_clock_enable", &self.auto_clock_enable())
             .finish()
@@ -71,20 +51,10 @@ impl W {
     pub fn use_ext_seed(&mut self) -> UseExtSeedW<CFGrs> {
         UseExtSeedW::new(self, 1)
     }
-    ///Bits 2:7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CFGrs> {
-        Rsvd2W::new(self, 2)
-    }
     ///Bits 8:15 - random seed internal VN corrector check threshold
     #[inline(always)]
     pub fn reject_threshold(&mut self) -> RejectThresholdW<CFGrs> {
         RejectThresholdW::new(self, 8)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CFGrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///

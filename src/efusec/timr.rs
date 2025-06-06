@@ -14,10 +14,6 @@ pub type ThpckW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type TckhpR = crate::FieldReader<u16>;
 ///Field `TCKHP` writer - SCLK high period for PGM. Recommended value ~10us
 pub type TckhpW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 impl R {
     ///Bits 0:6 - SCLK to CSB hold time into READ mode. Recmmended value > 500ns
     #[inline(always)]
@@ -34,16 +30,10 @@ impl R {
     pub fn tckhp(&self) -> TckhpR {
         TckhpR::new(((self.bits >> 10) & 0x07ff) as u16)
     }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 21) & 0x07ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TIMR")
-            .field("rsvd", &self.rsvd())
             .field("tckhp", &self.tckhp())
             .field("thpck", &self.thpck())
             .field("thrck", &self.thrck())
@@ -65,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn tckhp(&mut self) -> TckhpW<TIMRrs> {
         TckhpW::new(self, 10)
-    }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TIMRrs> {
-        RsvdW::new(self, 21)
     }
 }
 ///Timer Register

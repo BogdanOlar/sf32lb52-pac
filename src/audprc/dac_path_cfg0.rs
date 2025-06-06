@@ -38,10 +38,6 @@ pub type Mixrsrc1W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type DstSelR = crate::FieldReader;
 ///Field `DST_SEL` writer - dac path destination select 2'h0: select audio codec 2'h1: select external interface 2'h2: select apb interface 2'h3: reserved
 pub type DstSelW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     ///Bits 0:3 - dac mixer left channel rough volume control range from -36dB to 54dB step is 6dB 4'h0: -36dB 4'h1: -30dB ...... 4'h6: 0dB ...... 4'he: 48dB 4'hf: 54dB
     #[inline(always)]
@@ -88,16 +84,10 @@ impl R {
     pub fn dst_sel(&self) -> DstSelR {
         DstSelR::new(((self.bits >> 28) & 3) as u8)
     }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 30) & 3) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DAC_PATH_CFG0")
-            .field("rsvd", &self.rsvd())
             .field("dst_sel", &self.dst_sel())
             .field("mixrsrc1", &self.mixrsrc1())
             .field("mixrsrc0", &self.mixrsrc0())
@@ -155,11 +145,6 @@ impl W {
     #[inline(always)]
     pub fn dst_sel(&mut self) -> DstSelW<DAC_PATH_CFG0rs> {
         DstSelW::new(self, 28)
-    }
-    ///Bits 30:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DAC_PATH_CFG0rs> {
-        RsvdW::new(self, 30)
     }
 }
 ///

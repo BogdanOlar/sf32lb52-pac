@@ -46,10 +46,6 @@ pub type ScLb1W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type ScLb0R = crate::FieldReader;
 ///Field `SC_LB0` writer -
 pub type ScLb0W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -106,16 +102,10 @@ impl R {
     pub fn sc_lb0(&self) -> ScLb0R {
         ScLb0R::new(((self.bits >> 25) & 3) as u8)
     }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 27) & 0x1f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("OL2_STAT")
-            .field("rsvd", &self.rsvd())
             .field("sc_lb0", &self.sc_lb0())
             .field("sc_lb1", &self.sc_lb1())
             .field("sc_fe", &self.sc_fe())
@@ -185,11 +175,6 @@ impl W {
     #[inline(always)]
     pub fn sc_lb0(&mut self) -> ScLb0W<OL2_STATrs> {
         ScLb0W::new(self, 25)
-    }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<OL2_STATrs> {
-        RsvdW::new(self, 27)
     }
 }
 ///

@@ -10,10 +10,6 @@ pub type DacCh0FifoCntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type DacCh1FifoCntR = crate::FieldReader;
 ///Field `DAC_CH1_FIFO_CNT` writer -
 pub type DacCh1FifoCntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 ///Field `ADC_CH0_FIFO_CNT` reader -
 pub type AdcCh0FifoCntR = crate::FieldReader;
 ///Field `ADC_CH0_FIFO_CNT` writer -
@@ -22,10 +18,6 @@ pub type AdcCh0FifoCntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type AdcCh1FifoCntR = crate::FieldReader;
 ///Field `ADC_CH1_FIFO_CNT` writer -
 pub type AdcCh1FifoCntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:3
     #[inline(always)]
@@ -37,11 +29,6 @@ impl R {
     pub fn dac_ch1_fifo_cnt(&self) -> DacCh1FifoCntR {
         DacCh1FifoCntR::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 8) & 0xff) as u8)
-    }
     ///Bits 16:19
     #[inline(always)]
     pub fn adc_ch0_fifo_cnt(&self) -> AdcCh0FifoCntR {
@@ -52,19 +39,12 @@ impl R {
     pub fn adc_ch1_fifo_cnt(&self) -> AdcCh1FifoCntR {
         AdcCh1FifoCntR::new(((self.bits >> 20) & 0x0f) as u8)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("APB_STAT")
-            .field("rsvd", &self.rsvd())
             .field("adc_ch1_fifo_cnt", &self.adc_ch1_fifo_cnt())
             .field("adc_ch0_fifo_cnt", &self.adc_ch0_fifo_cnt())
-            .field("rsvd2", &self.rsvd2())
             .field("dac_ch1_fifo_cnt", &self.dac_ch1_fifo_cnt())
             .field("dac_ch0_fifo_cnt", &self.dac_ch0_fifo_cnt())
             .finish()
@@ -81,11 +61,6 @@ impl W {
     pub fn dac_ch1_fifo_cnt(&mut self) -> DacCh1FifoCntW<APB_STATrs> {
         DacCh1FifoCntW::new(self, 4)
     }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<APB_STATrs> {
-        Rsvd2W::new(self, 8)
-    }
     ///Bits 16:19
     #[inline(always)]
     pub fn adc_ch0_fifo_cnt(&mut self) -> AdcCh0FifoCntW<APB_STATrs> {
@@ -95,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn adc_ch1_fifo_cnt(&mut self) -> AdcCh1FifoCntW<APB_STATrs> {
         AdcCh1FifoCntW::new(self, 20)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<APB_STATrs> {
-        RsvdW::new(self, 24)
     }
 }
 ///

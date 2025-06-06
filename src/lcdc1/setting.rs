@@ -30,26 +30,14 @@ pub type JdiParUdrMaskW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LineDoneMaskR = crate::BitReader;
 ///Field `LINE_DONE_MASK` writer - line process done interrupt, 0: mask the interrupt
 pub type LineDoneMaskW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `AUTO_GATE_EN` reader - auto clock gating enable
 pub type AutoGateEnR = crate::BitReader;
 ///Field `AUTO_GATE_EN` writer - auto clock gating enable
 pub type AutoGateEnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 ///Field `LINE_DONE_NUM` reader - line number of line process done interrupt
 pub type LineDoneNumR = crate::FieldReader<u16>;
 ///Field `LINE_DONE_NUM` writer - line number of line process done interrupt
 pub type LineDoneNumW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     ///Bit 0 - end of frame interrupt mask, 0: mask the interrupt
     #[inline(always)]
@@ -86,40 +74,22 @@ impl R {
     pub fn line_done_mask(&self) -> LineDoneMaskR {
         LineDoneMaskR::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 7) & 1) != 0)
-    }
     ///Bit 8 - auto clock gating enable
     #[inline(always)]
     pub fn auto_gate_en(&self) -> AutoGateEnR {
         AutoGateEnR::new(((self.bits >> 8) & 1) != 0)
-    }
-    ///Bits 9:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 9) & 0x7f) as u8)
     }
     ///Bits 16:26 - line number of line process done interrupt
     #[inline(always)]
     pub fn line_done_num(&self) -> LineDoneNumR {
         LineDoneNumR::new(((self.bits >> 16) & 0x07ff) as u16)
     }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 27) & 0x1f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SETTING")
-            .field("rsvd", &self.rsvd())
             .field("line_done_num", &self.line_done_num())
-            .field("rsvd2", &self.rsvd2())
             .field("auto_gate_en", &self.auto_gate_en())
-            .field("rsvd3", &self.rsvd3())
             .field("line_done_mask", &self.line_done_mask())
             .field("jdi_par_udr_mask", &self.jdi_par_udr_mask())
             .field("jdi_parl_intr_mask", &self.jdi_parl_intr_mask())
@@ -166,30 +136,15 @@ impl W {
     pub fn line_done_mask(&mut self) -> LineDoneMaskW<SETTINGrs> {
         LineDoneMaskW::new(self, 6)
     }
-    ///Bit 7
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<SETTINGrs> {
-        Rsvd3W::new(self, 7)
-    }
     ///Bit 8 - auto clock gating enable
     #[inline(always)]
     pub fn auto_gate_en(&mut self) -> AutoGateEnW<SETTINGrs> {
         AutoGateEnW::new(self, 8)
     }
-    ///Bits 9:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<SETTINGrs> {
-        Rsvd2W::new(self, 9)
-    }
     ///Bits 16:26 - line number of line process done interrupt
     #[inline(always)]
     pub fn line_done_num(&mut self) -> LineDoneNumW<SETTINGrs> {
         LineDoneNumW::new(self, 16)
-    }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SETTINGrs> {
-        RsvdW::new(self, 27)
     }
 }
 ///

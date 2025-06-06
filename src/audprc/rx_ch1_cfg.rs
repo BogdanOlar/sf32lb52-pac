@@ -10,10 +10,6 @@ pub type EnableW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type FormatR = crate::BitReader;
 ///Field `FORMAT` writer - rx format 0: 16-bit mode 1: 24-bit mode
 pub type FormatW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `DMA_MSK` reader - 1: mask the dma request for rx ch1
 pub type DmaMskR = crate::BitReader;
 ///Field `DMA_MSK` writer - 1: mask the dma request for rx ch1
@@ -22,10 +18,6 @@ pub type DmaMskW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type FifoCntR = crate::FieldReader;
 ///Field `FIFO_CNT` writer - rx fifo counter
 pub type FifoCntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bit 0 - rx channel 1 enable
     #[inline(always)]
@@ -37,11 +29,6 @@ impl R {
     pub fn format(&self) -> FormatR {
         FormatR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 2
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 2) & 1) != 0)
-    }
     ///Bit 3 - 1: mask the dma request for rx ch1
     #[inline(always)]
     pub fn dma_msk(&self) -> DmaMskR {
@@ -52,19 +39,12 @@ impl R {
     pub fn fifo_cnt(&self) -> FifoCntR {
         FifoCntR::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("RX_CH1_CFG")
-            .field("rsvd", &self.rsvd())
             .field("fifo_cnt", &self.fifo_cnt())
             .field("dma_msk", &self.dma_msk())
-            .field("rsvd2", &self.rsvd2())
             .field("format", &self.format())
             .field("enable", &self.enable())
             .finish()
@@ -81,11 +61,6 @@ impl W {
     pub fn format(&mut self) -> FormatW<RX_CH1_CFGrs> {
         FormatW::new(self, 1)
     }
-    ///Bit 2
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<RX_CH1_CFGrs> {
-        Rsvd2W::new(self, 2)
-    }
     ///Bit 3 - 1: mask the dma request for rx ch1
     #[inline(always)]
     pub fn dma_msk(&mut self) -> DmaMskW<RX_CH1_CFGrs> {
@@ -95,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn fifo_cnt(&mut self) -> FifoCntW<RX_CH1_CFGrs> {
         FifoCntW::new(self, 4)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RX_CH1_CFGrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///

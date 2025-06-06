@@ -42,10 +42,6 @@ pub type AutoGateEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type StbClkSelR = crate::BitReader;
 ///Field `STB_CLK_SEL` writer - audio strobe clock select 0: use xtal clock to generate strobe 1: use pll clock to generate strobe
 pub type StbClkSelW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `AUDCLK_DIV` reader - audprc clock divider, 0 and 1 means divide by 1
 pub type AudclkDivR = crate::FieldReader;
 ///Field `AUDCLK_DIV` writer - audprc clock divider, 0 and 1 means divide by 1
@@ -54,10 +50,6 @@ pub type AudclkDivW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type AudclkDivUpdateR = crate::BitReader;
 ///Field `AUDCLK_DIV_UPDATE` writer - audprc clock divider update, write 1 to update
 pub type AudclkDivUpdateW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 impl R {
     ///Bit 0 - audprc enable
     #[inline(always)]
@@ -109,11 +101,6 @@ impl R {
     pub fn stb_clk_sel(&self) -> StbClkSelR {
         StbClkSelR::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 10) & 0x3f) as u8)
-    }
     ///Bits 16:19 - audprc clock divider, 0 and 1 means divide by 1
     #[inline(always)]
     pub fn audclk_div(&self) -> AudclkDivR {
@@ -124,19 +111,12 @@ impl R {
     pub fn audclk_div_update(&self) -> AudclkDivUpdateR {
         AudclkDivUpdateR::new(((self.bits >> 20) & 1) != 0)
     }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 21) & 0x07ff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CFG")
-            .field("rsvd", &self.rsvd())
             .field("audclk_div_update", &self.audclk_div_update())
             .field("audclk_div", &self.audclk_div())
-            .field("rsvd2", &self.rsvd2())
             .field("stb_clk_sel", &self.stb_clk_sel())
             .field("auto_gate_en", &self.auto_gate_en())
             .field("adc_path_en", &self.adc_path_en())
@@ -201,11 +181,6 @@ impl W {
     pub fn stb_clk_sel(&mut self) -> StbClkSelW<CFGrs> {
         StbClkSelW::new(self, 9)
     }
-    ///Bits 10:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CFGrs> {
-        Rsvd2W::new(self, 10)
-    }
     ///Bits 16:19 - audprc clock divider, 0 and 1 means divide by 1
     #[inline(always)]
     pub fn audclk_div(&mut self) -> AudclkDivW<CFGrs> {
@@ -215,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn audclk_div_update(&mut self) -> AudclkDivUpdateW<CFGrs> {
         AudclkDivUpdateW::new(self, 20)
-    }
-    ///Bits 21:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CFGrs> {
-        RsvdW::new(self, 21)
     }
 }
 ///

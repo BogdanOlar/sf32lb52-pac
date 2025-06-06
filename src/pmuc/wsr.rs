@@ -38,10 +38,6 @@ pub type LowbatW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ChgR = crate::BitReader;
 ///Field `CHG` writer -
 pub type ChgW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bit 0 - Indicates the wakeup status from RTC. Note: the status is masked by WER
     #[inline(always)]
@@ -88,16 +84,10 @@ impl R {
     pub fn chg(&self) -> ChgR {
         ChgR::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("WSR")
-            .field("rsvd", &self.rsvd())
             .field("chg", &self.chg())
             .field("lowbat", &self.lowbat())
             .field("pwrkey", &self.pwrkey())
@@ -155,11 +145,6 @@ impl W {
     #[inline(always)]
     pub fn chg(&mut self) -> ChgW<WSRrs> {
         ChgW::new(self, 8)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<WSRrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///Wakeup Status register

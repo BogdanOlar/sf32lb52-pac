@@ -8,10 +8,6 @@ pub type FifoStatusOutR = crate::FieldReader;
 ///Field `FIFO_STATUS_OUT` writer - FIFO Status output: Bit \[7:0\]
 ///= {tx_full,tx_empty,tx_almost_full,tx_almost_empty,rx_full,rx_empty,rx_almost_full,rx_almost_empty}
 pub type FifoStatusOutW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bits 0:7 - FIFO Status output: Bit \[7:0\]
     ///= {tx_full,tx_empty,tx_almost_full,tx_almost_empty,rx_full,rx_empty,rx_almost_full,rx_almost_empty}
@@ -19,16 +15,10 @@ impl R {
     pub fn fifo_status_out(&self) -> FifoStatusOutR {
         FifoStatusOutR::new((self.bits & 0xff) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("FIFO_STATUS")
-            .field("rsvd", &self.rsvd())
             .field("fifo_status_out", &self.fifo_status_out())
             .finish()
     }
@@ -39,11 +29,6 @@ impl W {
     #[inline(always)]
     pub fn fifo_status_out(&mut self) -> FifoStatusOutW<FIFO_STATUSrs> {
         FifoStatusOutW::new(self, 0)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<FIFO_STATUSrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///

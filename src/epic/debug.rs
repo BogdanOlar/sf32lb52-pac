@@ -10,10 +10,6 @@ pub type DebugOutSelW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type DebugIntSelR = crate::FieldReader;
 ///Field `DEBUG_INT_SEL` writer -
 pub type DebugIntSelW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 ///Field `DEBUG_INT_DATA` reader - 4'h0: RSVD 4'h1: OL0 debug info 4'h2: OL1 debug info 4'h3: OL2 debug info 4'h4: VL debug info1 4'h5: VL debug info2 4'h6: ROI debug out 4'h7: mem intfa debug out 4'h8: mem intfb debug out 4'h9: ahb ctrl debug out 4'ha: ROI XX 4'hb: ROI YY 4'hc: EPIC_EZIP debug out others: RSVD
 pub type DebugIntDataR = crate::FieldReader<u16>;
 ///Field `DEBUG_INT_DATA` writer - 4'h0: RSVD 4'h1: OL0 debug info 4'h2: OL1 debug info 4'h3: OL2 debug info 4'h4: VL debug info1 4'h5: VL debug info2 4'h6: ROI debug out 4'h7: mem intfa debug out 4'h8: mem intfb debug out 4'h9: ahb ctrl debug out 4'ha: ROI XX 4'hb: ROI YY 4'hc: EPIC_EZIP debug out others: RSVD
@@ -29,11 +25,6 @@ impl R {
     pub fn debug_int_sel(&self) -> DebugIntSelR {
         DebugIntSelR::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 8) & 0xff) as u8)
-    }
     ///Bits 16:31 - 4'h0: RSVD 4'h1: OL0 debug info 4'h2: OL1 debug info 4'h3: OL2 debug info 4'h4: VL debug info1 4'h5: VL debug info2 4'h6: ROI debug out 4'h7: mem intfa debug out 4'h8: mem intfb debug out 4'h9: ahb ctrl debug out 4'ha: ROI XX 4'hb: ROI YY 4'hc: EPIC_EZIP debug out others: RSVD
     #[inline(always)]
     pub fn debug_int_data(&self) -> DebugIntDataR {
@@ -44,7 +35,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DEBUG")
             .field("debug_int_data", &self.debug_int_data())
-            .field("rsvd", &self.rsvd())
             .field("debug_int_sel", &self.debug_int_sel())
             .field("debug_out_sel", &self.debug_out_sel())
             .finish()
@@ -60,11 +50,6 @@ impl W {
     #[inline(always)]
     pub fn debug_int_sel(&mut self) -> DebugIntSelW<DEBUGrs> {
         DebugIntSelW::new(self, 4)
-    }
-    ///Bits 8:15
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DEBUGrs> {
-        RsvdW::new(self, 8)
     }
     ///Bits 16:31 - 4'h0: RSVD 4'h1: OL0 debug info 4'h2: OL1 debug info 4'h3: OL2 debug info 4'h4: VL debug info1 4'h5: VL debug info2 4'h6: ROI debug out 4'h7: mem intfa debug out 4'h8: mem intfb debug out 4'h9: ahb ctrl debug out 4'ha: ROI XX 4'hb: ROI YY 4'hc: EPIC_EZIP debug out others: RSVD
     #[inline(always)]

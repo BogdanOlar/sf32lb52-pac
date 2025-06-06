@@ -44,10 +44,6 @@ pub type RxreqW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AbortdmaR = crate::BitReader;
 ///Field `ABORTDMA` writer - Abort DMA operation. Will be cleared by HW automatically
 pub type AbortdmaW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bit 0 - Transfer Byte: Used to send or receive a byte on the I2C bus: 0 = Cleared by I2C when the byte is sent/received. 1 = Send/receive a byte. CPU can monitor this bit to determine when the byte transfer has completed. In master or slave mode, after each byte transfer including acknowledge pulse, the I2C holds the SCL line low (inserting wait states) until TB is set.
     #[inline(always)]
@@ -94,16 +90,10 @@ impl R {
     pub fn abortdma(&self) -> AbortdmaR {
         AbortdmaR::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TCR")
-            .field("rsvd", &self.rsvd())
             .field("abortdma", &self.abortdma())
             .field("rxreq", &self.rxreq())
             .field("txreq", &self.txreq())
@@ -160,11 +150,6 @@ impl W {
     #[inline(always)]
     pub fn abortdma(&mut self) -> AbortdmaW<TCRrs> {
         AbortdmaW::new(self, 7)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TCRrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///Transfer Control register

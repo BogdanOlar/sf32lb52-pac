@@ -6,28 +6,16 @@ pub type W = crate::W<CMPrs>;
 pub type CmpR = crate::FieldReader<u32>;
 ///Field `CMP` writer - Compare value CMP is the compare value used by the LPTIM.
 pub type CmpW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:23 - Compare value CMP is the compare value used by the LPTIM.
     #[inline(always)]
     pub fn cmp(&self) -> CmpR {
         CmpR::new(self.bits & 0x00ff_ffff)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CMP")
-            .field("rsvd", &self.rsvd())
-            .field("cmp", &self.cmp())
-            .finish()
+        f.debug_struct("CMP").field("cmp", &self.cmp()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn cmp(&mut self) -> CmpW<CMPrs> {
         CmpW::new(self, 0)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CMPrs> {
-        RsvdW::new(self, 24)
     }
 }
 ///LPTIM compare register

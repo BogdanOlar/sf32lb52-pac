@@ -10,10 +10,6 @@ pub type PaIsoW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type VhpIsoR = crate::BitReader;
 ///Field `VHP_ISO` writer - Set 1 to force off all HPSYS related analog modules
 pub type VhpIsoW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - Set 1 to force IO(PA) into retention mode
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn vhp_iso(&self) -> VhpIsoR {
         VhpIsoR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ANACR")
-            .field("rsvd", &self.rsvd())
             .field("vhp_iso", &self.vhp_iso())
             .field("pa_iso", &self.pa_iso())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn vhp_iso(&mut self) -> VhpIsoW<ANACRrs> {
         VhpIsoW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ANACRrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///Analog Control Register

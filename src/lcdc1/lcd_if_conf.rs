@@ -50,10 +50,6 @@ pub type DoDlySetW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CtrlDlySetR = crate::BitReader;
 ///Field `CTRL_DLY_SET` writer - if this bit is set to 1, LCD control output will be delayed for 1 lcdc clock cycle
 pub type CtrlDlySetW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     ///Bits 0:2 - setup cycles, delay from LCD_CS active to LCD_WR/LCD_RD active
     #[inline(always)]
@@ -115,16 +111,10 @@ impl R {
     pub fn ctrl_dly_set(&self) -> CtrlDlySetR {
         CtrlDlySetR::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 26) & 0x3f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LCD_IF_CONF")
-            .field("rsvd", &self.rsvd())
             .field("ctrl_dly_set", &self.ctrl_dly_set())
             .field("do_dly_set", &self.do_dly_set())
             .field("lcd_rstb", &self.lcd_rstb())
@@ -200,11 +190,6 @@ impl W {
     #[inline(always)]
     pub fn ctrl_dly_set(&mut self) -> CtrlDlySetW<LCD_IF_CONFrs> {
         CtrlDlySetW::new(self, 25)
-    }
-    ///Bits 26:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LCD_IF_CONFrs> {
-        RsvdW::new(self, 26)
     }
 }
 ///

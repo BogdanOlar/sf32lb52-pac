@@ -42,10 +42,6 @@ pub type AnauTsenEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AnauTsenClkDivR = crate::FieldReader;
 ///Field `ANAU_TSEN_CLK_DIV` writer - gen tsen clk by divide hclk by anau_tsen_clk_div
 pub type AnauTsenClkDivW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 impl R {
     ///Bit 0 - power up tsen
     #[inline(always)]
@@ -97,16 +93,10 @@ impl R {
     pub fn anau_tsen_clk_div(&self) -> AnauTsenClkDivR {
         AnauTsenClkDivR::new(((self.bits >> 12) & 0x3f) as u8)
     }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 18) & 0x3fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("TSEN_CTRL_REG")
-            .field("rsvd", &self.rsvd())
             .field("anau_tsen_clk_div", &self.anau_tsen_clk_div())
             .field("anau_tsen_en", &self.anau_tsen_en())
             .field("anau_tsen_rdy", &self.anau_tsen_rdy())
@@ -170,11 +160,6 @@ impl W {
     #[inline(always)]
     pub fn anau_tsen_clk_div(&mut self) -> AnauTsenClkDivW<TSEN_CTRL_REGrs> {
         AnauTsenClkDivW::new(self, 12)
-    }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<TSEN_CTRL_REGrs> {
-        RsvdW::new(self, 18)
     }
 }
 ///TSEN Analog Control Register

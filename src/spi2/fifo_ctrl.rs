@@ -50,10 +50,6 @@ pub type FpckeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type RxfifoAutoFullCtrlR = crate::BitReader;
 ///Field `RXFIFO_AUTO_FULL_CTRL` writer - Rx FIFO Auto Full Control: After this field is set to 1 and the SPI controller is operating in master mode, the controller FSM returns to IDLE state and stops the SPI_CLK. When Rx FIFO is full, the controller FSM continues transferring data after the RxFIFO is not full. This field is used to avoid an RxFIFO overrun issue. 1: Enable Rx FIFO auto full control
 pub type RxfifoAutoFullCtrlW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 impl R {
     ///Bits 0:4 - TXFIFO Trigger Threshold This field sets the threshold level at which TXFIFO asserts interrupt. The level should be set to the preferred threshold value minus 1.
     #[inline(always)]
@@ -103,16 +99,10 @@ impl R {
     pub fn rxfifo_auto_full_ctrl(&self) -> RxfifoAutoFullCtrlR {
         RxfifoAutoFullCtrlR::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 18) & 0x3fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("FIFO_CTRL")
-            .field("rsvd", &self.rsvd())
             .field("rxfifo_auto_full_ctrl", &self.rxfifo_auto_full_ctrl())
             .field("fpcke", &self.fpcke())
             .field("txfifo_wr_endian", &self.txfifo_wr_endian())
@@ -172,11 +162,6 @@ impl W {
     #[inline(always)]
     pub fn rxfifo_auto_full_ctrl(&mut self) -> RxfifoAutoFullCtrlW<FIFO_CTRLrs> {
         RxfifoAutoFullCtrlW::new(self, 17)
-    }
-    ///Bits 18:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<FIFO_CTRLrs> {
-        RsvdW::new(self, 18)
     }
 }
 ///FIFO Control Register

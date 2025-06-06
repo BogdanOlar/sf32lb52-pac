@@ -30,18 +30,10 @@ pub type ExtckselW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PrescR = crate::FieldReader;
 ///Field `PRESC` writer - Clock prescaler The PRESC bits configure the prescaler division factor. It can be one among the following division factors: 000: /1 001: /2 010: /4 011: /8 100: /16 101: /32 110: /64 111: /128
 pub type PrescW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD4` reader -
-pub type Rsvd4R = crate::BitReader;
-///Field `RSVD4` writer -
-pub type Rsvd4W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `TRIGSEL` reader - Trigger selector The TRIGSEL bits select the trigger source that will serve as a trigger event for the LPTIM among the below 8 available sources: 000: lptim_ext0 001: lptim_ext1 010: lptim_ext2 011: lptim_ext3 100: lptim_ext4 101: lptim_ext5 110: lptim_ext6 111: lptim_ext7
 pub type TrigselR = crate::FieldReader;
 ///Field `TRIGSEL` writer - Trigger selector The TRIGSEL bits select the trigger source that will serve as a trigger event for the LPTIM among the below 8 available sources: 000: lptim_ext0 001: lptim_ext1 010: lptim_ext2 011: lptim_ext3 100: lptim_ext4 101: lptim_ext5 110: lptim_ext6 111: lptim_ext7
 pub type TrigselW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD3` reader -
-pub type Rsvd3R = crate::BitReader;
-///Field `RSVD3` writer -
-pub type Rsvd3W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `TRIGEN` reader - Trigger enable and polarity The TRIGEN bits controls whether the LPTIM counter is started by an external trigger or not. If the external trigger option is selected, three configurations are possible for the trigger active edge: 00: software trigger (counting start is initiated by software) 01: rising edge is the active edge 10: falling edge is the active edge 11: both edges are active edges
 pub type TrigenR = crate::FieldReader;
 ///Field `TRIGEN` writer - Trigger enable and polarity The TRIGEN bits controls whether the LPTIM counter is started by an external trigger or not. If the external trigger option is selected, three configurations are possible for the trigger active edge: 00: software trigger (counting start is initiated by software) 01: rising edge is the active edge 10: falling edge is the active edge 11: both edges are active edges
@@ -58,18 +50,10 @@ pub type WaveW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type WavpolR = crate::BitReader;
 ///Field `WAVPOL` writer - Waveform shape polarity The WAVEPOL bit controls the output polarity 0: The LPTIM output reflects the compare results between LPTIM_ARR and LPTIM_CMP registers 1: The LPTIM output reflects the inverse of the compare results between LPTIM_ARR and LPTIM_CMP registers
 pub type WavpolW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `COUNTMODE` reader - counter mode in internal clock source mode (CKSEL=0). If CKSEL=1, this bit has no effect. 0: the counter is incremented following each internal clock pulse 1: the counter is incremented following each valid pulse on the external clock
 pub type CountmodeR = crate::BitReader;
 ///Field `COUNTMODE` writer - counter mode in internal clock source mode (CKSEL=0). If CKSEL=1, this bit has no effect. 0: the counter is incremented following each internal clock pulse 1: the counter is incremented following each valid pulse on the external clock
 pub type CountmodeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bit 0 - Clock selector The CKSEL bit selects which clock source the LPTIM will use: 0: LPTIM is clocked by internal clock source, according to INTCKSEL 1: LPTIM is clocked by external clock source, according to EXTCKSEL
     #[inline(always)]
@@ -106,20 +90,10 @@ impl R {
     pub fn presc(&self) -> PrescR {
         PrescR::new(((self.bits >> 9) & 7) as u8)
     }
-    ///Bit 12
-    #[inline(always)]
-    pub fn rsvd4(&self) -> Rsvd4R {
-        Rsvd4R::new(((self.bits >> 12) & 1) != 0)
-    }
     ///Bits 13:15 - Trigger selector The TRIGSEL bits select the trigger source that will serve as a trigger event for the LPTIM among the below 8 available sources: 000: lptim_ext0 001: lptim_ext1 010: lptim_ext2 011: lptim_ext3 100: lptim_ext4 101: lptim_ext5 110: lptim_ext6 111: lptim_ext7
     #[inline(always)]
     pub fn trigsel(&self) -> TrigselR {
         TrigselR::new(((self.bits >> 13) & 7) as u8)
-    }
-    ///Bit 16
-    #[inline(always)]
-    pub fn rsvd3(&self) -> Rsvd3R {
-        Rsvd3R::new(((self.bits >> 16) & 1) != 0)
     }
     ///Bits 17:18 - Trigger enable and polarity The TRIGEN bits controls whether the LPTIM counter is started by an external trigger or not. If the external trigger option is selected, three configurations are possible for the trigger active edge: 00: software trigger (counting start is initiated by software) 01: rising edge is the active edge 10: falling edge is the active edge 11: both edges are active edges
     #[inline(always)]
@@ -141,35 +115,21 @@ impl R {
     pub fn wavpol(&self) -> WavpolR {
         WavpolR::new(((self.bits >> 21) & 1) != 0)
     }
-    ///Bit 22
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 22) & 1) != 0)
-    }
     ///Bit 23 - counter mode in internal clock source mode (CKSEL=0). If CKSEL=1, this bit has no effect. 0: the counter is incremented following each internal clock pulse 1: the counter is incremented following each valid pulse on the external clock
     #[inline(always)]
     pub fn countmode(&self) -> CountmodeR {
         CountmodeR::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CFGR")
-            .field("rsvd", &self.rsvd())
             .field("countmode", &self.countmode())
-            .field("rsvd2", &self.rsvd2())
             .field("wavpol", &self.wavpol())
             .field("wave", &self.wave())
             .field("timout", &self.timout())
             .field("trigen", &self.trigen())
-            .field("rsvd3", &self.rsvd3())
             .field("trigsel", &self.trigsel())
-            .field("rsvd4", &self.rsvd4())
             .field("presc", &self.presc())
             .field("extcksel", &self.extcksel())
             .field("trgflt", &self.trgflt())
@@ -216,20 +176,10 @@ impl W {
     pub fn presc(&mut self) -> PrescW<CFGRrs> {
         PrescW::new(self, 9)
     }
-    ///Bit 12
-    #[inline(always)]
-    pub fn rsvd4(&mut self) -> Rsvd4W<CFGRrs> {
-        Rsvd4W::new(self, 12)
-    }
     ///Bits 13:15 - Trigger selector The TRIGSEL bits select the trigger source that will serve as a trigger event for the LPTIM among the below 8 available sources: 000: lptim_ext0 001: lptim_ext1 010: lptim_ext2 011: lptim_ext3 100: lptim_ext4 101: lptim_ext5 110: lptim_ext6 111: lptim_ext7
     #[inline(always)]
     pub fn trigsel(&mut self) -> TrigselW<CFGRrs> {
         TrigselW::new(self, 13)
-    }
-    ///Bit 16
-    #[inline(always)]
-    pub fn rsvd3(&mut self) -> Rsvd3W<CFGRrs> {
-        Rsvd3W::new(self, 16)
     }
     ///Bits 17:18 - Trigger enable and polarity The TRIGEN bits controls whether the LPTIM counter is started by an external trigger or not. If the external trigger option is selected, three configurations are possible for the trigger active edge: 00: software trigger (counting start is initiated by software) 01: rising edge is the active edge 10: falling edge is the active edge 11: both edges are active edges
     #[inline(always)]
@@ -251,20 +201,10 @@ impl W {
     pub fn wavpol(&mut self) -> WavpolW<CFGRrs> {
         WavpolW::new(self, 21)
     }
-    ///Bit 22
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CFGRrs> {
-        Rsvd2W::new(self, 22)
-    }
     ///Bit 23 - counter mode in internal clock source mode (CKSEL=0). If CKSEL=1, this bit has no effect. 0: the counter is incremented following each internal clock pulse 1: the counter is incremented following each valid pulse on the external clock
     #[inline(always)]
     pub fn countmode(&mut self) -> CountmodeW<CFGRrs> {
         CountmodeW::new(self, 23)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CFGRrs> {
-        RsvdW::new(self, 24)
     }
 }
 ///LPTIM configuration register

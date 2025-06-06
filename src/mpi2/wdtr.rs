@@ -10,10 +10,6 @@ pub type TimeoutW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 pub type EnR = crate::BitReader;
 ///Field `EN` writer - WDT enable. This watchdog is on AHB side such that bus access will not hang in exceptional cases
 pub type EnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 ///Field `TOF` reader - Timeout flag. Self cleared when HREADYOUT becomes ready
 pub type TofR = crate::BitReader;
 ///Field `TOF` writer - Timeout flag. Self cleared when HREADYOUT becomes ready
@@ -29,11 +25,6 @@ impl R {
     pub fn en(&self) -> EnR {
         EnR::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bits 17:30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 17) & 0x3fff) as u16)
-    }
     ///Bit 31 - Timeout flag. Self cleared when HREADYOUT becomes ready
     #[inline(always)]
     pub fn tof(&self) -> TofR {
@@ -44,7 +35,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("WDTR")
             .field("tof", &self.tof())
-            .field("rsvd", &self.rsvd())
             .field("en", &self.en())
             .field("timeout", &self.timeout())
             .finish()
@@ -60,11 +50,6 @@ impl W {
     #[inline(always)]
     pub fn en(&mut self) -> EnW<WDTRrs> {
         EnW::new(self, 16)
-    }
-    ///Bits 17:30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<WDTRrs> {
-        RsvdW::new(self, 17)
     }
     ///Bit 31 - Timeout flag. Self cleared when HREADYOUT becomes ready
     #[inline(always)]

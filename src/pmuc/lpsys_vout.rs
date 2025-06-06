@@ -6,26 +6,16 @@ pub type W = crate::W<LPSYS_VOUTrs>;
 pub type VoutR = crate::FieldReader;
 ///Field `VOUT` writer - 0x8 - 1.0V, 0x5 - 0.9V
 pub type VoutW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bits 0:3 - 0x8 - 1.0V, 0x5 - 0.9V
     #[inline(always)]
     pub fn vout(&self) -> VoutR {
         VoutR::new((self.bits & 0x0f) as u8)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LPSYS_VOUT")
-            .field("rsvd", &self.rsvd())
             .field("vout", &self.vout())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn vout(&mut self) -> VoutW<LPSYS_VOUTrs> {
         VoutW::new(self, 0)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<LPSYS_VOUTrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///

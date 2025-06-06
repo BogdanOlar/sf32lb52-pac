@@ -6,28 +6,16 @@ pub type W = crate::W<DNRrs>;
 pub type NdtR = crate::FieldReader<u16>;
 ///Field `NDT` writer - Write as number of data to transfer in byte. Read as left data number to transfer
 pub type NdtW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bits 0:8 - Write as number of data to transfer in byte. Read as left data number to transfer
     #[inline(always)]
     pub fn ndt(&self) -> NdtR {
         NdtR::new((self.bits & 0x01ff) as u16)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DNR")
-            .field("rsvd", &self.rsvd())
-            .field("ndt", &self.ndt())
-            .finish()
+        f.debug_struct("DNR").field("ndt", &self.ndt()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn ndt(&mut self) -> NdtW<DNRrs> {
         NdtW::new(self, 0)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DNRrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///DMA number register

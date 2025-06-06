@@ -6,46 +6,26 @@ pub type W = crate::W<L2_ROT_M_CFG3rs>;
 pub type MXtlR = crate::FieldReader<u16>;
 ///Field `M_XTL` writer - manual mode top left x cordinate, signed value, -1023~1023, -1024 is not supported
 pub type MXtlW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 ///Field `M_YTL` reader - manual mode top left y cordinate, signed value, -1023~1023, -1024 is not supported
 pub type MYtlR = crate::FieldReader<u16>;
 ///Field `M_YTL` writer - manual mode top left y cordinate, signed value, -1023~1023, -1024 is not supported
 pub type MYtlW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     ///Bits 0:10 - manual mode top left x cordinate, signed value, -1023~1023, -1024 is not supported
     #[inline(always)]
     pub fn m_xtl(&self) -> MXtlR {
         MXtlR::new((self.bits & 0x07ff) as u16)
     }
-    ///Bits 11:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 11) & 0x1f) as u8)
-    }
     ///Bits 16:26 - manual mode top left y cordinate, signed value, -1023~1023, -1024 is not supported
     #[inline(always)]
     pub fn m_ytl(&self) -> MYtlR {
         MYtlR::new(((self.bits >> 16) & 0x07ff) as u16)
     }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 27) & 0x1f) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("L2_ROT_M_CFG3")
-            .field("rsvd", &self.rsvd())
             .field("m_ytl", &self.m_ytl())
-            .field("rsvd2", &self.rsvd2())
             .field("m_xtl", &self.m_xtl())
             .finish()
     }
@@ -56,20 +36,10 @@ impl W {
     pub fn m_xtl(&mut self) -> MXtlW<L2_ROT_M_CFG3rs> {
         MXtlW::new(self, 0)
     }
-    ///Bits 11:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<L2_ROT_M_CFG3rs> {
-        Rsvd2W::new(self, 11)
-    }
     ///Bits 16:26 - manual mode top left y cordinate, signed value, -1023~1023, -1024 is not supported
     #[inline(always)]
     pub fn m_ytl(&mut self) -> MYtlW<L2_ROT_M_CFG3rs> {
         MYtlW::new(self, 16)
-    }
-    ///Bits 27:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<L2_ROT_M_CFG3rs> {
-        RsvdW::new(self, 27)
     }
 }
 ///

@@ -18,10 +18,6 @@ pub type RstbW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type EnR = crate::BitReader;
 ///Field `EN` writer - enable adc
 pub type EnW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0 - clear adc
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn en(&self) -> EnR {
         EnR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ADC2_CFG2")
-            .field("rsvd", &self.rsvd())
             .field("en", &self.en())
             .field("rstb", &self.rstb())
             .field("chop_en", &self.chop_en())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn en(&mut self) -> EnW<ADC2_CFG2rs> {
         EnW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ADC2_CFG2rs> {
-        RsvdW::new(self, 4)
     }
 }
 ///

@@ -6,26 +6,16 @@ pub type W = crate::W<GREY_PARArs>;
 pub type GreyParaR = crate::FieldReader<u32>;
 ///Field `GREY_PARA` writer - fill color parameter, when send grey data to epic . \[23:16\]-R,\[15:8\]-G,\[7:0\]-B
 pub type GreyParaW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bits 0:23 - fill color parameter, when send grey data to epic . \[23:16\]-R,\[15:8\]-G,\[7:0\]-B
     #[inline(always)]
     pub fn grey_para(&self) -> GreyParaR {
         GreyParaR::new(self.bits & 0x00ff_ffff)
     }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("GREY_PARA")
-            .field("rsvd", &self.rsvd())
             .field("grey_para", &self.grey_para())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn grey_para(&mut self) -> GreyParaW<GREY_PARArs> {
         GreyParaW::new(self, 0)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<GREY_PARArs> {
-        RsvdW::new(self, 24)
     }
 }
 ///

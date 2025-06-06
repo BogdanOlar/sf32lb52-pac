@@ -18,10 +18,6 @@ pub type CalOpW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 pub type CalLockR = crate::BitReader;
 ///Field `CAL_LOCK` writer -
 pub type CalLockW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 18, u32>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn cal_lock(&self) -> CalLockR {
         CalLockR::new(((self.bits >> 13) & 1) != 0)
     }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 14) & 0x0003_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DBL96_CALR")
-            .field("rsvd", &self.rsvd())
             .field("cal_lock", &self.cal_lock())
             .field("cal_op", &self.cal_op())
             .field("cal_close_ext_en", &self.cal_close_ext_en())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn cal_lock(&mut self) -> CalLockW<DBL96_CALRrs> {
         CalLockW::new(self, 13)
-    }
-    ///Bits 14:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DBL96_CALRrs> {
-        RsvdW::new(self, 14)
     }
 }
 ///DBL96 Calibration Register

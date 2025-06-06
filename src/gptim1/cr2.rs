@@ -2,10 +2,6 @@
 pub type R = crate::R<CR2rs>;
 ///Register `CR2` writer
 pub type W = crate::W<CR2rs>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 ///Field `CCDS` reader - Capture/compare DMA selection 0: CCx DMA request sent when CCx event occurs 1: CCx DMA requests sent when update event occurs
 pub type CcdsR = crate::BitReader;
 ///Field `CCDS` writer - Capture/compare DMA selection 0: CCx DMA request sent when CCx event occurs 1: CCx DMA requests sent when update event occurs
@@ -18,16 +14,7 @@ pub type MmsW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 pub type Ti1sR = crate::BitReader;
 ///Field `TI1S` writer - TI1 selection 0: The CH1 pin is connected to TI1 input 1: The CH1, CH2 and CH3 pins are connected to the TI1 input (XOR combination)
 pub type Ti1sW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
-    ///Bits 0:2
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new((self.bits & 7) as u8)
-    }
     ///Bit 3 - Capture/compare DMA selection 0: CCx DMA request sent when CCx event occurs 1: CCx DMA requests sent when update event occurs
     #[inline(always)]
     pub fn ccds(&self) -> CcdsR {
@@ -43,29 +30,17 @@ impl R {
     pub fn ti1s(&self) -> Ti1sR {
         Ti1sR::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CR2")
-            .field("rsvd", &self.rsvd())
             .field("ti1s", &self.ti1s())
             .field("mms", &self.mms())
             .field("ccds", &self.ccds())
-            .field("rsvd2", &self.rsvd2())
             .finish()
     }
 }
 impl W {
-    ///Bits 0:2
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CR2rs> {
-        Rsvd2W::new(self, 0)
-    }
     ///Bit 3 - Capture/compare DMA selection 0: CCx DMA request sent when CCx event occurs 1: CCx DMA requests sent when update event occurs
     #[inline(always)]
     pub fn ccds(&mut self) -> CcdsW<CR2rs> {
@@ -80,11 +55,6 @@ impl W {
     #[inline(always)]
     pub fn ti1s(&mut self) -> Ti1sW<CR2rs> {
         Ti1sW::new(self, 7)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CR2rs> {
-        RsvdW::new(self, 8)
     }
 }
 ///TIM control register 2

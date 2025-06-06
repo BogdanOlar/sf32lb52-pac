@@ -6,28 +6,16 @@ pub type W = crate::W<ISR1rs>;
 pub type IsR = crate::FieldReader<u16>;
 ///Field `IS` writer - Interrupt status. Write 1 will clear interrupt status of corresponding GPIO\[44:32\]
 pub type IsW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 impl R {
     ///Bits 0:12 - Interrupt status. Write 1 will clear interrupt status of corresponding GPIO\[44:32\]
     #[inline(always)]
     pub fn is(&self) -> IsR {
         IsR::new((self.bits & 0x1fff) as u16)
     }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 13) & 0x0007_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ISR1")
-            .field("rsvd", &self.rsvd())
-            .field("is", &self.is())
-            .finish()
+        f.debug_struct("ISR1").field("is", &self.is()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn is(&mut self) -> IsW<ISR1rs> {
         IsW::new(self, 0)
-    }
-    ///Bits 13:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ISR1rs> {
-        RsvdW::new(self, 13)
     }
 }
 ///Interrupt Status Register

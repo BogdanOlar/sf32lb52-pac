@@ -54,10 +54,6 @@ pub type SpiClkPolW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SpiClkInitR = crate::BitReader;
 ///Field `SPI_CLK_INIT` writer - SPI CLK idle state value 1'h0: high 1'h1: low
 pub type SpiClkInitW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::BitReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     ///Bits 0:5 - SPI line wait cycle, wait cycle is after each line and is according to SPI clock. 0 refers to no wait cycle.
     #[inline(always)]
@@ -124,16 +120,10 @@ impl R {
     pub fn spi_clk_init(&self) -> SpiClkInitR {
         SpiClkInitR::new(((self.bits >> 30) & 1) != 0)
     }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 31) & 1) != 0)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SPI_IF_CONF")
-            .field("rsvd", &self.rsvd())
             .field("spi_clk_init", &self.spi_clk_init())
             .field("spi_clk_pol", &self.spi_clk_pol())
             .field("spi_cs_pol", &self.spi_cs_pol())
@@ -215,11 +205,6 @@ impl W {
     #[inline(always)]
     pub fn spi_clk_init(&mut self) -> SpiClkInitW<SPI_IF_CONFrs> {
         SpiClkInitW::new(self, 30)
-    }
-    ///Bit 31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SPI_IF_CONFrs> {
-        RsvdW::new(self, 31)
     }
 }
 ///

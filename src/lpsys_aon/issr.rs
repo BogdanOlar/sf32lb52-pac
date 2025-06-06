@@ -10,10 +10,6 @@ pub type Lp2hpReqW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Hp2lpReqR = crate::BitReader;
 ///Field `HP2LP_REQ` writer - indicate HPSYS request exists
 pub type Hp2lpReqW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `LP_ACTIVE` reader - write 1 to indicates LPSYS is active
 pub type LpActiveR = crate::BitReader;
 ///Field `LP_ACTIVE` writer - write 1 to indicates LPSYS is active
@@ -22,10 +18,6 @@ pub type LpActiveW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type HpActiveR = crate::BitReader;
 ///Field `HP_ACTIVE` writer - read 1 indicates HPSYS is active
 pub type HpActiveW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 26, u32>;
 impl R {
     ///Bit 0 - write 1 to request HPSYS to stay in active mode
     #[inline(always)]
@@ -37,11 +29,6 @@ impl R {
     pub fn hp2lp_req(&self) -> Hp2lpReqR {
         Hp2lpReqR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:3
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 2) & 3) as u8)
-    }
     ///Bit 4 - write 1 to indicates LPSYS is active
     #[inline(always)]
     pub fn lp_active(&self) -> LpActiveR {
@@ -52,19 +39,12 @@ impl R {
     pub fn hp_active(&self) -> HpActiveR {
         HpActiveR::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 6) & 0x03ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ISSR")
-            .field("rsvd", &self.rsvd())
             .field("hp_active", &self.hp_active())
             .field("lp_active", &self.lp_active())
-            .field("rsvd2", &self.rsvd2())
             .field("hp2lp_req", &self.hp2lp_req())
             .field("lp2hp_req", &self.lp2hp_req())
             .finish()
@@ -81,11 +61,6 @@ impl W {
     pub fn hp2lp_req(&mut self) -> Hp2lpReqW<ISSRrs> {
         Hp2lpReqW::new(self, 1)
     }
-    ///Bits 2:3
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ISSRrs> {
-        Rsvd2W::new(self, 2)
-    }
     ///Bit 4 - write 1 to indicates LPSYS is active
     #[inline(always)]
     pub fn lp_active(&mut self) -> LpActiveW<ISSRrs> {
@@ -95,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn hp_active(&mut self) -> HpActiveW<ISSRrs> {
         HpActiveW::new(self, 5)
-    }
-    ///Bits 6:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ISSRrs> {
-        RsvdW::new(self, 6)
     }
 }
 ///Inter System Status Register

@@ -18,10 +18,6 @@ pub type GpadcIrsrW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type GpadcIsrR = crate::BitReader;
 ///Field `GPADC_ISR` writer -
 pub type GpadcIsrW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn gpadc_isr(&self) -> GpadcIsrR {
         GpadcIsrR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("GPADC_IRQ")
-            .field("rsvd", &self.rsvd())
             .field("gpadc_isr", &self.gpadc_isr())
             .field("gpadc_irsr", &self.gpadc_irsr())
             .field("gpadc_imr", &self.gpadc_imr())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn gpadc_isr(&mut self) -> GpadcIsrW<GPADC_IRQrs> {
         GpadcIsrW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<GPADC_IRQrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///GPADC IRQ Register

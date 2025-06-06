@@ -10,10 +10,6 @@ pub type RxFifoOverflowW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TxFifoUnderflowR = crate::BitReader;
 ///Field `TX_FIFO_UNDERFLOW` writer - TX FIFO pop underflow
 pub type TxFifoUnderflowW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - RX FIFO push overflow
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn tx_fifo_underflow(&self) -> TxFifoUnderflowR {
         TxFifoUnderflowR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("INT_STATUS")
-            .field("rsvd", &self.rsvd())
             .field("tx_fifo_underflow", &self.tx_fifo_underflow())
             .field("rx_fifo_overflow", &self.rx_fifo_overflow())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn tx_fifo_underflow(&mut self) -> TxFifoUnderflowW<INT_STATUSrs> {
         TxFifoUnderflowW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<INT_STATUSrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///

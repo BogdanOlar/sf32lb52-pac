@@ -10,10 +10,6 @@ pub type SdaW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SclR = crate::BitReader;
 ///Field `SCL` writer - value of the SCL pin. Software can check bus level when the I2C bus is hung and the I2C unit must be reset.
 pub type SclW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     ///Bit 0 - value of the SDA pin.
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn scl(&self) -> SclR {
         SclR::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x3fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("BMR")
-            .field("rsvd", &self.rsvd())
             .field("scl", &self.scl())
             .field("sda", &self.sda())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn scl(&mut self) -> SclW<BMRrs> {
         SclW::new(self, 1)
-    }
-    ///Bits 2:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<BMRrs> {
-        RsvdW::new(self, 2)
     }
 }
 ///Bus Monitor Register

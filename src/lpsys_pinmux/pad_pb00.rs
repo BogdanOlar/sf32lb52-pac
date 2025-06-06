@@ -6,10 +6,6 @@ pub type W = crate::W<PAD_PB00rs>;
 pub type FselR = crate::FieldReader;
 ///Field `FSEL` writer - Function Select
 pub type FselW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `PE` reader - Pull Enable. Logic HIGH enables week pull device
 pub type PeR = crate::BitReader;
 ///Field `PE` writer - Pull Enable. Logic HIGH enables week pull device
@@ -42,20 +38,11 @@ pub type Ds1W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PoeR = crate::BitReader;
 ///Field `POE` writer - Reserved. Always set to logic LOW
 pub type PoeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 impl R {
     ///Bits 0:2 - Function Select
     #[inline(always)]
     pub fn fsel(&self) -> FselR {
         FselR::new((self.bits & 7) as u8)
-    }
-    ///Bit 3
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 3) & 1) != 0)
     }
     ///Bit 4 - Pull Enable. Logic HIGH enables week pull device
     #[inline(always)]
@@ -97,16 +84,10 @@ impl R {
     pub fn poe(&self) -> PoeR {
         PoeR::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 12) & 0x000f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("PAD_PB00")
-            .field("rsvd", &self.rsvd())
             .field("poe", &self.poe())
             .field("ds1", &self.ds1())
             .field("ds0", &self.ds0())
@@ -115,7 +96,6 @@ impl core::fmt::Debug for R {
             .field("ie", &self.ie())
             .field("ps", &self.ps())
             .field("pe", &self.pe())
-            .field("rsvd2", &self.rsvd2())
             .field("fsel", &self.fsel())
             .finish()
     }
@@ -125,11 +105,6 @@ impl W {
     #[inline(always)]
     pub fn fsel(&mut self) -> FselW<PAD_PB00rs> {
         FselW::new(self, 0)
-    }
-    ///Bit 3
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<PAD_PB00rs> {
-        Rsvd2W::new(self, 3)
     }
     ///Bit 4 - Pull Enable. Logic HIGH enables week pull device
     #[inline(always)]
@@ -170,11 +145,6 @@ impl W {
     #[inline(always)]
     pub fn poe(&mut self) -> PoeW<PAD_PB00rs> {
         PoeW::new(self, 11)
-    }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PAD_PB00rs> {
-        RsvdW::new(self, 12)
     }
 }
 ///

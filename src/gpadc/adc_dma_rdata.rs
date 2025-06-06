@@ -6,46 +6,26 @@ pub type W = crate::W<ADC_DMA_RDATArs>;
 pub type DmaRdataR = crate::FieldReader<u16>;
 ///Field `DMA_RDATA` writer -
 pub type DmaRdataW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 ///Field `DMA_RDATA_RAW` reader -
 pub type DmaRdataRawR = crate::FieldReader<u16>;
 ///Field `DMA_RDATA_RAW` writer -
 pub type DmaRdataRawW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     ///Bits 0:12
     #[inline(always)]
     pub fn dma_rdata(&self) -> DmaRdataR {
         DmaRdataR::new((self.bits & 0x1fff) as u16)
     }
-    ///Bits 13:15
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 13) & 7) as u8)
-    }
     ///Bits 16:28
     #[inline(always)]
     pub fn dma_rdata_raw(&self) -> DmaRdataRawR {
         DmaRdataRawR::new(((self.bits >> 16) & 0x1fff) as u16)
     }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 29) & 7) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ADC_DMA_RDATA")
-            .field("rsvd", &self.rsvd())
             .field("dma_rdata_raw", &self.dma_rdata_raw())
-            .field("rsvd2", &self.rsvd2())
             .field("dma_rdata", &self.dma_rdata())
             .finish()
     }
@@ -56,20 +36,10 @@ impl W {
     pub fn dma_rdata(&mut self) -> DmaRdataW<ADC_DMA_RDATArs> {
         DmaRdataW::new(self, 0)
     }
-    ///Bits 13:15
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<ADC_DMA_RDATArs> {
-        Rsvd2W::new(self, 13)
-    }
     ///Bits 16:28
     #[inline(always)]
     pub fn dma_rdata_raw(&mut self) -> DmaRdataRawW<ADC_DMA_RDATArs> {
         DmaRdataRawW::new(self, 16)
-    }
-    ///Bits 29:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<ADC_DMA_RDATArs> {
-        RsvdW::new(self, 29)
     }
 }
 ///ADC Read Data For DMA

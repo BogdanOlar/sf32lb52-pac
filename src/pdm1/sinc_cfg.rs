@@ -10,10 +10,6 @@ pub type SincRateW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 pub type SincOrderSelR = crate::BitReader;
 ///Field `SINC_ORDER_SEL` writer - 1:select four differentiators in sinc filter; 0:select three differentiators in sinc filter
 pub type SincOrderSelW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     ///Bits 0:7 - dowmsampling rate of sinc filter
     #[inline(always)]
@@ -25,16 +21,10 @@ impl R {
     pub fn sinc_order_sel(&self) -> SincOrderSelR {
         SincOrderSelR::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 9) & 0x007f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SINC_CFG")
-            .field("rsvd", &self.rsvd())
             .field("sinc_order_sel", &self.sinc_order_sel())
             .field("sinc_rate", &self.sinc_rate())
             .finish()
@@ -50,11 +40,6 @@ impl W {
     #[inline(always)]
     pub fn sinc_order_sel(&mut self) -> SincOrderSelW<SINC_CFGrs> {
         SincOrderSelW::new(self, 8)
-    }
-    ///Bits 9:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SINC_CFGrs> {
-        RsvdW::new(self, 9)
     }
 }
 ///

@@ -14,10 +14,6 @@ pub type Bk2cmp1eW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Bk2cmp2eR = crate::BitReader;
 ///Field `BK2CMP2E` writer - BRK2 LPCOMP output2 enable This bit enables the LPCOMP output2 (if LPCOMP integrated) for the timer's BRK2 input. LPCOMP output2 is 'ORed' with the other BRK2 sources. 0: LPCOMP output2 disabled 1: LPCOMP output2 enabled This bit cannot be modified as long as LOCK level 1 has been programmed.
 pub type Bk2cmp2eW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `BK2INP` reader - BRK2 BKIN2 input polarity This bit selects the BKIN2 input sensitivity. It must be programmed together with the BK2P polarity bit. 0: BKIN2 input is active low 1: BKIN2 input is active high This bit cannot be modified as long as LOCK level 1 has been programmed.
 pub type Bk2inpR = crate::BitReader;
 ///Field `BK2INP` writer - BRK2 BKIN2 input polarity This bit selects the BKIN2 input sensitivity. It must be programmed together with the BK2P polarity bit. 0: BKIN2 input is active low 1: BKIN2 input is active high This bit cannot be modified as long as LOCK level 1 has been programmed.
@@ -30,10 +26,6 @@ pub type Bk2cmp1pW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Bk2cmp2pR = crate::BitReader;
 ///Field `BK2CMP2P` writer - BRK2 LPCOMP output2 polarity This bit selects the LPCOMP output2 sensitivity (if LPCOMP integrated). It must be programmed together with the BK2P polarity bit. 0: LPCOMP output2 is active high 1: LPCOMP output2 is active low This bit cannot be modified as long as LOCK level 1 has been programmed.
 pub type Bk2cmp2pW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 impl R {
     ///Bit 0 - BRK2 BKIN input enable This bit enables the BKIN2 input. BKIN2 input is 'Ored' with the other BRK2 sources. 0: BKIN2 input disabled 1: BKIN2 input enabled This bit cannot be modified as long as LOCK level 1 has been programmed.
     #[inline(always)]
@@ -50,11 +42,6 @@ impl R {
     pub fn bk2cmp2e(&self) -> Bk2cmp2eR {
         Bk2cmp2eR::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 3:8
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 3) & 0x3f) as u8)
-    }
     ///Bit 9 - BRK2 BKIN2 input polarity This bit selects the BKIN2 input sensitivity. It must be programmed together with the BK2P polarity bit. 0: BKIN2 input is active low 1: BKIN2 input is active high This bit cannot be modified as long as LOCK level 1 has been programmed.
     #[inline(always)]
     pub fn bk2inp(&self) -> Bk2inpR {
@@ -70,20 +57,13 @@ impl R {
     pub fn bk2cmp2p(&self) -> Bk2cmp2pR {
         Bk2cmp2pR::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 12) & 0x000f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("AF2")
-            .field("rsvd", &self.rsvd())
             .field("bk2cmp2p", &self.bk2cmp2p())
             .field("bk2cmp1p", &self.bk2cmp1p())
             .field("bk2inp", &self.bk2inp())
-            .field("rsvd2", &self.rsvd2())
             .field("bk2cmp2e", &self.bk2cmp2e())
             .field("bk2cmp1e", &self.bk2cmp1e())
             .field("bk2ine", &self.bk2ine())
@@ -106,11 +86,6 @@ impl W {
     pub fn bk2cmp2e(&mut self) -> Bk2cmp2eW<AF2rs> {
         Bk2cmp2eW::new(self, 2)
     }
-    ///Bits 3:8
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<AF2rs> {
-        Rsvd2W::new(self, 3)
-    }
     ///Bit 9 - BRK2 BKIN2 input polarity This bit selects the BKIN2 input sensitivity. It must be programmed together with the BK2P polarity bit. 0: BKIN2 input is active low 1: BKIN2 input is active high This bit cannot be modified as long as LOCK level 1 has been programmed.
     #[inline(always)]
     pub fn bk2inp(&mut self) -> Bk2inpW<AF2rs> {
@@ -125,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn bk2cmp2p(&mut self) -> Bk2cmp2pW<AF2rs> {
         Bk2cmp2pW::new(self, 11)
-    }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<AF2rs> {
-        RsvdW::new(self, 12)
     }
 }
 ///Alternate function option register 2

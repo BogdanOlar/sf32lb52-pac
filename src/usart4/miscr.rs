@@ -10,10 +10,6 @@ pub type SmpliniW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type RtsbitR = crate::FieldReader;
 ///Field `RTSBIT` writer - assert RTS ahead of the frame completion (in number of bits)Reserved-Do not modify
 pub type RtsbitW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 ///Field `AUTOCAL` reader -
 pub type AutocalR = crate::BitReader;
 ///Field `AUTOCAL` writer -
@@ -29,11 +25,6 @@ impl R {
     pub fn rtsbit(&self) -> RtsbitR {
         RtsbitR::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    ///Bits 8:30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x007f_ffff)
-    }
     ///Bit 31
     #[inline(always)]
     pub fn autocal(&self) -> AutocalR {
@@ -44,7 +35,6 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("MISCR")
             .field("autocal", &self.autocal())
-            .field("rsvd", &self.rsvd())
             .field("rtsbit", &self.rtsbit())
             .field("smplini", &self.smplini())
             .finish()
@@ -60,11 +50,6 @@ impl W {
     #[inline(always)]
     pub fn rtsbit(&mut self) -> RtsbitW<MISCRrs> {
         RtsbitW::new(self, 4)
-    }
-    ///Bits 8:30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<MISCRrs> {
-        RsvdW::new(self, 8)
     }
     ///Bit 31
     #[inline(always)]

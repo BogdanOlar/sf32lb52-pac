@@ -6,28 +6,16 @@ pub type W = crate::W<WCRrs>;
 pub type CntR = crate::FieldReader;
 ///Field `CNT` writer - Controls the counter values defining the setup and hold times in standard and fast mode Tvddat=Thddat=Tfclk*(CNT+2) Tsudat=max(Tlow-Thddat,Thddat) Lower counter values may violate setup and hold times.
 pub type CntW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bits 0:7 - Controls the counter values defining the setup and hold times in standard and fast mode Tvddat=Thddat=Tfclk*(CNT+2) Tsudat=max(Tlow-Thddat,Thddat) Lower counter values may violate setup and hold times.
     #[inline(always)]
     pub fn cnt(&self) -> CntR {
         CntR::new((self.bits & 0xff) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("WCR")
-            .field("rsvd", &self.rsvd())
-            .field("cnt", &self.cnt())
-            .finish()
+        f.debug_struct("WCR").field("cnt", &self.cnt()).finish()
     }
 }
 impl W {
@@ -35,11 +23,6 @@ impl W {
     #[inline(always)]
     pub fn cnt(&mut self) -> CntW<WCRrs> {
         CntW::new(self, 0)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<WCRrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///Wait Count Register

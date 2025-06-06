@@ -6,10 +6,6 @@ pub type W = crate::W<PMRrs>;
 pub type ModeR = crate::FieldReader;
 ///Field `MODE` writer - Power Mode: 2'h0 - active; 2'h1 - light sleep; 2'h2 - deep sleep; 2'h3 - standby
 pub type ModeW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 ///Field `FORCE_LCPU` reader - for debug only
 pub type ForceLcpuR = crate::BitReader;
 ///Field `FORCE_LCPU` writer - for debug only
@@ -23,11 +19,6 @@ impl R {
     #[inline(always)]
     pub fn mode(&self) -> ModeR {
         ModeR::new((self.bits & 3) as u8)
-    }
-    ///Bits 2:29
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 2) & 0x0fff_ffff)
     }
     ///Bit 30 - for debug only
     #[inline(always)]
@@ -45,7 +36,6 @@ impl core::fmt::Debug for R {
         f.debug_struct("PMR")
             .field("force_sleep", &self.force_sleep())
             .field("force_lcpu", &self.force_lcpu())
-            .field("rsvd", &self.rsvd())
             .field("mode", &self.mode())
             .finish()
     }
@@ -55,11 +45,6 @@ impl W {
     #[inline(always)]
     pub fn mode(&mut self) -> ModeW<PMRrs> {
         ModeW::new(self, 0)
-    }
-    ///Bits 2:29
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<PMRrs> {
-        RsvdW::new(self, 2)
     }
     ///Bit 30 - for debug only
     #[inline(always)]

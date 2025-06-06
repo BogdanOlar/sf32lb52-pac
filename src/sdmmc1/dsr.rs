@@ -6,26 +6,16 @@ pub type W = crate::W<DSRrs>;
 pub type SdDataILlR = crate::FieldReader;
 ///Field `SD_DATA_I_LL` writer - The status of each sd data pad status
 pub type SdDataILlW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     ///Bits 0:7 - The status of each sd data pad status
     #[inline(always)]
     pub fn sd_data_i_ll(&self) -> SdDataILlR {
         SdDataILlR::new((self.bits & 0xff) as u8)
     }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 8) & 0x00ff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("DSR")
-            .field("rsvd", &self.rsvd())
             .field("sd_data_i_ll", &self.sd_data_i_ll())
             .finish()
     }
@@ -35,11 +25,6 @@ impl W {
     #[inline(always)]
     pub fn sd_data_i_ll(&mut self) -> SdDataILlW<DSRrs> {
         SdDataILlW::new(self, 0)
-    }
-    ///Bits 8:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<DSRrs> {
-        RsvdW::new(self, 8)
     }
 }
 ///data status register

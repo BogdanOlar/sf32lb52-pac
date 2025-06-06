@@ -30,18 +30,10 @@ pub type CmsW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 pub type ArpeR = crate::BitReader;
 ///Field `ARPE` writer - Auto-reload preload enable 0: ARR register is not buffered 1: ARR register is buffered
 pub type ArpeW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 ///Field `UIFREMAP` reader - UIF status bit remapping 0: No remapping. UIF status bit is not copied to CNT register bit 31 1: Remapping enabled. UIF status bit is copied to CNT register bit 31.
 pub type UifremapR = crate::BitReader;
 ///Field `UIFREMAP` writer - UIF status bit remapping 0: No remapping. UIF status bit is not copied to CNT register bit 31 1: Remapping enabled. UIF status bit is copied to CNT register bit 31.
 pub type UifremapW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 impl R {
     ///Bit 0 - Counter enable 0: Counter disabled 1: Counter enabled External clock, gated mode and encoder mode can work only if the CEN bit has been previously set by software. However trigger mode can set the CEN bit automatically by hardware. CEN is cleared automatically in one-pulse mode, when an update event occurs.
     #[inline(always)]
@@ -78,28 +70,16 @@ impl R {
     pub fn arpe(&self) -> ArpeR {
         ArpeR::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 8:10
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 8) & 7) as u8)
-    }
     ///Bit 11 - UIF status bit remapping 0: No remapping. UIF status bit is not copied to CNT register bit 31 1: Remapping enabled. UIF status bit is copied to CNT register bit 31.
     #[inline(always)]
     pub fn uifremap(&self) -> UifremapR {
         UifremapR::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 12) & 0x000f_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("CR1")
-            .field("rsvd", &self.rsvd())
             .field("uifremap", &self.uifremap())
-            .field("rsvd2", &self.rsvd2())
             .field("arpe", &self.arpe())
             .field("cms", &self.cms())
             .field("dir", &self.dir())
@@ -146,20 +126,10 @@ impl W {
     pub fn arpe(&mut self) -> ArpeW<CR1rs> {
         ArpeW::new(self, 7)
     }
-    ///Bits 8:10
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<CR1rs> {
-        Rsvd2W::new(self, 8)
-    }
     ///Bit 11 - UIF status bit remapping 0: No remapping. UIF status bit is not copied to CNT register bit 31 1: Remapping enabled. UIF status bit is copied to CNT register bit 31.
     #[inline(always)]
     pub fn uifremap(&mut self) -> UifremapW<CR1rs> {
         UifremapW::new(self, 11)
-    }
-    ///Bits 12:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<CR1rs> {
-        RsvdW::new(self, 12)
     }
 }
 ///TIM control register 1

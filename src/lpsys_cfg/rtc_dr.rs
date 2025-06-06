@@ -10,10 +10,6 @@ pub type DuW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type DtR = crate::FieldReader;
 ///Field `DT` writer - Date tens in BCD format
 pub type DtW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::FieldReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 ///Field `MU` reader - Month units in BCD format
 pub type MuR = crate::FieldReader;
 ///Field `MU` writer - Month units in BCD format
@@ -38,10 +34,6 @@ pub type YtW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type CbR = crate::BitReader;
 ///Field `CB` writer - Century flag
 pub type CbW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `ERR` reader - reserved for debug
 pub type ErrR = crate::BitReader;
 ///Field `ERR` writer - reserved for debug
@@ -56,11 +48,6 @@ impl R {
     #[inline(always)]
     pub fn dt(&self) -> DtR {
         DtR::new(((self.bits >> 4) & 3) as u8)
-    }
-    ///Bits 6:7
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 6) & 3) as u8)
     }
     ///Bits 8:11 - Month units in BCD format
     #[inline(always)]
@@ -92,11 +79,6 @@ impl R {
     pub fn cb(&self) -> CbR {
         CbR::new(((self.bits >> 24) & 1) != 0)
     }
-    ///Bits 25:30
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 25) & 0x3f) as u8)
-    }
     ///Bit 31 - reserved for debug
     #[inline(always)]
     pub fn err(&self) -> ErrR {
@@ -107,14 +89,12 @@ impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("RTC_DR")
             .field("err", &self.err())
-            .field("rsvd", &self.rsvd())
             .field("cb", &self.cb())
             .field("yt", &self.yt())
             .field("yu", &self.yu())
             .field("wd", &self.wd())
             .field("mt", &self.mt())
             .field("mu", &self.mu())
-            .field("rsvd2", &self.rsvd2())
             .field("dt", &self.dt())
             .field("du", &self.du())
             .finish()
@@ -130,11 +110,6 @@ impl W {
     #[inline(always)]
     pub fn dt(&mut self) -> DtW<RTC_DRrs> {
         DtW::new(self, 4)
-    }
-    ///Bits 6:7
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<RTC_DRrs> {
-        Rsvd2W::new(self, 6)
     }
     ///Bits 8:11 - Month units in BCD format
     #[inline(always)]
@@ -165,11 +140,6 @@ impl W {
     #[inline(always)]
     pub fn cb(&mut self) -> CbW<RTC_DRrs> {
         CbW::new(self, 24)
-    }
-    ///Bits 25:30
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<RTC_DRrs> {
-        RsvdW::new(self, 25)
     }
     ///Bit 31 - reserved for debug
     #[inline(always)]

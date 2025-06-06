@@ -18,10 +18,6 @@ pub type LsRomW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PdRomR = crate::BitReader;
 ///Field `PD_ROM` writer - reserved for debug
 pub type PdRomW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u32>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 28, u32>;
 impl R {
     ///Bit 0 - reserved for debug
     #[inline(always)]
@@ -43,16 +39,10 @@ impl R {
     pub fn pd_rom(&self) -> PdRomR {
         PdRomR::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new((self.bits >> 4) & 0x0fff_ffff)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("MDBGR")
-            .field("rsvd", &self.rsvd())
             .field("pd_rom", &self.pd_rom())
             .field("ls_rom", &self.ls_rom())
             .field("ls_ram1", &self.ls_ram1())
@@ -80,11 +70,6 @@ impl W {
     #[inline(always)]
     pub fn pd_rom(&mut self) -> PdRomW<MDBGRrs> {
         PdRomW::new(self, 3)
-    }
-    ///Bits 4:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<MDBGRrs> {
-        RsvdW::new(self, 4)
     }
 }
 ///Memory Debug Register

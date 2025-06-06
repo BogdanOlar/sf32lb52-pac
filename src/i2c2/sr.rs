@@ -34,10 +34,6 @@ pub type TeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type RfR = crate::BitReader;
 ///Field `RF` writer - DBR Receive Full: 0 = The DBR has not received a new data byte or the I2C is idle. 1 = The DBR register received a new data byte from the I2C bus. An interrupt is signalled when enabled in the CR. Cleared if write 1
 pub type RfW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD2` reader -
-pub type Rsvd2R = crate::BitReader;
-///Field `RSVD2` writer -
-pub type Rsvd2W<'a, REG> = crate::BitWriter<'a, REG>;
 ///Field `SAD` reader - Slave Address Detected: 0 = No slave address was detected. 1 = The I2C detected a seven-bit address that matches the general call address or SAR. An interrupt is signalled when enabled in the CR. Cleared if write 1
 pub type SadR = crate::BitReader;
 ///Field `SAD` writer - Slave Address Detected: 0 = No slave address was detected. 1 = The I2C detected a seven-bit address that matches the general call address or SAR. An interrupt is signalled when enabled in the CR. Cleared if write 1
@@ -68,10 +64,6 @@ pub type OfW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type UfR = crate::BitReader;
 ///Field `UF` writer - FIFO Underflow Flag. Asserted when FIFO is empty and a POP request generated without a PUSH. Cleared if write 1
 pub type UfW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `RSVD` reader -
-pub type RsvdR = crate::FieldReader<u16>;
-///Field `RSVD` writer -
-pub type RsvdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     ///Bit 0 - Read/write Mode: 0 = The I2C is in master-transmit or slave-receive mode. 1 = The I2C is in master-receive or slave-transmit mode. This is the R/nW bit of the slave address. It is cleared automatically by hardware after a Stop state.
     #[inline(always)]
@@ -113,11 +105,6 @@ impl R {
     pub fn rf(&self) -> RfR {
         RfR::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bit 8
-    #[inline(always)]
-    pub fn rsvd2(&self) -> Rsvd2R {
-        Rsvd2R::new(((self.bits >> 8) & 1) != 0)
-    }
     ///Bit 9 - Slave Address Detected: 0 = No slave address was detected. 1 = The I2C detected a seven-bit address that matches the general call address or SAR. An interrupt is signalled when enabled in the CR. Cleared if write 1
     #[inline(always)]
     pub fn sad(&self) -> SadR {
@@ -154,16 +141,10 @@ impl R {
     pub fn uf(&self) -> UfR {
         UfR::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&self) -> RsvdR {
-        RsvdR::new(((self.bits >> 16) & 0xffff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("SR")
-            .field("rsvd", &self.rsvd())
             .field("uf", &self.uf())
             .field("of", &self.of())
             .field("dmadone", &self.dmadone())
@@ -171,7 +152,6 @@ impl core::fmt::Debug for R {
             .field("ebb", &self.ebb())
             .field("bed", &self.bed())
             .field("sad", &self.sad())
-            .field("rsvd2", &self.rsvd2())
             .field("rf", &self.rf())
             .field("te", &self.te())
             .field("ald", &self.ald())
@@ -224,11 +204,6 @@ impl W {
     pub fn rf(&mut self) -> RfW<SRrs> {
         RfW::new(self, 7)
     }
-    ///Bit 8
-    #[inline(always)]
-    pub fn rsvd2(&mut self) -> Rsvd2W<SRrs> {
-        Rsvd2W::new(self, 8)
-    }
     ///Bit 9 - Slave Address Detected: 0 = No slave address was detected. 1 = The I2C detected a seven-bit address that matches the general call address or SAR. An interrupt is signalled when enabled in the CR. Cleared if write 1
     #[inline(always)]
     pub fn sad(&mut self) -> SadW<SRrs> {
@@ -264,11 +239,6 @@ impl W {
     #[inline(always)]
     pub fn uf(&mut self) -> UfW<SRrs> {
         UfW::new(self, 15)
-    }
-    ///Bits 16:31
-    #[inline(always)]
-    pub fn rsvd(&mut self) -> RsvdW<SRrs> {
-        RsvdW::new(self, 16)
     }
 }
 ///Status register
