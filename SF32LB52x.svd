@@ -23,7 +23,7 @@
   <peripherals>
     <peripheral>
       <name>HPSYS_RCC</name>
-      <description/>
+      <description></description>
       <groupName>HPSYS_RCC</groupName>
       <baseAddress>0x50000000</baseAddress>
       <addressBlock>
@@ -2130,7 +2130,7 @@
     </peripheral>
     <peripheral>
       <name>EXTDMA</name>
-      <description/>
+      <description></description>
       <groupName>EXTDMA</groupName>
       <baseAddress>0x50001000</baseAddress>
       <addressBlock>
@@ -2415,7 +2415,7 @@
     </peripheral>
     <peripheral>
       <name>HPSYS_PINMUX</name>
-      <description/>
+      <description></description>
       <groupName>HPSYS_PINMUX</groupName>
       <baseAddress>0x50003000</baseAddress>
       <addressBlock>
@@ -2427,7 +2427,7 @@
         <register>
           <name>PAD_SA00</name>
           <displayName>PAD_SA00</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -2510,7 +2510,7 @@
         <register>
           <name>PAD_SA01</name>
           <displayName>PAD_SA01</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -2593,7 +2593,7 @@
         <register>
           <name>PAD_SA02</name>
           <displayName>PAD_SA02</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -2676,7 +2676,7 @@
         <register>
           <name>PAD_SA03</name>
           <displayName>PAD_SA03</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -2759,7 +2759,7 @@
         <register>
           <name>PAD_SA04</name>
           <displayName>PAD_SA04</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -2842,7 +2842,7 @@
         <register>
           <name>PAD_SA05</name>
           <displayName>PAD_SA05</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -2925,7 +2925,7 @@
         <register>
           <name>PAD_SA06</name>
           <displayName>PAD_SA06</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3008,7 +3008,7 @@
         <register>
           <name>PAD_SA07</name>
           <displayName>PAD_SA07</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3091,7 +3091,7 @@
         <register>
           <name>PAD_SA08</name>
           <displayName>PAD_SA08</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3174,7 +3174,7 @@
         <register>
           <name>PAD_SA09</name>
           <displayName>PAD_SA09</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3257,7 +3257,7 @@
         <register>
           <name>PAD_SA10</name>
           <displayName>PAD_SA10</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3340,7 +3340,7 @@
         <register>
           <name>PAD_SA11</name>
           <displayName>PAD_SA11</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3423,7 +3423,7 @@
         <register>
           <name>PAD_SA12</name>
           <displayName>PAD_SA12</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3506,7 +3506,7 @@
         <register>
           <name>PAD_PA00</name>
           <displayName>PAD_PA00</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3589,7 +3589,7 @@
         <register>
           <name>PAD_PA01</name>
           <displayName>PAD_PA01</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3672,7 +3672,7 @@
         <register>
           <name>PAD_PA02</name>
           <displayName>PAD_PA02</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3755,7 +3755,7 @@
         <register>
           <name>PAD_PA03</name>
           <displayName>PAD_PA03</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3838,7 +3838,7 @@
         <register>
           <name>PAD_PA04</name>
           <displayName>PAD_PA04</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -3921,7 +3921,7 @@
         <register>
           <name>PAD_PA05</name>
           <displayName>PAD_PA05</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4004,7 +4004,7 @@
         <register>
           <name>PAD_PA06</name>
           <displayName>PAD_PA06</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4087,7 +4087,7 @@
         <register>
           <name>PAD_PA07</name>
           <displayName>PAD_PA07</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4170,7 +4170,7 @@
         <register>
           <name>PAD_PA08</name>
           <displayName>PAD_PA08</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4253,7 +4253,7 @@
         <register>
           <name>PAD_PA09</name>
           <displayName>PAD_PA09</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4336,7 +4336,7 @@
         <register>
           <name>PAD_PA10</name>
           <displayName>PAD_PA10</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x5c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4419,7 +4419,7 @@
         <register>
           <name>PAD_PA11</name>
           <displayName>PAD_PA11</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4502,7 +4502,7 @@
         <register>
           <name>PAD_PA12</name>
           <displayName>PAD_PA12</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4585,7 +4585,7 @@
         <register>
           <name>PAD_PA13</name>
           <displayName>PAD_PA13</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4668,7 +4668,7 @@
         <register>
           <name>PAD_PA14</name>
           <displayName>PAD_PA14</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x6c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4751,7 +4751,7 @@
         <register>
           <name>PAD_PA15</name>
           <displayName>PAD_PA15</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4834,7 +4834,7 @@
         <register>
           <name>PAD_PA16</name>
           <displayName>PAD_PA16</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -4917,7 +4917,7 @@
         <register>
           <name>PAD_PA17</name>
           <displayName>PAD_PA17</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5000,7 +5000,7 @@
         <register>
           <name>PAD_PA18</name>
           <displayName>PAD_PA18</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x7c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5083,7 +5083,7 @@
         <register>
           <name>PAD_PA19</name>
           <displayName>PAD_PA19</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5166,7 +5166,7 @@
         <register>
           <name>PAD_PA20</name>
           <displayName>PAD_PA20</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5249,7 +5249,7 @@
         <register>
           <name>PAD_PA21</name>
           <displayName>PAD_PA21</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5332,7 +5332,7 @@
         <register>
           <name>PAD_PA22</name>
           <displayName>PAD_PA22</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5415,7 +5415,7 @@
         <register>
           <name>PAD_PA23</name>
           <displayName>PAD_PA23</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5498,7 +5498,7 @@
         <register>
           <name>PAD_PA24</name>
           <displayName>PAD_PA24</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5581,7 +5581,7 @@
         <register>
           <name>PAD_PA25</name>
           <displayName>PAD_PA25</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5664,7 +5664,7 @@
         <register>
           <name>PAD_PA26</name>
           <displayName>PAD_PA26</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5747,7 +5747,7 @@
         <register>
           <name>PAD_PA27</name>
           <displayName>PAD_PA27</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5830,7 +5830,7 @@
         <register>
           <name>PAD_PA28</name>
           <displayName>PAD_PA28</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5913,7 +5913,7 @@
         <register>
           <name>PAD_PA29</name>
           <displayName>PAD_PA29</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -5996,7 +5996,7 @@
         <register>
           <name>PAD_PA30</name>
           <displayName>PAD_PA30</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xac</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6079,7 +6079,7 @@
         <register>
           <name>PAD_PA31</name>
           <displayName>PAD_PA31</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6162,7 +6162,7 @@
         <register>
           <name>PAD_PA32</name>
           <displayName>PAD_PA32</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6245,7 +6245,7 @@
         <register>
           <name>PAD_PA33</name>
           <displayName>PAD_PA33</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6328,7 +6328,7 @@
         <register>
           <name>PAD_PA34</name>
           <displayName>PAD_PA34</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xbc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6411,7 +6411,7 @@
         <register>
           <name>PAD_PA35</name>
           <displayName>PAD_PA35</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6494,7 +6494,7 @@
         <register>
           <name>PAD_PA36</name>
           <displayName>PAD_PA36</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6577,7 +6577,7 @@
         <register>
           <name>PAD_PA37</name>
           <displayName>PAD_PA37</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6660,7 +6660,7 @@
         <register>
           <name>PAD_PA38</name>
           <displayName>PAD_PA38</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xcc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6743,7 +6743,7 @@
         <register>
           <name>PAD_PA39</name>
           <displayName>PAD_PA39</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6818,7 +6818,7 @@
         <register>
           <name>PAD_PA40</name>
           <displayName>PAD_PA40</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6893,7 +6893,7 @@
         <register>
           <name>PAD_PA41</name>
           <displayName>PAD_PA41</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -6968,7 +6968,7 @@
         <register>
           <name>PAD_PA42</name>
           <displayName>PAD_PA42</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xdc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -7043,7 +7043,7 @@
         <register>
           <name>PAD_PA43</name>
           <displayName>PAD_PA43</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -7126,7 +7126,7 @@
         <register>
           <name>PAD_PA44</name>
           <displayName>PAD_PA44</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -7210,7 +7210,7 @@
     </peripheral>
     <peripheral>
       <name>ATIM1</name>
-      <description/>
+      <description></description>
       <groupName>ATIM</groupName>
       <baseAddress>0x50004000</baseAddress>
       <addressBlock>
@@ -9253,7 +9253,7 @@
     </peripheral>
     <peripheral>
       <name>AUDPRC</name>
-      <description/>
+      <description></description>
       <groupName>AUDPRC</groupName>
       <baseAddress>0x50005000</baseAddress>
       <addressBlock>
@@ -9265,7 +9265,7 @@
         <register>
           <name>ID</name>
           <displayName>ID</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x00</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9284,7 +9284,7 @@
         <register>
           <name>CFG</name>
           <displayName>CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x04</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9393,7 +9393,7 @@
         <register>
           <name>STB</name>
           <displayName>STB</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x08</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9420,7 +9420,7 @@
         <register>
           <name>IRQ</name>
           <displayName>IRQ</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x0c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9591,7 +9591,7 @@
         <register>
           <name>TX_CH0_CFG</name>
           <displayName>TX_CH0_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9648,7 +9648,7 @@
         <register>
           <name>TX_CH0_ENTRY</name>
           <displayName>TX_CH0_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9667,7 +9667,7 @@
         <register>
           <name>TX_CH1_CFG</name>
           <displayName>TX_CH1_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9712,7 +9712,7 @@
         <register>
           <name>TX_CH1_ENTRY</name>
           <displayName>TX_CH1_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9731,7 +9731,7 @@
         <register>
           <name>TX_CH2_CFG</name>
           <displayName>TX_CH2_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9788,7 +9788,7 @@
         <register>
           <name>TX_CH2_ENTRY</name>
           <displayName>TX_CH2_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9807,7 +9807,7 @@
         <register>
           <name>TX_CH3_CFG</name>
           <displayName>TX_CH3_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9852,7 +9852,7 @@
         <register>
           <name>TX_CH3_ENTRY</name>
           <displayName>TX_CH3_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9871,7 +9871,7 @@
         <register>
           <name>RX_CH0_CFG</name>
           <displayName>RX_CH0_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9928,7 +9928,7 @@
         <register>
           <name>RX_CH0_ENTRY</name>
           <displayName>RX_CH0_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9947,7 +9947,7 @@
         <register>
           <name>RX_CH1_CFG</name>
           <displayName>RX_CH1_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -9992,7 +9992,7 @@
         <register>
           <name>RX_CH1_ENTRY</name>
           <displayName>RX_CH1_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10011,7 +10011,7 @@
         <register>
           <name>TX_OUT_CH0_CFG</name>
           <displayName>TX_OUT_CH0_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10068,7 +10068,7 @@
         <register>
           <name>TX_OUT_CH0_ENTRY</name>
           <displayName>TX_OUT_CH0_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10087,7 +10087,7 @@
         <register>
           <name>TX_OUT_CH1_CFG</name>
           <displayName>TX_OUT_CH1_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10132,7 +10132,7 @@
         <register>
           <name>TX_OUT_CH1_ENTRY</name>
           <displayName>TX_OUT_CH1_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10151,7 +10151,7 @@
         <register>
           <name>DAC_PATH_CFG0</name>
           <displayName>DAC_PATH_CFG0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10294,7 +10294,7 @@
         <register>
           <name>DAC_PATH_CFG1</name>
           <displayName>DAC_PATH_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10475,7 +10475,7 @@
         <register>
           <name>DAC_PATH_CFG2</name>
           <displayName>DAC_PATH_CFG2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10502,7 +10502,7 @@
         <register>
           <name>DAC_PATH_CFG3</name>
           <displayName>DAC_PATH_CFG3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x5c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10597,7 +10597,7 @@
         <register>
           <name>ADC_PATH_CFG0</name>
           <displayName>ADC_PATH_CFG0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10698,7 +10698,7 @@
         <register>
           <name>DAC_EQ_CFG0</name>
           <displayName>DAC_EQ_CFG0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10716,7 +10716,7 @@
         <register>
           <name>DAC_EQ_CFG1</name>
           <displayName>DAC_EQ_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10734,7 +10734,7 @@
         <register>
           <name>DAC_EQ_CFG2</name>
           <displayName>DAC_EQ_CFG2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10752,7 +10752,7 @@
         <register>
           <name>DAC_EQ_CFG3</name>
           <displayName>DAC_EQ_CFG3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x7c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10770,7 +10770,7 @@
         <register>
           <name>DAC_EQ_CFG4</name>
           <displayName>DAC_EQ_CFG4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10788,7 +10788,7 @@
         <register>
           <name>DAC_EQ_CFG5</name>
           <displayName>DAC_EQ_CFG5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10806,7 +10806,7 @@
         <register>
           <name>DAC_EQ_CFG6</name>
           <displayName>DAC_EQ_CFG6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10824,7 +10824,7 @@
         <register>
           <name>DAC_EQ_CFG7</name>
           <displayName>DAC_EQ_CFG7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10842,7 +10842,7 @@
         <register>
           <name>DAC_EQ_CFG8</name>
           <displayName>DAC_EQ_CFG8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10860,7 +10860,7 @@
         <register>
           <name>DAC_EQ_CFG9</name>
           <displayName>DAC_EQ_CFG9</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10878,7 +10878,7 @@
         <register>
           <name>DAC_EQ_CFG10</name>
           <displayName>DAC_EQ_CFG10</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10896,7 +10896,7 @@
         <register>
           <name>DAC_EQ_CFG11</name>
           <displayName>DAC_EQ_CFG11</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10914,7 +10914,7 @@
         <register>
           <name>DAC_EQ_CFG12</name>
           <displayName>DAC_EQ_CFG12</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10932,7 +10932,7 @@
         <register>
           <name>DAC_EQ_CFG13</name>
           <displayName>DAC_EQ_CFG13</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10950,7 +10950,7 @@
         <register>
           <name>DAC_EQ_CFG14</name>
           <displayName>DAC_EQ_CFG14</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10968,7 +10968,7 @@
         <register>
           <name>DAC_EQ_CFG15</name>
           <displayName>DAC_EQ_CFG15</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xac</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -10986,7 +10986,7 @@
         <register>
           <name>DAC_EQ_CFG16</name>
           <displayName>DAC_EQ_CFG16</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11004,7 +11004,7 @@
         <register>
           <name>DAC_EQ_CFG17</name>
           <displayName>DAC_EQ_CFG17</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11022,7 +11022,7 @@
         <register>
           <name>DAC_EQ_CFG18</name>
           <displayName>DAC_EQ_CFG18</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11040,7 +11040,7 @@
         <register>
           <name>DAC_EQ_CFG19</name>
           <displayName>DAC_EQ_CFG19</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xbc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11058,7 +11058,7 @@
         <register>
           <name>DAC_EQ_CFG20</name>
           <displayName>DAC_EQ_CFG20</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11076,7 +11076,7 @@
         <register>
           <name>DAC_EQ_CFG21</name>
           <displayName>DAC_EQ_CFG21</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11094,7 +11094,7 @@
         <register>
           <name>DAC_EQ_CFG22</name>
           <displayName>DAC_EQ_CFG22</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11112,7 +11112,7 @@
         <register>
           <name>DAC_EQ_CFG23</name>
           <displayName>DAC_EQ_CFG23</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xcc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11130,7 +11130,7 @@
         <register>
           <name>DAC_EQ_CFG24</name>
           <displayName>DAC_EQ_CFG24</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11148,7 +11148,7 @@
         <register>
           <name>DAC_EQ_CFG25</name>
           <displayName>DAC_EQ_CFG25</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11166,7 +11166,7 @@
         <register>
           <name>DAC_EQ_CFG26</name>
           <displayName>DAC_EQ_CFG26</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11184,7 +11184,7 @@
         <register>
           <name>DAC_EQ_CFG27</name>
           <displayName>DAC_EQ_CFG27</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xdc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11202,7 +11202,7 @@
         <register>
           <name>DAC_EQ_CFG28</name>
           <displayName>DAC_EQ_CFG28</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11220,7 +11220,7 @@
         <register>
           <name>DAC_EQ_CFG29</name>
           <displayName>DAC_EQ_CFG29</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11238,7 +11238,7 @@
         <register>
           <name>DAC_EQ_CFG30</name>
           <displayName>DAC_EQ_CFG30</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11256,7 +11256,7 @@
         <register>
           <name>DAC_EQ_CFG31</name>
           <displayName>DAC_EQ_CFG31</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xec</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11274,7 +11274,7 @@
         <register>
           <name>DAC_EQ_CFG32</name>
           <displayName>DAC_EQ_CFG32</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xf0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11292,7 +11292,7 @@
         <register>
           <name>DAC_EQ_CFG33</name>
           <displayName>DAC_EQ_CFG33</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xf4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11310,7 +11310,7 @@
         <register>
           <name>DAC_EQ_CFG34</name>
           <displayName>DAC_EQ_CFG34</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xf8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11328,7 +11328,7 @@
         <register>
           <name>DAC_EQ_CFG35</name>
           <displayName>DAC_EQ_CFG35</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xfc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11346,7 +11346,7 @@
         <register>
           <name>DAC_EQ_CFG36</name>
           <displayName>DAC_EQ_CFG36</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x100</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11364,7 +11364,7 @@
         <register>
           <name>DAC_EQ_CFG37</name>
           <displayName>DAC_EQ_CFG37</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x104</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11382,7 +11382,7 @@
         <register>
           <name>DAC_EQ_CFG38</name>
           <displayName>DAC_EQ_CFG38</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x108</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11400,7 +11400,7 @@
         <register>
           <name>DAC_EQ_CFG39</name>
           <displayName>DAC_EQ_CFG39</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x10c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11418,7 +11418,7 @@
         <register>
           <name>DAC_EQ_CFG40</name>
           <displayName>DAC_EQ_CFG40</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x110</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11436,7 +11436,7 @@
         <register>
           <name>DAC_EQ_CFG41</name>
           <displayName>DAC_EQ_CFG41</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x114</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11454,7 +11454,7 @@
         <register>
           <name>DAC_EQ_CFG42</name>
           <displayName>DAC_EQ_CFG42</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x118</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11472,7 +11472,7 @@
         <register>
           <name>DAC_EQ_CFG43</name>
           <displayName>DAC_EQ_CFG43</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x11c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11490,7 +11490,7 @@
         <register>
           <name>DAC_EQ_CFG44</name>
           <displayName>DAC_EQ_CFG44</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x120</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11508,7 +11508,7 @@
         <register>
           <name>DAC_EQ_CFG45</name>
           <displayName>DAC_EQ_CFG45</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x124</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11526,7 +11526,7 @@
         <register>
           <name>DAC_EQ_CFG46</name>
           <displayName>DAC_EQ_CFG46</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x128</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11544,7 +11544,7 @@
         <register>
           <name>DAC_EQ_CFG47</name>
           <displayName>DAC_EQ_CFG47</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x12c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11562,7 +11562,7 @@
         <register>
           <name>DAC_EQ_CFG48</name>
           <displayName>DAC_EQ_CFG48</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x130</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11580,7 +11580,7 @@
         <register>
           <name>DAC_EQ_CFG49</name>
           <displayName>DAC_EQ_CFG49</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x134</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11598,7 +11598,7 @@
         <register>
           <name>RESERVED_IN</name>
           <displayName>RESERVED_IN</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x138</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11633,7 +11633,7 @@
         <register>
           <name>RESERVED_OUT</name>
           <displayName>RESERVED_OUT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x13c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -11653,7 +11653,7 @@
     </peripheral>
     <peripheral>
       <name>EZIP1</name>
-      <description/>
+      <description></description>
       <groupName>EZIP</groupName>
       <baseAddress>0x50006000</baseAddress>
       <addressBlock>
@@ -12691,7 +12691,7 @@
     </peripheral>
     <peripheral>
       <name>EPIC</name>
-      <description/>
+      <description></description>
       <groupName>EPIC</groupName>
       <baseAddress>0x50007000</baseAddress>
       <addressBlock>
@@ -12703,7 +12703,7 @@
         <register>
           <name>COMMAND</name>
           <displayName>COMMAND</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x00</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -12730,7 +12730,7 @@
         <register>
           <name>STATUS</name>
           <displayName>STATUS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x04</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -12757,7 +12757,7 @@
         <register>
           <name>EOF_IRQ</name>
           <displayName>EOF_IRQ</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x08</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -12800,7 +12800,7 @@
         <register>
           <name>SETTING</name>
           <displayName>SETTING</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x0c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -12944,7 +12944,7 @@
         <register>
           <name>VL_CFG</name>
           <displayName>VL_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13038,7 +13038,7 @@
         <register>
           <name>VL_TL_POS</name>
           <displayName>VL_TL_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13065,7 +13065,7 @@
         <register>
           <name>VL_BR_POS</name>
           <displayName>VL_BR_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13092,7 +13092,7 @@
         <register>
           <name>VL_EXTENTS</name>
           <displayName>VL_EXTENTS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13119,7 +13119,7 @@
         <register>
           <name>VL_FILTER</name>
           <displayName>VL_FILTER</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13162,7 +13162,7 @@
         <register>
           <name>VL_SRC</name>
           <displayName>VL_SRC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13181,7 +13181,7 @@
         <register>
           <name>VL_ROT</name>
           <displayName>VL_ROT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13224,7 +13224,7 @@
         <register>
           <name>VL_ROT_STAT</name>
           <displayName>VL_ROT_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13251,7 +13251,7 @@
         <register>
           <name>VL_SCALE_RATIO_H</name>
           <displayName>VL_SCALE_RATIO_H</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13270,7 +13270,7 @@
         <register>
           <name>VL_SCALE_RATIO_V</name>
           <displayName>VL_SCALE_RATIO_V</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13289,7 +13289,7 @@
         <register>
           <name>VL_FILL</name>
           <displayName>VL_FILL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13342,7 +13342,7 @@
         <register>
           <name>VL_MISC_CFG</name>
           <displayName>VL_MISC_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13403,7 +13403,7 @@
         <register>
           <name>L0_CFG</name>
           <displayName>L0_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13489,7 +13489,7 @@
         <register>
           <name>L0_TL_POS</name>
           <displayName>L0_TL_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13516,7 +13516,7 @@
         <register>
           <name>L0_BR_POS</name>
           <displayName>L0_BR_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13543,7 +13543,7 @@
         <register>
           <name>L0_FILTER</name>
           <displayName>L0_FILTER</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x5c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13586,7 +13586,7 @@
         <register>
           <name>L0_SRC</name>
           <displayName>L0_SRC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13605,7 +13605,7 @@
         <register>
           <name>L0_FILL</name>
           <displayName>L0_FILL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13658,7 +13658,7 @@
         <register>
           <name>L0_MISC_CFG</name>
           <displayName>L0_MISC_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13687,7 +13687,7 @@
         <register>
           <name>L1_CFG</name>
           <displayName>L1_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13773,7 +13773,7 @@
         <register>
           <name>L1_TL_POS</name>
           <displayName>L1_TL_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13800,7 +13800,7 @@
         <register>
           <name>L1_BR_POS</name>
           <displayName>L1_BR_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13827,7 +13827,7 @@
         <register>
           <name>L1_FILTER</name>
           <displayName>L1_FILTER</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x7c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13870,7 +13870,7 @@
         <register>
           <name>L1_SRC</name>
           <displayName>L1_SRC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13889,7 +13889,7 @@
         <register>
           <name>L1_FILL</name>
           <displayName>L1_FILL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13942,7 +13942,7 @@
         <register>
           <name>L1_MISC_CFG</name>
           <displayName>L1_MISC_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -13971,7 +13971,7 @@
         <register>
           <name>L2_CFG</name>
           <displayName>L2_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14057,7 +14057,7 @@
         <register>
           <name>L2_TL_POS</name>
           <displayName>L2_TL_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14084,7 +14084,7 @@
         <register>
           <name>L2_BR_POS</name>
           <displayName>L2_BR_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14111,7 +14111,7 @@
         <register>
           <name>L2_EXTENTS</name>
           <displayName>L2_EXTENTS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14138,7 +14138,7 @@
         <register>
           <name>L2_FILTER</name>
           <displayName>L2_FILTER</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14181,7 +14181,7 @@
         <register>
           <name>L2_SRC</name>
           <displayName>L2_SRC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14200,7 +14200,7 @@
         <register>
           <name>L2_ROT</name>
           <displayName>L2_ROT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14243,7 +14243,7 @@
         <register>
           <name>L2_ROT_STAT</name>
           <displayName>L2_ROT_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xac</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14270,7 +14270,7 @@
         <register>
           <name>L2_SCALE_RATIO_H</name>
           <displayName>L2_SCALE_RATIO_H</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14289,7 +14289,7 @@
         <register>
           <name>L2_SCALE_RATIO_V</name>
           <displayName>L2_SCALE_RATIO_V</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14308,7 +14308,7 @@
         <register>
           <name>L2_FILL</name>
           <displayName>L2_FILL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14361,7 +14361,7 @@
         <register>
           <name>L2_MISC_CFG</name>
           <displayName>L2_MISC_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xbc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14422,7 +14422,7 @@
         <register>
           <name>MASK_CFG</name>
           <displayName>MASK_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14509,7 +14509,7 @@
         <register>
           <name>MASK_TL_POS</name>
           <displayName>MASK_TL_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14536,7 +14536,7 @@
         <register>
           <name>MASK_BR_POS</name>
           <displayName>MASK_BR_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14563,7 +14563,7 @@
         <register>
           <name>MASK_SRC</name>
           <displayName>MASK_SRC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xcc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14582,7 +14582,7 @@
         <register>
           <name>COENG_CFG</name>
           <displayName>COENG_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14625,7 +14625,7 @@
         <register>
           <name>YUV_ENG_CFG0</name>
           <displayName>YUV_ENG_CFG0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14670,7 +14670,7 @@
         <register>
           <name>YUV_ENG_CFG1</name>
           <displayName>YUV_ENG_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14689,7 +14689,7 @@
         <register>
           <name>Y_SRC</name>
           <displayName>Y_SRC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xdc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14708,7 +14708,7 @@
         <register>
           <name>U_SRC</name>
           <displayName>U_SRC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14727,7 +14727,7 @@
         <register>
           <name>V_SRC</name>
           <displayName>V_SRC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14746,7 +14746,7 @@
         <register>
           <name>COEF0</name>
           <displayName>COEF0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14781,7 +14781,7 @@
         <register>
           <name>COEF1</name>
           <displayName>COEF1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xec</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14808,7 +14808,7 @@
         <register>
           <name>DITHER_CONF</name>
           <displayName>DITHER_CONF</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xf0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14871,7 +14871,7 @@
         <register>
           <name>DITHER_LFSR</name>
           <displayName>DITHER_LFSR</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xf4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14890,7 +14890,7 @@
         <register>
           <name>AHB_CTRL</name>
           <displayName>AHB_CTRL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xf8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14923,7 +14923,7 @@
         <register>
           <name>AHB_MEM</name>
           <displayName>AHB_MEM</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xfc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14942,7 +14942,7 @@
         <register>
           <name>AHB_STRIDE</name>
           <displayName>AHB_STRIDE</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x100</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -14960,7 +14960,7 @@
         <register>
           <name>DEBUG</name>
           <displayName>DEBUG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x104</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15006,7 +15006,7 @@
         <register>
           <name>VL_ROT_M_CFG1</name>
           <displayName>VL_ROT_M_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x108</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15043,7 +15043,7 @@
         <register>
           <name>VL_ROT_M_CFG2</name>
           <displayName>VL_ROT_M_CFG2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x10c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15070,7 +15070,7 @@
         <register>
           <name>VL_ROT_M_CFG3</name>
           <displayName>VL_ROT_M_CFG3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x110</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15097,7 +15097,7 @@
         <register>
           <name>VL_SCALE_INIT_CFG1</name>
           <displayName>VL_SCALE_INIT_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x114</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15116,7 +15116,7 @@
         <register>
           <name>VL_SCALE_INIT_CFG2</name>
           <displayName>VL_SCALE_INIT_CFG2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x118</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15135,7 +15135,7 @@
         <register>
           <name>L2_ROT_M_CFG1</name>
           <displayName>L2_ROT_M_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x11c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15172,7 +15172,7 @@
         <register>
           <name>L2_ROT_M_CFG2</name>
           <displayName>L2_ROT_M_CFG2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x120</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15199,7 +15199,7 @@
         <register>
           <name>L2_ROT_M_CFG3</name>
           <displayName>L2_ROT_M_CFG3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x124</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15226,7 +15226,7 @@
         <register>
           <name>L2_SCALE_INIT_CFG1</name>
           <displayName>L2_SCALE_INIT_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x128</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15245,7 +15245,7 @@
         <register>
           <name>L2_SCALE_INIT_CFG2</name>
           <displayName>L2_SCALE_INIT_CFG2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x12c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15264,7 +15264,7 @@
         <register>
           <name>PERF_CNT</name>
           <displayName>PERF_CNT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x130</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15283,7 +15283,7 @@
         <register>
           <name>CANVAS_STAT</name>
           <displayName>CANVAS_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x140</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15342,7 +15342,7 @@
         <register>
           <name>EZIP_STAT</name>
           <displayName>EZIP_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x144</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15401,7 +15401,7 @@
         <register>
           <name>OL_STAT</name>
           <displayName>OL_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x148</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15510,7 +15510,7 @@
         <register>
           <name>OL2_STAT</name>
           <displayName>OL2_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x14c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15598,7 +15598,7 @@
         <register>
           <name>VL_STAT</name>
           <displayName>VL_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x150</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15686,7 +15686,7 @@
         <register>
           <name>ML_STAT</name>
           <displayName>ML_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x154</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15739,7 +15739,7 @@
         <register>
           <name>MEM_IF_STAT</name>
           <displayName>MEM_IF_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x158</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15814,7 +15814,7 @@
     </peripheral>
     <peripheral>
       <name>LCDC1</name>
-      <description/>
+      <description></description>
       <groupName>LCDC</groupName>
       <baseAddress>0x50008000</baseAddress>
       <addressBlock>
@@ -15826,7 +15826,7 @@
         <register>
           <name>COMMAND</name>
           <displayName>COMMAND</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x00</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15853,7 +15853,7 @@
         <register>
           <name>STATUS</name>
           <displayName>STATUS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x04</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -15888,7 +15888,7 @@
         <register>
           <name>IRQ</name>
           <displayName>IRQ</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x08</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16011,7 +16011,7 @@
         <register>
           <name>SETTING</name>
           <displayName>SETTING</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x0c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16094,7 +16094,7 @@
         <register>
           <name>CANVAS_TL_POS</name>
           <displayName>CANVAS_TL_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16119,7 +16119,7 @@
         <register>
           <name>CANVAS_BR_POS</name>
           <displayName>CANVAS_BR_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16144,7 +16144,7 @@
         <register>
           <name>CANVAS_BG</name>
           <displayName>CANVAS_BG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16211,7 +16211,7 @@
         <register>
           <name>LAYER0_CONFIG</name>
           <displayName>LAYER0_CONFIG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16315,7 +16315,7 @@
         <register>
           <name>LAYER0_TL_POS</name>
           <displayName>LAYER0_TL_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16342,7 +16342,7 @@
         <register>
           <name>LAYER0_BR_POS</name>
           <displayName>LAYER0_BR_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16369,7 +16369,7 @@
         <register>
           <name>LAYER0_FILTER</name>
           <displayName>LAYER0_FILTER</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16412,7 +16412,7 @@
         <register>
           <name>LAYER0_SRC</name>
           <displayName>LAYER0_SRC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16431,7 +16431,7 @@
         <register>
           <name>LAYER0_FILL</name>
           <displayName>LAYER0_FILL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16484,7 +16484,7 @@
         <register>
           <name>LAYER0_DECOMP</name>
           <displayName>LAYER0_DECOMP</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16519,7 +16519,7 @@
         <register>
           <name>LAYER0_DECOMP_CFG0</name>
           <displayName>LAYER0_DECOMP_CFG0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16577,7 +16577,7 @@
         <register>
           <name>LAYER0_DECOMP_CFG1</name>
           <displayName>LAYER0_DECOMP_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16664,7 +16664,7 @@
         <register>
           <name>LAYER0_DECOMP_STAT</name>
           <displayName>LAYER0_DECOMP_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16683,7 +16683,7 @@
         <register>
           <name>LAYER1_CONFIG</name>
           <displayName>LAYER1_CONFIG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16787,7 +16787,7 @@
         <register>
           <name>LAYER1_TL_POS</name>
           <displayName>LAYER1_TL_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16814,7 +16814,7 @@
         <register>
           <name>LAYER1_BR_POS</name>
           <displayName>LAYER1_BR_POS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16841,7 +16841,7 @@
         <register>
           <name>LAYER1_FILTER</name>
           <displayName>LAYER1_FILTER</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x6c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16884,7 +16884,7 @@
         <register>
           <name>LAYER1_SRC</name>
           <displayName>LAYER1_SRC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16903,7 +16903,7 @@
         <register>
           <name>LAYER1_FILL</name>
           <displayName>LAYER1_FILL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16956,7 +16956,7 @@
         <register>
           <name>DITHER_CONF</name>
           <displayName>DITHER_CONF</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17019,7 +17019,7 @@
         <register>
           <name>DITHER_LFSR</name>
           <displayName>DITHER_LFSR</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x7c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17038,7 +17038,7 @@
         <register>
           <name>LCD_CONF</name>
           <displayName>LCD_CONF</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17174,7 +17174,7 @@
         <register>
           <name>LCD_IF_CONF</name>
           <displayName>LCD_IF_CONF</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17281,7 +17281,7 @@
         <register>
           <name>LCD_MEM</name>
           <displayName>LCD_MEM</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17300,7 +17300,7 @@
         <register>
           <name>LCD_O_WIDTH</name>
           <displayName>LCD_O_WIDTH</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17319,7 +17319,7 @@
         <register>
           <name>LCD_SINGLE</name>
           <displayName>LCD_SINGLE</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17364,7 +17364,7 @@
         <register>
           <name>LCD_WR</name>
           <displayName>LCD_WR</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17383,7 +17383,7 @@
         <register>
           <name>LCD_RD</name>
           <displayName>LCD_RD</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17402,7 +17402,7 @@
         <register>
           <name>SPI_IF_CONF</name>
           <displayName>SPI_IF_CONF</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17536,7 +17536,7 @@
         <register>
           <name>TE_CONF</name>
           <displayName>TE_CONF</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17600,7 +17600,7 @@
         <register>
           <name>TE_CONF2</name>
           <displayName>TE_CONF2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17619,7 +17619,7 @@
         <register>
           <name>DPI_IF_CONF1</name>
           <displayName>DPI_IF_CONF1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17646,7 +17646,7 @@
         <register>
           <name>DPI_IF_CONF2</name>
           <displayName>DPI_IF_CONF2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xac</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17673,7 +17673,7 @@
         <register>
           <name>DPI_IF_CONF3</name>
           <displayName>DPI_IF_CONF3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17700,7 +17700,7 @@
         <register>
           <name>DPI_IF_CONF4</name>
           <displayName>DPI_IF_CONF4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17727,7 +17727,7 @@
         <register>
           <name>DPI_IF_CONF5</name>
           <displayName>DPI_IF_CONF5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17795,7 +17795,7 @@
         <register>
           <name>DPI_CTRL</name>
           <displayName>DPI_CTRL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xbc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17838,7 +17838,7 @@
         <register>
           <name>DPI_STAT</name>
           <displayName>DPI_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17880,7 +17880,7 @@
         <register>
           <name>JDI_SER_CONF1</name>
           <displayName>JDI_SER_CONF1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17907,7 +17907,7 @@
         <register>
           <name>JDI_SER_CONF2</name>
           <displayName>JDI_SER_CONF2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17934,7 +17934,7 @@
         <register>
           <name>JDI_SER_CTRL</name>
           <displayName>JDI_SER_CTRL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xcc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17961,7 +17961,7 @@
         <register>
           <name>JDI_PAR_CONF1</name>
           <displayName>JDI_PAR_CONF1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17988,7 +17988,7 @@
         <register>
           <name>JDI_PAR_CONF2</name>
           <displayName>JDI_PAR_CONF2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18015,7 +18015,7 @@
         <register>
           <name>JDI_PAR_CONF3</name>
           <displayName>JDI_PAR_CONF3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18042,7 +18042,7 @@
         <register>
           <name>JDI_PAR_CONF4</name>
           <displayName>JDI_PAR_CONF4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xdc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18069,7 +18069,7 @@
         <register>
           <name>JDI_PAR_CONF5</name>
           <displayName>JDI_PAR_CONF5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18096,7 +18096,7 @@
         <register>
           <name>JDI_PAR_CONF6</name>
           <displayName>JDI_PAR_CONF6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18123,7 +18123,7 @@
         <register>
           <name>JDI_PAR_CONF7</name>
           <displayName>JDI_PAR_CONF7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18150,7 +18150,7 @@
         <register>
           <name>JDI_PAR_CTRL</name>
           <displayName>JDI_PAR_CTRL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xec</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18225,7 +18225,7 @@
         <register>
           <name>JDI_PAR_STAT</name>
           <displayName>JDI_PAR_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xf0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18252,7 +18252,7 @@
         <register>
           <name>JDI_PAR_EX_CTRL</name>
           <displayName>JDI_PAR_EX_CTRL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xf4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18303,7 +18303,7 @@
         <register>
           <name>JDI_PAR_CONF8</name>
           <displayName>JDI_PAR_CONF8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xf8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18330,7 +18330,7 @@
         <register>
           <name>JDI_PAR_CONF9</name>
           <displayName>JDI_PAR_CONF9</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xfc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18357,7 +18357,7 @@
         <register>
           <name>JDI_PAR_CONF10</name>
           <displayName>JDI_PAR_CONF10</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x100</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18384,7 +18384,7 @@
         <register>
           <name>CANVAS_STAT0</name>
           <displayName>CANVAS_STAT0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x110</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18411,7 +18411,7 @@
         <register>
           <name>CANVAS_STAT1</name>
           <displayName>CANVAS_STAT1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x114</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18454,7 +18454,7 @@
         <register>
           <name>OL0_STAT</name>
           <displayName>OL0_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x118</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18542,7 +18542,7 @@
         <register>
           <name>OL1_STAT</name>
           <displayName>OL1_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x11c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18595,7 +18595,7 @@
         <register>
           <name>MEM_IF_STAT</name>
           <displayName>MEM_IF_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x120</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18627,7 +18627,7 @@
         <register>
           <name>PERF_CNT</name>
           <displayName>PERF_CNT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x124</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18647,7 +18647,7 @@
     </peripheral>
     <peripheral>
       <name>I2S1</name>
-      <description/>
+      <description></description>
       <groupName>I2S</groupName>
       <baseAddress>0x50009000</baseAddress>
       <addressBlock>
@@ -18659,7 +18659,7 @@
         <register>
           <name>TX_PCM_FORMAT</name>
           <displayName>TX_PCM_FORMAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18696,7 +18696,7 @@
         <register>
           <name>TX_PCM_SAMPLE_CLK</name>
           <displayName>TX_PCM_SAMPLE_CLK</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18724,7 +18724,7 @@
         <register>
           <name>TX_RS_SMOOTH</name>
           <displayName>TX_RS_SMOOTH</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18745,7 +18745,7 @@
         <register>
           <name>TX_PCM_CH_SEL</name>
           <displayName>TX_PCM_CH_SEL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18778,7 +18778,7 @@
         <register>
           <name>TX_VOL_CTRL</name>
           <displayName>TX_VOL_CTRL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18808,7 +18808,7 @@
         <register>
           <name>TX_LR_BAL_CTRL</name>
           <displayName>TX_LR_BAL_CTRL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18853,7 +18853,7 @@
         <register>
           <name>AUDIO_TX_LRCK_DIV</name>
           <displayName>AUDIO_TX_LRCK_DIV</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18900,7 +18900,7 @@
         <register>
           <name>AUDIO_TX_BCLK_DIV</name>
           <displayName>AUDIO_TX_BCLK_DIV</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18928,7 +18928,7 @@
         <register>
           <name>AUDIO_TX_FORMAT</name>
           <displayName>AUDIO_TX_FORMAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18949,7 +18949,7 @@
         <register>
           <name>AUDIO_SERIAL_TIMING</name>
           <displayName>AUDIO_SERIAL_TIMING</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18992,7 +18992,7 @@
         <register>
           <name>AUDIO_TX_FUNC_EN</name>
           <displayName>AUDIO_TX_FUNC_EN</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19019,7 +19019,7 @@
         <register>
           <name>AUDIO_TX_PAUSE</name>
           <displayName>AUDIO_TX_PAUSE</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19040,7 +19040,7 @@
         <register>
           <name>AUDIO_I2S_SL_MERGE</name>
           <displayName>AUDIO_I2S_SL_MERGE</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19061,7 +19061,7 @@
         <register>
           <name>AUDIO_RX_FUNC_EN</name>
           <displayName>AUDIO_RX_FUNC_EN</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x100</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19088,7 +19088,7 @@
         <register>
           <name>AUDIO_RX_PAUSE</name>
           <displayName>AUDIO_RX_PAUSE</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x110</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19109,7 +19109,7 @@
         <register>
           <name>AUDIO_RX_SERIAL_TIMING</name>
           <displayName>AUDIO_RX_SERIAL_TIMING</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x120</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19152,7 +19152,7 @@
         <register>
           <name>AUDIO_RX_PCM_DW</name>
           <displayName>AUDIO_RX_PCM_DW</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x130</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19172,7 +19172,7 @@
         <register>
           <name>AUDIO_RX_LRCK_DIV</name>
           <displayName>AUDIO_RX_LRCK_DIV</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x140</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19219,7 +19219,7 @@
         <register>
           <name>AUDIO_RX_BCLK_DIV</name>
           <displayName>AUDIO_RX_BCLK_DIV</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x150</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19247,7 +19247,7 @@
         <register>
           <name>RECORD_DATA_SEL</name>
           <displayName>RECORD_DATA_SEL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x160</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19266,7 +19266,7 @@
         <register>
           <name>RX_RE_SAMPLE_CLK_DIV</name>
           <displayName>RX_RE_SAMPLE_CLK_DIV</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x170</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19296,7 +19296,7 @@
         <register>
           <name>RX_RE_SAMPLE</name>
           <displayName>RX_RE_SAMPLE</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x180</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19316,7 +19316,7 @@
         <register>
           <name>RECORD_FORMAT</name>
           <displayName>RECORD_FORMAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x190</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19348,7 +19348,7 @@
         <register>
           <name>RX_CH_SEL</name>
           <displayName>RX_CH_SEL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x1a0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19381,7 +19381,7 @@
         <register>
           <name>BT_PHONE_CTRL</name>
           <displayName>BT_PHONE_CTRL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x200</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19446,7 +19446,7 @@
         <register>
           <name>BB_PCM_FORMAT</name>
           <displayName>BB_PCM_FORMAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x210</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19515,7 +19515,7 @@
         <register>
           <name>BT_PCM_DW</name>
           <displayName>BT_PCM_DW</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x220</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19535,7 +19535,7 @@
         <register>
           <name>BT_PCM_TIMING</name>
           <displayName>BT_PCM_TIMING</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x230</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19573,7 +19573,7 @@
         <register>
           <name>BT_PCM_CLK_DUTY</name>
           <displayName>BT_PCM_CLK_DUTY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x240</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19593,7 +19593,7 @@
         <register>
           <name>BT_PCM_SYNC_DUTY</name>
           <displayName>BT_PCM_SYNC_DUTY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x250</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19612,7 +19612,7 @@
         <register>
           <name>BT_VOL_CTRL</name>
           <displayName>BT_VOL_CTRL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x260</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19639,7 +19639,7 @@
         <register>
           <name>INT_MASK</name>
           <displayName>INT_MASK</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x300</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19666,7 +19666,7 @@
         <register>
           <name>INT_STATUS</name>
           <displayName>INT_STATUS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x310</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19693,7 +19693,7 @@
         <register>
           <name>TX_DMA_ENTRY</name>
           <displayName>TX_DMA_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x400</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19712,7 +19712,7 @@
         <register>
           <name>RX_DMA_ENTRY</name>
           <displayName>RX_DMA_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x440</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19731,7 +19731,7 @@
         <register>
           <name>DMA_MASK</name>
           <displayName>DMA_MASK</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x480</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19758,7 +19758,7 @@
         <register>
           <name>DEBUG_LOOP</name>
           <displayName>DEBUG_LOOP</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x500</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19815,7 +19815,7 @@
         <register>
           <name>FIFO_STATUS</name>
           <displayName>FIFO_STATUS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x600</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19835,7 +19835,7 @@
         <register>
           <name>TX_EQUALIZER_EN</name>
           <displayName>TX_EQUALIZER_EN</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x700</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19856,7 +19856,7 @@
         <register>
           <name>TX_EQUALIZER_GAIN1</name>
           <displayName>TX_EQUALIZER_GAIN1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x710</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19909,7 +19909,7 @@
         <register>
           <name>TX_EQUALIZER_GAIN2</name>
           <displayName>TX_EQUALIZER_GAIN2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x720</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19949,7 +19949,7 @@
     </peripheral>
     <peripheral>
       <name>HPSYS_CFG</name>
-      <description/>
+      <description></description>
       <groupName>HPSYS_CFG</groupName>
       <baseAddress>0x5000b000</baseAddress>
       <addressBlock>
@@ -21551,7 +21551,7 @@
     </peripheral>
     <peripheral>
       <name>EFUSEC</name>
-      <description/>
+      <description></description>
       <groupName>EFUSEC</groupName>
       <baseAddress>0x5000c000</baseAddress>
       <addressBlock>
@@ -22453,7 +22453,7 @@
     </peripheral>
     <peripheral>
       <name>AES</name>
-      <description/>
+      <description></description>
       <groupName>AES</groupName>
       <baseAddress>0x5000d000</baseAddress>
       <addressBlock>
@@ -22465,7 +22465,7 @@
         <register>
           <name>COMMAND</name>
           <displayName>COMMAND</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x00</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22516,7 +22516,7 @@
         <register>
           <name>STATUS</name>
           <displayName>STATUS</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x04</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22551,7 +22551,7 @@
         <register>
           <name>IRQ</name>
           <displayName>IRQ</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x08</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22658,7 +22658,7 @@
         <register>
           <name>SETTING</name>
           <displayName>SETTING</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x0c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22717,7 +22717,7 @@
         <register>
           <name>AES_SETTING</name>
           <displayName>AES_SETTING</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22788,7 +22788,7 @@
         <register>
           <name>DMA_IN</name>
           <displayName>DMA_IN</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22807,7 +22807,7 @@
         <register>
           <name>DMA_OUT</name>
           <displayName>DMA_OUT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22826,7 +22826,7 @@
         <register>
           <name>DMA_DATA</name>
           <displayName>DMA_DATA</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22845,7 +22845,7 @@
         <register>
           <name>IV_W0</name>
           <displayName>IV_W0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22864,7 +22864,7 @@
         <register>
           <name>IV_W1</name>
           <displayName>IV_W1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22883,7 +22883,7 @@
         <register>
           <name>IV_W2</name>
           <displayName>IV_W2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22902,7 +22902,7 @@
         <register>
           <name>IV_W3</name>
           <displayName>IV_W3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22921,7 +22921,7 @@
         <register>
           <name>EXT_KEY_W0</name>
           <displayName>EXT_KEY_W0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22940,7 +22940,7 @@
         <register>
           <name>EXT_KEY_W1</name>
           <displayName>EXT_KEY_W1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22959,7 +22959,7 @@
         <register>
           <name>EXT_KEY_W2</name>
           <displayName>EXT_KEY_W2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22978,7 +22978,7 @@
         <register>
           <name>EXT_KEY_W3</name>
           <displayName>EXT_KEY_W3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -22997,7 +22997,7 @@
         <register>
           <name>EXT_KEY_W4</name>
           <displayName>EXT_KEY_W4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23016,7 +23016,7 @@
         <register>
           <name>EXT_KEY_W5</name>
           <displayName>EXT_KEY_W5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23035,7 +23035,7 @@
         <register>
           <name>EXT_KEY_W6</name>
           <displayName>EXT_KEY_W6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23054,7 +23054,7 @@
         <register>
           <name>EXT_KEY_W7</name>
           <displayName>EXT_KEY_W7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23073,7 +23073,7 @@
         <register>
           <name>HASH_SETTING</name>
           <displayName>HASH_SETTING</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23150,7 +23150,7 @@
         <register>
           <name>HASH_DMA_IN</name>
           <displayName>HASH_DMA_IN</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23169,7 +23169,7 @@
         <register>
           <name>HASH_DMA_DATA</name>
           <displayName>HASH_DMA_DATA</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23188,7 +23188,7 @@
         <register>
           <name>HASH_IV_H0</name>
           <displayName>HASH_IV_H0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x5c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23207,7 +23207,7 @@
         <register>
           <name>HASH_IV_H1</name>
           <displayName>HASH_IV_H1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23226,7 +23226,7 @@
         <register>
           <name>HASH_IV_H2</name>
           <displayName>HASH_IV_H2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23245,7 +23245,7 @@
         <register>
           <name>HASH_IV_H3</name>
           <displayName>HASH_IV_H3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23264,7 +23264,7 @@
         <register>
           <name>HASH_IV_H4</name>
           <displayName>HASH_IV_H4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x6c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23283,7 +23283,7 @@
         <register>
           <name>HASH_IV_H5</name>
           <displayName>HASH_IV_H5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23302,7 +23302,7 @@
         <register>
           <name>HASH_IV_H6</name>
           <displayName>HASH_IV_H6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23321,7 +23321,7 @@
         <register>
           <name>HASH_IV_H7</name>
           <displayName>HASH_IV_H7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23340,7 +23340,7 @@
         <register>
           <name>HASH_RESULT_H0</name>
           <displayName>HASH_RESULT_H0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x7c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23359,7 +23359,7 @@
         <register>
           <name>HASH_RESULT_H1</name>
           <displayName>HASH_RESULT_H1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23378,7 +23378,7 @@
         <register>
           <name>HASH_RESULT_H2</name>
           <displayName>HASH_RESULT_H2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23397,7 +23397,7 @@
         <register>
           <name>HASH_RESULT_H3</name>
           <displayName>HASH_RESULT_H3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23416,7 +23416,7 @@
         <register>
           <name>HASH_RESULT_H4</name>
           <displayName>HASH_RESULT_H4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23435,7 +23435,7 @@
         <register>
           <name>HASH_RESULT_H5</name>
           <displayName>HASH_RESULT_H5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23454,7 +23454,7 @@
         <register>
           <name>HASH_RESULT_H6</name>
           <displayName>HASH_RESULT_H6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23473,7 +23473,7 @@
         <register>
           <name>HASH_RESULT_H7</name>
           <displayName>HASH_RESULT_H7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23492,7 +23492,7 @@
         <register>
           <name>HASH_LEN_L</name>
           <displayName>HASH_LEN_L</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23511,7 +23511,7 @@
         <register>
           <name>HASH_LEN_H</name>
           <displayName>HASH_LEN_H</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23530,7 +23530,7 @@
         <register>
           <name>HASH_RESULT_LEN_L</name>
           <displayName>HASH_RESULT_LEN_L</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23549,7 +23549,7 @@
         <register>
           <name>HASH_RESULT_LEN_H</name>
           <displayName>HASH_RESULT_LEN_H</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23569,7 +23569,7 @@
     </peripheral>
     <peripheral>
       <name>TRNG</name>
-      <description/>
+      <description></description>
       <groupName>TRNG</groupName>
       <baseAddress>0x5000f000</baseAddress>
       <addressBlock>
@@ -23581,7 +23581,7 @@
         <register>
           <name>CTRL</name>
           <displayName>CTRL</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x00</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23632,7 +23632,7 @@
         <register>
           <name>STAT</name>
           <displayName>STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x04</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23675,7 +23675,7 @@
         <register>
           <name>CFG</name>
           <displayName>CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x08</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23710,7 +23710,7 @@
         <register>
           <name>IRQ</name>
           <displayName>IRQ</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x0c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23769,7 +23769,7 @@
         <register>
           <name>RAND_SEED0</name>
           <displayName>RAND_SEED0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23788,7 +23788,7 @@
         <register>
           <name>RAND_SEED1</name>
           <displayName>RAND_SEED1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23807,7 +23807,7 @@
         <register>
           <name>RAND_SEED2</name>
           <displayName>RAND_SEED2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23826,7 +23826,7 @@
         <register>
           <name>RAND_SEED3</name>
           <displayName>RAND_SEED3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23845,7 +23845,7 @@
         <register>
           <name>RAND_SEED4</name>
           <displayName>RAND_SEED4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23864,7 +23864,7 @@
         <register>
           <name>RAND_SEED5</name>
           <displayName>RAND_SEED5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23883,7 +23883,7 @@
         <register>
           <name>RAND_SEED6</name>
           <displayName>RAND_SEED6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23902,7 +23902,7 @@
         <register>
           <name>RAND_SEED7</name>
           <displayName>RAND_SEED7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23921,7 +23921,7 @@
         <register>
           <name>RAND_NUM0</name>
           <displayName>RAND_NUM0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23940,7 +23940,7 @@
         <register>
           <name>RAND_NUM1</name>
           <displayName>RAND_NUM1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23959,7 +23959,7 @@
         <register>
           <name>RAND_NUM2</name>
           <displayName>RAND_NUM2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23978,7 +23978,7 @@
         <register>
           <name>RAND_NUM3</name>
           <displayName>RAND_NUM3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -23997,7 +23997,7 @@
         <register>
           <name>RAND_NUM4</name>
           <displayName>RAND_NUM4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -24016,7 +24016,7 @@
         <register>
           <name>RAND_NUM5</name>
           <displayName>RAND_NUM5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -24035,7 +24035,7 @@
         <register>
           <name>RAND_NUM6</name>
           <displayName>RAND_NUM6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -24054,7 +24054,7 @@
         <register>
           <name>RAND_NUM7</name>
           <displayName>RAND_NUM7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -24073,7 +24073,7 @@
         <register>
           <name>CAL_CFG</name>
           <displayName>CAL_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -24124,7 +24124,7 @@
         <register>
           <name>CAL_RESULT</name>
           <displayName>CAL_RESULT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -24152,7 +24152,7 @@
     </peripheral>
     <peripheral>
       <name>MPI1</name>
-      <description/>
+      <description></description>
       <groupName>MPI</groupName>
       <baseAddress>0x50041000</baseAddress>
       <addressBlock>
@@ -25637,7 +25637,7 @@
     </peripheral>
     <peripheral>
       <name>MPI2</name>
-      <description/>
+      <description></description>
       <groupName>MPI</groupName>
       <baseAddress>0x50042000</baseAddress>
       <addressBlock>
@@ -27122,7 +27122,7 @@
     </peripheral>
     <peripheral>
       <name>SDMMC1</name>
-      <description/>
+      <description></description>
       <groupName>SDMMC</groupName>
       <baseAddress>0x50045000</baseAddress>
       <addressBlock>
@@ -28312,7 +28312,7 @@
     </peripheral>
     <peripheral>
       <name>CRC1</name>
-      <description/>
+      <description></description>
       <groupName>CRC</groupName>
       <baseAddress>0x50048000</baseAddress>
       <addressBlock>
@@ -28483,7 +28483,7 @@
     </peripheral>
     <peripheral>
       <name>PTC1</name>
-      <description/>
+      <description></description>
       <groupName>PTC</groupName>
       <baseAddress>0x50080000</baseAddress>
       <addressBlock>
@@ -28953,7 +28953,7 @@
         <register>
           <name>TCR2</name>
           <displayName>TCR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29034,7 +29034,7 @@
         <register>
           <name>TAR2</name>
           <displayName>TAR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29053,7 +29053,7 @@
         <register>
           <name>TDR2</name>
           <displayName>TDR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29104,7 +29104,7 @@
         <register>
           <name>TCR3</name>
           <displayName>TCR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29185,7 +29185,7 @@
         <register>
           <name>TAR3</name>
           <displayName>TAR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29204,7 +29204,7 @@
         <register>
           <name>TDR3</name>
           <displayName>TDR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29255,7 +29255,7 @@
         <register>
           <name>TCR4</name>
           <displayName>TCR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29336,7 +29336,7 @@
         <register>
           <name>TAR4</name>
           <displayName>TAR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29355,7 +29355,7 @@
         <register>
           <name>TDR4</name>
           <displayName>TDR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29406,7 +29406,7 @@
         <register>
           <name>TCR5</name>
           <displayName>TCR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29487,7 +29487,7 @@
         <register>
           <name>TAR5</name>
           <displayName>TAR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29506,7 +29506,7 @@
         <register>
           <name>TDR5</name>
           <displayName>TDR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29546,7 +29546,7 @@
         <register>
           <name>TCR6</name>
           <displayName>TCR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29627,7 +29627,7 @@
         <register>
           <name>TAR6</name>
           <displayName>TAR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29646,7 +29646,7 @@
         <register>
           <name>TDR6</name>
           <displayName>TDR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29686,7 +29686,7 @@
         <register>
           <name>TCR7</name>
           <displayName>TCR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29767,7 +29767,7 @@
         <register>
           <name>TAR7</name>
           <displayName>TAR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29786,7 +29786,7 @@
         <register>
           <name>TDR7</name>
           <displayName>TDR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29826,7 +29826,7 @@
         <register>
           <name>TCR8</name>
           <displayName>TCR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29907,7 +29907,7 @@
         <register>
           <name>TAR8</name>
           <displayName>TAR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -29926,7 +29926,7 @@
         <register>
           <name>TDR8</name>
           <displayName>TDR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -30042,7 +30042,7 @@
         <register>
           <name>GPIO31_0</name>
           <displayName>GPIO31_0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -30089,7 +30089,7 @@
         <register>
           <name>GPIO63_32</name>
           <displayName>GPIO63_32</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -30136,7 +30136,7 @@
         <register>
           <name>GPIO95_64</name>
           <displayName>GPIO95_64</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -30184,7 +30184,7 @@
     </peripheral>
     <peripheral>
       <name>DMAC1</name>
-      <description/>
+      <description></description>
       <groupName>DMAC</groupName>
       <baseAddress>0x50081000</baseAddress>
       <addressBlock>
@@ -30196,7 +30196,7 @@
         <register>
           <name>ISR</name>
           <displayName>ISR</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x00</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -30463,7 +30463,7 @@
         <register>
           <name>IFCR</name>
           <displayName>IFCR</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x04</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -30730,7 +30730,7 @@
         <register>
           <name>CCR1</name>
           <displayName>CCR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x08</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -30887,7 +30887,7 @@
         <register>
           <name>CNDTR1</name>
           <displayName>CNDTR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x0c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -30911,7 +30911,7 @@
         <register>
           <name>CPAR1</name>
           <displayName>CPAR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -30933,7 +30933,7 @@
         <register>
           <name>CM0AR1</name>
           <displayName>CM0AR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -30955,7 +30955,7 @@
         <register>
           <name>CBSR1</name>
           <displayName>CBSR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -30977,7 +30977,7 @@
         <register>
           <name>CCR2</name>
           <displayName>CCR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31134,7 +31134,7 @@
         <register>
           <name>CNDTR2</name>
           <displayName>CNDTR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31158,7 +31158,7 @@
         <register>
           <name>CPAR2</name>
           <displayName>CPAR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31180,7 +31180,7 @@
         <register>
           <name>CM0AR2</name>
           <displayName>CM0AR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31202,7 +31202,7 @@
         <register>
           <name>CBSR2</name>
           <displayName>CBSR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31224,7 +31224,7 @@
         <register>
           <name>CCR3</name>
           <displayName>CCR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31381,7 +31381,7 @@
         <register>
           <name>CNDTR3</name>
           <displayName>CNDTR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31405,7 +31405,7 @@
         <register>
           <name>CPAR3</name>
           <displayName>CPAR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31427,7 +31427,7 @@
         <register>
           <name>CM0AR3</name>
           <displayName>CM0AR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31449,7 +31449,7 @@
         <register>
           <name>CBSR3</name>
           <displayName>CBSR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31471,7 +31471,7 @@
         <register>
           <name>CCR4</name>
           <displayName>CCR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31628,7 +31628,7 @@
         <register>
           <name>CNDTR4</name>
           <displayName>CNDTR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31652,7 +31652,7 @@
         <register>
           <name>CPAR4</name>
           <displayName>CPAR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31674,7 +31674,7 @@
         <register>
           <name>CM0AR4</name>
           <displayName>CM0AR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31696,7 +31696,7 @@
         <register>
           <name>CBSR4</name>
           <displayName>CBSR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31718,7 +31718,7 @@
         <register>
           <name>CCR5</name>
           <displayName>CCR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31875,7 +31875,7 @@
         <register>
           <name>CNDTR5</name>
           <displayName>CNDTR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x5c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31899,7 +31899,7 @@
         <register>
           <name>CPAR5</name>
           <displayName>CPAR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31921,7 +31921,7 @@
         <register>
           <name>CM0AR5</name>
           <displayName>CM0AR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31943,7 +31943,7 @@
         <register>
           <name>CBSR5</name>
           <displayName>CBSR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -31965,7 +31965,7 @@
         <register>
           <name>CCR6</name>
           <displayName>CCR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x6c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32122,7 +32122,7 @@
         <register>
           <name>CNDTR6</name>
           <displayName>CNDTR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32146,7 +32146,7 @@
         <register>
           <name>CPAR6</name>
           <displayName>CPAR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32168,7 +32168,7 @@
         <register>
           <name>CM0AR6</name>
           <displayName>CM0AR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32190,7 +32190,7 @@
         <register>
           <name>CBSR6</name>
           <displayName>CBSR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x7c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32212,7 +32212,7 @@
         <register>
           <name>CCR7</name>
           <displayName>CCR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32369,7 +32369,7 @@
         <register>
           <name>CNDTR7</name>
           <displayName>CNDTR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32393,7 +32393,7 @@
         <register>
           <name>CPAR7</name>
           <displayName>CPAR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32415,7 +32415,7 @@
         <register>
           <name>CM0AR7</name>
           <displayName>CM0AR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32437,7 +32437,7 @@
         <register>
           <name>CBSR7</name>
           <displayName>CBSR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32459,7 +32459,7 @@
         <register>
           <name>CCR8</name>
           <displayName>CCR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32616,7 +32616,7 @@
         <register>
           <name>CNDTR8</name>
           <displayName>CNDTR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32640,7 +32640,7 @@
         <register>
           <name>CPAR8</name>
           <displayName>CPAR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32662,7 +32662,7 @@
         <register>
           <name>CM0AR8</name>
           <displayName>CM0AR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32684,7 +32684,7 @@
         <register>
           <name>CBSR8</name>
           <displayName>CBSR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32706,7 +32706,7 @@
         <register>
           <name>CSELR1</name>
           <displayName>CSELR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32749,7 +32749,7 @@
         <register>
           <name>CSELR2</name>
           <displayName>CSELR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xac</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -32793,7 +32793,7 @@
     </peripheral>
     <peripheral>
       <name>USART1</name>
-      <description/>
+      <description></description>
       <groupName>USART</groupName>
       <baseAddress>0x50084000</baseAddress>
       <addressBlock>
@@ -33420,7 +33420,7 @@
     </peripheral>
     <peripheral>
       <name>USART2</name>
-      <description/>
+      <description></description>
       <groupName>USART</groupName>
       <baseAddress>0x50085000</baseAddress>
       <addressBlock>
@@ -34047,7 +34047,7 @@
     </peripheral>
     <peripheral>
       <name>USART3</name>
-      <description/>
+      <description></description>
       <groupName>USART</groupName>
       <baseAddress>0x50086000</baseAddress>
       <addressBlock>
@@ -34674,7 +34674,7 @@
     </peripheral>
     <peripheral>
       <name>GPADC</name>
-      <description/>
+      <description></description>
       <groupName>GPADC</groupName>
       <baseAddress>0x50087000</baseAddress>
       <addressBlock>
@@ -35381,7 +35381,7 @@
     </peripheral>
     <peripheral>
       <name>AUDCODEC</name>
-      <description/>
+      <description></description>
       <groupName>AUDCODEC</groupName>
       <baseAddress>0x50088000</baseAddress>
       <addressBlock>
@@ -35393,7 +35393,7 @@
         <register>
           <name>ID</name>
           <displayName>ID</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x00</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -35412,7 +35412,7 @@
         <register>
           <name>CFG</name>
           <displayName>CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x04</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -35459,7 +35459,7 @@
         <register>
           <name>IRQ</name>
           <displayName>IRQ</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x08</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -35566,7 +35566,7 @@
         <register>
           <name>IRQ_MSK</name>
           <displayName>IRQ_MSK</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x0c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -35673,7 +35673,7 @@
         <register>
           <name>DAC_CFG</name>
           <displayName>DAC_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -35801,7 +35801,7 @@
         <register>
           <name>ADC_CFG</name>
           <displayName>ADC_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -35863,7 +35863,7 @@
         <register>
           <name>APB_STAT</name>
           <displayName>APB_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -35902,7 +35902,7 @@
         <register>
           <name>ADC_CH0_CFG</name>
           <displayName>ADC_CH0_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36018,7 +36018,7 @@
         <register>
           <name>ADC_CH1_CFG</name>
           <displayName>ADC_CH1_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36134,7 +36134,7 @@
         <register>
           <name>DAC_CH0_CFG</name>
           <displayName>DAC_CH0_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36266,7 +36266,7 @@
         <register>
           <name>DAC_CH0_CFG_EXT</name>
           <displayName>DAC_CH0_CFG_EXT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36319,7 +36319,7 @@
         <register>
           <name>DAC_CH1_CFG</name>
           <displayName>DAC_CH1_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36451,7 +36451,7 @@
         <register>
           <name>DAC_CH1_CFG_EXT</name>
           <displayName>DAC_CH1_CFG_EXT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36504,7 +36504,7 @@
         <register>
           <name>ADC_CH0_ENTRY</name>
           <displayName>ADC_CH0_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36523,7 +36523,7 @@
         <register>
           <name>ADC_CH1_ENTRY</name>
           <displayName>ADC_CH1_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36542,7 +36542,7 @@
         <register>
           <name>DAC_CH0_ENTRY</name>
           <displayName>DAC_CH0_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36561,7 +36561,7 @@
         <register>
           <name>DAC_CH1_ENTRY</name>
           <displayName>DAC_CH1_ENTRY</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36580,7 +36580,7 @@
         <register>
           <name>DAC_CH0_DEBUG</name>
           <displayName>DAC_CH0_DEBUG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36607,7 +36607,7 @@
         <register>
           <name>DAC_CH1_DEBUG</name>
           <displayName>DAC_CH1_DEBUG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x5c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36634,7 +36634,7 @@
         <register>
           <name>DAC_CH0_DC</name>
           <displayName>DAC_CH0_DC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36653,7 +36653,7 @@
         <register>
           <name>DAC_CH1_DC</name>
           <displayName>DAC_CH1_DC</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36672,7 +36672,7 @@
         <register>
           <name>COMMON_CFG</name>
           <displayName>COMMON_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36707,7 +36707,7 @@
         <register>
           <name>BG_CFG0</name>
           <displayName>BG_CFG0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36790,7 +36790,7 @@
         <register>
           <name>BG_CFG1</name>
           <displayName>BG_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36809,7 +36809,7 @@
         <register>
           <name>BG_CFG2</name>
           <displayName>BG_CFG2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x7c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36828,7 +36828,7 @@
         <register>
           <name>REFGEN_CFG</name>
           <displayName>REFGEN_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -36895,7 +36895,7 @@
         <register>
           <name>PLL_CFG0</name>
           <displayName>PLL_CFG0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37002,7 +37002,7 @@
         <register>
           <name>PLL_CFG1</name>
           <displayName>PLL_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37061,7 +37061,7 @@
         <register>
           <name>PLL_CFG2</name>
           <displayName>PLL_CFG2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37152,7 +37152,7 @@
         <register>
           <name>PLL_CFG3</name>
           <displayName>PLL_CFG3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37235,7 +37235,7 @@
         <register>
           <name>PLL_CFG4</name>
           <displayName>PLL_CFG4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37334,7 +37334,7 @@
         <register>
           <name>PLL_CFG5</name>
           <displayName>PLL_CFG5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37441,7 +37441,7 @@
         <register>
           <name>PLL_CFG6</name>
           <displayName>PLL_CFG6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37572,7 +37572,7 @@
         <register>
           <name>PLL_STAT</name>
           <displayName>PLL_STAT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37607,7 +37607,7 @@
         <register>
           <name>PLL_CAL_CFG</name>
           <displayName>PLL_CAL_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37642,7 +37642,7 @@
         <register>
           <name>PLL_CAL_RESULT</name>
           <displayName>PLL_CAL_RESULT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37669,7 +37669,7 @@
         <register>
           <name>ADC_ANA_CFG</name>
           <displayName>ADC_ANA_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xac</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37704,7 +37704,7 @@
         <register>
           <name>ADC1_CFG1</name>
           <displayName>ADC1_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37828,7 +37828,7 @@
         <register>
           <name>ADC1_CFG2</name>
           <displayName>ADC1_CFG2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37871,7 +37871,7 @@
         <register>
           <name>ADC2_CFG1</name>
           <displayName>ADC2_CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xb8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -37978,7 +37978,7 @@
         <register>
           <name>ADC2_CFG2</name>
           <displayName>ADC2_CFG2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xbc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -38021,7 +38021,7 @@
         <register>
           <name>DAC1_CFG</name>
           <displayName>DAC1_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -38136,7 +38136,7 @@
         <register>
           <name>DAC2_CFG</name>
           <displayName>DAC2_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -38251,7 +38251,7 @@
         <register>
           <name>RESERVED_IN0</name>
           <displayName>RESERVED_IN0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -38294,7 +38294,7 @@
         <register>
           <name>RESERVED_IN1</name>
           <displayName>RESERVED_IN1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -38321,7 +38321,7 @@
         <register>
           <name>RESERVED_OUT</name>
           <displayName>RESERVED_OUT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xd8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -38349,7 +38349,7 @@
     </peripheral>
     <peripheral>
       <name>TSEN</name>
-      <description/>
+      <description></description>
       <groupName>TSEN</groupName>
       <baseAddress>0x50089000</baseAddress>
       <addressBlock>
@@ -38510,7 +38510,7 @@
     </peripheral>
     <peripheral>
       <name>GPTIM1</name>
-      <description/>
+      <description></description>
       <groupName>GPTIM</groupName>
       <baseAddress>0x50090000</baseAddress>
       <addressBlock>
@@ -39697,7 +39697,7 @@
     </peripheral>
     <peripheral>
       <name>BTIM1</name>
-      <description/>
+      <description></description>
       <groupName>BTIM</groupName>
       <baseAddress>0x50092000</baseAddress>
       <addressBlock>
@@ -40025,7 +40025,7 @@
     </peripheral>
     <peripheral>
       <name>WDT1</name>
-      <description/>
+      <description></description>
       <groupName>WDT</groupName>
       <baseAddress>0x50094000</baseAddress>
       <addressBlock>
@@ -40238,7 +40238,7 @@
     </peripheral>
     <peripheral>
       <name>SPI1</name>
-      <description/>
+      <description></description>
       <groupName>SPI</groupName>
       <baseAddress>0x50095000</baseAddress>
       <addressBlock>
@@ -40897,7 +40897,7 @@
     </peripheral>
     <peripheral>
       <name>SPI2</name>
-      <description/>
+      <description></description>
       <groupName>SPI</groupName>
       <baseAddress>0x50096000</baseAddress>
       <addressBlock>
@@ -41556,7 +41556,7 @@
     </peripheral>
     <peripheral>
       <name>PDM1</name>
-      <description/>
+      <description></description>
       <groupName>PDM</groupName>
       <baseAddress>0x5009a000</baseAddress>
       <addressBlock>
@@ -41568,7 +41568,7 @@
         <register>
           <name>CFG0</name>
           <displayName>CFG0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x00</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -41635,7 +41635,7 @@
         <register>
           <name>CFG1</name>
           <displayName>CFG1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x04</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -41662,7 +41662,7 @@
         <register>
           <name>SINC_CFG</name>
           <displayName>SINC_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x08</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -41689,7 +41689,7 @@
         <register>
           <name>HPF_CFG</name>
           <displayName>HPF_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -41724,7 +41724,7 @@
         <register>
           <name>PGA_CFG</name>
           <displayName>PGA_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -41751,7 +41751,7 @@
         <register>
           <name>LPF_CFG6</name>
           <displayName>LPF_CFG6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -41778,7 +41778,7 @@
         <register>
           <name>FIFO_CFG</name>
           <displayName>FIFO_CFG</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -41837,7 +41837,7 @@
         <register>
           <name>FIFO_ST</name>
           <displayName>FIFO_ST</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -41912,7 +41912,7 @@
         <register>
           <name>INT_ST</name>
           <displayName>INT_ST</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -41939,7 +41939,7 @@
         <register>
           <name>INT_MSK</name>
           <displayName>INT_MSK</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -41966,7 +41966,7 @@
         <register>
           <name>INT_CLR</name>
           <displayName>INT_CLR</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -41994,7 +41994,7 @@
     </peripheral>
     <peripheral>
       <name>I2C1</name>
-      <description/>
+      <description></description>
       <groupName>I2C</groupName>
       <baseAddress>0x5009c000</baseAddress>
       <addressBlock>
@@ -42734,7 +42734,7 @@
     </peripheral>
     <peripheral>
       <name>I2C2</name>
-      <description/>
+      <description></description>
       <groupName>I2C</groupName>
       <baseAddress>0x5009d000</baseAddress>
       <addressBlock>
@@ -43474,7 +43474,7 @@
     </peripheral>
     <peripheral>
       <name>I2C3</name>
-      <description/>
+      <description></description>
       <groupName>I2C</groupName>
       <baseAddress>0x5009e000</baseAddress>
       <addressBlock>
@@ -44214,7 +44214,7 @@
     </peripheral>
     <peripheral>
       <name>I2C4</name>
-      <description/>
+      <description></description>
       <groupName>I2C</groupName>
       <baseAddress>0x5009f000</baseAddress>
       <addressBlock>
@@ -44954,7 +44954,7 @@
     </peripheral>
     <peripheral>
       <name>HPSYS_GPIO</name>
-      <description/>
+      <description></description>
       <groupName>HPSYS_GPIO</groupName>
       <baseAddress>0x500a0000</baseAddress>
       <addressBlock>
@@ -45841,7 +45841,7 @@
     </peripheral>
     <peripheral>
       <name>GPTIM2</name>
-      <description/>
+      <description></description>
       <groupName>GPTIM</groupName>
       <baseAddress>0x500b0000</baseAddress>
       <addressBlock>
@@ -47028,7 +47028,7 @@
     </peripheral>
     <peripheral>
       <name>BTIM2</name>
-      <description/>
+      <description></description>
       <groupName>BTIM</groupName>
       <baseAddress>0x500b1000</baseAddress>
       <addressBlock>
@@ -47356,7 +47356,7 @@
     </peripheral>
     <peripheral>
       <name>HPSYS_AON</name>
-      <description/>
+      <description></description>
       <groupName>HPSYS_AON</groupName>
       <baseAddress>0x500c0000</baseAddress>
       <addressBlock>
@@ -48420,7 +48420,7 @@
     </peripheral>
     <peripheral>
       <name>LPTIM1</name>
-      <description/>
+      <description></description>
       <groupName>LPTIM</groupName>
       <baseAddress>0x500c1000</baseAddress>
       <addressBlock>
@@ -48953,7 +48953,7 @@
     </peripheral>
     <peripheral>
       <name>LPTIM2</name>
-      <description/>
+      <description></description>
       <groupName>LPTIM</groupName>
       <baseAddress>0x500c2000</baseAddress>
       <addressBlock>
@@ -49486,7 +49486,7 @@
     </peripheral>
     <peripheral>
       <name>PMUC</name>
-      <description/>
+      <description></description>
       <groupName>PMUC</groupName>
       <baseAddress>0x500ca000</baseAddress>
       <addressBlock>
@@ -51837,7 +51837,7 @@
         <register>
           <name>HPSYS_VOUT</name>
           <displayName>HPSYS_VOUT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -51856,7 +51856,7 @@
         <register>
           <name>LPSYS_VOUT</name>
           <displayName>LPSYS_VOUT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -51875,7 +51875,7 @@
         <register>
           <name>BUCK_VOUT</name>
           <displayName>BUCK_VOUT</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -51895,7 +51895,7 @@
     </peripheral>
     <peripheral>
       <name>IWDT</name>
-      <description/>
+      <description></description>
       <groupName>WDT</groupName>
       <baseAddress>0x500cc000</baseAddress>
       <addressBlock>
@@ -52108,7 +52108,7 @@
     </peripheral>
     <peripheral>
       <name>LPSYS_RCC</name>
-      <description/>
+      <description></description>
       <groupName>LPSYS_RCC</groupName>
       <baseAddress>0x40000000</baseAddress>
       <addressBlock>
@@ -52846,7 +52846,7 @@
     </peripheral>
     <peripheral>
       <name>DMAC2</name>
-      <description/>
+      <description></description>
       <groupName>DMAC</groupName>
       <baseAddress>0x40001000</baseAddress>
       <addressBlock>
@@ -52858,7 +52858,7 @@
         <register>
           <name>ISR</name>
           <displayName>ISR</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x00</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53125,7 +53125,7 @@
         <register>
           <name>IFCR</name>
           <displayName>IFCR</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x04</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53392,7 +53392,7 @@
         <register>
           <name>CCR1</name>
           <displayName>CCR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x08</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53549,7 +53549,7 @@
         <register>
           <name>CNDTR1</name>
           <displayName>CNDTR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x0c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53573,7 +53573,7 @@
         <register>
           <name>CPAR1</name>
           <displayName>CPAR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53595,7 +53595,7 @@
         <register>
           <name>CM0AR1</name>
           <displayName>CM0AR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53617,7 +53617,7 @@
         <register>
           <name>CBSR1</name>
           <displayName>CBSR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53639,7 +53639,7 @@
         <register>
           <name>CCR2</name>
           <displayName>CCR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53796,7 +53796,7 @@
         <register>
           <name>CNDTR2</name>
           <displayName>CNDTR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53820,7 +53820,7 @@
         <register>
           <name>CPAR2</name>
           <displayName>CPAR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53842,7 +53842,7 @@
         <register>
           <name>CM0AR2</name>
           <displayName>CM0AR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53864,7 +53864,7 @@
         <register>
           <name>CBSR2</name>
           <displayName>CBSR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -53886,7 +53886,7 @@
         <register>
           <name>CCR3</name>
           <displayName>CCR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54043,7 +54043,7 @@
         <register>
           <name>CNDTR3</name>
           <displayName>CNDTR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54067,7 +54067,7 @@
         <register>
           <name>CPAR3</name>
           <displayName>CPAR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54089,7 +54089,7 @@
         <register>
           <name>CM0AR3</name>
           <displayName>CM0AR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54111,7 +54111,7 @@
         <register>
           <name>CBSR3</name>
           <displayName>CBSR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54133,7 +54133,7 @@
         <register>
           <name>CCR4</name>
           <displayName>CCR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54290,7 +54290,7 @@
         <register>
           <name>CNDTR4</name>
           <displayName>CNDTR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54314,7 +54314,7 @@
         <register>
           <name>CPAR4</name>
           <displayName>CPAR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54336,7 +54336,7 @@
         <register>
           <name>CM0AR4</name>
           <displayName>CM0AR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54358,7 +54358,7 @@
         <register>
           <name>CBSR4</name>
           <displayName>CBSR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54380,7 +54380,7 @@
         <register>
           <name>CCR5</name>
           <displayName>CCR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54537,7 +54537,7 @@
         <register>
           <name>CNDTR5</name>
           <displayName>CNDTR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x5c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54561,7 +54561,7 @@
         <register>
           <name>CPAR5</name>
           <displayName>CPAR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54583,7 +54583,7 @@
         <register>
           <name>CM0AR5</name>
           <displayName>CM0AR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54605,7 +54605,7 @@
         <register>
           <name>CBSR5</name>
           <displayName>CBSR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54627,7 +54627,7 @@
         <register>
           <name>CCR6</name>
           <displayName>CCR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x6c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54784,7 +54784,7 @@
         <register>
           <name>CNDTR6</name>
           <displayName>CNDTR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54808,7 +54808,7 @@
         <register>
           <name>CPAR6</name>
           <displayName>CPAR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54830,7 +54830,7 @@
         <register>
           <name>CM0AR6</name>
           <displayName>CM0AR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54852,7 +54852,7 @@
         <register>
           <name>CBSR6</name>
           <displayName>CBSR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x7c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -54874,7 +54874,7 @@
         <register>
           <name>CCR7</name>
           <displayName>CCR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55031,7 +55031,7 @@
         <register>
           <name>CNDTR7</name>
           <displayName>CNDTR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55055,7 +55055,7 @@
         <register>
           <name>CPAR7</name>
           <displayName>CPAR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55077,7 +55077,7 @@
         <register>
           <name>CM0AR7</name>
           <displayName>CM0AR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55099,7 +55099,7 @@
         <register>
           <name>CBSR7</name>
           <displayName>CBSR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55121,7 +55121,7 @@
         <register>
           <name>CCR8</name>
           <displayName>CCR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55278,7 +55278,7 @@
         <register>
           <name>CNDTR8</name>
           <displayName>CNDTR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55302,7 +55302,7 @@
         <register>
           <name>CPAR8</name>
           <displayName>CPAR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55324,7 +55324,7 @@
         <register>
           <name>CM0AR8</name>
           <displayName>CM0AR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55346,7 +55346,7 @@
         <register>
           <name>CBSR8</name>
           <displayName>CBSR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55368,7 +55368,7 @@
         <register>
           <name>CSELR1</name>
           <displayName>CSELR1</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55411,7 +55411,7 @@
         <register>
           <name>CSELR2</name>
           <displayName>CSELR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xac</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55455,7 +55455,7 @@
     </peripheral>
     <peripheral>
       <name>LPSYS_PINMUX</name>
-      <description/>
+      <description></description>
       <groupName>LPSYS_PINMUX</groupName>
       <baseAddress>0x40003000</baseAddress>
       <addressBlock>
@@ -55467,7 +55467,7 @@
         <register>
           <name>PAD_PB00</name>
           <displayName>PAD_PB00</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55550,7 +55550,7 @@
         <register>
           <name>PAD_PB01</name>
           <displayName>PAD_PB01</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55633,7 +55633,7 @@
         <register>
           <name>PAD_PB02</name>
           <displayName>PAD_PB02</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55716,7 +55716,7 @@
         <register>
           <name>PAD_PB03</name>
           <displayName>PAD_PB03</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -55800,7 +55800,7 @@
     </peripheral>
     <peripheral>
       <name>USART4</name>
-      <description/>
+      <description></description>
       <groupName>USART</groupName>
       <baseAddress>0x40005000</baseAddress>
       <addressBlock>
@@ -56427,7 +56427,7 @@
     </peripheral>
     <peripheral>
       <name>USART5</name>
-      <description/>
+      <description></description>
       <groupName>USART</groupName>
       <baseAddress>0x40006000</baseAddress>
       <addressBlock>
@@ -57054,7 +57054,7 @@
     </peripheral>
     <peripheral>
       <name>BTIM3</name>
-      <description/>
+      <description></description>
       <groupName>BTIM</groupName>
       <baseAddress>0x40009000</baseAddress>
       <addressBlock>
@@ -57382,7 +57382,7 @@
     </peripheral>
     <peripheral>
       <name>BTIM4</name>
-      <description/>
+      <description></description>
       <groupName>BTIM</groupName>
       <baseAddress>0x4000a000</baseAddress>
       <addressBlock>
@@ -57710,7 +57710,7 @@
     </peripheral>
     <peripheral>
       <name>WDT2</name>
-      <description/>
+      <description></description>
       <groupName>WDT</groupName>
       <baseAddress>0x4000b000</baseAddress>
       <addressBlock>
@@ -57923,7 +57923,7 @@
     </peripheral>
     <peripheral>
       <name>PTC2</name>
-      <description/>
+      <description></description>
       <groupName>PTC</groupName>
       <baseAddress>0x4000c000</baseAddress>
       <addressBlock>
@@ -58393,7 +58393,7 @@
         <register>
           <name>TCR2</name>
           <displayName>TCR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58474,7 +58474,7 @@
         <register>
           <name>TAR2</name>
           <displayName>TAR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58493,7 +58493,7 @@
         <register>
           <name>TDR2</name>
           <displayName>TDR2</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58544,7 +58544,7 @@
         <register>
           <name>TCR3</name>
           <displayName>TCR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58625,7 +58625,7 @@
         <register>
           <name>TAR3</name>
           <displayName>TAR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58644,7 +58644,7 @@
         <register>
           <name>TDR3</name>
           <displayName>TDR3</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58695,7 +58695,7 @@
         <register>
           <name>TCR4</name>
           <displayName>TCR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58776,7 +58776,7 @@
         <register>
           <name>TAR4</name>
           <displayName>TAR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58795,7 +58795,7 @@
         <register>
           <name>TDR4</name>
           <displayName>TDR4</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58846,7 +58846,7 @@
         <register>
           <name>TCR5</name>
           <displayName>TCR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58927,7 +58927,7 @@
         <register>
           <name>TAR5</name>
           <displayName>TAR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58946,7 +58946,7 @@
         <register>
           <name>TDR5</name>
           <displayName>TDR5</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -58986,7 +58986,7 @@
         <register>
           <name>TCR6</name>
           <displayName>TCR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59067,7 +59067,7 @@
         <register>
           <name>TAR6</name>
           <displayName>TAR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59086,7 +59086,7 @@
         <register>
           <name>TDR6</name>
           <displayName>TDR6</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59126,7 +59126,7 @@
         <register>
           <name>TCR7</name>
           <displayName>TCR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59207,7 +59207,7 @@
         <register>
           <name>TAR7</name>
           <displayName>TAR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59226,7 +59226,7 @@
         <register>
           <name>TDR7</name>
           <displayName>TDR7</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59266,7 +59266,7 @@
         <register>
           <name>TCR8</name>
           <displayName>TCR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59347,7 +59347,7 @@
         <register>
           <name>TAR8</name>
           <displayName>TAR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59366,7 +59366,7 @@
         <register>
           <name>TDR8</name>
           <displayName>TDR8</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59482,7 +59482,7 @@
         <register>
           <name>GPIO31_0</name>
           <displayName>GPIO31_0</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59529,7 +59529,7 @@
         <register>
           <name>GPIO63_32</name>
           <displayName>GPIO63_32</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59576,7 +59576,7 @@
         <register>
           <name>GPIO95_64</name>
           <displayName>GPIO95_64</displayName>
-          <description/>
+          <description></description>
           <addressOffset>0xe8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -59624,7 +59624,7 @@
     </peripheral>
     <peripheral>
       <name>LPSYS_CFG</name>
-      <description/>
+      <description></description>
       <groupName>LPSYS_CFG</groupName>
       <baseAddress>0x4000f000</baseAddress>
       <addressBlock>
@@ -60216,7 +60216,7 @@
     </peripheral>
     <peripheral>
       <name>LPSYS_AON</name>
-      <description/>
+      <description></description>
       <groupName>LPSYS_AON</groupName>
       <baseAddress>0x40040000</baseAddress>
       <addressBlock>
@@ -61453,7 +61453,7 @@
     </peripheral>
     <peripheral>
       <name>LPTIM3</name>
-      <description/>
+      <description></description>
       <groupName>LPTIM</groupName>
       <baseAddress>0x40042000</baseAddress>
       <addressBlock>
@@ -61986,7 +61986,7 @@
     </peripheral>
     <peripheral>
       <name>CRC2</name>
-      <description/>
+      <description></description>
       <groupName>CRC</groupName>
       <baseAddress>0x40085000</baseAddress>
       <addressBlock>
