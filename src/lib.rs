@@ -2079,10 +2079,10 @@ pub struct Dmac2 {
 unsafe impl Send for Dmac2 {}
 impl Dmac2 {
     ///Pointer to the register block
-    pub const PTR: *const dmac2::RegisterBlock = 0x4000_1000 as *const _;
+    pub const PTR: *const dmac1::RegisterBlock = 0x4000_1000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const dmac2::RegisterBlock {
+    pub const fn ptr() -> *const dmac1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -2105,7 +2105,7 @@ impl Dmac2 {
     }
 }
 impl Deref for Dmac2 {
-    type Target = dmac2::RegisterBlock;
+    type Target = dmac1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2117,7 +2117,7 @@ impl core::fmt::Debug for Dmac2 {
     }
 }
 ///DMAC2
-pub mod dmac2;
+pub use self::dmac1 as dmac2;
 ///LPSYS_PINMUX
 pub struct LpsysPinmux {
     _marker: PhantomData<*const ()>,
