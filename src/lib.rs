@@ -1711,10 +1711,10 @@ pub struct Gptim2 {
 unsafe impl Send for Gptim2 {}
 impl Gptim2 {
     ///Pointer to the register block
-    pub const PTR: *const gptim2::RegisterBlock = 0x500b_0000 as *const _;
+    pub const PTR: *const gptim1::RegisterBlock = 0x500b_0000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const gptim2::RegisterBlock {
+    pub const fn ptr() -> *const gptim1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -1737,7 +1737,7 @@ impl Gptim2 {
     }
 }
 impl Deref for Gptim2 {
-    type Target = gptim2::RegisterBlock;
+    type Target = gptim1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -1749,7 +1749,7 @@ impl core::fmt::Debug for Gptim2 {
     }
 }
 ///GPTIM2
-pub mod gptim2;
+pub use self::gptim1 as gptim2;
 ///BTIM2
 pub struct Btim2 {
     _marker: PhantomData<*const ()>,
