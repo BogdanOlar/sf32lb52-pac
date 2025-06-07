@@ -12,7 +12,7 @@ in order to minimize the amount of generated code.
 ## Generate the PAC:
 
 ```sh
-svd2rust -i EFM32PG1B.svd -c svd2rust.toml
+svd2rust -i SF32LB52x.svd -c svd2rust.toml
 rm -rf src
 form -i lib.rs -o src/ && rm lib.rs
 cargo +nightly fmt
