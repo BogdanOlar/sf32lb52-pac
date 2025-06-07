@@ -3091,7 +3091,7 @@
     </peripheral>
     <peripheral>
       <name>ATIM1</name>
-      <description></description>
+      <description>Advanced Timer</description>
       <groupName>ATIM</groupName>
       <baseAddress>0x50004000</baseAddress>
       <addressBlock>
@@ -5110,7 +5110,7 @@
     </peripheral>
     <peripheral>
       <name>AUDPRC</name>
-      <description></description>
+      <description>Audio Process Controller</description>
       <groupName>AUDPRC</groupName>
       <baseAddress>0x50005000</baseAddress>
       <addressBlock>
@@ -11671,7 +11671,7 @@
     </peripheral>
     <peripheral>
       <name>LCDC1</name>
-      <description></description>
+      <description>LCD Controller</description>
       <groupName>LCDC</groupName>
       <baseAddress>0x50008000</baseAddress>
       <addressBlock>
@@ -14504,7 +14504,7 @@
     </peripheral>
     <peripheral>
       <name>I2S1</name>
-      <description></description>
+      <description>Inter IC Sound</description>
       <groupName>I2S</groupName>
       <baseAddress>0x50009000</baseAddress>
       <addressBlock>
@@ -16896,7 +16896,7 @@
             <field>
               <name>ETR2_PIN</name>
               <description>
-              Connect GPTIM2_ETR to selected IO(PA). 
+              Connect GPTIM2_ETR to selected IO(PA).
               0 to 44 for PA00 to PA44.
               Other values for floating.
               </description>
@@ -16906,7 +16906,7 @@
             <field>
               <name>ETR1_PIN</name>
               <description>
-              Connect GPTIM1_ETR to selected IO(PA). 
+              Connect GPTIM1_ETR to selected IO(PA).
               0 to 44 for PA00 to PA44.
               Other values for floating.
               </description>
@@ -17408,7 +17408,7 @@
     </peripheral>
     <peripheral>
       <name>EFUSEC</name>
-      <description></description>
+      <description>efuse control</description>
       <groupName>EFUSEC</groupName>
       <baseAddress>0x5000c000</baseAddress>
       <addressBlock>
@@ -19186,7 +19186,7 @@
     </peripheral>
     <peripheral>
       <name>TRNG</name>
-      <description></description>
+      <description>True Random Number Generator</description>
       <groupName>TRNG</groupName>
       <baseAddress>0x5000f000</baseAddress>
       <addressBlock>
@@ -19629,7 +19629,7 @@
     </peripheral>
     <peripheral>
       <name>MPI1</name>
-      <description></description>
+      <description>Memory Peripheral Interface</description>
       <groupName>MPI</groupName>
       <baseAddress>0x50041000</baseAddress>
       <addressBlock>
@@ -21114,7 +21114,7 @@
     </peripheral>
     <peripheral derivedFrom="MPI1">
       <name>MPI2</name>
-      <description></description>
+      <description>Memory Peripheral Interface</description>
       <groupName>MPI</groupName>
       <baseAddress>0x50042000</baseAddress>
       <addressBlock>
@@ -22315,7 +22315,7 @@
     </peripheral>
     <peripheral>
       <name>CRC1</name>
-      <description></description>
+      <description>Cyclic Redundancy Check</description>
       <groupName>CRC</groupName>
       <baseAddress>0x50048000</baseAddress>
       <addressBlock>
@@ -26796,7 +26796,7 @@
     </peripheral>
     <peripheral>
       <name>USART1</name>
-      <description></description>
+      <description>USART</description>
       <groupName>USART</groupName>
       <baseAddress>0x50084000</baseAddress>
       <addressBlock>
@@ -27423,7 +27423,7 @@
     </peripheral>
     <peripheral derivedFrom="USART1">
       <name>USART2</name>
-      <description></description>
+      <description>USART</description>
       <groupName>USART</groupName>
       <baseAddress>0x50085000</baseAddress>
       <addressBlock>
@@ -27434,7 +27434,7 @@
     </peripheral>
     <peripheral derivedFrom="USART1">
       <name>USART3</name>
-      <description></description>
+      <description>USART</description>
       <groupName>USART</groupName>
       <baseAddress>0x50086000</baseAddress>
       <addressBlock>
@@ -31281,7 +31281,7 @@
     </peripheral>
     <peripheral>
       <name>GPTIM1</name>
-      <description></description>
+      <description>General Purpose Timer</description>
       <groupName>GPTIM</groupName>
       <baseAddress>0x50090000</baseAddress>
       <addressBlock>
@@ -32468,7 +32468,7 @@
     </peripheral>
     <peripheral>
       <name>BTIM1</name>
-      <description></description>
+      <description>Basic Timer</description>
       <groupName>BTIM</groupName>
       <baseAddress>0x50092000</baseAddress>
       <addressBlock>
@@ -32796,7 +32796,7 @@
     </peripheral>
     <peripheral>
       <name>WDT1</name>
-      <description></description>
+      <description>Watchdog 1</description>
       <groupName>WDT</groupName>
       <baseAddress>0x50094000</baseAddress>
       <addressBlock>
@@ -33009,7 +33009,7 @@
     </peripheral>
     <peripheral>
       <name>SPI1</name>
-      <description></description>
+      <description>SPI</description>
       <groupName>SPI</groupName>
       <baseAddress>0x50095000</baseAddress>
       <addressBlock>
@@ -33668,7 +33668,7 @@
     </peripheral>
     <peripheral derivedFrom="SPI1">
       <name>SPI2</name>
-      <description></description>
+      <description>SPI</description>
       <groupName>SPI</groupName>
       <baseAddress>0x50096000</baseAddress>
       <addressBlock>
@@ -33679,7 +33679,7 @@
     </peripheral>
     <peripheral>
       <name>PDM1</name>
-      <description></description>
+      <description>Pulse Density Modulation</description>
       <groupName>PDM</groupName>
       <baseAddress>0x5009a000</baseAddress>
       <addressBlock>
@@ -34117,7 +34117,7 @@
     </peripheral>
     <peripheral>
       <name>I2C1</name>
-      <description></description>
+      <description>I2C</description>
       <groupName>I2C</groupName>
       <baseAddress>0x5009c000</baseAddress>
       <addressBlock>
@@ -34857,7 +34857,7 @@
     </peripheral>
     <peripheral derivedFrom="I2C1">
       <name>I2C2</name>
-      <description></description>
+      <description>I2C</description>
       <groupName>I2C</groupName>
       <baseAddress>0x5009d000</baseAddress>
       <addressBlock>
@@ -34868,7 +34868,7 @@
     </peripheral>
     <peripheral derivedFrom="I2C1">
       <name>I2C3</name>
-      <description></description>
+      <description>I2C</description>
       <groupName>I2C</groupName>
       <baseAddress>0x5009e000</baseAddress>
       <addressBlock>
@@ -34879,7 +34879,7 @@
     </peripheral>
     <peripheral derivedFrom="I2C1">
       <name>I2C4</name>
-      <description></description>
+      <description>I2C</description>
       <groupName>I2C</groupName>
       <baseAddress>0x5009f000</baseAddress>
       <addressBlock>
@@ -35777,7 +35777,7 @@
     </peripheral>
     <peripheral derivedFrom="GPTIM1">
       <name>GPTIM2</name>
-      <description></description>
+      <description>General Purpose Timer</description>
       <groupName>GPTIM</groupName>
       <baseAddress>0x500b0000</baseAddress>
       <addressBlock>
@@ -35788,7 +35788,7 @@
     </peripheral>
     <peripheral derivedFrom="BTIM1">
       <name>BTIM2</name>
-      <description></description>
+      <description>Basic Timer</description>
       <groupName>BTIM</groupName>
       <baseAddress>0x500b1000</baseAddress>
       <addressBlock>
@@ -36863,7 +36863,7 @@
     </peripheral>
     <peripheral>
       <name>LPTIM1</name>
-      <description></description>
+      <description>Low Power Timer</description>
       <groupName>LPTIM</groupName>
       <baseAddress>0x500c1000</baseAddress>
       <addressBlock>
@@ -37396,7 +37396,7 @@
     </peripheral>
     <peripheral derivedFrom="LPTIM1">
       <name>LPTIM2</name>
-      <description></description>
+      <description>Low Power Timer</description>
       <groupName>LPTIM</groupName>
       <baseAddress>0x500c2000</baseAddress>
       <addressBlock>
@@ -39816,7 +39816,7 @@
     </peripheral>
     <peripheral>
       <name>IWDT</name>
-      <description></description>
+      <description>IWatchdog</description>
       <groupName>WDT</groupName>
       <baseAddress>0x500cc000</baseAddress>
       <addressBlock>
@@ -41123,7 +41123,7 @@
     </peripheral>
     <peripheral derivedFrom="USART1">
       <name>USART4</name>
-      <description></description>
+      <description>USART</description>
       <groupName>USART</groupName>
       <baseAddress>0x40005000</baseAddress>
       <addressBlock>
@@ -41134,7 +41134,7 @@
     </peripheral>
     <peripheral derivedFrom="USART1">
       <name>USART5</name>
-      <description></description>
+      <description>USART</description>
       <groupName>USART</groupName>
       <baseAddress>0x40006000</baseAddress>
       <addressBlock>
@@ -41145,7 +41145,7 @@
     </peripheral>
     <peripheral derivedFrom="BTIM1">
       <name>BTIM3</name>
-      <description></description>
+      <description>Basic Timer</description>
       <groupName>BTIM</groupName>
       <baseAddress>0x40009000</baseAddress>
       <addressBlock>
@@ -41156,7 +41156,7 @@
     </peripheral>
     <peripheral derivedFrom="BTIM1">
       <name>BTIM4</name>
-      <description></description>
+      <description>Basic Timer</description>
       <groupName>BTIM</groupName>
       <baseAddress>0x4000a000</baseAddress>
       <addressBlock>
@@ -41167,7 +41167,7 @@
     </peripheral>
     <peripheral derivedFrom="WDT1">
       <name>WDT2</name>
-      <description></description>
+      <description>Watchdog 2</description>
       <groupName>WDT</groupName>
       <baseAddress>0x4000b000</baseAddress>
       <addressBlock>
@@ -43018,7 +43018,7 @@
     </peripheral>
     <peripheral derivedFrom="LPTIM1">
       <name>LPTIM3</name>
-      <description></description>
+      <description>Low Power Timer</description>
       <groupName>LPTIM</groupName>
       <baseAddress>0x40042000</baseAddress>
       <addressBlock>
@@ -43029,7 +43029,7 @@
     </peripheral>
     <peripheral derivedFrom="CRC1">
       <name>CRC2</name>
-      <description></description>
+      <description>Cyclic Redundancy Check</description>
       <groupName>CRC</groupName>
       <baseAddress>0x40085000</baseAddress>
       <addressBlock>

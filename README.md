@@ -9,5 +9,3 @@ rm -rf src
 form -i lib.rs -o src/ && rm lib.rs
 cargo +nightly fmt
 ```
-
-derivedFrom="HPSYS_PINMUX.PAD_SA00"

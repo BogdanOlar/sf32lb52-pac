@@ -186,7 +186,7 @@ impl core::fmt::Debug for HpsysPinmux {
 }
 ///HPSYS_PINMUX
 pub mod hpsys_pinmux;
-///ATIM1
+///Advanced Timer
 pub struct Atim1 {
     _marker: PhantomData<*const ()>,
 }
@@ -230,9 +230,9 @@ impl core::fmt::Debug for Atim1 {
         f.debug_struct("Atim1").finish()
     }
 }
-///ATIM1
+///Advanced Timer
 pub mod atim1;
-///AUDPRC
+///Audio Process Controller
 pub struct Audprc {
     _marker: PhantomData<*const ()>,
 }
@@ -276,7 +276,7 @@ impl core::fmt::Debug for Audprc {
         f.debug_struct("Audprc").finish()
     }
 }
-///AUDPRC
+///Audio Process Controller
 pub mod audprc;
 ///EZIP1
 pub struct Ezip1 {
@@ -370,7 +370,7 @@ impl core::fmt::Debug for Epic {
 }
 ///EPIC
 pub mod epic;
-///LCDC1
+///LCD Controller
 pub struct Lcdc1 {
     _marker: PhantomData<*const ()>,
 }
@@ -414,9 +414,9 @@ impl core::fmt::Debug for Lcdc1 {
         f.debug_struct("Lcdc1").finish()
     }
 }
-///LCDC1
+///LCD Controller
 pub mod lcdc1;
-///I2S1
+///Inter IC Sound
 pub struct I2s1 {
     _marker: PhantomData<*const ()>,
 }
@@ -460,7 +460,7 @@ impl core::fmt::Debug for I2s1 {
         f.debug_struct("I2s1").finish()
     }
 }
-///I2S1
+///Inter IC Sound
 pub mod i2s1;
 ///HPSYS_CFG
 pub struct HpsysCfg {
@@ -508,7 +508,7 @@ impl core::fmt::Debug for HpsysCfg {
 }
 ///HPSYS_CFG
 pub mod hpsys_cfg;
-///EFUSEC
+///efuse control
 pub struct Efusec {
     _marker: PhantomData<*const ()>,
 }
@@ -552,7 +552,7 @@ impl core::fmt::Debug for Efusec {
         f.debug_struct("Efusec").finish()
     }
 }
-///EFUSEC
+///efuse control
 pub mod efusec;
 ///AES
 pub struct Aes {
@@ -600,7 +600,7 @@ impl core::fmt::Debug for Aes {
 }
 ///AES
 pub mod aes;
-///TRNG
+///True Random Number Generator
 pub struct Trng {
     _marker: PhantomData<*const ()>,
 }
@@ -644,9 +644,9 @@ impl core::fmt::Debug for Trng {
         f.debug_struct("Trng").finish()
     }
 }
-///TRNG
+///True Random Number Generator
 pub mod trng;
-///MPI1
+///Memory Peripheral Interface
 pub struct Mpi1 {
     _marker: PhantomData<*const ()>,
 }
@@ -690,9 +690,9 @@ impl core::fmt::Debug for Mpi1 {
         f.debug_struct("Mpi1").finish()
     }
 }
-///MPI1
+///Memory Peripheral Interface
 pub mod mpi1;
-///MPI2
+///Memory Peripheral Interface
 pub struct Mpi2 {
     _marker: PhantomData<*const ()>,
 }
@@ -736,7 +736,7 @@ impl core::fmt::Debug for Mpi2 {
         f.debug_struct("Mpi2").finish()
     }
 }
-///MPI2
+///Memory Peripheral Interface
 pub use self::mpi1 as mpi2;
 ///SDMMC1
 pub struct Sdmmc1 {
@@ -784,7 +784,7 @@ impl core::fmt::Debug for Sdmmc1 {
 }
 ///SDMMC1
 pub mod sdmmc1;
-///CRC1
+///Cyclic Redundancy Check
 pub struct Crc1 {
     _marker: PhantomData<*const ()>,
 }
@@ -828,7 +828,7 @@ impl core::fmt::Debug for Crc1 {
         f.debug_struct("Crc1").finish()
     }
 }
-///CRC1
+///Cyclic Redundancy Check
 pub mod crc1;
 ///PTC1
 pub struct Ptc1 {
@@ -922,7 +922,7 @@ impl core::fmt::Debug for Dmac1 {
 }
 ///DMAC1
 pub mod dmac1;
-///USART1
+///USART
 pub struct Usart1 {
     _marker: PhantomData<*const ()>,
 }
@@ -966,9 +966,9 @@ impl core::fmt::Debug for Usart1 {
         f.debug_struct("Usart1").finish()
     }
 }
-///USART1
+///USART
 pub mod usart1;
-///USART2
+///USART
 pub struct Usart2 {
     _marker: PhantomData<*const ()>,
 }
@@ -1012,9 +1012,9 @@ impl core::fmt::Debug for Usart2 {
         f.debug_struct("Usart2").finish()
     }
 }
-///USART2
+///USART
 pub use self::usart1 as usart2;
-///USART3
+///USART
 pub struct Usart3 {
     _marker: PhantomData<*const ()>,
 }
@@ -1058,7 +1058,7 @@ impl core::fmt::Debug for Usart3 {
         f.debug_struct("Usart3").finish()
     }
 }
-///USART3
+///USART
 pub use self::usart1 as usart3;
 ///GPADC
 pub struct Gpadc {
@@ -1198,7 +1198,7 @@ impl core::fmt::Debug for Tsen {
 }
 ///TSEN
 pub mod tsen;
-///GPTIM1
+///General Purpose Timer
 pub struct Gptim1 {
     _marker: PhantomData<*const ()>,
 }
@@ -1242,9 +1242,9 @@ impl core::fmt::Debug for Gptim1 {
         f.debug_struct("Gptim1").finish()
     }
 }
-///GPTIM1
+///General Purpose Timer
 pub mod gptim1;
-///BTIM1
+///Basic Timer
 pub struct Btim1 {
     _marker: PhantomData<*const ()>,
 }
@@ -1288,9 +1288,9 @@ impl core::fmt::Debug for Btim1 {
         f.debug_struct("Btim1").finish()
     }
 }
-///BTIM1
+///Basic Timer
 pub mod btim1;
-///WDT1
+///Watchdog 1
 pub struct Wdt1 {
     _marker: PhantomData<*const ()>,
 }
@@ -1334,9 +1334,9 @@ impl core::fmt::Debug for Wdt1 {
         f.debug_struct("Wdt1").finish()
     }
 }
-///WDT1
+///Watchdog 1
 pub mod wdt1;
-///SPI1
+///SPI
 pub struct Spi1 {
     _marker: PhantomData<*const ()>,
 }
@@ -1380,9 +1380,9 @@ impl core::fmt::Debug for Spi1 {
         f.debug_struct("Spi1").finish()
     }
 }
-///SPI1
+///SPI
 pub mod spi1;
-///SPI2
+///SPI
 pub struct Spi2 {
     _marker: PhantomData<*const ()>,
 }
@@ -1426,9 +1426,9 @@ impl core::fmt::Debug for Spi2 {
         f.debug_struct("Spi2").finish()
     }
 }
-///SPI2
+///SPI
 pub use self::spi1 as spi2;
-///PDM1
+///Pulse Density Modulation
 pub struct Pdm1 {
     _marker: PhantomData<*const ()>,
 }
@@ -1472,9 +1472,9 @@ impl core::fmt::Debug for Pdm1 {
         f.debug_struct("Pdm1").finish()
     }
 }
-///PDM1
+///Pulse Density Modulation
 pub mod pdm1;
-///I2C1
+///I2C
 pub struct I2c1 {
     _marker: PhantomData<*const ()>,
 }
@@ -1518,9 +1518,9 @@ impl core::fmt::Debug for I2c1 {
         f.debug_struct("I2c1").finish()
     }
 }
-///I2C1
+///I2C
 pub mod i2c1;
-///I2C2
+///I2C
 pub struct I2c2 {
     _marker: PhantomData<*const ()>,
 }
@@ -1564,9 +1564,9 @@ impl core::fmt::Debug for I2c2 {
         f.debug_struct("I2c2").finish()
     }
 }
-///I2C2
+///I2C
 pub use self::i2c1 as i2c2;
-///I2C3
+///I2C
 pub struct I2c3 {
     _marker: PhantomData<*const ()>,
 }
@@ -1610,9 +1610,9 @@ impl core::fmt::Debug for I2c3 {
         f.debug_struct("I2c3").finish()
     }
 }
-///I2C3
+///I2C
 pub use self::i2c1 as i2c3;
-///I2C4
+///I2C
 pub struct I2c4 {
     _marker: PhantomData<*const ()>,
 }
@@ -1656,7 +1656,7 @@ impl core::fmt::Debug for I2c4 {
         f.debug_struct("I2c4").finish()
     }
 }
-///I2C4
+///I2C
 pub use self::i2c1 as i2c4;
 ///HPSYS_GPIO
 pub struct HpsysGpio {
@@ -1704,7 +1704,7 @@ impl core::fmt::Debug for HpsysGpio {
 }
 ///HPSYS_GPIO
 pub mod hpsys_gpio;
-///GPTIM2
+///General Purpose Timer
 pub struct Gptim2 {
     _marker: PhantomData<*const ()>,
 }
@@ -1748,9 +1748,9 @@ impl core::fmt::Debug for Gptim2 {
         f.debug_struct("Gptim2").finish()
     }
 }
-///GPTIM2
+///General Purpose Timer
 pub use self::gptim1 as gptim2;
-///BTIM2
+///Basic Timer
 pub struct Btim2 {
     _marker: PhantomData<*const ()>,
 }
@@ -1794,7 +1794,7 @@ impl core::fmt::Debug for Btim2 {
         f.debug_struct("Btim2").finish()
     }
 }
-///BTIM2
+///Basic Timer
 pub use self::btim1 as btim2;
 ///HPSYS_AON
 pub struct HpsysAon {
@@ -1842,7 +1842,7 @@ impl core::fmt::Debug for HpsysAon {
 }
 ///HPSYS_AON
 pub mod hpsys_aon;
-///LPTIM1
+///Low Power Timer
 pub struct Lptim1 {
     _marker: PhantomData<*const ()>,
 }
@@ -1886,9 +1886,9 @@ impl core::fmt::Debug for Lptim1 {
         f.debug_struct("Lptim1").finish()
     }
 }
-///LPTIM1
+///Low Power Timer
 pub mod lptim1;
-///LPTIM2
+///Low Power Timer
 pub struct Lptim2 {
     _marker: PhantomData<*const ()>,
 }
@@ -1932,7 +1932,7 @@ impl core::fmt::Debug for Lptim2 {
         f.debug_struct("Lptim2").finish()
     }
 }
-///LPTIM2
+///Low Power Timer
 pub use self::lptim1 as lptim2;
 ///PMUC
 pub struct Pmuc {
@@ -1980,7 +1980,7 @@ impl core::fmt::Debug for Pmuc {
 }
 ///PMUC
 pub mod pmuc;
-///IWDT
+///IWatchdog
 pub struct Iwdt {
     _marker: PhantomData<*const ()>,
 }
@@ -2024,7 +2024,7 @@ impl core::fmt::Debug for Iwdt {
         f.debug_struct("Iwdt").finish()
     }
 }
-///IWDT
+///IWatchdog
 pub mod iwdt;
 ///LPSYS_RCC
 pub struct LpsysRcc {
@@ -2164,7 +2164,7 @@ impl core::fmt::Debug for LpsysPinmux {
 }
 ///LPSYS_PINMUX
 pub mod lpsys_pinmux;
-///USART4
+///USART
 pub struct Usart4 {
     _marker: PhantomData<*const ()>,
 }
@@ -2208,9 +2208,9 @@ impl core::fmt::Debug for Usart4 {
         f.debug_struct("Usart4").finish()
     }
 }
-///USART4
+///USART
 pub use self::usart1 as usart4;
-///USART5
+///USART
 pub struct Usart5 {
     _marker: PhantomData<*const ()>,
 }
@@ -2254,9 +2254,9 @@ impl core::fmt::Debug for Usart5 {
         f.debug_struct("Usart5").finish()
     }
 }
-///USART5
+///USART
 pub use self::usart1 as usart5;
-///BTIM3
+///Basic Timer
 pub struct Btim3 {
     _marker: PhantomData<*const ()>,
 }
@@ -2300,9 +2300,9 @@ impl core::fmt::Debug for Btim3 {
         f.debug_struct("Btim3").finish()
     }
 }
-///BTIM3
+///Basic Timer
 pub use self::btim1 as btim3;
-///BTIM4
+///Basic Timer
 pub struct Btim4 {
     _marker: PhantomData<*const ()>,
 }
@@ -2346,9 +2346,9 @@ impl core::fmt::Debug for Btim4 {
         f.debug_struct("Btim4").finish()
     }
 }
-///BTIM4
+///Basic Timer
 pub use self::btim1 as btim4;
-///WDT2
+///Watchdog 2
 pub struct Wdt2 {
     _marker: PhantomData<*const ()>,
 }
@@ -2392,7 +2392,7 @@ impl core::fmt::Debug for Wdt2 {
         f.debug_struct("Wdt2").finish()
     }
 }
-///WDT2
+///Watchdog 2
 pub use self::wdt1 as wdt2;
 ///PTC2
 pub struct Ptc2 {
@@ -2532,7 +2532,7 @@ impl core::fmt::Debug for LpsysAon {
 }
 ///LPSYS_AON
 pub mod lpsys_aon;
-///LPTIM3
+///Low Power Timer
 pub struct Lptim3 {
     _marker: PhantomData<*const ()>,
 }
@@ -2576,9 +2576,9 @@ impl core::fmt::Debug for Lptim3 {
         f.debug_struct("Lptim3").finish()
     }
 }
-///LPTIM3
+///Low Power Timer
 pub use self::lptim1 as lptim3;
-///CRC2
+///Cyclic Redundancy Check
 pub struct Crc2 {
     _marker: PhantomData<*const ()>,
 }
@@ -2622,7 +2622,7 @@ impl core::fmt::Debug for Crc2 {
         f.debug_struct("Crc2").finish()
     }
 }
-///CRC2
+///Cyclic Redundancy Check
 pub use self::crc1 as crc2;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
