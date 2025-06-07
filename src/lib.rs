@@ -2355,10 +2355,10 @@ pub struct Wdt2 {
 unsafe impl Send for Wdt2 {}
 impl Wdt2 {
     ///Pointer to the register block
-    pub const PTR: *const wdt2::RegisterBlock = 0x4000_b000 as *const _;
+    pub const PTR: *const wdt1::RegisterBlock = 0x4000_b000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const wdt2::RegisterBlock {
+    pub const fn ptr() -> *const wdt1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -2381,7 +2381,7 @@ impl Wdt2 {
     }
 }
 impl Deref for Wdt2 {
-    type Target = wdt2::RegisterBlock;
+    type Target = wdt1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2393,7 +2393,7 @@ impl core::fmt::Debug for Wdt2 {
     }
 }
 ///WDT2
-pub mod wdt2;
+pub use self::wdt1 as wdt2;
 ///PTC2
 pub struct Ptc2 {
     _marker: PhantomData<*const ()>,
