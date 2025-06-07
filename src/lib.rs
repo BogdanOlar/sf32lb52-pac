@@ -1757,10 +1757,10 @@ pub struct Btim2 {
 unsafe impl Send for Btim2 {}
 impl Btim2 {
     ///Pointer to the register block
-    pub const PTR: *const btim2::RegisterBlock = 0x500b_1000 as *const _;
+    pub const PTR: *const btim1::RegisterBlock = 0x500b_1000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const btim2::RegisterBlock {
+    pub const fn ptr() -> *const btim1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -1783,7 +1783,7 @@ impl Btim2 {
     }
 }
 impl Deref for Btim2 {
-    type Target = btim2::RegisterBlock;
+    type Target = btim1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -1795,7 +1795,7 @@ impl core::fmt::Debug for Btim2 {
     }
 }
 ///BTIM2
-pub mod btim2;
+pub use self::btim1 as btim2;
 ///HPSYS_AON
 pub struct HpsysAon {
     _marker: PhantomData<*const ()>,
@@ -2263,10 +2263,10 @@ pub struct Btim3 {
 unsafe impl Send for Btim3 {}
 impl Btim3 {
     ///Pointer to the register block
-    pub const PTR: *const btim3::RegisterBlock = 0x4000_9000 as *const _;
+    pub const PTR: *const btim1::RegisterBlock = 0x4000_9000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const btim3::RegisterBlock {
+    pub const fn ptr() -> *const btim1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -2289,7 +2289,7 @@ impl Btim3 {
     }
 }
 impl Deref for Btim3 {
-    type Target = btim3::RegisterBlock;
+    type Target = btim1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2301,7 +2301,7 @@ impl core::fmt::Debug for Btim3 {
     }
 }
 ///BTIM3
-pub mod btim3;
+pub use self::btim1 as btim3;
 ///BTIM4
 pub struct Btim4 {
     _marker: PhantomData<*const ()>,
@@ -2309,10 +2309,10 @@ pub struct Btim4 {
 unsafe impl Send for Btim4 {}
 impl Btim4 {
     ///Pointer to the register block
-    pub const PTR: *const btim4::RegisterBlock = 0x4000_a000 as *const _;
+    pub const PTR: *const btim1::RegisterBlock = 0x4000_a000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const btim4::RegisterBlock {
+    pub const fn ptr() -> *const btim1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -2335,7 +2335,7 @@ impl Btim4 {
     }
 }
 impl Deref for Btim4 {
-    type Target = btim4::RegisterBlock;
+    type Target = btim1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2347,7 +2347,7 @@ impl core::fmt::Debug for Btim4 {
     }
 }
 ///BTIM4
-pub mod btim4;
+pub use self::btim1 as btim4;
 ///WDT2
 pub struct Wdt2 {
     _marker: PhantomData<*const ()>,
