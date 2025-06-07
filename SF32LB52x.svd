@@ -19410,7 +19410,7 @@
         <register>
           <name>RAND_SEED0</name>
           <displayName>RAND_SEED0</displayName>
-          <description></description>
+          <description>Random seed value0. If using external random seed, write value to this register will update the random seed in use.</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19419,150 +19419,80 @@
             <field>
               <name>VAL</name>
               <description>
-              random seed value0. If using external random seed, write value to this register will update the random seed in use.
+              Random seed value. If using external random seed, write value to this register will update the random seed in use.
               </description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
           </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_SEED0">
           <name>RAND_SEED1</name>
           <displayName>RAND_SEED1</displayName>
-          <description></description>
+          <description>random seed value1. If using external random seed, write value to this register will update the random seed in use.</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random seed value1. If using external random seed, write value to this register will update the random seed in use.
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_SEED0">
           <name>RAND_SEED2</name>
           <displayName>RAND_SEED2</displayName>
-          <description></description>
+          <description>random seed value2. If using external random seed, write value to this register will update the random seed in use.</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random seed value2. If using external random seed, write value to this register will update the random seed in use.
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_SEED0">
           <name>RAND_SEED3</name>
           <displayName>RAND_SEED3</displayName>
-          <description></description>
+          <description>random seed value3. If using external random seed, write value to this register will update the random seed in use.</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random seed value3. If using external random seed, write value to this register will update the random seed in use.
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_SEED0">
           <name>RAND_SEED4</name>
           <displayName>RAND_SEED4</displayName>
-          <description></description>
+          <description>random seed value4. If using external random seed, write value to this register will update the random seed in use.</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random seed value4. If using external random seed, write value to this register will update the random seed in use.
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_SEED0">
           <name>RAND_SEED5</name>
           <displayName>RAND_SEED5</displayName>
-          <description></description>
+          <description>random seed value5. If using external random seed, write value to this register will update the random seed in use.</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random seed value5. If using external random seed, write value to this register will update the random seed in use.
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_SEED0">
           <name>RAND_SEED6</name>
           <displayName>RAND_SEED6</displayName>
-          <description></description>
+          <description>random seed value6. If using external random seed, write value to this register will update the random seed in use.</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random seed value6. If using external random seed, write value to this register will update the random seed in use.
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_SEED0">
           <name>RAND_SEED7</name>
           <displayName>RAND_SEED7</displayName>
-          <description></description>
+          <description>random seed value7. If using external random seed, write value to this register will update the random seed in use.</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random seed value7. If using external random seed, write value to this register will update the random seed in use.
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
         <register>
           <name>RAND_NUM0</name>
           <displayName>RAND_NUM0</displayName>
-          <description></description>
+          <description>random number value0</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19571,145 +19501,75 @@
             <field>
               <name>VAL</name>
               <description>
-              random number value0
+              random number value
               </description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
           </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_NUM0">
           <name>RAND_NUM1</name>
           <displayName>RAND_NUM1</displayName>
-          <description></description>
+          <description>random number value1</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random number value1
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_NUM0">
           <name>RAND_NUM2</name>
           <displayName>RAND_NUM2</displayName>
-          <description></description>
+          <description>random number value2</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random number value2
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_NUM0">
           <name>RAND_NUM3</name>
           <displayName>RAND_NUM3</displayName>
-          <description></description>
+          <description>random number value3</description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random number value3
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_NUM0">
           <name>RAND_NUM4</name>
           <displayName>RAND_NUM4</displayName>
-          <description></description>
+          <description>random number value4</description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random number value4
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_NUM0">
           <name>RAND_NUM5</name>
           <displayName>RAND_NUM5</displayName>
-          <description></description>
+          <description>random number value5</description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random number value5
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_NUM0">
           <name>RAND_NUM6</name>
           <displayName>RAND_NUM6</displayName>
-          <description></description>
+          <description>random number value6</description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random number value6
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="RAND_NUM0">
           <name>RAND_NUM7</name>
           <displayName>RAND_NUM7</displayName>
-          <description></description>
+          <description>random number value7</description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VAL</name>
-              <description>
-              random number value7
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
         <register>
           <name>CAL_CFG</name>

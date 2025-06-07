@@ -2,12 +2,12 @@
 pub type R = crate::R<RAND_SEED0rs>;
 ///Register `RAND_SEED0` writer
 pub type W = crate::W<RAND_SEED0rs>;
-///Field `VAL` reader - random seed value0. If using external random seed, write value to this register will update the random seed in use.
+///Field `VAL` reader - Random seed value. If using external random seed, write value to this register will update the random seed in use.
 pub type ValR = crate::FieldReader<u32>;
-///Field `VAL` writer - random seed value0. If using external random seed, write value to this register will update the random seed in use.
+///Field `VAL` writer - Random seed value. If using external random seed, write value to this register will update the random seed in use.
 pub type ValW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    ///Bits 0:31 - random seed value0. If using external random seed, write value to this register will update the random seed in use.
+    ///Bits 0:31 - Random seed value. If using external random seed, write value to this register will update the random seed in use.
     #[inline(always)]
     pub fn val(&self) -> ValR {
         ValR::new(self.bits)
@@ -21,13 +21,13 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    ///Bits 0:31 - random seed value0. If using external random seed, write value to this register will update the random seed in use.
+    ///Bits 0:31 - Random seed value. If using external random seed, write value to this register will update the random seed in use.
     #[inline(always)]
     pub fn val(&mut self) -> ValW<RAND_SEED0rs> {
         ValW::new(self, 0)
     }
 }
-///
+///Random seed value0. If using external random seed, write value to this register will update the random seed in use.
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`rand_seed0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_seed0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 pub struct RAND_SEED0rs;

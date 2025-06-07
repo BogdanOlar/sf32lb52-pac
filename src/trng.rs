@@ -46,82 +46,82 @@ impl RegisterBlock {
     pub const fn irq(&self) -> &Irq {
         &self.irq
     }
-    ///0x10 -
+    ///0x10 - Random seed value0. If using external random seed, write value to this register will update the random seed in use.
     #[inline(always)]
     pub const fn rand_seed0(&self) -> &RandSeed0 {
         &self.rand_seed0
     }
-    ///0x14 -
+    ///0x14 - random seed value1. If using external random seed, write value to this register will update the random seed in use.
     #[inline(always)]
     pub const fn rand_seed1(&self) -> &RandSeed1 {
         &self.rand_seed1
     }
-    ///0x18 -
+    ///0x18 - random seed value2. If using external random seed, write value to this register will update the random seed in use.
     #[inline(always)]
     pub const fn rand_seed2(&self) -> &RandSeed2 {
         &self.rand_seed2
     }
-    ///0x1c -
+    ///0x1c - random seed value3. If using external random seed, write value to this register will update the random seed in use.
     #[inline(always)]
     pub const fn rand_seed3(&self) -> &RandSeed3 {
         &self.rand_seed3
     }
-    ///0x20 -
+    ///0x20 - random seed value4. If using external random seed, write value to this register will update the random seed in use.
     #[inline(always)]
     pub const fn rand_seed4(&self) -> &RandSeed4 {
         &self.rand_seed4
     }
-    ///0x24 -
+    ///0x24 - random seed value5. If using external random seed, write value to this register will update the random seed in use.
     #[inline(always)]
     pub const fn rand_seed5(&self) -> &RandSeed5 {
         &self.rand_seed5
     }
-    ///0x28 -
+    ///0x28 - random seed value6. If using external random seed, write value to this register will update the random seed in use.
     #[inline(always)]
     pub const fn rand_seed6(&self) -> &RandSeed6 {
         &self.rand_seed6
     }
-    ///0x2c -
+    ///0x2c - random seed value7. If using external random seed, write value to this register will update the random seed in use.
     #[inline(always)]
     pub const fn rand_seed7(&self) -> &RandSeed7 {
         &self.rand_seed7
     }
-    ///0x30 -
+    ///0x30 - random number value0
     #[inline(always)]
     pub const fn rand_num0(&self) -> &RandNum0 {
         &self.rand_num0
     }
-    ///0x34 -
+    ///0x34 - random number value1
     #[inline(always)]
     pub const fn rand_num1(&self) -> &RandNum1 {
         &self.rand_num1
     }
-    ///0x38 -
+    ///0x38 - random number value2
     #[inline(always)]
     pub const fn rand_num2(&self) -> &RandNum2 {
         &self.rand_num2
     }
-    ///0x3c -
+    ///0x3c - random number value3
     #[inline(always)]
     pub const fn rand_num3(&self) -> &RandNum3 {
         &self.rand_num3
     }
-    ///0x40 -
+    ///0x40 - random number value4
     #[inline(always)]
     pub const fn rand_num4(&self) -> &RandNum4 {
         &self.rand_num4
     }
-    ///0x44 -
+    ///0x44 - random number value5
     #[inline(always)]
     pub const fn rand_num5(&self) -> &RandNum5 {
         &self.rand_num5
     }
-    ///0x48 -
+    ///0x48 - random number value6
     #[inline(always)]
     pub const fn rand_num6(&self) -> &RandNum6 {
         &self.rand_num6
     }
-    ///0x4c -
+    ///0x4c - random number value7
     #[inline(always)]
     pub const fn rand_num7(&self) -> &RandNum7 {
         &self.rand_num7
@@ -177,7 +177,7 @@ pub mod cfg;
 pub type Irq = crate::Reg<irq::IRQrs>;
 ///
 pub mod irq;
-///RAND_SEED0 (rw) register accessor:
+///RAND_SEED0 (rw) register accessor: Random seed value0. If using external random seed, write value to this register will update the random seed in use.
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`rand_seed0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_seed0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
@@ -185,79 +185,23 @@ pub mod irq;
 ///module
 #[doc(alias = "RAND_SEED0")]
 pub type RandSeed0 = crate::Reg<rand_seed0::RAND_SEED0rs>;
-///
+///Random seed value0. If using external random seed, write value to this register will update the random seed in use.
 pub mod rand_seed0;
-///RAND_SEED1 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_seed1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_seed1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_seed1`]
-///module
-#[doc(alias = "RAND_SEED1")]
-pub type RandSeed1 = crate::Reg<rand_seed1::RAND_SEED1rs>;
-///
-pub mod rand_seed1;
-///RAND_SEED2 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_seed2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_seed2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_seed2`]
-///module
-#[doc(alias = "RAND_SEED2")]
-pub type RandSeed2 = crate::Reg<rand_seed2::RAND_SEED2rs>;
-///
-pub mod rand_seed2;
-///RAND_SEED3 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_seed3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_seed3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_seed3`]
-///module
-#[doc(alias = "RAND_SEED3")]
-pub type RandSeed3 = crate::Reg<rand_seed3::RAND_SEED3rs>;
-///
-pub mod rand_seed3;
-///RAND_SEED4 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_seed4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_seed4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_seed4`]
-///module
-#[doc(alias = "RAND_SEED4")]
-pub type RandSeed4 = crate::Reg<rand_seed4::RAND_SEED4rs>;
-///
-pub mod rand_seed4;
-///RAND_SEED5 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_seed5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_seed5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_seed5`]
-///module
-#[doc(alias = "RAND_SEED5")]
-pub type RandSeed5 = crate::Reg<rand_seed5::RAND_SEED5rs>;
-///
-pub mod rand_seed5;
-///RAND_SEED6 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_seed6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_seed6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_seed6`]
-///module
-#[doc(alias = "RAND_SEED6")]
-pub type RandSeed6 = crate::Reg<rand_seed6::RAND_SEED6rs>;
-///
-pub mod rand_seed6;
-///RAND_SEED7 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_seed7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_seed7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_seed7`]
-///module
-#[doc(alias = "RAND_SEED7")]
-pub type RandSeed7 = crate::Reg<rand_seed7::RAND_SEED7rs>;
-///
-pub mod rand_seed7;
-///RAND_NUM0 (rw) register accessor:
+pub use rand_seed0 as rand_seed1;
+pub use rand_seed0 as rand_seed2;
+pub use rand_seed0 as rand_seed3;
+pub use rand_seed0 as rand_seed4;
+pub use rand_seed0 as rand_seed5;
+pub use rand_seed0 as rand_seed6;
+pub use rand_seed0 as rand_seed7;
+pub use RandSeed0 as RandSeed1;
+pub use RandSeed0 as RandSeed2;
+pub use RandSeed0 as RandSeed3;
+pub use RandSeed0 as RandSeed4;
+pub use RandSeed0 as RandSeed5;
+pub use RandSeed0 as RandSeed6;
+pub use RandSeed0 as RandSeed7;
+///RAND_NUM0 (rw) register accessor: random number value0
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`rand_num0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_num0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
@@ -265,78 +209,22 @@ pub mod rand_seed7;
 ///module
 #[doc(alias = "RAND_NUM0")]
 pub type RandNum0 = crate::Reg<rand_num0::RAND_NUM0rs>;
-///
+///random number value0
 pub mod rand_num0;
-///RAND_NUM1 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_num1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_num1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_num1`]
-///module
-#[doc(alias = "RAND_NUM1")]
-pub type RandNum1 = crate::Reg<rand_num1::RAND_NUM1rs>;
-///
-pub mod rand_num1;
-///RAND_NUM2 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_num2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_num2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_num2`]
-///module
-#[doc(alias = "RAND_NUM2")]
-pub type RandNum2 = crate::Reg<rand_num2::RAND_NUM2rs>;
-///
-pub mod rand_num2;
-///RAND_NUM3 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_num3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_num3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_num3`]
-///module
-#[doc(alias = "RAND_NUM3")]
-pub type RandNum3 = crate::Reg<rand_num3::RAND_NUM3rs>;
-///
-pub mod rand_num3;
-///RAND_NUM4 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_num4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_num4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_num4`]
-///module
-#[doc(alias = "RAND_NUM4")]
-pub type RandNum4 = crate::Reg<rand_num4::RAND_NUM4rs>;
-///
-pub mod rand_num4;
-///RAND_NUM5 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_num5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_num5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_num5`]
-///module
-#[doc(alias = "RAND_NUM5")]
-pub type RandNum5 = crate::Reg<rand_num5::RAND_NUM5rs>;
-///
-pub mod rand_num5;
-///RAND_NUM6 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_num6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_num6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_num6`]
-///module
-#[doc(alias = "RAND_NUM6")]
-pub type RandNum6 = crate::Reg<rand_num6::RAND_NUM6rs>;
-///
-pub mod rand_num6;
-///RAND_NUM7 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`rand_num7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_num7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@rand_num7`]
-///module
-#[doc(alias = "RAND_NUM7")]
-pub type RandNum7 = crate::Reg<rand_num7::RAND_NUM7rs>;
-///
-pub mod rand_num7;
+pub use rand_num0 as rand_num1;
+pub use rand_num0 as rand_num2;
+pub use rand_num0 as rand_num3;
+pub use rand_num0 as rand_num4;
+pub use rand_num0 as rand_num5;
+pub use rand_num0 as rand_num6;
+pub use rand_num0 as rand_num7;
+pub use RandNum0 as RandNum1;
+pub use RandNum0 as RandNum2;
+pub use RandNum0 as RandNum3;
+pub use RandNum0 as RandNum4;
+pub use RandNum0 as RandNum5;
+pub use RandNum0 as RandNum6;
+pub use RandNum0 as RandNum7;
 ///CAL_CFG (rw) register accessor:
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cal_cfg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cal_cfg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).

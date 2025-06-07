@@ -2,12 +2,12 @@
 pub type R = crate::R<RAND_NUM0rs>;
 ///Register `RAND_NUM0` writer
 pub type W = crate::W<RAND_NUM0rs>;
-///Field `VAL` reader - random number value0
+///Field `VAL` reader - random number value
 pub type ValR = crate::FieldReader<u32>;
-///Field `VAL` writer - random number value0
+///Field `VAL` writer - random number value
 pub type ValW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    ///Bits 0:31 - random number value0
+    ///Bits 0:31 - random number value
     #[inline(always)]
     pub fn val(&self) -> ValR {
         ValR::new(self.bits)
@@ -21,13 +21,13 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    ///Bits 0:31 - random number value0
+    ///Bits 0:31 - random number value
     #[inline(always)]
     pub fn val(&mut self) -> ValW<RAND_NUM0rs> {
         ValW::new(self, 0)
     }
 }
-///
+///random number value0
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`rand_num0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rand_num0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 pub struct RAND_NUM0rs;
