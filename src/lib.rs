@@ -1389,10 +1389,10 @@ pub struct Spi2 {
 unsafe impl Send for Spi2 {}
 impl Spi2 {
     ///Pointer to the register block
-    pub const PTR: *const spi2::RegisterBlock = 0x5009_6000 as *const _;
+    pub const PTR: *const spi1::RegisterBlock = 0x5009_6000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const spi2::RegisterBlock {
+    pub const fn ptr() -> *const spi1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -1415,7 +1415,7 @@ impl Spi2 {
     }
 }
 impl Deref for Spi2 {
-    type Target = spi2::RegisterBlock;
+    type Target = spi1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -1427,7 +1427,7 @@ impl core::fmt::Debug for Spi2 {
     }
 }
 ///SPI2
-pub mod spi2;
+pub use self::spi1 as spi2;
 ///PDM1
 pub struct Pdm1 {
     _marker: PhantomData<*const ()>,
