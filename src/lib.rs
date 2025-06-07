@@ -2401,10 +2401,10 @@ pub struct Ptc2 {
 unsafe impl Send for Ptc2 {}
 impl Ptc2 {
     ///Pointer to the register block
-    pub const PTR: *const ptc2::RegisterBlock = 0x4000_c000 as *const _;
+    pub const PTR: *const ptc1::RegisterBlock = 0x4000_c000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const ptc2::RegisterBlock {
+    pub const fn ptr() -> *const ptc1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -2427,7 +2427,7 @@ impl Ptc2 {
     }
 }
 impl Deref for Ptc2 {
-    type Target = ptc2::RegisterBlock;
+    type Target = ptc1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2439,7 +2439,7 @@ impl core::fmt::Debug for Ptc2 {
     }
 }
 ///PTC2
-pub mod ptc2;
+pub use self::ptc1 as ptc2;
 ///LPSYS_CFG
 pub struct LpsysCfg {
     _marker: PhantomData<*const ()>,
