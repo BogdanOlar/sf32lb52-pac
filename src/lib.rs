@@ -699,10 +699,10 @@ pub struct Mpi2 {
 unsafe impl Send for Mpi2 {}
 impl Mpi2 {
     ///Pointer to the register block
-    pub const PTR: *const mpi2::RegisterBlock = 0x5004_2000 as *const _;
+    pub const PTR: *const mpi1::RegisterBlock = 0x5004_2000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const mpi2::RegisterBlock {
+    pub const fn ptr() -> *const mpi1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -725,7 +725,7 @@ impl Mpi2 {
     }
 }
 impl Deref for Mpi2 {
-    type Target = mpi2::RegisterBlock;
+    type Target = mpi1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -737,7 +737,7 @@ impl core::fmt::Debug for Mpi2 {
     }
 }
 ///MPI2
-pub mod mpi2;
+pub use self::mpi1 as mpi2;
 ///SDMMC1
 pub struct Sdmmc1 {
     _marker: PhantomData<*const ()>,
