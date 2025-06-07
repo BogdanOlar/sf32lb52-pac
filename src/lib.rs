@@ -1895,10 +1895,10 @@ pub struct Lptim2 {
 unsafe impl Send for Lptim2 {}
 impl Lptim2 {
     ///Pointer to the register block
-    pub const PTR: *const lptim2::RegisterBlock = 0x500c_2000 as *const _;
+    pub const PTR: *const lptim1::RegisterBlock = 0x500c_2000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const lptim2::RegisterBlock {
+    pub const fn ptr() -> *const lptim1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -1921,7 +1921,7 @@ impl Lptim2 {
     }
 }
 impl Deref for Lptim2 {
-    type Target = lptim2::RegisterBlock;
+    type Target = lptim1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -1933,7 +1933,7 @@ impl core::fmt::Debug for Lptim2 {
     }
 }
 ///LPTIM2
-pub mod lptim2;
+pub use self::lptim1 as lptim2;
 ///PMUC
 pub struct Pmuc {
     _marker: PhantomData<*const ()>,
@@ -2539,10 +2539,10 @@ pub struct Lptim3 {
 unsafe impl Send for Lptim3 {}
 impl Lptim3 {
     ///Pointer to the register block
-    pub const PTR: *const lptim3::RegisterBlock = 0x4004_2000 as *const _;
+    pub const PTR: *const lptim1::RegisterBlock = 0x4004_2000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const lptim3::RegisterBlock {
+    pub const fn ptr() -> *const lptim1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -2565,7 +2565,7 @@ impl Lptim3 {
     }
 }
 impl Deref for Lptim3 {
-    type Target = lptim3::RegisterBlock;
+    type Target = lptim1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2577,7 +2577,7 @@ impl core::fmt::Debug for Lptim3 {
     }
 }
 ///LPTIM3
-pub mod lptim3;
+pub use self::lptim1 as lptim3;
 ///CRC2
 pub struct Crc2 {
     _marker: PhantomData<*const ()>,
