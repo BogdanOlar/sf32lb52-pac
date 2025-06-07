@@ -16,8 +16,6 @@ pub struct RegisterBlock {
     issr: Issr,
     anacr: Anacr,
     gtimr: Gtimr,
-    reserve0: Reserve0,
-    reserve1: Reserve1,
 }
 impl RegisterBlock {
     ///0x00 - Power Mode Register
@@ -89,16 +87,6 @@ impl RegisterBlock {
     #[inline(always)]
     pub const fn gtimr(&self) -> &Gtimr {
         &self.gtimr
-    }
-    ///0x38 - Reserved Register 0
-    #[inline(always)]
-    pub const fn reserve0(&self) -> &Reserve0 {
-        &self.reserve0
-    }
-    ///0x3c - Reserved Register 1
-    #[inline(always)]
-    pub const fn reserve1(&self) -> &Reserve1 {
-        &self.reserve1
     }
 }
 ///PMR (rw) register accessor: Power Mode Register
@@ -241,23 +229,3 @@ pub mod anacr;
 pub type Gtimr = crate::Reg<gtimr::GTIMRrs>;
 ///Global Timer Register
 pub mod gtimr;
-///RESERVE0 (rw) register accessor: Reserved Register 0
-///
-///You can [`read`](crate::Reg::read) this register and get [`reserve0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reserve0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@reserve0`]
-///module
-#[doc(alias = "RESERVE0")]
-pub type Reserve0 = crate::Reg<reserve0::RESERVE0rs>;
-///Reserved Register 0
-pub mod reserve0;
-///RESERVE1 (rw) register accessor: Reserved Register 1
-///
-///You can [`read`](crate::Reg::read) this register and get [`reserve1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reserve1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@reserve1`]
-///module
-#[doc(alias = "RESERVE1")]
-pub type Reserve1 = crate::Reg<reserve1::RESERVE1rs>;
-///Reserved Register 1
-pub mod reserve1;

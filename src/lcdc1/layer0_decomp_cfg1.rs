@@ -10,10 +10,6 @@ pub type BlockWidthW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DitherR = crate::BitReader;
 ///Field `DITHER` writer - dithering function 0: off 1: on
 pub type DitherW<'a, REG> = crate::BitWriter<'a, REG>;
-///Field `CFG1_RESERVED` reader -
-pub type Cfg1ReservedR = crate::FieldReader;
-///Field `CFG1_RESERVED` writer -
-pub type Cfg1ReservedW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 ///Field `FAILOVER_BITS_R` reader - failover compression mode target bits(Red)
 pub type FailoverBitsRR = crate::FieldReader;
 ///Field `FAILOVER_BITS_R` writer - failover compression mode target bits(Red)
@@ -48,11 +44,6 @@ impl R {
     #[inline(always)]
     pub fn dither(&self) -> DitherR {
         DitherR::new(((self.bits >> 1) & 1) != 0)
-    }
-    ///Bits 2:7
-    #[inline(always)]
-    pub fn cfg1_reserved(&self) -> Cfg1ReservedR {
-        Cfg1ReservedR::new(((self.bits >> 2) & 0x3f) as u8)
     }
     ///Bits 8:11 - failover compression mode target bits(Red)
     #[inline(always)]
@@ -94,7 +85,6 @@ impl core::fmt::Debug for R {
             .field("failover_bits_b", &self.failover_bits_b())
             .field("failover_bits_g", &self.failover_bits_g())
             .field("failover_bits_r", &self.failover_bits_r())
-            .field("cfg1_reserved", &self.cfg1_reserved())
             .field("dither", &self.dither())
             .field("block_width", &self.block_width())
             .finish()
@@ -110,11 +100,6 @@ impl W {
     #[inline(always)]
     pub fn dither(&mut self) -> DitherW<LAYER0_DECOMP_CFG1rs> {
         DitherW::new(self, 1)
-    }
-    ///Bits 2:7
-    #[inline(always)]
-    pub fn cfg1_reserved(&mut self) -> Cfg1ReservedW<LAYER0_DECOMP_CFG1rs> {
-        Cfg1ReservedW::new(self, 2)
     }
     ///Bits 8:11 - failover compression mode target bits(Red)
     #[inline(always)]

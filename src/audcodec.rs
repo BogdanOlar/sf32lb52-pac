@@ -49,10 +49,6 @@ pub struct RegisterBlock {
     adc2_cfg2: Adc2Cfg2,
     dac1_cfg: Dac1Cfg,
     dac2_cfg: Dac2Cfg,
-    _reserved43: [u8; 0x08],
-    reserved_in0: ReservedIn0,
-    reserved_in1: ReservedIn1,
-    reserved_out: ReservedOut,
 }
 impl RegisterBlock {
     ///0x00 -
@@ -269,21 +265,6 @@ impl RegisterBlock {
     #[inline(always)]
     pub const fn dac2_cfg(&self) -> &Dac2Cfg {
         &self.dac2_cfg
-    }
-    ///0xd0 -
-    #[inline(always)]
-    pub const fn reserved_in0(&self) -> &ReservedIn0 {
-        &self.reserved_in0
-    }
-    ///0xd4 -
-    #[inline(always)]
-    pub const fn reserved_in1(&self) -> &ReservedIn1 {
-        &self.reserved_in1
-    }
-    ///0xd8 -
-    #[inline(always)]
-    pub const fn reserved_out(&self) -> &ReservedOut {
-        &self.reserved_out
     }
 }
 ///ID (rw) register accessor:
@@ -716,33 +697,3 @@ pub mod dac1_cfg;
 pub type Dac2Cfg = crate::Reg<dac2_cfg::DAC2_CFGrs>;
 ///
 pub mod dac2_cfg;
-///RESERVED_IN0 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`reserved_in0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reserved_in0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@reserved_in0`]
-///module
-#[doc(alias = "RESERVED_IN0")]
-pub type ReservedIn0 = crate::Reg<reserved_in0::RESERVED_IN0rs>;
-///
-pub mod reserved_in0;
-///RESERVED_IN1 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`reserved_in1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reserved_in1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@reserved_in1`]
-///module
-#[doc(alias = "RESERVED_IN1")]
-pub type ReservedIn1 = crate::Reg<reserved_in1::RESERVED_IN1rs>;
-///
-pub mod reserved_in1;
-///RESERVED_OUT (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`reserved_out::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reserved_out::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@reserved_out`]
-///module
-#[doc(alias = "RESERVED_OUT")]
-pub type ReservedOut = crate::Reg<reserved_out::RESERVED_OUTrs>;
-///
-pub mod reserved_out;

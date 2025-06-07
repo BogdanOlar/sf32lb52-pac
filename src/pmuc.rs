@@ -27,7 +27,7 @@ pub struct RegisterBlock {
     lpsys_swr: LpsysSwr,
     peri_ldo: PeriLdo,
     pmu_tr: PmuTr,
-    pmu_rsvd: PmuRsvd,
+    _reserved25: [u8; 0x04],
     hxt_cr1: HxtCr1,
     hxt_cr2: HxtCr2,
     hxt_cr3: HxtCr3,
@@ -36,7 +36,7 @@ pub struct RegisterBlock {
     dbl96_calr: Dbl96Calr,
     cau_bgr: CauBgr,
     cau_tr: CauTr,
-    cau_rsvd: CauRsvd,
+    _reserved33: [u8; 0x04],
     wkup_cnt: WkupCnt,
     pwrkey_cnt: PwrkeyCnt,
     hpsys_vout: HpsysVout,
@@ -169,11 +169,6 @@ impl RegisterBlock {
     pub const fn pmu_tr(&self) -> &PmuTr {
         &self.pmu_tr
     }
-    ///0x64 - PMU Reserved Register
-    #[inline(always)]
-    pub const fn pmu_rsvd(&self) -> &PmuRsvd {
-        &self.pmu_rsvd
-    }
     ///0x68 - HXT48 Control Register 1
     #[inline(always)]
     pub const fn hxt_cr1(&self) -> &HxtCr1 {
@@ -213,11 +208,6 @@ impl RegisterBlock {
     #[inline(always)]
     pub const fn cau_tr(&self) -> &CauTr {
         &self.cau_tr
-    }
-    ///0x88 - CAU Reserved Register
-    #[inline(always)]
-    pub const fn cau_rsvd(&self) -> &CauRsvd {
-        &self.cau_rsvd
     }
     ///0x8c - Wakeup Count Register
     #[inline(always)]
@@ -495,16 +485,6 @@ pub mod peri_ldo;
 pub type PmuTr = crate::Reg<pmu_tr::PMU_TRrs>;
 ///PMU Test Register
 pub mod pmu_tr;
-///PMU_RSVD (rw) register accessor: PMU Reserved Register
-///
-///You can [`read`](crate::Reg::read) this register and get [`pmu_rsvd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pmu_rsvd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pmu_rsvd`]
-///module
-#[doc(alias = "PMU_RSVD")]
-pub type PmuRsvd = crate::Reg<pmu_rsvd::PMU_RSVDrs>;
-///PMU Reserved Register
-pub mod pmu_rsvd;
 ///HXT_CR1 (rw) register accessor: HXT48 Control Register 1
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`hxt_cr1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hxt_cr1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
@@ -585,16 +565,6 @@ pub mod cau_bgr;
 pub type CauTr = crate::Reg<cau_tr::CAU_TRrs>;
 ///CAU Test Register
 pub mod cau_tr;
-///CAU_RSVD (rw) register accessor: CAU Reserved Register
-///
-///You can [`read`](crate::Reg::read) this register and get [`cau_rsvd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cau_rsvd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@cau_rsvd`]
-///module
-#[doc(alias = "CAU_RSVD")]
-pub type CauRsvd = crate::Reg<cau_rsvd::CAU_RSVDrs>;
-///CAU Reserved Register
-pub mod cau_rsvd;
 ///WKUP_CNT (rw) register accessor: Wakeup Count Register
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`wkup_cnt::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wkup_cnt::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).

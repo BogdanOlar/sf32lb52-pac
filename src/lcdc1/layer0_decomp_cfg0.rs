@@ -22,10 +22,6 @@ pub type LosslessQidx1W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type LosslessQidx2R = crate::FieldReader;
 ///Field `LOSSLESS_QIDX2` writer - condition to decrease qidx
 pub type LosslessQidx2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-///Field `CFG0_RESERVED` reader -
-pub type Cfg0ReservedR = crate::FieldReader<u16>;
-///Field `CFG0_RESERVED` writer -
-pub type Cfg0ReservedW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     ///Bits 0:3 - extra bit for high quality bit
     #[inline(always)]
@@ -52,16 +48,10 @@ impl R {
     pub fn lossless_qidx2(&self) -> LosslessQidx2R {
         LosslessQidx2R::new(((self.bits >> 16) & 0x0f) as u8)
     }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn cfg0_reserved(&self) -> Cfg0ReservedR {
-        Cfg0ReservedR::new(((self.bits >> 20) & 0x0fff) as u16)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("LAYER0_DECOMP_CFG0")
-            .field("cfg0_reserved", &self.cfg0_reserved())
             .field("lossless_qidx2", &self.lossless_qidx2())
             .field("lossless_qidx1", &self.lossless_qidx1())
             .field("use_lossless_qidx", &self.use_lossless_qidx())
@@ -95,11 +85,6 @@ impl W {
     #[inline(always)]
     pub fn lossless_qidx2(&mut self) -> LosslessQidx2W<LAYER0_DECOMP_CFG0rs> {
         LosslessQidx2W::new(self, 16)
-    }
-    ///Bits 20:31
-    #[inline(always)]
-    pub fn cfg0_reserved(&mut self) -> Cfg0ReservedW<LAYER0_DECOMP_CFG0rs> {
-        Cfg0ReservedW::new(self, 20)
     }
 }
 ///

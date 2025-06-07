@@ -7452,60 +7452,6 @@
             </field>
           </fields>
         </register>
-        <register>
-          <name>RESERVED_IN</name>
-          <displayName>RESERVED_IN</displayName>
-          <description></description>
-          <addressOffset>0x138</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CTRL_2</name>
-              <description>
-              reserved control 2
-              </description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>CTRL_1</name>
-              <description>
-              reserved control 1
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>CTRL_0</name>
-              <description>
-              reserved control 0
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RESERVED_OUT</name>
-          <displayName>RESERVED_OUT</displayName>
-          <description></description>
-          <addressOffset>0x13c</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>STAT</name>
-              <description>
-              reserved status
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
       </registers>
     </peripheral>
     <peripheral>
@@ -12383,13 +12329,6 @@
           <resetValue>0x01055982</resetValue>
           <fields>
             <field>
-              <name>CFG0_RESERVED</name>
-              <description>
-              </description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>12</bitWidth>
-            </field>
-            <field>
               <name>LOSSLESS_QIDX2</name>
               <description>
               condition to decrease qidx
@@ -12487,13 +12426,6 @@
               </description>
               <bitOffset>8</bitOffset>
               <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>CFG1_RESERVED</name>
-              <description>
-              </description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>6</bitWidth>
             </field>
             <field>
               <name>DITHER</name>
@@ -16463,49 +16395,6 @@
           </fields>
         </register>
         <register>
-          <name>SYS_RSVD</name>
-          <displayName>SYS_RSVD</displayName>
-          <description>HPSYS RSVD Register</description>
-          <addressOffset>0x44</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>RESERVE3</name>
-              <description>
-              reserved for debug
-              </description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE2</name>
-              <description>
-              reserved for debug
-              </description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE1</name>
-              <description>
-              reserved for debug
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE0</name>
-              <description>
-              reserved for debug
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
           <name>I2C1_PINR</name>
           <displayName>I2C1_PINR</displayName>
           <description>I2C1 Pin Register</description>
@@ -17233,49 +17122,6 @@
           </fields>
         </register>
         <register>
-          <name>ANAU_RSVD</name>
-          <displayName>ANAU_RSVD</displayName>
-          <description>ANAU Reserve Register</description>
-          <addressOffset>0x8c</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>RESERVE3</name>
-              <description>
-              reserved for debug
-              </description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE2</name>
-              <description>
-              reserved for debug
-              </description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE1</name>
-              <description>
-              reserved for debug
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE0</name>
-              <description>
-              reserved for debug
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
           <name>ANATR</name>
           <displayName>ANATR</displayName>
           <description>Analog Test Register</description>
@@ -17366,41 +17212,6 @@
               </description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CAU2_RSVD</name>
-          <displayName>CAU2_RSVD</displayName>
-          <description>CAU2 RSVD Register1</description>
-          <addressOffset>0x98</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>RESERVE2</name>
-              <description>
-              reserved for debug
-              </description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE1</name>
-              <description>
-              reserved for debug
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE0</name>
-              <description>
-              reserved for debug
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
             </field>
           </fields>
         </register>
@@ -18243,20 +18054,6 @@
           <access>read-write</access>
           <resetValue>0x0</resetValue>
           <fields>
-            <field>
-              <name>RESERVE1</name>
-              <description>
-              </description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE0</name>
-              <description>
-              </description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
             <field>
               <name>LDO_DC_TR</name>
               <description>
@@ -31019,103 +30816,6 @@
             </field>
           </fields>
         </register>
-        <register>
-          <name>RESERVED_IN0</name>
-          <displayName>RESERVED_IN0</displayName>
-          <description></description>
-          <addressOffset>0xd0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CTRL3</name>
-              <description>
-              reserved control 3
-              </description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>CTRL2</name>
-              <description>
-              reserved control 2
-              </description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>CTRL1</name>
-              <description>
-              reserved control 1
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>CTRL0</name>
-              <description>
-              reserved control 0
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RESERVED_IN1</name>
-          <displayName>RESERVED_IN1</displayName>
-          <description></description>
-          <addressOffset>0xd4</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CTRL5</name>
-              <description>
-              reserved control 5
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>CTRL4</name>
-              <description>
-              reserved control 4
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RESERVED_OUT</name>
-          <displayName>RESERVED_OUT</displayName>
-          <description></description>
-          <addressOffset>0xd8</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>STAT1</name>
-              <description>
-              reserved status1
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>STAT0</name>
-              <description>
-              reserved status0
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
       </registers>
     </peripheral>
     <peripheral>
@@ -34478,7 +34178,7 @@
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            </fields>
+          </fields>
         </register>
         <register>
           <name>SR</name>
@@ -36821,44 +36521,6 @@
             </field>
           </fields>
         </register>
-        <register>
-          <name>RESERVE0</name>
-          <displayName>RESERVE0</displayName>
-          <description>Reserved Register 0</description>
-          <addressOffset>0x38</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              for debug only
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RESERVE1</name>
-          <displayName>RESERVE1</displayName>
-          <description>Reserved Register 1</description>
-          <addressOffset>0x3c</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              for debug only
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
       </registers>
     </peripheral>
     <peripheral>
@@ -39090,45 +38752,6 @@
           </fields>
         </register>
         <register>
-          <name>PMU_RSVD</name>
-          <displayName>PMU_RSVD</displayName>
-          <description>PMU Reserved Register</description>
-          <addressOffset>0x64</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RESERVE3</name>
-              <description>
-              </description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE2</name>
-              <description>
-              </description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE1</name>
-              <description>
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE0</name>
-              <description>
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
           <name>HXT_CR1</name>
           <displayName>HXT_CR1</displayName>
           <description>HXT48 Control Register 1</description>
@@ -39676,38 +39299,6 @@
               </description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CAU_RSVD</name>
-          <displayName>CAU_RSVD</displayName>
-          <description>CAU Reserved Register</description>
-          <addressOffset>0x88</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RESERVE2</name>
-              <description>
-              </description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE1</name>
-              <description>
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RESERVE0</name>
-              <description>
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
             </field>
           </fields>
         </register>
@@ -42932,44 +42523,6 @@
               <name>CNT</name>
               <description>
               Global timer value
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RESERVE0</name>
-          <displayName>RESERVE0</displayName>
-          <description>Reserved Register 0</description>
-          <addressOffset>0x4c</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              for debug only
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RESERVE1</name>
-          <displayName>RESERVE1</displayName>
-          <description>Reserved Register 1</description>
-          <addressOffset>0x50</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              for debug only
               </description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>

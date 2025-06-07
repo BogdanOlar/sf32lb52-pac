@@ -15,7 +15,7 @@ pub struct RegisterBlock {
     _reserved10: [u8; 0x14],
     lpirq: Lpirq,
     usbcr: Usbcr,
-    sys_rsvd: SysRsvd,
+    _reserved12: [u8; 0x04],
     i2c1_pinr: I2c1Pinr,
     i2c2_pinr: I2c2Pinr,
     i2c3_pinr: I2c3Pinr,
@@ -33,10 +33,9 @@ pub struct RegisterBlock {
     atim1_pinr3: Atim1Pinr3,
     pta_pinr: PtaPinr,
     anau_cr: AnauCr,
-    anau_rsvd: AnauRsvd,
+    _reserved29: [u8; 0x04],
     anatr: Anatr,
     cau2_cr: Cau2Cr,
-    cau2_rsvd: Cau2Rsvd,
 }
 impl RegisterBlock {
     ///0x00 - Boot Mode Register
@@ -98,11 +97,6 @@ impl RegisterBlock {
     #[inline(always)]
     pub const fn usbcr(&self) -> &Usbcr {
         &self.usbcr
-    }
-    ///0x44 - HPSYS RSVD Register
-    #[inline(always)]
-    pub const fn sys_rsvd(&self) -> &SysRsvd {
-        &self.sys_rsvd
     }
     ///0x48 - I2C1 Pin Register
     #[inline(always)]
@@ -189,11 +183,6 @@ impl RegisterBlock {
     pub const fn anau_cr(&self) -> &AnauCr {
         &self.anau_cr
     }
-    ///0x8c - ANAU Reserve Register
-    #[inline(always)]
-    pub const fn anau_rsvd(&self) -> &AnauRsvd {
-        &self.anau_rsvd
-    }
     ///0x90 - Analog Test Register
     #[inline(always)]
     pub const fn anatr(&self) -> &Anatr {
@@ -203,11 +192,6 @@ impl RegisterBlock {
     #[inline(always)]
     pub const fn cau2_cr(&self) -> &Cau2Cr {
         &self.cau2_cr
-    }
-    ///0x98 - CAU2 RSVD Register1
-    #[inline(always)]
-    pub const fn cau2_rsvd(&self) -> &Cau2Rsvd {
-        &self.cau2_rsvd
     }
 }
 ///BMR (rw) register accessor: Boot Mode Register
@@ -330,16 +314,6 @@ pub mod lpirq;
 pub type Usbcr = crate::Reg<usbcr::USBCRrs>;
 ///USB Control register
 pub mod usbcr;
-///SYS_RSVD (rw) register accessor: HPSYS RSVD Register
-///
-///You can [`read`](crate::Reg::read) this register and get [`sys_rsvd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sys_rsvd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@sys_rsvd`]
-///module
-#[doc(alias = "SYS_RSVD")]
-pub type SysRsvd = crate::Reg<sys_rsvd::SYS_RSVDrs>;
-///HPSYS RSVD Register
-pub mod sys_rsvd;
 ///I2C1_PINR (rw) register accessor: I2C1 Pin Register
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`i2c1_pinr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`i2c1_pinr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
@@ -510,16 +484,6 @@ pub mod pta_pinr;
 pub type AnauCr = crate::Reg<anau_cr::ANAU_CRrs>;
 ///ANAU Control Register
 pub mod anau_cr;
-///ANAU_RSVD (rw) register accessor: ANAU Reserve Register
-///
-///You can [`read`](crate::Reg::read) this register and get [`anau_rsvd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`anau_rsvd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@anau_rsvd`]
-///module
-#[doc(alias = "ANAU_RSVD")]
-pub type AnauRsvd = crate::Reg<anau_rsvd::ANAU_RSVDrs>;
-///ANAU Reserve Register
-pub mod anau_rsvd;
 ///ANATR (rw) register accessor: Analog Test Register
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`anatr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`anatr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
@@ -540,13 +504,3 @@ pub mod anatr;
 pub type Cau2Cr = crate::Reg<cau2_cr::CAU2_CRrs>;
 ///CAU2 Control Register
 pub mod cau2_cr;
-///CAU2_RSVD (rw) register accessor: CAU2 RSVD Register1
-///
-///You can [`read`](crate::Reg::read) this register and get [`cau2_rsvd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cau2_rsvd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@cau2_rsvd`]
-///module
-#[doc(alias = "CAU2_RSVD")]
-pub type Cau2Rsvd = crate::Reg<cau2_rsvd::CAU2_RSVDrs>;
-///CAU2 RSVD Register1
-pub mod cau2_rsvd;

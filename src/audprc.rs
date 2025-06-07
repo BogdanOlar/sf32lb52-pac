@@ -78,8 +78,6 @@ pub struct RegisterBlock {
     dac_eq_cfg47: DacEqCfg47,
     dac_eq_cfg48: DacEqCfg48,
     dac_eq_cfg49: DacEqCfg49,
-    reserved_in: ReservedIn,
-    reserved_out: ReservedOut,
 }
 impl RegisterBlock {
     ///0x00 -
@@ -456,16 +454,6 @@ impl RegisterBlock {
     #[inline(always)]
     pub const fn dac_eq_cfg49(&self) -> &DacEqCfg49 {
         &self.dac_eq_cfg49
-    }
-    ///0x138 -
-    #[inline(always)]
-    pub const fn reserved_in(&self) -> &ReservedIn {
-        &self.reserved_in
-    }
-    ///0x13c -
-    #[inline(always)]
-    pub const fn reserved_out(&self) -> &ReservedOut {
-        &self.reserved_out
     }
 }
 ///ID (rw) register accessor:
@@ -1218,23 +1206,3 @@ pub mod dac_eq_cfg48;
 pub type DacEqCfg49 = crate::Reg<dac_eq_cfg49::DAC_EQ_CFG49rs>;
 ///
 pub mod dac_eq_cfg49;
-///RESERVED_IN (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`reserved_in::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reserved_in::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@reserved_in`]
-///module
-#[doc(alias = "RESERVED_IN")]
-pub type ReservedIn = crate::Reg<reserved_in::RESERVED_INrs>;
-///
-pub mod reserved_in;
-///RESERVED_OUT (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`reserved_out::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reserved_out::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@reserved_out`]
-///module
-#[doc(alias = "RESERVED_OUT")]
-pub type ReservedOut = crate::Reg<reserved_out::RESERVED_OUTrs>;
-///
-pub mod reserved_out;

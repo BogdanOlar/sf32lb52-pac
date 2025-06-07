@@ -18,14 +18,6 @@ pub type LdoModeW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LdoDcTrR = crate::FieldReader;
 ///Field `LDO_DC_TR` writer -
 pub type LdoDcTrW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-///Field `RESERVE0` reader -
-pub type Reserve0R = crate::FieldReader;
-///Field `RESERVE0` writer -
-pub type Reserve0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-///Field `RESERVE1` reader -
-pub type Reserve1R = crate::FieldReader;
-///Field `RESERVE1` writer -
-pub type Reserve1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     ///Bit 0
     #[inline(always)]
@@ -47,22 +39,10 @@ impl R {
     pub fn ldo_dc_tr(&self) -> LdoDcTrR {
         LdoDcTrR::new(((self.bits >> 8) & 7) as u8)
     }
-    ///Bits 16:23
-    #[inline(always)]
-    pub fn reserve0(&self) -> Reserve0R {
-        Reserve0R::new(((self.bits >> 16) & 0xff) as u8)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn reserve1(&self) -> Reserve1R {
-        Reserve1R::new(((self.bits >> 24) & 0xff) as u8)
-    }
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("ANACR")
-            .field("reserve1", &self.reserve1())
-            .field("reserve0", &self.reserve0())
             .field("ldo_dc_tr", &self.ldo_dc_tr())
             .field("ldo_mode", &self.ldo_mode())
             .field("ldo_vref_sel", &self.ldo_vref_sel())
@@ -90,16 +70,6 @@ impl W {
     #[inline(always)]
     pub fn ldo_dc_tr(&mut self) -> LdoDcTrW<ANACRrs> {
         LdoDcTrW::new(self, 8)
-    }
-    ///Bits 16:23
-    #[inline(always)]
-    pub fn reserve0(&mut self) -> Reserve0W<ANACRrs> {
-        Reserve0W::new(self, 16)
-    }
-    ///Bits 24:31
-    #[inline(always)]
-    pub fn reserve1(&mut self) -> Reserve1W<ANACRrs> {
-        Reserve1W::new(self, 24)
     }
 }
 ///Bank3 Data7
