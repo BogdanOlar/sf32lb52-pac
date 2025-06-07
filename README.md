@@ -6,6 +6,7 @@ The code is generated automatically from a (modified) [vendor-supplied SVD](http
 The `.svd` file has been modified to:
 - derive peripherals from each other (e.g. derive `I2C2` and `I2C3` from `I2C1`, etc)
 - remove all kinds of "reserved" registers and fields
+
 in order to minimize the amount of generated code.
 
 ## Generate the PAC:
