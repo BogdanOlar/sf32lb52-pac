@@ -1,6 +1,6 @@
 [package]
-name = "SF32LB52-pac"
-version = "0.1.0"
+name = "sf32lb52-pac"
+version = "0.1.1"
 edition = "2021"
 authors = ["Bogdan Olar <olar.bogdan.dev@gmail.com>"]
 description = "Peripheral access API for SF32LB52 microcontrollers"
