@@ -975,10 +975,10 @@ pub struct Usart2 {
 unsafe impl Send for Usart2 {}
 impl Usart2 {
     ///Pointer to the register block
-    pub const PTR: *const usart2::RegisterBlock = 0x5008_5000 as *const _;
+    pub const PTR: *const usart1::RegisterBlock = 0x5008_5000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const usart2::RegisterBlock {
+    pub const fn ptr() -> *const usart1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -1001,7 +1001,7 @@ impl Usart2 {
     }
 }
 impl Deref for Usart2 {
-    type Target = usart2::RegisterBlock;
+    type Target = usart1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -1013,7 +1013,7 @@ impl core::fmt::Debug for Usart2 {
     }
 }
 ///USART2
-pub mod usart2;
+pub use self::usart1 as usart2;
 ///USART3
 pub struct Usart3 {
     _marker: PhantomData<*const ()>,
@@ -1021,10 +1021,10 @@ pub struct Usart3 {
 unsafe impl Send for Usart3 {}
 impl Usart3 {
     ///Pointer to the register block
-    pub const PTR: *const usart3::RegisterBlock = 0x5008_6000 as *const _;
+    pub const PTR: *const usart1::RegisterBlock = 0x5008_6000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const usart3::RegisterBlock {
+    pub const fn ptr() -> *const usart1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -1047,7 +1047,7 @@ impl Usart3 {
     }
 }
 impl Deref for Usart3 {
-    type Target = usart3::RegisterBlock;
+    type Target = usart1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -1059,7 +1059,7 @@ impl core::fmt::Debug for Usart3 {
     }
 }
 ///USART3
-pub mod usart3;
+pub use self::usart1 as usart3;
 ///GPADC
 pub struct Gpadc {
     _marker: PhantomData<*const ()>,
@@ -2171,10 +2171,10 @@ pub struct Usart4 {
 unsafe impl Send for Usart4 {}
 impl Usart4 {
     ///Pointer to the register block
-    pub const PTR: *const usart4::RegisterBlock = 0x4000_5000 as *const _;
+    pub const PTR: *const usart1::RegisterBlock = 0x4000_5000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const usart4::RegisterBlock {
+    pub const fn ptr() -> *const usart1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -2197,7 +2197,7 @@ impl Usart4 {
     }
 }
 impl Deref for Usart4 {
-    type Target = usart4::RegisterBlock;
+    type Target = usart1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2209,7 +2209,7 @@ impl core::fmt::Debug for Usart4 {
     }
 }
 ///USART4
-pub mod usart4;
+pub use self::usart1 as usart4;
 ///USART5
 pub struct Usart5 {
     _marker: PhantomData<*const ()>,
@@ -2217,10 +2217,10 @@ pub struct Usart5 {
 unsafe impl Send for Usart5 {}
 impl Usart5 {
     ///Pointer to the register block
-    pub const PTR: *const usart5::RegisterBlock = 0x4000_6000 as *const _;
+    pub const PTR: *const usart1::RegisterBlock = 0x4000_6000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const usart5::RegisterBlock {
+    pub const fn ptr() -> *const usart1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -2243,7 +2243,7 @@ impl Usart5 {
     }
 }
 impl Deref for Usart5 {
-    type Target = usart5::RegisterBlock;
+    type Target = usart1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2255,7 +2255,7 @@ impl core::fmt::Debug for Usart5 {
     }
 }
 ///USART5
-pub mod usart5;
+pub use self::usart1 as usart5;
 ///BTIM3
 pub struct Btim3 {
     _marker: PhantomData<*const ()>,
