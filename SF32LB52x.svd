@@ -4485,98 +4485,74 @@
         <register>
           <name>CCR1</name>
           <displayName>CCR1</displayName>
-          <description>Capture/Compare register 1</description>
+          <description>
+            Capture/Compare register 1
+            If channel CC1 is configured as output:
+            CCR1 is the value to be loaded in the actual capture/compare 1 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR1 register (bit OC1PE). Else the preload value is copied in the active capture/compare 1 register when an update event occurs.
+            The active capture/compare register contains the value to be compared to the counter CNT and signaled on OC1 output.
+            If channel CC1is configured as input:
+            CCR1 is the counter value transferred by the last input capture 1 event (IC1).
+          </description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>CCR1</name>
-              <description>
-              Capture/Compare 1 value
-              If channel CC1 is configured as output:
-              CCR1 is the value to be loaded in the actual capture/compare 1 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR1 register (bit OC1PE). Else the preload value is copied in the active capture/compare 1 register when an update event occurs.
-              The active capture/compare register contains the value to be compared to the counter CNT and signaled on OC1 output.
-              If channel CC1is configured as input:
-              CCR1 is the counter value transferred by the last input capture 1 event (IC1).
-              </description>
+              <name>CCR</name>
+              <description>Capture/Compare value</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
           </fields>
         </register>
-        <register>
+        <register derivedFrom="CCR1">
           <name>CCR2</name>
           <displayName>CCR2</displayName>
-          <description>Capture/Compare register 2</description>
+          <description>
+            Capture/Compare register 2
+            If channel CC2 is configured as output:
+            CCR2 is the value to be loaded in the actual capture/compare 2 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR1 register (bit OC2PE). Else the preload value is copied in the active capture/compare 2 register when an update event occurs.
+            The active capture/compare register contains the value to be compared to the counter CNT and signalled on OC2 output.
+            If channel CC2 is configured as input:
+            CCR2 is the counter value transferred by the last input capture 2 event (IC2).
+          </description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CCR2</name>
-              <description>
-              Capture/Compare 2 value
-              If channel CC2 is configured as output:
-              CCR2 is the value to be loaded in the actual capture/compare 2 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR1 register (bit OC2PE). Else the preload value is copied in the active capture/compare 2 register when an update event occurs.
-              The active capture/compare register contains the value to be compared to the counter CNT and signalled on OC2 output.
-              If channel CC2 is configured as input:
-              CCR2 is the counter value transferred by the last input capture 2 event (IC2).
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="CCR1">
           <name>CCR3</name>
           <displayName>CCR3</displayName>
-          <description>Capture/Compare register 3</description>
+          <description>
+            Capture/Compare register 3
+            If channel CC3 is configured as output:
+            CCR3 is the value to be loaded in the actual capture/compare 3 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR2 register (bit OC3PE). Else the preload value is copied in the active capture/compare 3 register when an update event occurs.
+            The active capture/compare register contains the value to be compared to the counter CNT and signalled on OC3 output.
+            If channel CC3is configured as input:
+            CCR3 is the counter value transferred by the last input capture 3 event (IC3).
+          </description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CCR3</name>
-              <description>
-              Capture/Compare value
-              If channel CC3 is configured as output:
-              CCR3 is the value to be loaded in the actual capture/compare 3 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR2 register (bit OC3PE). Else the preload value is copied in the active capture/compare 3 register when an update event occurs.
-              The active capture/compare register contains the value to be compared to the counter CNT and signalled on OC3 output.
-              If channel CC3is configured as input:
-              CCR3 is the counter value transferred by the last input capture 3 event (IC3).
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="CCR1">
           <name>CCR4</name>
           <displayName>CCR4</displayName>
-          <description>Capture/Compare register 4</description>
+          <description>
+            Capture/Compare register 4
+            1. if CC4 channel is configured as output (CC4S bits):
+            CCR4 is the value to be loaded in the actual capture/compare 4 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR2 register (bit OC4PE). Else the preload value is copied in the active capture/compare 4 register when an update event occurs.
+            The active capture/compare register contains the value to be compared to the counter CNT and signalled on OC4 output.
+            2.  if CC4 channel is configured as input (CC4S bits in CCMR4 register):
+            CCR4 is the counter value transferred by the last input capture 4 event (IC4).
+          </description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CCR4</name>
-              <description>
-              Capture/Compare value
-              1. if CC4 channel is configured as output (CC4S bits):
-              CCR4 is the value to be loaded in the actual capture/compare 4 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR2 register (bit OC4PE). Else the preload value is copied in the active capture/compare 4 register when an update event occurs.
-              The active capture/compare register contains the value to be compared to the counter CNT and signalled on OC4 output.
-              2.  if CC4 channel is configured as input (CC4S bits in CCMR4 register):
-              CCR4 is the counter value transferred by the last input capture 4 event (IC4).
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
         <register>
           <name>BDTR</name>

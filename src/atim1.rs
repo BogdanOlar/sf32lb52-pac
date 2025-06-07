@@ -93,22 +93,22 @@ impl RegisterBlock {
     pub const fn rcr(&self) -> &Rcr {
         &self.rcr
     }
-    ///0x34 - Capture/Compare register 1
+    ///0x34 - Capture/Compare register 1 If channel CC1 is configured as output: CCR1 is the value to be loaded in the actual capture/compare 1 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR1 register (bit OC1PE). Else the preload value is copied in the active capture/compare 1 register when an update event occurs. The active capture/compare register contains the value to be compared to the counter CNT and signaled on OC1 output. If channel CC1is configured as input: CCR1 is the counter value transferred by the last input capture 1 event (IC1).
     #[inline(always)]
     pub const fn ccr1(&self) -> &Ccr1 {
         &self.ccr1
     }
-    ///0x38 - Capture/Compare register 2
+    ///0x38 - Capture/Compare register 2 If channel CC2 is configured as output: CCR2 is the value to be loaded in the actual capture/compare 2 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR1 register (bit OC2PE). Else the preload value is copied in the active capture/compare 2 register when an update event occurs. The active capture/compare register contains the value to be compared to the counter CNT and signalled on OC2 output. If channel CC2 is configured as input: CCR2 is the counter value transferred by the last input capture 2 event (IC2).
     #[inline(always)]
     pub const fn ccr2(&self) -> &Ccr2 {
         &self.ccr2
     }
-    ///0x3c - Capture/Compare register 3
+    ///0x3c - Capture/Compare register 3 If channel CC3 is configured as output: CCR3 is the value to be loaded in the actual capture/compare 3 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR2 register (bit OC3PE). Else the preload value is copied in the active capture/compare 3 register when an update event occurs. The active capture/compare register contains the value to be compared to the counter CNT and signalled on OC3 output. If channel CC3is configured as input: CCR3 is the counter value transferred by the last input capture 3 event (IC3).
     #[inline(always)]
     pub const fn ccr3(&self) -> &Ccr3 {
         &self.ccr3
     }
-    ///0x40 - Capture/Compare register 4
+    ///0x40 - Capture/Compare register 4 1. if CC4 channel is configured as output (CC4S bits): CCR4 is the value to be loaded in the actual capture/compare 4 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR2 register (bit OC4PE). Else the preload value is copied in the active capture/compare 4 register when an update event occurs. The active capture/compare register contains the value to be compared to the counter CNT and signalled on OC4 output. 2. if CC4 channel is configured as input (CC4S bits in CCMR4 register): CCR4 is the counter value transferred by the last input capture 4 event (IC4).
     #[inline(always)]
     pub const fn ccr4(&self) -> &Ccr4 {
         &self.ccr4
@@ -274,7 +274,7 @@ pub mod arr;
 pub type Rcr = crate::Reg<rcr::RCRrs>;
 ///Repetition counter register
 pub mod rcr;
-///CCR1 (rw) register accessor: Capture/Compare register 1
+///CCR1 (rw) register accessor: Capture/Compare register 1 If channel CC1 is configured as output: CCR1 is the value to be loaded in the actual capture/compare 1 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR1 register (bit OC1PE). Else the preload value is copied in the active capture/compare 1 register when an update event occurs. The active capture/compare register contains the value to be compared to the counter CNT and signaled on OC1 output. If channel CC1is configured as input: CCR1 is the counter value transferred by the last input capture 1 event (IC1).
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ccr1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ccr1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
@@ -282,38 +282,14 @@ pub mod rcr;
 ///module
 #[doc(alias = "CCR1")]
 pub type Ccr1 = crate::Reg<ccr1::CCR1rs>;
-///Capture/Compare register 1
+///Capture/Compare register 1 If channel CC1 is configured as output: CCR1 is the value to be loaded in the actual capture/compare 1 register (preload value).It is loaded permanently if the preload feature is not selected in the CCMR1 register (bit OC1PE). Else the preload value is copied in the active capture/compare 1 register when an update event occurs. The active capture/compare register contains the value to be compared to the counter CNT and signaled on OC1 output. If channel CC1is configured as input: CCR1 is the counter value transferred by the last input capture 1 event (IC1).
 pub mod ccr1;
-///CCR2 (rw) register accessor: Capture/Compare register 2
-///
-///You can [`read`](crate::Reg::read) this register and get [`ccr2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ccr2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@ccr2`]
-///module
-#[doc(alias = "CCR2")]
-pub type Ccr2 = crate::Reg<ccr2::CCR2rs>;
-///Capture/Compare register 2
-pub mod ccr2;
-///CCR3 (rw) register accessor: Capture/Compare register 3
-///
-///You can [`read`](crate::Reg::read) this register and get [`ccr3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ccr3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@ccr3`]
-///module
-#[doc(alias = "CCR3")]
-pub type Ccr3 = crate::Reg<ccr3::CCR3rs>;
-///Capture/Compare register 3
-pub mod ccr3;
-///CCR4 (rw) register accessor: Capture/Compare register 4
-///
-///You can [`read`](crate::Reg::read) this register and get [`ccr4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ccr4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@ccr4`]
-///module
-#[doc(alias = "CCR4")]
-pub type Ccr4 = crate::Reg<ccr4::CCR4rs>;
-///Capture/Compare register 4
-pub mod ccr4;
+pub use ccr1 as ccr2;
+pub use ccr1 as ccr3;
+pub use ccr1 as ccr4;
+pub use Ccr1 as Ccr2;
+pub use Ccr1 as Ccr3;
+pub use Ccr1 as Ccr4;
 ///BDTR (rw) register accessor: TIM break and dead-time register
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`bdtr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bdtr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
