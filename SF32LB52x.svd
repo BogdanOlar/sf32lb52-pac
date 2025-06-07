@@ -2508,7 +2508,7 @@
             </field>
           </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA01</name>
           <displayName>PAD_SA01</displayName>
           <description></description>
@@ -2516,82 +2516,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA02</name>
           <displayName>PAD_SA02</displayName>
           <description></description>
@@ -2599,82 +2525,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA03</name>
           <displayName>PAD_SA03</displayName>
           <description></description>
@@ -2682,82 +2534,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA04</name>
           <displayName>PAD_SA04</displayName>
           <description></description>
@@ -2765,82 +2543,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA05</name>
           <displayName>PAD_SA05</displayName>
           <description></description>
@@ -2848,82 +2552,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA06</name>
           <displayName>PAD_SA06</displayName>
           <description></description>
@@ -2931,82 +2561,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA07</name>
           <displayName>PAD_SA07</displayName>
           <description></description>
@@ -3014,82 +2570,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA08</name>
           <displayName>PAD_SA08</displayName>
           <description></description>
@@ -3097,82 +2579,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA09</name>
           <displayName>PAD_SA09</displayName>
           <description></description>
@@ -3180,82 +2588,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA10</name>
           <displayName>PAD_SA10</displayName>
           <description></description>
@@ -3263,82 +2597,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA11</name>
           <displayName>PAD_SA11</displayName>
           <description></description>
@@ -3346,82 +2606,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_SA12</name>
           <displayName>PAD_SA12</displayName>
           <description></description>
@@ -3429,82 +2615,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA00</name>
           <displayName>PAD_PA00</displayName>
           <description></description>
@@ -3512,82 +2624,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA01</name>
           <displayName>PAD_PA01</displayName>
           <description></description>
@@ -3595,82 +2633,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA02</name>
           <displayName>PAD_PA02</displayName>
           <description></description>
@@ -3678,82 +2642,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA03</name>
           <displayName>PAD_PA03</displayName>
           <description></description>
@@ -3761,82 +2651,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA04</name>
           <displayName>PAD_PA04</displayName>
           <description></description>
@@ -3844,82 +2660,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA05</name>
           <displayName>PAD_PA05</displayName>
           <description></description>
@@ -3927,82 +2669,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA06</name>
           <displayName>PAD_PA06</displayName>
           <description></description>
@@ -4010,82 +2678,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA07</name>
           <displayName>PAD_PA07</displayName>
           <description></description>
@@ -4093,82 +2687,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA08</name>
           <displayName>PAD_PA08</displayName>
           <description></description>
@@ -4176,82 +2696,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA09</name>
           <displayName>PAD_PA09</displayName>
           <description></description>
@@ -4259,82 +2705,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA10</name>
           <displayName>PAD_PA10</displayName>
           <description></description>
@@ -4342,82 +2714,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA11</name>
           <displayName>PAD_PA11</displayName>
           <description></description>
@@ -4425,82 +2723,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA12</name>
           <displayName>PAD_PA12</displayName>
           <description></description>
@@ -4508,82 +2732,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA13</name>
           <displayName>PAD_PA13</displayName>
           <description></description>
@@ -4591,82 +2741,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA14</name>
           <displayName>PAD_PA14</displayName>
           <description></description>
@@ -4674,82 +2750,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA15</name>
           <displayName>PAD_PA15</displayName>
           <description></description>
@@ -4757,82 +2759,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA16</name>
           <displayName>PAD_PA16</displayName>
           <description></description>
@@ -4840,82 +2768,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA17</name>
           <displayName>PAD_PA17</displayName>
           <description></description>
@@ -4923,82 +2777,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA18</name>
           <displayName>PAD_PA18</displayName>
           <description></description>
@@ -5006,82 +2786,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA19</name>
           <displayName>PAD_PA19</displayName>
           <description></description>
@@ -5089,82 +2795,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA20</name>
           <displayName>PAD_PA20</displayName>
           <description></description>
@@ -5172,82 +2804,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA21</name>
           <displayName>PAD_PA21</displayName>
           <description></description>
@@ -5255,82 +2813,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA22</name>
           <displayName>PAD_PA22</displayName>
           <description></description>
@@ -5338,82 +2822,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA23</name>
           <displayName>PAD_PA23</displayName>
           <description></description>
@@ -5421,82 +2831,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA24</name>
           <displayName>PAD_PA24</displayName>
           <description></description>
@@ -5504,82 +2840,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA25</name>
           <displayName>PAD_PA25</displayName>
           <description></description>
@@ -5587,82 +2849,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA26</name>
           <displayName>PAD_PA26</displayName>
           <description></description>
@@ -5670,82 +2858,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA27</name>
           <displayName>PAD_PA27</displayName>
           <description></description>
@@ -5753,82 +2867,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA28</name>
           <displayName>PAD_PA28</displayName>
           <description></description>
@@ -5836,82 +2876,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA29</name>
           <displayName>PAD_PA29</displayName>
           <description></description>
@@ -5919,82 +2885,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA30</name>
           <displayName>PAD_PA30</displayName>
           <description></description>
@@ -6002,82 +2894,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA31</name>
           <displayName>PAD_PA31</displayName>
           <description></description>
@@ -6085,82 +2903,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA32</name>
           <displayName>PAD_PA32</displayName>
           <description></description>
@@ -6168,82 +2912,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA33</name>
           <displayName>PAD_PA33</displayName>
           <description></description>
@@ -6251,82 +2921,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA34</name>
           <displayName>PAD_PA34</displayName>
           <description></description>
@@ -6334,82 +2930,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA35</name>
           <displayName>PAD_PA35</displayName>
           <description></description>
@@ -6417,82 +2939,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA36</name>
           <displayName>PAD_PA36</displayName>
           <description></description>
@@ -6500,82 +2948,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA37</name>
           <displayName>PAD_PA37</displayName>
           <description></description>
@@ -6583,82 +2957,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA38</name>
           <displayName>PAD_PA38</displayName>
           <description></description>
@@ -6666,80 +2966,6 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
         <register>
           <name>PAD_PA39</name>
@@ -6816,7 +3042,7 @@
             </field>
           </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_PA39">
           <name>PAD_PA40</name>
           <displayName>PAD_PA40</displayName>
           <description></description>
@@ -6824,74 +3050,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS</name>
-              <description>
-              Drive Select. Logic LOW selects 4mA drive,logic HIGH selects 20mA drive
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MODE</name>
-              <description>
-              Mode Select. Logic LOW enables GPIO mode,logic HIGH enables I2C mode
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_PA39">
           <name>PAD_PA41</name>
           <displayName>PAD_PA41</displayName>
           <description></description>
@@ -6899,74 +3059,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS</name>
-              <description>
-              Drive Select. Logic LOW selects 4mA drive,logic HIGH selects 20mA drive
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MODE</name>
-              <description>
-              Mode Select. Logic LOW enables GPIO mode,logic HIGH enables I2C mode
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_PA39">
           <name>PAD_PA42</name>
           <displayName>PAD_PA42</displayName>
           <description></description>
@@ -6974,74 +3068,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS</name>
-              <description>
-              Drive Select. Logic LOW selects 4mA drive,logic HIGH selects 20mA drive
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MODE</name>
-              <description>
-              Mode Select. Logic LOW enables GPIO mode,logic HIGH enables I2C mode
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA43</name>
           <displayName>PAD_PA43</displayName>
           <description></description>
@@ -7049,82 +3077,8 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="PAD_SA00">
           <name>PAD_PA44</name>
           <displayName>PAD_PA44</displayName>
           <description></description>
@@ -7132,80 +3086,6 @@
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0</resetValue>
-          <fields>
-            <field>
-              <name>POE</name>
-              <description>
-              Reserved. Always set to logic LOW
-              </description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS1</name>
-              <description>
-              Drive Select 1. Used to select output drive strength
-              </description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS0</name>
-              <description>
-              Drive Select 0. Used to select output drive strength
-              </description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SR</name>
-              <description>
-              Slew Rate. Logic HIGH selects slow slew rate, logic LOW selects fast slew rate
-              </description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IS</name>
-              <description>
-              Input Select. Logic LOW selects CMOS input, logic HIGH selects Schmitt input
-              </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>
-              Input Enable. Logic HIGH enables the input buffer
-              </description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PS</name>
-              <description>
-              Pull Select. Logic HIGH selects pull-up, logic LOW select pull-down
-              </description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PE</name>
-              <description>
-              Pull Enable. Logic HIGH enables week pull device
-              </description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSEL</name>
-              <description>
-              Function Select
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
         </register>
       </registers>
     </peripheral>

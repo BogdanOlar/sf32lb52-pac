@@ -363,516 +363,108 @@ impl RegisterBlock {
 pub type PadSa00 = crate::Reg<pad_sa00::PAD_SA00rs>;
 ///
 pub mod pad_sa00;
-///PAD_SA01 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa01::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa01::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa01`]
-///module
-#[doc(alias = "PAD_SA01")]
-pub type PadSa01 = crate::Reg<pad_sa01::PAD_SA01rs>;
-///
-pub mod pad_sa01;
-///PAD_SA02 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa02::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa02::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa02`]
-///module
-#[doc(alias = "PAD_SA02")]
-pub type PadSa02 = crate::Reg<pad_sa02::PAD_SA02rs>;
-///
-pub mod pad_sa02;
-///PAD_SA03 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa03::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa03::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa03`]
-///module
-#[doc(alias = "PAD_SA03")]
-pub type PadSa03 = crate::Reg<pad_sa03::PAD_SA03rs>;
-///
-pub mod pad_sa03;
-///PAD_SA04 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa04::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa04::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa04`]
-///module
-#[doc(alias = "PAD_SA04")]
-pub type PadSa04 = crate::Reg<pad_sa04::PAD_SA04rs>;
-///
-pub mod pad_sa04;
-///PAD_SA05 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa05::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa05::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa05`]
-///module
-#[doc(alias = "PAD_SA05")]
-pub type PadSa05 = crate::Reg<pad_sa05::PAD_SA05rs>;
-///
-pub mod pad_sa05;
-///PAD_SA06 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa06::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa06::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa06`]
-///module
-#[doc(alias = "PAD_SA06")]
-pub type PadSa06 = crate::Reg<pad_sa06::PAD_SA06rs>;
-///
-pub mod pad_sa06;
-///PAD_SA07 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa07::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa07::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa07`]
-///module
-#[doc(alias = "PAD_SA07")]
-pub type PadSa07 = crate::Reg<pad_sa07::PAD_SA07rs>;
-///
-pub mod pad_sa07;
-///PAD_SA08 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa08::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa08::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa08`]
-///module
-#[doc(alias = "PAD_SA08")]
-pub type PadSa08 = crate::Reg<pad_sa08::PAD_SA08rs>;
-///
-pub mod pad_sa08;
-///PAD_SA09 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa09::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa09::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa09`]
-///module
-#[doc(alias = "PAD_SA09")]
-pub type PadSa09 = crate::Reg<pad_sa09::PAD_SA09rs>;
-///
-pub mod pad_sa09;
-///PAD_SA10 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa10`]
-///module
-#[doc(alias = "PAD_SA10")]
-pub type PadSa10 = crate::Reg<pad_sa10::PAD_SA10rs>;
-///
-pub mod pad_sa10;
-///PAD_SA11 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa11`]
-///module
-#[doc(alias = "PAD_SA11")]
-pub type PadSa11 = crate::Reg<pad_sa11::PAD_SA11rs>;
-///
-pub mod pad_sa11;
-///PAD_SA12 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_sa12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_sa12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_sa12`]
-///module
-#[doc(alias = "PAD_SA12")]
-pub type PadSa12 = crate::Reg<pad_sa12::PAD_SA12rs>;
-///
-pub mod pad_sa12;
-///PAD_PA00 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa00::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa00::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa00`]
-///module
-#[doc(alias = "PAD_PA00")]
-pub type PadPa00 = crate::Reg<pad_pa00::PAD_PA00rs>;
-///
-pub mod pad_pa00;
-///PAD_PA01 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa01::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa01::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa01`]
-///module
-#[doc(alias = "PAD_PA01")]
-pub type PadPa01 = crate::Reg<pad_pa01::PAD_PA01rs>;
-///
-pub mod pad_pa01;
-///PAD_PA02 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa02::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa02::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa02`]
-///module
-#[doc(alias = "PAD_PA02")]
-pub type PadPa02 = crate::Reg<pad_pa02::PAD_PA02rs>;
-///
-pub mod pad_pa02;
-///PAD_PA03 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa03::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa03::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa03`]
-///module
-#[doc(alias = "PAD_PA03")]
-pub type PadPa03 = crate::Reg<pad_pa03::PAD_PA03rs>;
-///
-pub mod pad_pa03;
-///PAD_PA04 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa04::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa04::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa04`]
-///module
-#[doc(alias = "PAD_PA04")]
-pub type PadPa04 = crate::Reg<pad_pa04::PAD_PA04rs>;
-///
-pub mod pad_pa04;
-///PAD_PA05 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa05::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa05::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa05`]
-///module
-#[doc(alias = "PAD_PA05")]
-pub type PadPa05 = crate::Reg<pad_pa05::PAD_PA05rs>;
-///
-pub mod pad_pa05;
-///PAD_PA06 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa06::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa06::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa06`]
-///module
-#[doc(alias = "PAD_PA06")]
-pub type PadPa06 = crate::Reg<pad_pa06::PAD_PA06rs>;
-///
-pub mod pad_pa06;
-///PAD_PA07 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa07::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa07::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa07`]
-///module
-#[doc(alias = "PAD_PA07")]
-pub type PadPa07 = crate::Reg<pad_pa07::PAD_PA07rs>;
-///
-pub mod pad_pa07;
-///PAD_PA08 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa08::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa08::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa08`]
-///module
-#[doc(alias = "PAD_PA08")]
-pub type PadPa08 = crate::Reg<pad_pa08::PAD_PA08rs>;
-///
-pub mod pad_pa08;
-///PAD_PA09 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa09::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa09::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa09`]
-///module
-#[doc(alias = "PAD_PA09")]
-pub type PadPa09 = crate::Reg<pad_pa09::PAD_PA09rs>;
-///
-pub mod pad_pa09;
-///PAD_PA10 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa10`]
-///module
-#[doc(alias = "PAD_PA10")]
-pub type PadPa10 = crate::Reg<pad_pa10::PAD_PA10rs>;
-///
-pub mod pad_pa10;
-///PAD_PA11 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa11`]
-///module
-#[doc(alias = "PAD_PA11")]
-pub type PadPa11 = crate::Reg<pad_pa11::PAD_PA11rs>;
-///
-pub mod pad_pa11;
-///PAD_PA12 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa12`]
-///module
-#[doc(alias = "PAD_PA12")]
-pub type PadPa12 = crate::Reg<pad_pa12::PAD_PA12rs>;
-///
-pub mod pad_pa12;
-///PAD_PA13 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa13`]
-///module
-#[doc(alias = "PAD_PA13")]
-pub type PadPa13 = crate::Reg<pad_pa13::PAD_PA13rs>;
-///
-pub mod pad_pa13;
-///PAD_PA14 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa14`]
-///module
-#[doc(alias = "PAD_PA14")]
-pub type PadPa14 = crate::Reg<pad_pa14::PAD_PA14rs>;
-///
-pub mod pad_pa14;
-///PAD_PA15 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa15`]
-///module
-#[doc(alias = "PAD_PA15")]
-pub type PadPa15 = crate::Reg<pad_pa15::PAD_PA15rs>;
-///
-pub mod pad_pa15;
-///PAD_PA16 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa16::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa16::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa16`]
-///module
-#[doc(alias = "PAD_PA16")]
-pub type PadPa16 = crate::Reg<pad_pa16::PAD_PA16rs>;
-///
-pub mod pad_pa16;
-///PAD_PA17 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa17::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa17::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa17`]
-///module
-#[doc(alias = "PAD_PA17")]
-pub type PadPa17 = crate::Reg<pad_pa17::PAD_PA17rs>;
-///
-pub mod pad_pa17;
-///PAD_PA18 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa18::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa18::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa18`]
-///module
-#[doc(alias = "PAD_PA18")]
-pub type PadPa18 = crate::Reg<pad_pa18::PAD_PA18rs>;
-///
-pub mod pad_pa18;
-///PAD_PA19 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa19::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa19::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa19`]
-///module
-#[doc(alias = "PAD_PA19")]
-pub type PadPa19 = crate::Reg<pad_pa19::PAD_PA19rs>;
-///
-pub mod pad_pa19;
-///PAD_PA20 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa20::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa20::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa20`]
-///module
-#[doc(alias = "PAD_PA20")]
-pub type PadPa20 = crate::Reg<pad_pa20::PAD_PA20rs>;
-///
-pub mod pad_pa20;
-///PAD_PA21 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa21::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa21::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa21`]
-///module
-#[doc(alias = "PAD_PA21")]
-pub type PadPa21 = crate::Reg<pad_pa21::PAD_PA21rs>;
-///
-pub mod pad_pa21;
-///PAD_PA22 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa22::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa22::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa22`]
-///module
-#[doc(alias = "PAD_PA22")]
-pub type PadPa22 = crate::Reg<pad_pa22::PAD_PA22rs>;
-///
-pub mod pad_pa22;
-///PAD_PA23 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa23::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa23::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa23`]
-///module
-#[doc(alias = "PAD_PA23")]
-pub type PadPa23 = crate::Reg<pad_pa23::PAD_PA23rs>;
-///
-pub mod pad_pa23;
-///PAD_PA24 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa24::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa24::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa24`]
-///module
-#[doc(alias = "PAD_PA24")]
-pub type PadPa24 = crate::Reg<pad_pa24::PAD_PA24rs>;
-///
-pub mod pad_pa24;
-///PAD_PA25 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa25::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa25::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa25`]
-///module
-#[doc(alias = "PAD_PA25")]
-pub type PadPa25 = crate::Reg<pad_pa25::PAD_PA25rs>;
-///
-pub mod pad_pa25;
-///PAD_PA26 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa26::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa26::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa26`]
-///module
-#[doc(alias = "PAD_PA26")]
-pub type PadPa26 = crate::Reg<pad_pa26::PAD_PA26rs>;
-///
-pub mod pad_pa26;
-///PAD_PA27 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa27::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa27::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa27`]
-///module
-#[doc(alias = "PAD_PA27")]
-pub type PadPa27 = crate::Reg<pad_pa27::PAD_PA27rs>;
-///
-pub mod pad_pa27;
-///PAD_PA28 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa28::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa28::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa28`]
-///module
-#[doc(alias = "PAD_PA28")]
-pub type PadPa28 = crate::Reg<pad_pa28::PAD_PA28rs>;
-///
-pub mod pad_pa28;
-///PAD_PA29 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa29::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa29::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa29`]
-///module
-#[doc(alias = "PAD_PA29")]
-pub type PadPa29 = crate::Reg<pad_pa29::PAD_PA29rs>;
-///
-pub mod pad_pa29;
-///PAD_PA30 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa30::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa30::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa30`]
-///module
-#[doc(alias = "PAD_PA30")]
-pub type PadPa30 = crate::Reg<pad_pa30::PAD_PA30rs>;
-///
-pub mod pad_pa30;
-///PAD_PA31 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa31::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa31::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa31`]
-///module
-#[doc(alias = "PAD_PA31")]
-pub type PadPa31 = crate::Reg<pad_pa31::PAD_PA31rs>;
-///
-pub mod pad_pa31;
-///PAD_PA32 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa32::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa32::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa32`]
-///module
-#[doc(alias = "PAD_PA32")]
-pub type PadPa32 = crate::Reg<pad_pa32::PAD_PA32rs>;
-///
-pub mod pad_pa32;
-///PAD_PA33 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa33::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa33::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa33`]
-///module
-#[doc(alias = "PAD_PA33")]
-pub type PadPa33 = crate::Reg<pad_pa33::PAD_PA33rs>;
-///
-pub mod pad_pa33;
-///PAD_PA34 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa34::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa34::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa34`]
-///module
-#[doc(alias = "PAD_PA34")]
-pub type PadPa34 = crate::Reg<pad_pa34::PAD_PA34rs>;
-///
-pub mod pad_pa34;
-///PAD_PA35 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa35::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa35::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa35`]
-///module
-#[doc(alias = "PAD_PA35")]
-pub type PadPa35 = crate::Reg<pad_pa35::PAD_PA35rs>;
-///
-pub mod pad_pa35;
-///PAD_PA36 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa36::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa36::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa36`]
-///module
-#[doc(alias = "PAD_PA36")]
-pub type PadPa36 = crate::Reg<pad_pa36::PAD_PA36rs>;
-///
-pub mod pad_pa36;
-///PAD_PA37 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa37::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa37::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa37`]
-///module
-#[doc(alias = "PAD_PA37")]
-pub type PadPa37 = crate::Reg<pad_pa37::PAD_PA37rs>;
-///
-pub mod pad_pa37;
-///PAD_PA38 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa38::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa38::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa38`]
-///module
-#[doc(alias = "PAD_PA38")]
-pub type PadPa38 = crate::Reg<pad_pa38::PAD_PA38rs>;
-///
-pub mod pad_pa38;
+pub use pad_sa00 as pad_sa01;
+pub use pad_sa00 as pad_sa02;
+pub use pad_sa00 as pad_sa03;
+pub use pad_sa00 as pad_sa04;
+pub use pad_sa00 as pad_sa05;
+pub use pad_sa00 as pad_sa06;
+pub use pad_sa00 as pad_sa07;
+pub use pad_sa00 as pad_sa08;
+pub use pad_sa00 as pad_sa09;
+pub use pad_sa00 as pad_sa10;
+pub use pad_sa00 as pad_sa11;
+pub use pad_sa00 as pad_sa12;
+pub use pad_sa00 as pad_pa00;
+pub use pad_sa00 as pad_pa01;
+pub use pad_sa00 as pad_pa02;
+pub use pad_sa00 as pad_pa03;
+pub use pad_sa00 as pad_pa04;
+pub use pad_sa00 as pad_pa05;
+pub use pad_sa00 as pad_pa06;
+pub use pad_sa00 as pad_pa07;
+pub use pad_sa00 as pad_pa08;
+pub use pad_sa00 as pad_pa09;
+pub use pad_sa00 as pad_pa10;
+pub use pad_sa00 as pad_pa11;
+pub use pad_sa00 as pad_pa12;
+pub use pad_sa00 as pad_pa13;
+pub use pad_sa00 as pad_pa14;
+pub use pad_sa00 as pad_pa15;
+pub use pad_sa00 as pad_pa16;
+pub use pad_sa00 as pad_pa17;
+pub use pad_sa00 as pad_pa18;
+pub use pad_sa00 as pad_pa19;
+pub use pad_sa00 as pad_pa20;
+pub use pad_sa00 as pad_pa21;
+pub use pad_sa00 as pad_pa22;
+pub use pad_sa00 as pad_pa23;
+pub use pad_sa00 as pad_pa24;
+pub use pad_sa00 as pad_pa25;
+pub use pad_sa00 as pad_pa26;
+pub use pad_sa00 as pad_pa27;
+pub use pad_sa00 as pad_pa28;
+pub use pad_sa00 as pad_pa29;
+pub use pad_sa00 as pad_pa30;
+pub use pad_sa00 as pad_pa31;
+pub use pad_sa00 as pad_pa32;
+pub use pad_sa00 as pad_pa33;
+pub use pad_sa00 as pad_pa34;
+pub use pad_sa00 as pad_pa35;
+pub use pad_sa00 as pad_pa36;
+pub use pad_sa00 as pad_pa37;
+pub use pad_sa00 as pad_pa38;
+pub use PadSa00 as PadSa01;
+pub use PadSa00 as PadSa02;
+pub use PadSa00 as PadSa03;
+pub use PadSa00 as PadSa04;
+pub use PadSa00 as PadSa05;
+pub use PadSa00 as PadSa06;
+pub use PadSa00 as PadSa07;
+pub use PadSa00 as PadSa08;
+pub use PadSa00 as PadSa09;
+pub use PadSa00 as PadSa10;
+pub use PadSa00 as PadSa11;
+pub use PadSa00 as PadSa12;
+pub use PadSa00 as PadPa00;
+pub use PadSa00 as PadPa01;
+pub use PadSa00 as PadPa02;
+pub use PadSa00 as PadPa03;
+pub use PadSa00 as PadPa04;
+pub use PadSa00 as PadPa05;
+pub use PadSa00 as PadPa06;
+pub use PadSa00 as PadPa07;
+pub use PadSa00 as PadPa08;
+pub use PadSa00 as PadPa09;
+pub use PadSa00 as PadPa10;
+pub use PadSa00 as PadPa11;
+pub use PadSa00 as PadPa12;
+pub use PadSa00 as PadPa13;
+pub use PadSa00 as PadPa14;
+pub use PadSa00 as PadPa15;
+pub use PadSa00 as PadPa16;
+pub use PadSa00 as PadPa17;
+pub use PadSa00 as PadPa18;
+pub use PadSa00 as PadPa19;
+pub use PadSa00 as PadPa20;
+pub use PadSa00 as PadPa21;
+pub use PadSa00 as PadPa22;
+pub use PadSa00 as PadPa23;
+pub use PadSa00 as PadPa24;
+pub use PadSa00 as PadPa25;
+pub use PadSa00 as PadPa26;
+pub use PadSa00 as PadPa27;
+pub use PadSa00 as PadPa28;
+pub use PadSa00 as PadPa29;
+pub use PadSa00 as PadPa30;
+pub use PadSa00 as PadPa31;
+pub use PadSa00 as PadPa32;
+pub use PadSa00 as PadPa33;
+pub use PadSa00 as PadPa34;
+pub use PadSa00 as PadPa35;
+pub use PadSa00 as PadPa36;
+pub use PadSa00 as PadPa37;
+pub use PadSa00 as PadPa38;
 ///PAD_PA39 (rw) register accessor:
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`pad_pa39::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa39::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
@@ -883,53 +475,13 @@ pub mod pad_pa38;
 pub type PadPa39 = crate::Reg<pad_pa39::PAD_PA39rs>;
 ///
 pub mod pad_pa39;
-///PAD_PA40 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa40::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa40::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa40`]
-///module
-#[doc(alias = "PAD_PA40")]
-pub type PadPa40 = crate::Reg<pad_pa40::PAD_PA40rs>;
-///
-pub mod pad_pa40;
-///PAD_PA41 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa41::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa41::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa41`]
-///module
-#[doc(alias = "PAD_PA41")]
-pub type PadPa41 = crate::Reg<pad_pa41::PAD_PA41rs>;
-///
-pub mod pad_pa41;
-///PAD_PA42 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa42::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa42::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa42`]
-///module
-#[doc(alias = "PAD_PA42")]
-pub type PadPa42 = crate::Reg<pad_pa42::PAD_PA42rs>;
-///
-pub mod pad_pa42;
-///PAD_PA43 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa43::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa43::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa43`]
-///module
-#[doc(alias = "PAD_PA43")]
-pub type PadPa43 = crate::Reg<pad_pa43::PAD_PA43rs>;
-///
-pub mod pad_pa43;
-///PAD_PA44 (rw) register accessor:
-///
-///You can [`read`](crate::Reg::read) this register and get [`pad_pa44::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pad_pa44::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [`mod@pad_pa44`]
-///module
-#[doc(alias = "PAD_PA44")]
-pub type PadPa44 = crate::Reg<pad_pa44::PAD_PA44rs>;
-///
-pub mod pad_pa44;
+pub use pad_pa39 as pad_pa40;
+pub use pad_pa39 as pad_pa41;
+pub use pad_pa39 as pad_pa42;
+pub use pad_sa00 as pad_pa43;
+pub use pad_sa00 as pad_pa44;
+pub use PadPa39 as PadPa40;
+pub use PadPa39 as PadPa41;
+pub use PadPa39 as PadPa42;
+pub use PadSa00 as PadPa43;
+pub use PadSa00 as PadPa44;
