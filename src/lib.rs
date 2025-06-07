@@ -1527,10 +1527,10 @@ pub struct I2c2 {
 unsafe impl Send for I2c2 {}
 impl I2c2 {
     ///Pointer to the register block
-    pub const PTR: *const i2c2::RegisterBlock = 0x5009_d000 as *const _;
+    pub const PTR: *const i2c1::RegisterBlock = 0x5009_d000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const i2c2::RegisterBlock {
+    pub const fn ptr() -> *const i2c1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -1553,7 +1553,7 @@ impl I2c2 {
     }
 }
 impl Deref for I2c2 {
-    type Target = i2c2::RegisterBlock;
+    type Target = i2c1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -1565,7 +1565,7 @@ impl core::fmt::Debug for I2c2 {
     }
 }
 ///I2C2
-pub mod i2c2;
+pub use self::i2c1 as i2c2;
 ///I2C3
 pub struct I2c3 {
     _marker: PhantomData<*const ()>,
@@ -1573,10 +1573,10 @@ pub struct I2c3 {
 unsafe impl Send for I2c3 {}
 impl I2c3 {
     ///Pointer to the register block
-    pub const PTR: *const i2c3::RegisterBlock = 0x5009_e000 as *const _;
+    pub const PTR: *const i2c1::RegisterBlock = 0x5009_e000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const i2c3::RegisterBlock {
+    pub const fn ptr() -> *const i2c1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -1599,7 +1599,7 @@ impl I2c3 {
     }
 }
 impl Deref for I2c3 {
-    type Target = i2c3::RegisterBlock;
+    type Target = i2c1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -1611,7 +1611,7 @@ impl core::fmt::Debug for I2c3 {
     }
 }
 ///I2C3
-pub mod i2c3;
+pub use self::i2c1 as i2c3;
 ///I2C4
 pub struct I2c4 {
     _marker: PhantomData<*const ()>,
@@ -1619,10 +1619,10 @@ pub struct I2c4 {
 unsafe impl Send for I2c4 {}
 impl I2c4 {
     ///Pointer to the register block
-    pub const PTR: *const i2c4::RegisterBlock = 0x5009_f000 as *const _;
+    pub const PTR: *const i2c1::RegisterBlock = 0x5009_f000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const i2c4::RegisterBlock {
+    pub const fn ptr() -> *const i2c1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -1645,7 +1645,7 @@ impl I2c4 {
     }
 }
 impl Deref for I2c4 {
-    type Target = i2c4::RegisterBlock;
+    type Target = i2c1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -1657,7 +1657,7 @@ impl core::fmt::Debug for I2c4 {
     }
 }
 ///I2C4
-pub mod i2c4;
+pub use self::i2c1 as i2c4;
 ///HPSYS_GPIO
 pub struct HpsysGpio {
     _marker: PhantomData<*const ()>,
