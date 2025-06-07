@@ -1,6 +1,6 @@
 [package]
 name = "sf32lb52-pac"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Bogdan Olar <olar.bogdan.dev@gmail.com>"]
 description = "Peripheral Access Crate for SF32LB52 microcontrollers"
