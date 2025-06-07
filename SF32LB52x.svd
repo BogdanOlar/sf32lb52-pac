@@ -18726,7 +18726,7 @@
         <register>
           <name>IV_W0</name>
           <displayName>IV_W0</displayName>
-          <description></description>
+          <description>Initial Vector Word 0</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18735,74 +18735,44 @@
             <field>
               <name>DATA</name>
               <description>
-              Initial Vector Word0
+              Initial Vector Word
               </description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
           </fields>
         </register>
-        <register>
+        <register derivedFrom="IV_W0">
           <name>IV_W1</name>
           <displayName>IV_W1</displayName>
-          <description></description>
+          <description>Initial Vector Word 1</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              Initial Vector Word1
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="IV_W0">
           <name>IV_W2</name>
           <displayName>IV_W2</displayName>
-          <description></description>
+          <description>Initial Vector Word 2</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              Initial Vector Word2
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="IV_W0">
           <name>IV_W3</name>
           <displayName>IV_W3</displayName>
-          <description></description>
+          <description>Initial Vector Word3</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              Initial Vector Word3
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
         <register>
           <name>EXT_KEY_W0</name>
           <displayName>EXT_KEY_W0</displayName>
-          <description></description>
+          <description>External Key Word0</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -18811,145 +18781,75 @@
             <field>
               <name>DATA</name>
               <description>
-              External Key Word0
+              External Key Word
               </description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
           </fields>
         </register>
-        <register>
+        <register derivedFrom="EXT_KEY_W0">
           <name>EXT_KEY_W1</name>
           <displayName>EXT_KEY_W1</displayName>
-          <description></description>
+          <description>External Key Word1</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              External Key Word1
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="EXT_KEY_W0">
           <name>EXT_KEY_W2</name>
           <displayName>EXT_KEY_W2</displayName>
-          <description></description>
+          <description>External Key Word2</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              External Key Word2
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="EXT_KEY_W0">
           <name>EXT_KEY_W3</name>
           <displayName>EXT_KEY_W3</displayName>
-          <description></description>
+          <description>External Key Word3</description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              External Key Word3
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="EXT_KEY_W0">
           <name>EXT_KEY_W4</name>
           <displayName>EXT_KEY_W4</displayName>
-          <description></description>
+          <description>External Key Word4</description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              External Key Word4
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="EXT_KEY_W0">
           <name>EXT_KEY_W5</name>
           <displayName>EXT_KEY_W5</displayName>
-          <description></description>
+          <description>External Key Word5</description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              External Key Word5
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="EXT_KEY_W0">
           <name>EXT_KEY_W6</name>
           <displayName>EXT_KEY_W6</displayName>
-          <description></description>
+          <description>External Key Word6</description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              External Key Word6
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="EXT_KEY_W0">
           <name>EXT_KEY_W7</name>
           <displayName>EXT_KEY_W7</displayName>
-          <description></description>
+          <description>External Key Word7</description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              External Key Word7
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
         <register>
           <name>HASH_SETTING</name>
@@ -19069,7 +18969,7 @@
         <register>
           <name>HASH_IV_H0</name>
           <displayName>HASH_IV_H0</displayName>
-          <description></description>
+          <description>HASH IV H0</description>
           <addressOffset>0x5c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19078,150 +18978,80 @@
             <field>
               <name>DATA</name>
               <description>
-              HASH IV H0
+              HASH IV H
               </description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
           </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_IV_H0">
           <name>HASH_IV_H1</name>
           <displayName>HASH_IV_H1</displayName>
-          <description></description>
+          <description>HASH IV H1</description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH IV H1
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_IV_H0">
           <name>HASH_IV_H2</name>
           <displayName>HASH_IV_H2</displayName>
-          <description></description>
+          <description>HASH IV H2</description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH IV H2
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_IV_H0">
           <name>HASH_IV_H3</name>
           <displayName>HASH_IV_H3</displayName>
-          <description></description>
+          <description>HASH IV H3</description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH IV H3
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_IV_H0">
           <name>HASH_IV_H4</name>
           <displayName>HASH_IV_H4</displayName>
-          <description></description>
+          <description>HASH IV H4</description>
           <addressOffset>0x6c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH IV H4
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_IV_H0">
           <name>HASH_IV_H5</name>
           <displayName>HASH_IV_H5</displayName>
-          <description></description>
+          <description>HASH IV H5</description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH IV H5
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_IV_H0">
           <name>HASH_IV_H6</name>
           <displayName>HASH_IV_H6</displayName>
-          <description></description>
+          <description>HASH IV H6</description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH IV H6
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_IV_H0">
           <name>HASH_IV_H7</name>
           <displayName>HASH_IV_H7</displayName>
-          <description></description>
+          <description>HASH IV H7</description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH IV H7
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
         <register>
           <name>HASH_RESULT_H0</name>
           <displayName>HASH_RESULT_H0</displayName>
-          <description></description>
+          <description>HASH result H0</description>
           <addressOffset>0x7c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19230,150 +19060,80 @@
             <field>
               <name>DATA</name>
               <description>
-              HASH result H0
+              HASH result
               </description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
           </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_RESULT_H0">
           <name>HASH_RESULT_H1</name>
           <displayName>HASH_RESULT_H1</displayName>
-          <description></description>
+          <description>HASH result H1</description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH result H1
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_RESULT_H0">
           <name>HASH_RESULT_H2</name>
           <displayName>HASH_RESULT_H2</displayName>
-          <description></description>
+          <description>HASH result H2</description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH result H2
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_RESULT_H0">
           <name>HASH_RESULT_H3</name>
           <displayName>HASH_RESULT_H3</displayName>
-          <description></description>
+          <description>HASH result H3</description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH result H3
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_RESULT_H0">
           <name>HASH_RESULT_H4</name>
           <displayName>HASH_RESULT_H4</displayName>
-          <description></description>
+          <description>HASH result H4</description>
           <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH result H4
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_RESULT_H0">
           <name>HASH_RESULT_H5</name>
           <displayName>HASH_RESULT_H5</displayName>
-          <description></description>
+          <description>HASH result H5</description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH result H5
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_RESULT_H0">
           <name>HASH_RESULT_H6</name>
           <displayName>HASH_RESULT_H6</displayName>
-          <description></description>
+          <description>HASH result H6</description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH result H6
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
-        <register>
+        <register derivedFrom="HASH_RESULT_H0">
           <name>HASH_RESULT_H7</name>
           <displayName>HASH_RESULT_H7</displayName>
-          <description></description>
+          <description>HASH result H7</description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>
-              HASH result H7
-              </description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
         </register>
         <register>
           <name>HASH_LEN_L</name>
           <displayName>HASH_LEN_L</displayName>
-          <description></description>
+          <description>HASH load length l</description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19392,7 +19152,7 @@
         <register>
           <name>HASH_LEN_H</name>
           <displayName>HASH_LEN_H</displayName>
-          <description></description>
+          <description>HASH load length h</description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19411,7 +19171,7 @@
         <register>
           <name>HASH_RESULT_LEN_L</name>
           <displayName>HASH_RESULT_LEN_L</displayName>
-          <description></description>
+          <description>HASH result length l</description>
           <addressOffset>0xa4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -19430,7 +19190,7 @@
         <register>
           <name>HASH_RESULT_LEN_H</name>
           <displayName>HASH_RESULT_LEN_H</displayName>
-          <description></description>
+          <description>HASH result length h</description>
           <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
