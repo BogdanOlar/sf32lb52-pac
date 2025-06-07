@@ -2585,10 +2585,10 @@ pub struct Crc2 {
 unsafe impl Send for Crc2 {}
 impl Crc2 {
     ///Pointer to the register block
-    pub const PTR: *const crc2::RegisterBlock = 0x4008_5000 as *const _;
+    pub const PTR: *const crc1::RegisterBlock = 0x4008_5000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const crc2::RegisterBlock {
+    pub const fn ptr() -> *const crc1::RegisterBlock {
         Self::PTR
     }
     /// Steal an instance of this peripheral
@@ -2611,7 +2611,7 @@ impl Crc2 {
     }
 }
 impl Deref for Crc2 {
-    type Target = crc2::RegisterBlock;
+    type Target = crc1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2623,7 +2623,7 @@ impl core::fmt::Debug for Crc2 {
     }
 }
 ///CRC2
-pub mod crc2;
+pub use self::crc1 as crc2;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 /// All the peripherals.
